@@ -1,4 +1,4 @@
-echo "*.aux
+*.aux
 *.log
 *.out
 *.toc
@@ -8,5 +8,4 @@ echo "*.aux
 *.blg
 *.synctex.gz
 *.fdb_latexmk
-*.fls" > .gitignore
-
+*.fls
