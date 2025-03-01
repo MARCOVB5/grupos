@@ -1,0 +1,665 @@
+\documentclass[16pt,openany]{book}
+
+\usepackage[a4paper, margin=3cm]{geometry}
+\usepackage{pagenote}
+\usepackage{anyfontsize}
+\usepackage[portuguese]{babel}
+\usepackage{amsmath}    % Ambientes e símbolos matemáticos básicos
+\usepackage{amssymb}    % Símbolos matemáticos adicionais
+\usepackage{amsfonts}   % Fontes matemáticas adicionais
+\usepackage{amsthm}
+\usepackage{mathtools}  % Extensão do amsmath com funcionalidades extras
+\usepackage{bm}         % Vetores e matrizes em negrito
+\usepackage{mathrsfs}   % Fontes script caligráficas
+\usepackage{esint}      % Integrais múltiplas e notações extras
+\usepackage{cancel}     % Símbolos de cancelamento
+\usepackage{nicefrac}   % Frações em linha no formato texto
+\usepackage{siunitx}    % Escrita de unidades e notação científica
+\usepackage{array}      % Formatação avançada de tabelas e matrizes
+\usepackage{arydshln}   % Linhas tracejadas em tabelas e matrizes
+\usepackage{ytableau}   % Tabelas de Young e outras notações combinatórias
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+
+% fontes AMS EULER !!! 
+\usepackage{eulervm} 
+\usepackage[T1]{fontenc} 
+\usepackage{mathpazo}
+
+\theoremstyle{definition}
+
+\newtheorem{definition}{Definição}[section]  % Definições numeradas por subseção
+\newtheorem{example}{Exemplo}[section]       % Exemplos numerados por subseção
+\newtheorem{theorem}{Teorema}[section]     % Teoremas numerados como as definições
+\newtheorem{proposition}{Proposição}[section] % Proposições numeradas como as definições
+
+\newtcolorbox{mybox}[2]{%
+  colback=#1!10!white, % Fundo colorido
+  colframe=#1!50!black, % Borda mais escura
+  boxrule=0.5pt,        % Espessura da borda
+  sharp corners,        % Bordas retas
+  fonttitle=\bfseries,  % Título em negrito
+  breakable,            % Permite quebra de página
+  title={\textbf{#2}},  % Define o título
+}
+
+% Redefinindo os ambientes para adicionar caixinhas com numeração
+\renewenvironment{definition}[1][]{%
+  \refstepcounter{definition}%
+  \begin{mybox}{green}{Definição \thesection.\arabic{definition}}%
+}{\end{mybox}}
+
+\renewenvironment{example}[1][]{%
+  \refstepcounter{example}%
+  \begin{mybox}{yellow}{Exemplo \thesection.\arabic{example}}%
+}{\end{mybox}}
+
+\renewenvironment{theorem}[1][]{%
+  \refstepcounter{theorem}%
+  \begin{mybox}{blue}{Teorema \thesection.\arabic{theorem}}%
+}{\end{mybox}}
+
+\renewenvironment{proposition}[1][]{%
+  \refstepcounter{proposition}%
+  \begin{mybox}{red}{Proposição \thesection.\arabic{proposition}}%
+}{\end{mybox}}
+
+\newcommand{\titlepagecontent}{
+    \begin{center}
+        \vspace*{2cm} 
+        {\Huge\bfseries IC Grupos} \\[1cm]
+        {\Large Iniciação Científica em Teoria de Grupos} \\[2cm]
+        
+        {\Large Marco Vieira Busetti} \\[0.5cm]
+        {\Large Professor: Francismar Ferreira Lima} \\[2cm]
+        
+        {\Large Universidade Tecnológica Federal do Paraná} \\[0.5cm]
+        {\Large Curitiba, Novembro de 2024}
+    \end{center}
+}
+
+\newtheoremstyle{no-italic}  % Nome do estilo
+  {3pt}   % Espaçamento antes
+  {3pt}   % Espaçamento depois
+  {\normalfont} % Fonte do corpo (normal, sem itálico)
+  {}      % Identação
+  {\bfseries} % Fonte do título
+  {.}     % Ponto após o título
+  { }     % Espaçamento após o título
+  {}
+
+
+\begin{document}
+
+\begin{titlepage}
+    \titlepagecontent
+\end{titlepage}
+
+\fontsize{14}{22}\selectfont
+
+\chapter{Generalidades sobre Grupos}
+
+\section{Operações Binárias}
+
+\begin{definition}
+
+Sejam $G$ e $E$ conjuntos não-vazios e $\oplus$ uma função tal que:
+
+\[
+\oplus: 
+\begin{array}{c}
+G\bigtimes G \to E \\
+(a, b) \mapsto \oplus (a,b)
+\end{array}
+\]
+
+Definimos a função acima como a \textbf{operação binária de dois elementos de $G$ em $E$} e a escrevemos comumente como: $a\oplus b$.
+\end{definition}
+
+\begin{example}
+    A adição usual $+$ é uma operação binária de dois elementos de $\mathbb{I}$ em $\mathbb{R}$. Onde $\mathbb{I}$ denota o conjunto dos números irracionais.
+\end{example}
+
+\begin{example}
+    Sejam $(a,b)\in \mathbb{R}^2$, a função que define a distância cartesiana entre dois pontos $a$ e $b$:
+    \[
+    \text{dist}(a,b): 
+    \begin{array}{c}
+    \mathbb{R}\bigtimes \mathbb{R} \to \mathbb{R}^+ \\
+    (a, b) \mapsto \sqrt{a^2 + b^2}
+    \end{array}
+    \]
+    representa uma operação binária de dois elementos de $\mathbb{R}$ em $\mathbb{R}^+$.
+    
+\end{example}
+
+\begin{definition}
+A partir das notações acima, definimos \textbf{lei de composição interna de $G\times G \to G$ se $E = G$}.
+\end{definition}
+
+\textit{Observação: caso não haja ambiguidade, denotaremos simplesmente \textbf{lei de composição interna em $G$} para representar a lei de composição interna de $G\times G \to G$.}
+
+\begin{example}
+    A operação usual $+$ em $\mathbb{N}$ é uma lei de composição interna em $\mathbb{N}$, ao contrário da operação usual $-$ de $\mathbb{N}$ em $\mathbb{Z}$.
+\end{example}
+
+\section{Grupos}
+
+\begin{definition}
+    Seja $G$ um conjunto não-vazio. \textbf{Dizemos que $(G, \cdot)$ é um grupo} se, e somente se, $\cdot$ é uma lei de composição interna em $G$ tal que:
+    \begin{enumerate}
+    \item $\exists \,e \in G \; , \forall \,x \in G \; : x\cdot e = e\cdot x = x $;
+    \item $\forall x \in G, \exists \hat{x}\in G: \; x\cdot \hat{x} = \hat{x} \cdot x = e$;
+    \item $\forall \, x,y,z \in G : (x\cdot y)\cdot z = x\cdot (y\cdot z)$.
+    \end{enumerate}
+\end{definition}
+
+\textit{Observações:}
+
+\begin{enumerate}
+\color{red}\item Primeiramente, notamos que $e$ e $\hat{x}$ são únicos, uma vez que:
+
+    Supondo que existam $e$ e $e'$ pertencentes à $G$ que satisfazem o item 1, temos:
+    \[
+        x \cdot e = x = x \cdot e' 
+        \;\;\;\implies\;\;\;
+        \hat{x}\cdot x \cdot e 
+        = \hat{x} \cdot x \cdot e' 
+        \;\;\;\implies\;\;\;
+        e = e' 
+        \quad \qedsymbol
+    \]
+
+    Supondo agora que existam $\hat{x}$ e $\hat{x}'$ que satisfaçam o item 2, temos:
+    \[
+        \hat{x}\cdot x 
+        = e 
+        = \hat{x}'\cdot x 
+        \implies
+        \hat{x}\cdot x \cdot \hat{x} 
+        = \hat{x}'\cdot x \cdot \hat{x} 
+        \implies
+        \hat{x}\cdot e 
+        = \hat{x}'\cdot e 
+        \implies
+        \hat{x} = \hat{x}' 
+        \quad \qedsymbol
+    \]
+    \item Notamos por convenção $x^{-1}$ no lugar de $\hat{x}$ no \textbf{item 2} (dada sua unicidade).
+    
+    \item Caso $\forall \,(x,y) \in G \times G:\; x \cdot y = y \cdot x$, dizemos que $G$ é um grupo \emph{abeliano} (ou \emph{comutativo}).
+    
+    \item Caso $G$ seja um grupo abeliano, então 
+    \[
+      (x\cdot y)^n = x^n \cdot y^n, 
+      \quad \forall n \in \mathbb{Z}.
+    \]
+\end{enumerate}
+
+
+\begin{example}
+$(\mathbb{Z, +}), \;(\mathbb{Z}/n\mathbb{Z}, +),\;(\mathbb{R}^*, \cdot), \; (\mathbb{R}, +), \; (\mathbb{C, +}),\; (\mathbb{C^*, \cdot}), \; (\mathbb{Q}^*, \cdot)$ \\ são grupos abelianos (onde $+$ e $\cdot$ denotam as operações usuais de adição e produto em $\mathbb{C}$).
+\end{example}
+
+\begin{example}
+    $(GL_n(\mathbb{K}), \times)$ define uma estrutura de grupo, onde $\mathbb{K}= \mathbb{C}$ ou $\mathbb{R}$ e $GL_n(\mathbb{K})$ define o conjunto das matrizes $n\times n$ inversíveis com entradas em $\mathbb{K}$.
+\end{example}
+
+\begin{example}
+    Seja $A$ um conjunto não-vazio. Seja 
+    \[
+    \mathcal{P}(f)  = \{f:A \to A\; \vert\; f\;\text{bijetiva} \}
+    \]
+    O conjunto das funções $f$ bijetivas de $A$ em $A$.\\
+    $(\mathcal{P}(f), \circ )$ define uma estrutura de grupo, onde $\circ$ representa composição entre funções. \\
+    Caso $A$ seja um conjunto finito, $\mathcal{P}(f)$ será representado por $S_n$ e será chamado de \textbf{grupo simétrico ou grupo das permutações}.
+\end{example}
+
+\begin{example}
+     Seja $G = \;]-1, 1[, \; (G, \star)$ tal que 
+     \[
+     \forall x,y \in G \; : x\star y = \frac{x + y}{1 + xy}
+     \]
+     define um grupo abeliano.
+\end{example}
+
+\textbf{Demonstração:}
+
+Provemos primeiramente que $\forall x, y \in G, x\star y \in G$.
+
+Fixando $y \in G$ temos a seguinte função de $x \in G$:
+
+\[
+f(x) = \frac{x + y}{1 + xy}
+\]
+
+A função é derivável em $G$. Tomando sua derivada temos:
+
+\[
+f'(x) = \frac{1 - y^2}{(1+xy)^2} 
+\]
+
+Temos evidentemente $\forall (x, y) \in G \times G, f'(x) > 0$.
+
+(De forma simétrica podemos mostrar o mesmo escrevendo $f$ como uma função de $y$).
+
+Logo, deduzimos que a função $f$ é estritamente crescente.
+
+Portanto:
+
+\[
+f(-1)<x \star y < f(1) \iff \frac{y-1}{1-y} < x \star y < \frac{1+y}{1+y} \iff -1 <x\star y < 1
+\]
+
+Logo, provamos que $x\star y \in G$.
+
+Provemos os outros axiomas:
+
+\textit{Existência do neutro}:
+
+Tomando $y = 0$ temos:
+
+\[
+x\star 0 = \frac{x + 0}{1 + 0\cdot x} = x
+\]
+
+Portanto, deduzimos que o elemento neutro do grupo $G$ é dado por $e = 0$.
+
+\textit{Existência do inverso}:
+
+Tomando $y = -x$ temos:
+
+\[
+x\star -x = \frac{x -x}{1 - (-x)x} = 0
+\]
+
+Portanto, deduzimos que o elemento inverso do grupo $G$ existe e é dado por $x^{-1} = -x$.
+
+\textit{Associatividade}:
+
+Sejam $x, y, z \in G$, mostremos que $(x\star y)\star z = x\star (y\star z)$
+
+Temos:
+
+\begin{align*}
+(x\star y)\star z &= \frac{(x\star y) + z}{1+(x\star y)z} = \frac{\frac{x+y}{1+xy} + z}{1 + z\frac{x+y}{1 +xy}} = \frac{x + y+z+xyz}{1+xy+xz+yz} = \\[10pt]
+&= \frac{x(1+yz) + (y +z)}{(1+yz)+x(y+z)} = \frac{x+\frac{y+z}{1+yz}}{1+x\frac{y+z}{1+yz}} = x\star (y\star z)
+\end{align*}
+
+Mostrando, assim, a associatividade.
+
+Ainda, temos que o grupo é evidentemente abeliano.\qed
+
+\section{Subgrupos}
+
+\begin{definition}
+    Seja $(G, \cdot)$ um grupo. \textbf{Um subconjunto $H \subseteq G$ é chamado de subgrupo de $G$} (denotamos $H\leq G$) se, e somente se, $(H, \cdot)$ é um grupo.
+\end{definition}
+\textcolor{red}{
+\textit{Observação: temos ainda que se $H \subset G$, temos então $H$ é chamado de subgrupo próprio de $G$ e denotamos como $H< G$.}}
+
+\begin{proposition} \hypertarget{prop131}
+    Seja $H \subseteq G$ tal que $H \ne \emptyset$ e $(G, \cdot)$ é um grupo. $H\leq G$ é equivalente à satisfazer as seguintes condições:
+    \begin{enumerate}
+    \item $h_1 \cdot h_2 \in H,\; \forall (h_1,h_2) \in H \times H$;
+    \item $h^{-1} \in H, \; \forall h\in H$.
+    \end{enumerate}
+\end{proposition}
+
+\textbf{Demonstração:}
+
+É necessário mostrarmos as duas implicações da equivalência:
+
+\begin{align}
+    H\leq G \Longrightarrow (1.)\; \text{e} \;(2.)
+\end{align}
+
+\begin{align}
+    (1.)\; \text{e} \;(2.) \Longrightarrow H\leq G
+\end{align}
+
+A implicação $(1.1)$ é trivial. Ora, se $H\leq G$, então pela definição de subgrupo temos que $h_1\cdot h_2 \in H$ e $h^{-1}\in H$, isto é $\exists h^{-1} \in H : h\cdot h^{-1} = h^{-1} \cdot h = h$.
+
+Para a implicação $(1.2)$:
+
+Sabemos que $H \subseteq G$, logo, se $h_1 \cdot h_2 \in H \Longrightarrow h_1 \cdot h_2 \in G$. Ora, sabemos que $(G, \cdot)$ é um grupo. Logo, a associatividade é satisfeita. Para demonstrar que $e \in H$, basta tomarmos $h_2 = h^{-1}$ a partir de $(2.)$. Logo, temos $h\cdot h^{-1} = e \in H$. Com isso mostramos todos os axiomas necessários e deduzimos que $H\leq G$. \qed 
+
+\begin{example}
+    $(\mathbb{U}^*, \cdot), \;(\mathbb{R}^*, \cdot),\;(\mathbb{R}^*_+, \cdot), \; (\mathbb{Q}^*, \cdot), \; (\mathbb{Q}^*_+, \cdot)$ são subgrupos de $(\mathbb{C}^*, \cdot)$.
+\end{example}
+
+\begin{example}
+    $G$ e $\{e\}$ são subgrupos \textit{triviais} de $G$.
+\end{example}
+
+\begin{example}
+    $(n\mathbb{Z}, +)$ são subgrupos de $(\mathbb{Z},+)$, e, em particular, são os únicos.
+\end{example}
+
+\textbf{Demonstração:}
+
+
+\begin{example}
+    Seja $G$ um grupo e $I$ um conjunto não-vazio de índices. Se $\{H_i\}_{i \in I}$ é uma família de subgrupos de $G$, então $\bigcap_{i\in I} H _i$ é um subgrupo de $G$.
+\end{example}
+{\color{red}
+\textbf{Demonstração:}
+
+Como visto na \hyperlink{prop131}{\textbf{Proposição 1.3.1}}, mostremos que:
+
+\begin{enumerate}
+    \item $\forall\; x_1, x_2 \in \bigcap_{i\in I} H _i \implies x_1\cdot x_2 \in \bigcap_{i\in I} H _i$;
+    \item $\exists \; x^{-1} \in \bigcap_{i\in I} H _i$.
+\end{enumerate}
+
+Mostremos o item $1$: 
+
+Sabemos que:
+\[
+\forall H \subset \{H_i \}_{i\in I} \; : \; H\leq G
+\]
+
+Logo, para $x_1, x_2 \in \bigcap_{i\in I} H _i$, é evidente que $x_1\cdot x_2 \in \bigcap_{i\in I} H _i$.
+
+Mostremos o item $2$:
+
+Analogamente ao item $1$, sendo $x \in \bigcap_{i\in I} H _i$, sempre existirá $x^{-1}$ tal que $x\cdot x^{-1} = e \; \;\text{\textit{elem. neutro}}$.
+
+Portanto, mostramos que:
+
+\[
+\bigcap_{i\in I} H _i \leq G.
+\]
+
+\qed }
+
+\begin{definition}
+    Seja $G$ um grupo. O subconjunto $Z(G)$ tal que: 
+    \[
+    Z(G) = \{x \in G : xg = gx, \; \forall g \in G\}
+    \]
+    define um subgrupo de $G$ chamado \textit{centro} de $G$.
+\end{definition}
+
+\textbf{Demonstração:}
+
+Como visto na \hyperlink{prop131}{\textbf{Proposição 1.3.1}}, para mostrar que $Z(G) \leq G$ é suficiente mostrar que $x\cdot x^{-1} \in Z(G), \; \forall x \in Z(G)$.
+
+Temos que:
+
+Se:
+\[
+x \in Z(G) \Rightarrow x\cdot g = g\cdot x, \; \forall g\in G.
+\]
+
+Logo, teremos:
+
+\[
+xgx^{-1} = g \Longrightarrow x^{-1}xgx^{-1} = x^{-1}g \Longrightarrow gx^{-1} =x^{-1}g, \; \forall g \in G 
+\]
+
+Portanto: 
+
+\[
+x^{-1} \in Z(G)
+\]
+
+Temos também que:
+
+\[
+x_1 \in Z(G) \Longrightarrow x_1g = gx_1, \; \forall g \in G \;\; \text{(I)}
+\]
+
+\[
+x_2 \in Z(G) \Longrightarrow x_2g = gx_2, \; \forall g \in G \; \; \text{(II)}
+\]
+
+Deduzimos de (I):
+
+\[
+x_1g = gx_1 \Longrightarrow g = x^{-1}_1gx_1
+\]
+
+Substituindo em (II):
+
+\[
+x_2x^{-1}_1gx_1 = x^{-1}_1gx_1x_2 \Longrightarrow x_2x^{-1}_1x_1g = x^{-1}_1gx_1x_2 \Longrightarrow 
+\]
+
+\[
+\Longrightarrow x_2g = x^{-1}_1gx_1x_2 \Longrightarrow (x_1x_2)g = g(x_1x_2)
+\]
+
+Logo, deduzimos que:
+
+\[
+(x_1, x_2)\in Z(G)\times Z(G) \Longrightarrow x_1\cdot x_2 \in Z(G)
+\]
+
+Portanto, $Z(G) \leq G$. \qed
+
+\textit{Observação: O subgrupo centro serve o propósito de "medir a comutatividade" de um dado grupo. Por exemplo, observamos que $Z(\mathbb{Z}) = \mathbb{Z}$, $Z(GL_2 (\mathbb{R})) = \{\lambda I: \lambda \in \mathbb{R}^*\}$ e  $Z(S_n) = \{e\},\; n \geq 3$}.
+\color{red}
+\begin{definition}
+    Seja $(G, \cdot)$ um grupo e $X$ um conjunto não-vazio tal que $X\subseteq G$. \textbf{Chamamos de sub-grupo gerado por um subconjunto a interseção de todos os subgrupos de $G$ que contém $X$.} Isto é, o menor subgrupo de $G$ que contém $X$. Denotamos-o como $\langle X\rangle$.
+\end{definition}
+
+\begin{example}
+    Seja o grupo $(\mathbb{R}^*,\cdot)$ e o subconjunto $E\subset \mathbb{R}^*$ tal que $E = \{2\}$. O subgrupo gerado por $E$ é, portanto, $H=\{2^n, n\in \mathbb{Z}\}$.
+
+    De forma genérica, para um grupo $G$ e um elemento $a\in G$, temos:
+    $\langle a\rangle = \{a^n \vert n\in \mathbb{Z} \}$.
+\end{example}
+
+\begin{example}
+    Seja o grupo $(\mathbb{Z, +})$ e o subconjunto $E\subset \mathbb{Z}$ tal que $E=\{3\}$. O subgrupo gerado por $E$ é, portanto, $(3\mathbb{Z}, +)$.
+\end{example}
+
+De forma geral, dado um grupo $G$, para determinarmos um subgrupo $H$ gerado por um subconjunto $X$ devemos provar os seguintes pontos: 
+
+\begin{enumerate}
+    \item $H$ é um subgrupo de $G$ 
+    \item $ X\subset H$
+    \item Se $H'$ é um outro subgrupo tal que $X\subset H'$, então $H \subset H'$
+\end{enumerate}
+
+\begin{definition}
+    Seja $G$ um grupo. \textbf{$G$ é chamado de grupo cíclico quando ele pode ser gerado por um único elemento $x \in G$.}
+\end{definition}
+
+\begin{example}
+    $\mathbb{Z} = \langle 1\rangle, \; \mathbb{Z}/n\mathbb{Z} = \langle \bar{1}\rangle, \; \mathbb{U} = \langle e^{\frac{2\pi i}{n}}\rangle$.
+\end{example}
+
+\begin{proposition} \hypertarget{prop132}
+    Se $G$ é um grupo cíclico, então $G$ é um grupo abeliano.
+\end{proposition}
+
+\textbf{Demonstração:}
+
+Seja $a \in G$ tal que $G = \langle a\rangle$. Podemos representar $G$ como:
+
+\[
+G = \{...,\; (a^{-1})^{r},\; ...,\; (a^{-1})^2, \; a^{-1},\; e, \; a,\; a^2, \; ..., a^r, \; ...\} 
+\]
+
+Onde $r \in \mathbb{Z}$.
+
+Sejam $(x,y)\in G \times G$, queremos mostrar que $x\cdot y = y\cdot x$.
+
+Sabemos que:
+
+\[
+x = a^{r_1}, \; r_1 \in \mathbb{Z}
+\]
+
+\[
+y = a^{r_2}, \; r_2 \in \mathbb{Z}
+\]
+
+Logo:
+
+\[
+x\cdot y = a^{r_1} \cdot a^{r_2} = a^{r_1 + r_2} \stackrel{(\mathbb{Z,+})}{=} a^{r_2+ r_1} = a^{r_2}\cdot a^{r_1} = y\cdot x
+\]
+
+Portanto, $G$ é um grupo abeliano. \qed
+
+\begin{definition}
+    Definimos $\langle \{ xyx^{-1}y^{-1} \vert (x,y) \in G \times G \} \rangle$ como o subgrupo dos comutadores do grupo $G$. Denotaremos-o por $G'$.
+\end{definition}
+
+\begin{definition}
+    Seja $(G, \cdot)$ um grupo. \textbf{Definimos ordem do grupo $(G, \cdot)$ a quantidade de elementos no conjunto $G$} e a denotamos por $\vert G \vert$. \\
+    Se $\alpha \in G$, \textbf{a ordem de $\alpha$ é a ordem do subgrupo gerado por $\alpha$}, isto é, $\langle \alpha \rangle$, e será denotado por $\mathcal{O}(\alpha)$.
+\end{definition}
+
+\begin{example}
+    $\vert \mathbb{Z} \vert = \infty, \; \vert\mathbb{Z}/n\mathbb{Z}\vert = n, \; \vert S_n \vert = n!$
+\end{example}
+
+\section{Teorema de Lagrange}
+
+\begin{definition}
+    Seja $G$ um grupo e $H$ um subgrupo de $G$. \textbf{Definimos classe lateral à esquerda de $H$ em $G$ que contém $x$ o subconjunto $xH$} de $G$ tal que $\forall x \in G$:
+    \[
+    xH = \{xh \vert h\in H \}
+    \]
+    Analogamente definimos \textbf{classe lateral à direita de $H$ em $G$ que contém $x$ o subconjunto $Hx$} de $G$ tal que $\forall x \in G$:
+    \[
+    Hx = \{ hx \vert h \in H\}
+    \]
+\end{definition}
+
+\textit{Observações:}
+    \begin{itemize}
+        \item \textit{As classes laterais de $G$ não são necessariamente subgrupos de $G$;}
+        \item \textit{Quando não houver confusão possível, podemos denominar as classes laterais de classe lateral à esquerda/direita de $G$}.
+    \end{itemize}
+
+\begin{theorem} \hypertarget{lagrange}
+{\bfseries Teorema de Lagrange (Grupos)}\normalfont
+
+    Seja $G$ um grupo finito e $H$ um subgrupo de $G$.
+
+    Logo, $\vert H\vert$ divide $\vert G \vert$.
+\end{theorem}
+
+\textbf{Demonstração:}
+
+
+%A ideia da demonstração se baseia em, a partir de um subgrupo $H$ de $G$, formar partições de $G$ duas-a-duas disjuntas tais que a cardinalidade dessas partições sejam iguais à ordem de $H$.
+
+%Isto é, se $\{X_i \}_{i\in\mathbb{N}}$ representa uma família de subconjuntos de $G$ e $H$ é um subgrupo de $G$, então queremos provar que:
+
+%\[
+%\bigcup_{i \in \mathbb{N}}X_i = G; \; \; \bigcap_{i \in \mathbb{N}}X_i = \emptyset\; \; \text{e} \; \; \text{Card}(X_i) = \vert H\vert, \; \forall i \in \mathbb{N}.
+%\]
+
+Seja $x\in G \backslash H$, consideremos o conjunto das classes laterais à esquerda de $G$:
+
+\[
+xH = \{xh \vert h \in H\}
+\]
+
+Mostremos que $H\cap xH = \emptyset$:
+
+Supondo $\alpha \in H\cap xH$:
+
+\[
+\alpha \in H\cap xH \iff \alpha = xh \in H.
+\]
+
+Como $\alpha =xh \in H$, logo $\exists h^{-1}\in H$ tal que $hh^{-1} \in H$
+
+Portanto:
+
+\[
+\alpha h^{-1} = xhh^{-1} \in H \iff x \in H \Longrightarrow \text{Absurdo, pois   } x\in G\backslash H.
+\]
+
+Logo, $H\cap xH = \emptyset$.
+
+Agora mostremos que $\text{Card}(xH) = \vert H\vert$:
+
+Seja $\zeta$ a função definida abaixo:
+
+\[
+\zeta: 
+\begin{array}{c}
+H \to xH \\
+h \mapsto xh
+\end{array}
+\]
+
+A função $\zeta$ é claramente sobrejetiva por definição. 
+
+$\zeta$ também é injetiva pois se $(xh_1, xh_2) \in (xH)^2, xh_1 = xh_2$:
+
+\[
+xh_1 = xh_2 \Longrightarrow x^{-1}xh_1 = x^{-1}xh_2 \Longrightarrow h_1 = h_2.
+\]
+
+Portanto, deduzimos que $\text{Card}(xH) = \vert H\vert$.
+
+Consideremos agora o conjunto $yH$ das classes laterais à esquerda de $H$ em $G$ que contém $y$ tal que $y \notin H\cup xH$.
+
+Já mostramos anteriormente que $y \notin H$.
+
+Mostremos que $yH \cap xH = \emptyset$
+
+Supondo $\beta \in yH \cap xH$:
+
+Então $\beta$ pode ser escrito de duas formas:
+
+\[
+\beta = yh_1
+\]
+
+\[
+\beta = xh_2
+\]
+
+Logo, temos:
+
+\[
+yh_1 = xh_2 \Longrightarrow y = xh_2h_1^{-1} \in xH \Longrightarrow \text{Absurdo, pois  } y \notin H\cup xH.
+\]
+
+Analogamente ao passo anterior podemos provar que $\text{Card}(yH) = \text{Card}(xH) = \vert H\vert$.
+
+Portanto, realizando os passos acima sucessivamente, criamos partições de $G$.
+
+Como $G$ é finito, o processo terá finalizado após $n$ etapas.
+
+Portanto, temos: $\vert G\vert = n\vert H\vert$. \qed
+
+\textit{Observação: segue como consequência direta do \textbf{Teorema de Lagrange} que caso $G$ seja um grupo finito e $\alpha \in G$, então $\mathcal{O}(\alpha)$ divide $\vert G\vert$}.
+
+\begin{proposition}
+    Seja $G$ um grupo finito de ordem $p\in \mathbb{N}^*$. \\
+    Se $p$ for primo, então $G$ é um grupo cíclico.
+\end{proposition}
+
+\textbf{Demonstração:}
+
+Pelo \hyperlink{lagrange}{Teorema de Lagrange} sabemos que se $H$ é subgrupo de um grupo finito $G$, então $\vert H\vert$ divide $\vert G\vert$.
+
+Como $\vert G\vert = p$ primo, então os únicos subgrupos possíveis de $G$ são seus subgrupos triviais.
+
+Seja $x\in G$ tal que $x \neq e$, onde $e$ é o elemento neutro de $G$.
+
+Logo, o único subgrupo gerado por $x$ é o próprio $G$, $\langle x\rangle = G$ \qed
+
+\textit{Observação: como visto na \hyperlink{prop132}{\textbf{Proposição 1.3.2}}, $G$ também é abeliano!}
+
+\begin{theorem}
+    \textbf{Pequeno Teorema de Fermat} \\
+    
+    
+\end{theorem}
+
+\end{document}
