@@ -160,7 +160,7 @@ A partir das notações acima, definimos \textbf{lei de composição interna de 
 \textit{Observações:}
 
 \begin{enumerate}
-\color{red}\item Primeiramente, notamos que $e$ e $\hat{x}$ são únicos, uma vez que:
+	\item Primeiramente, notamos que $e$ e $\hat{x}$ são únicos, uma vez que:
 
     Supondo que existam $e$ e $e'$ pertencentes à $G$ que satisfazem o item 1, temos:
     \[
@@ -298,8 +298,7 @@ Ainda, temos que o grupo é evidentemente abeliano.\qed
 \begin{definition}
     Seja $(G, \cdot)$ um grupo. \textbf{Um subconjunto $H \subseteq G$ é chamado de subgrupo de $G$} (denotamos $H\leq G$) se, e somente se, $(H, \cdot)$ é um grupo.
 \end{definition}
-\textcolor{red}{
-\textit{Observação: temos ainda que se $H \subset G$, temos então $H$ é chamado de subgrupo próprio de $G$ e denotamos como $H< G$.}}
+\textit{Observação: temos ainda que se $H \subset G$, temos então $H$ é chamado de subgrupo próprio de $G$ e denotamos como $H< G$.}
 
 \begin{proposition} \hypertarget{prop131}
     Seja $H \subseteq G$ tal que $H \ne \emptyset$ e $(G, \cdot)$ é um grupo. $H\leq G$ é equivalente à satisfazer as seguintes condições:
@@ -336,11 +335,12 @@ Sabemos que $H \subseteq G$, logo, se $h_1 \cdot h_2 \in H \Longrightarrow h_1 \
 \end{example}
 
 \begin{example}
-    $(n\mathbb{Z}, +)$ são subgrupos de $(\mathbb{Z},+)$, e, em particular, são os únicos.
+    Seja $n\in \mathbb{Z}$, $(n\mathbb{Z}, +)$ são subgrupos de $(\mathbb{Z},+)$, e, em particular, são os únicos.
 \end{example}
 
 \textbf{Demonstração:}
 
+PARA FAZER...
 
 \begin{example}
     Seja $G$ um grupo e $I$ um conjunto não-vazio de índices. Se $\{H_i\}_{i \in I}$ é uma família de subgrupos de $G$, então $\bigcap_{i\in I} H _i$ é um subgrupo de $G$.
@@ -352,27 +352,72 @@ Como visto na \hyperlink{prop131}{\textbf{Proposição 1.3.1}}, mostremos que:
 
 \begin{enumerate}
     \item $\forall\; x_1, x_2 \in \bigcap_{i\in I} H _i \implies x_1\cdot x_2 \in \bigcap_{i\in I} H _i$;
-    \item $\exists \; x^{-1} \in \bigcap_{i\in I} H _i$.
+    \item $\forall x \in \bigcap_{i \in I} H_i \exists \; x^{-1} \in \bigcap_{i\in I} H _i$.
 \end{enumerate}
 
-Mostremos o item $1$: 
+Provemos o \textbf{item 1}:
 
-Sabemos que:
-\[
-\forall H \subset \{H_i \}_{i\in I} \; : \; H\leq G
-\]
-
-Logo, para $x_1, x_2 \in \bigcap_{i\in I} H _i$, é evidente que $x_1\cdot x_2 \in \bigcap_{i\in I} H _i$.
-
-Mostremos o item $2$:
-
-Analogamente ao item $1$, sendo $x \in \bigcap_{i\in I} H _i$, sempre existirá $x^{-1}$ tal que $x\cdot x^{-1} = e \; \;\text{\textit{elem. neutro}}$.
-
-Portanto, mostramos que:
+Sejam,
 
 \[
-\bigcap_{i\in I} H _i \leq G.
+x_1, x_2 \in \bigcap_{i\in I} H_i
 \]
+
+Logo:
+
+\[
+\forall i \in I, \; x_1, x_2 \in H_i
+\]
+
+Sabemos também que:
+
+\[
+\forall i \in I, \; H_i \leq G 
+\]
+
+Portanto, deduzimos que:
+
+\[
+\forall i \in I, \; x_1 \cdot x_2 \in H_i
+\]
+
+Mas isso é a mesma coisa que dizer:
+
+\[
+\forall x_1, x_2 \in \bigcap_{i \in I} H_i \implies x_1 \cdot x_2 \in \bigcap_{i\in I} H_i
+\]
+
+Provemos o \textbf{item 2}:
+
+Analogamente ao \textbf{item 1}, sabemos que:
+
+\[
+\forall x \in \bigcap_{i \in I} H_i \iff \forall i \in I, \; x \in H_i
+\]
+
+Porém, sabemos que:
+
+\[
+\forall i \in I, \; H_i \leq G
+\]
+
+Logo, deduzimos que:
+
+\[
+\forall i \in I, \; \forall x \in H_i, \; x^{-1} \in H_i   
+\]
+
+Mas isso é a mesma coisa que:
+
+\[
+\forall x \in \bigcap_{i \in I} H_i, \; x^{-1} \in \bigcap_{i \in I} H_i
+\]
+
+Portanto, provamos que:
+
+\[
+\bigcap_{i \in I} H_i \leq G
+\]  
 
 \qed }
 
