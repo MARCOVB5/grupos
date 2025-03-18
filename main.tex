@@ -159,6 +159,7 @@ A partir das notações acima, definimos \textbf{lei de composição interna de 
 
 \textit{Observações:}
 
+Levando em consideração as notações acima, temos:
 \begin{enumerate}
 	\item Primeiramente, notamos que $e$ e $\hat{x}$ são únicos, uma vez que:
 
@@ -215,7 +216,7 @@ $(\mathbb{Z, +}), \;(\mathbb{Z}/n\mathbb{Z}, +),\;(\mathbb{R}^*, \cdot), \; (\ma
     \]
     O conjunto das funções $f$ bijetivas de $A$ em $A$.\\
     $(\mathcal{P}(f), \circ )$ define uma estrutura de grupo, onde $\circ$ representa composição entre funções. \\
-    Caso $A$ seja um conjunto finito, $\mathcal{P}(f)$ será representado por $S_n$ e será chamado de \textbf{grupo simétrico ou grupo das permutações}.
+    Caso $A$ seja um conjunto finito e $n\in \mathbb{N}$ tal que $\text{Card}(A) = n$, $\mathcal{P}(f)$ será representado por $S_n$ e será chamado de \textbf{grupo simétrico ou grupo das permutações}.
 \end{example}
 
 \begin{example}
@@ -327,7 +328,7 @@ Para a implicação $(1.2)$:
 Sabemos que $H \subseteq G$, logo, se $h_1 \cdot h_2 \in H \Longrightarrow h_1 \cdot h_2 \in G$. Ora, sabemos que $(G, \cdot)$ é um grupo. Logo, a associatividade é satisfeita. Para demonstrar que $e \in H$, basta tomarmos $h_2 = h^{-1}$ a partir de $(2.)$. Logo, temos $h\cdot h^{-1} = e \in H$. Com isso mostramos todos os axiomas necessários e deduzimos que $H\leq G$. \qed 
 
 \begin{example}
-    $(\mathbb{U}^*, \cdot), \;(\mathbb{R}^*, \cdot),\;(\mathbb{R}^*_+, \cdot), \; (\mathbb{Q}^*, \cdot), \; (\mathbb{Q}^*_+, \cdot)$ são subgrupos de $(\mathbb{C}^*, \cdot)$.
+    $(\mathbb{U}^*, \cdot), \;(\mathbb{R}^*, \cdot),\;(\mathbb{R}^*_+, \cdot), \; (\mathbb{Q}^*, \cdot), \; (\mathbb{Q}^*_+, \cdot)$ são subgrupos de $(\mathbb{C}^*, \cdot)$, onde $\cdot$ denota a multplicação usual em $\mathbb{C}$.
 \end{example}
 
 \begin{example}
@@ -337,11 +338,33 @@ Sabemos que $H \subseteq G$, logo, se $h_1 \cdot h_2 \in H \Longrightarrow h_1 \
 \begin{example}
     Seja $n\in \mathbb{Z}$, $(n\mathbb{Z}, +)$ são subgrupos de $(\mathbb{Z},+)$, e, em particular, são os únicos.
 \end{example}
-
+{\color{red}
 \textbf{Demonstração:}
 
-PARA FAZER...
+É evidente que $(n\mathbb{Z}, +)$ são subgrupos de $(\mathbb{Z}, +)$. Mostremos que são os únicos! 
 
+Seja $(H, +)$ um subgrupo qualquer de $(\mathbb{Z}, +)$. Se $H = \{0\}$, então $H = 0\mathbb{Z}$.
+
+Suponhamos agora $H \neq \{0\}$. Seja $n = \text{min}\{a \in \mathbb{Z},\; a > 0 \}$. 
+
+Logo, como $n \in H$ e $H \leq \mathbb{Z}$, temos que $n\mathbb{Z} \subseteq H$. 
+
+De maneira inversa, seja $h \in H$. Logo, pelo Algoritmo de Euclides, existem $q, r \in \mathbb{Z}$ tais que:
+
+\[
+h = qn + r \; \; (0 \leq r < n)
+\] 
+
+Porém, pela minimalidade de $n$ deduzimos que $r = 0$.
+
+Logo:
+
+\[
+h = qn \implies h \in n\mathbb{Z} \implies H \subseteq n\mathbb{Z}.
+\]
+
+Portanto deduzimos que $H = n\mathbb{Z}$. \qed
+}
 \begin{example}
     Seja $G$ um grupo e $I$ um conjunto não-vazio de índices. Se $\{H_i\}_{i \in I}$ é uma família de subgrupos de $G$, então $\bigcap_{i\in I} H _i$ é um subgrupo de $G$.
 \end{example}
@@ -404,13 +427,13 @@ Porém, sabemos que:
 Logo, deduzimos que:
 
 \[
-\forall i \in I, \; \forall x \in H_i, \; x^{-1} \in H_i   
+\forall i \in I, \; \forall x \in H_i, \; \exists x^{-1} \in H_i   
 \]
 
 Mas isso é a mesma coisa que:
 
 \[
-\forall x \in \bigcap_{i \in I} H_i, \; x^{-1} \in \bigcap_{i \in I} H_i
+\forall x \in \bigcap_{i \in I} H_i \implies \exists  x^{-1} \in \bigcap_{i \in I} H_i
 \]
 
 Portanto, provamos que:
@@ -489,8 +512,31 @@ Portanto, $Z(G) \leq G$. \qed
 \textit{Observação: O subgrupo centro serve o propósito de "medir a comutatividade" de um dado grupo. Por exemplo, observamos que $Z(\mathbb{Z}) = \mathbb{Z}$, $Z(GL_2 (\mathbb{R})) = \{\lambda I: \lambda \in \mathbb{R}^*\}$ e  $Z(S_n) = \{e\},\; n \geq 3$}.
 \color{red}
 \begin{definition}
-    Seja $(G, \cdot)$ um grupo e $X$ um conjunto não-vazio tal que $X\subseteq G$. \textbf{Chamamos de sub-grupo gerado por um subconjunto a interseção de todos os subgrupos de $G$ que contém $X$.} Isto é, o menor subgrupo de $G$ que contém $X$. Denotamos-o como $\langle X\rangle$.
+    Seja $(G, \cdot)$ um grupo e $X$ um conjunto não-vazio tal que $X\subseteq G$. \textbf{Chamamos de subgrupo gerado por um subconjunto a interseção de todos os subgrupos de $G$ que contém $X$.}  Denotamos-o como $\langle X\rangle$.
+
+Matematicamente temos:
+
+\[
+\langle X \rangle = \bigcap \{H : H \leq G \; \; \text{e} \; \; S \subseteq H\}
+\]
+
 \end{definition}
+
+\begin{proposition}
+A partir das notações acima temos que:
+\[
+\langle X \rangle = \{a_1 a_2 ... a_n : a_i \in X \; \; \text{ou} \; \; a^{-1}_{i} \in X, \; n \geq 1 \}
+\]
+\end{proposition}
+
+\textbf{Demonstração}:
+
+
+\begin{proposition}
+A partir das notações acima temos que $\langle X \rangle$ é o menor subgrupo de $G$ que contém $X$.
+\end{proposition}
+
+\textbf{Demonstração}:
 
 \begin{example}
     Seja o grupo $(\mathbb{R}^*,\cdot)$ e o subconjunto $E\subset \mathbb{R}^*$ tal que $E = \{2\}$. O subgrupo gerado por $E$ é, portanto, $H=\{2^n, n\in \mathbb{Z}\}$.
