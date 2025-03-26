@@ -414,7 +414,7 @@ Provemos o \textbf{item 2}:
 Analogamente ao \textbf{item 1}, sabemos que:
 
 \[
-\forall x \in \bigcap_{i \in I} H_i \iff \forall i \in I, \; x \in H_i
+x_0 \in \bigcap_{i \in I} H_i \iff \forall i \in I, \; x_0 \in H_i
 \]
 
 Porém, sabemos que:
@@ -426,7 +426,7 @@ Porém, sabemos que:
 Logo, deduzimos que:
 
 \[
-\forall i \in I, \; \forall x \in H_i, \; \exists x^{-1} \in H_i   
+\forall i \in I, \; x_0 \in H_i, \; \exists x^{-1}_{0} \in H_i   
 \]
 
 Mas isso é a mesma coisa que:
@@ -441,7 +441,7 @@ Portanto, provamos que:
 \bigcap_{i \in I} H_i \leq G
 \]  
 
-\qed }
+\qed 
 
 \begin{definition}
     Seja $G$ um grupo. O subconjunto $Z(G)$ tal que: 
@@ -509,7 +509,7 @@ Logo, deduzimos que:
 Portanto, $Z(G) \leq G$. \qed
 
 \textit{Observação: O subgrupo centro serve o propósito de "medir a comutatividade" de um dado grupo. Por exemplo, observamos que $Z(\mathbb{Z}) = \mathbb{Z}$, $Z(GL_2 (\mathbb{R})) = \{\lambda I: \lambda \in \mathbb{R}^*\}$ e  $Z(S_n) = \{e\},\; n \geq 3$}.
-\color{red}
+
 \begin{definition}
     Seja $(G, \cdot)$ um grupo e $X$ um conjunto não-vazio tal que $X\subseteq G$. \textbf{Chamamos de subgrupo gerado por um subconjunto a interseção de todos os subgrupos de $G$ que contém $X$.}  Denotamos-o como $\langle X\rangle$.
 
