@@ -220,6 +220,36 @@ $(\mathbb{Z, +}), \;(\mathbb{Z}/n\mathbb{Z}, +),\;(\mathbb{R}^*, \cdot), \; (\ma
 \end{example}
 
 \begin{example}
+
+Seja a operação "$\odot$" definida da seguinte maneira em $\mathbb{Z} / n\mathbb{Z}$, onde $n\in \mathbb{Z}$:
+
+\[
+\odot: 
+\begin{array}{c}
+\mathbb{Z} / n\mathbb{Z} \bigtimes \mathbb{Z} / n\mathbb{Z} \to \mathbb{Z} / n\mathbb{Z} \\
+(\bar{a}, \bar{b}) \mapsto \bar{a} \odot \bar{b} = \bar{a\cdot b}
+\end{array}
+\] 
+
+onde "$\cdot$" indica a operação usual de produto nos inteiros.
+
+Temos que $(\mathbb{Z}^* / p\mathbb{Z}, \odot)$, onde $p$ é um número primo, é um grupo abeliano.
+
+\end{example}
+
+\textbf{Demonstração:}
+
+Para fins de simplificação de notação, nesta demonstração iremos utilizar $\mathbb{Z} / n\mathbb{Z} \overset{def}{=} \mathbb{Z}_n$
+
+Comecemos demonstrando que de fato temos:
+
+\[
+\forall (\bar{a}, \bar{b}) \in \mathbb{Z}_p \times \mathbb{Z}_p \implies \bar{a} \odot \bar{b} \in \mathbb{Z}_p
+\]
+
+Ora 
+
+\begin{example}
      Seja $G = \;]-1, 1[, \; (G, \star)$ tal que 
      \[
      \forall x,y \in G \; : x\star y = \frac{x + y}{1 + xy}
@@ -344,7 +374,7 @@ Sabemos que $H \subseteq G$, logo, se $h_1 \cdot h_2 \in H \Longrightarrow h_1 \
 
 Seja $(H, +)$ um subgrupo qualquer de $(\mathbb{Z}, +)$. Se $H = \{0\}$, então $H = 0\mathbb{Z}$.
 
-Suponhamos agora $H \neq \{0\}$. Seja $n = \text{min}\{a \in \mathbb{Z},\; a > 0 \}$. 
+Suponhamos agora $H \neq \{0\}$. Seja $n = \text{min}\{a \in H,\; a > 0 \}$. 
 
 Logo, como $n \in H$ e $H \leq \mathbb{Z}$, temos que $n\mathbb{Z} \subseteq H$. 
 
@@ -354,7 +384,15 @@ De maneira inversa, seja $h \in H$. Logo, pelo Algoritmo de Euclides, existem $q
 h = qn + r \; \; (0 \leq r < n)
 \] 
 
-Porém, pela minimalidade de $n$ deduzimos que $r = 0$.
+Porém, note que, como $h \in H$, temos:
+
+\[
+r = h - qn \in H  
+\]
+
+Porém, sabemos que $0 \leq r < n$.
+
+Ora, como $n$ é o elemento mínimo de $H$ estritamente maior que $0$, deduzimos que apenas podemos ter $r = 0$.
 
 Logo:
 
@@ -604,7 +642,7 @@ Portanto, $G$ é um grupo abeliano. \qed
 
 \begin{definition}
     Seja $(G, \cdot)$ um grupo. \textbf{Definimos ordem do grupo $(G, \cdot)$ a quantidade de elementos no conjunto $G$} e a denotamos por $\vert G \vert$. \\
-    Se $\alpha \in G$, \textbf{a ordem de $\alpha$ é a ordem do subgrupo gerado por $\alpha$}, denotada por $\mathcal{O}(\alpha)$, isto é,  $\vert \langle \alpha \rangle \vert$.
+    Se $\alpha \in G$, \textbf{a ordem de $\alpha$ é a ordem do subgrupo gerado por $\alpha$}, denotada por $\mathcal{O}(\alpha)$, isto é,  $ \mathcal{O}(\alpha) = \vert \langle \alpha \rangle \vert$.
 \end{definition}
 
 \begin{example}
@@ -632,9 +670,24 @@ Portanto, $G$ é um grupo abeliano. \qed
     \end{itemize}
 
 \begin{definition}
-	... Sobre número de classes laterais em G...
+	\color{red}
+	A cardinalidade do conjunto das classes laterais à esquerda \textit{ou} à direita é definida como \textbf{o índice de $H$ em $G$}, e será denotada por $[G\; : \; H]$.
 
 \end{definition}
+{\color{red}
+\textit{Observação}: note que o número de classes laterais à direita de $G$ é igual ao número de classes laterais à esquerda de $G$ (por mais que as classes laterais sejam diferentes). 
+
+Isto se dá pelo fato de que a função: 
+
+\[
+\phi: 
+\begin{array}{c}
+\{\text{classes lat. à esquerda}\} \to \{\text{classes lat. à direita} \} \\
+xH \mapsto Hx^{-1}
+\end{array}
+\]
+
+é claramente uma bijeção.}
 
 \begin{theorem} \hypertarget{lagrange}
 {\bfseries Teorema de Lagrange (Grupos)}\normalfont
@@ -693,7 +746,7 @@ h \mapsto xh
 
 A função $\zeta$ é claramente sobrejetiva por definição. 
 
-$\zeta$ também é injetiva pois se $(xh_1, xh_2) \in (xH)^2, xh_1 = xh_2$:
+$\zeta$ também é injetiva pois se $(xh_1, xh_2) \in (xH)^2$:
 
 \[
 xh_1 = xh_2 \Longrightarrow x^{-1}xh_1 = x^{-1}xh_2 \Longrightarrow h_1 = h_2.
