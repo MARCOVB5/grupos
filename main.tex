@@ -220,36 +220,71 @@ $(\mathbb{Z, +}), \;(\mathbb{Z}/n\mathbb{Z}, +),\;(\mathbb{R}^*, \cdot), \; (\ma
 \end{example}
 
 \begin{example}
-
-Seja, neste exemplo, $\mathbb{Z} / n\mathbb{Z} \overset{def}{=} \mathbb{Z}_n$, para $n\in \mathbb{Z}$.
+\color{red}
+Seja, neste exemplo, para fins de simplificação, $\mathbb{Z} / n\mathbb{Z} \overset{def}{=} \mathbb{Z}_n$, para $n\in \mathbb{Z}$.
 
 Seja a operação $\odot$ em $\mathbb{Z}_n$ definida da seguinte forma:
 
 \[
 \odot: 
 \begin{array}{c}
-\mathbb{Z}_n \bigtimes \mathbb{Z}_n \to \mathbb{Z} / n\mathbb{Z} \\
-(\bar{a}, \bar{b}) \mapsto \bar{a} \odot \bar{b} = \bar{a\cdot b}
+\mathbb{Z}_n \bigtimes \mathbb{Z}_n \to \mathbb{Z}_n \\
+(\overline{a}, \overline{b}) \mapsto \overline{a} \odot \overline{b} = \overline{a\cdot b}
 \end{array}
 \] 
 
-onde "$\cdot$" indica a operação usual de produto nos inteiros.
+onde $\cdot$ é a operação usual de produto nos inteiros.
 
-Temos que $(\mathbb{Z}^* / p\mathbb{Z}, \odot)$, onde $p$ é um número primo, é um grupo abeliano.
+Temos que $(\mathbb{Z}_{p}^{*}, \odot)$, onde $p$ é um número primo, é um grupo abeliano.
 
 \end{example}
-
+{\color{red}
 \textbf{Demonstração:}
 
-Para fins de simplificação de notação, nesta demonstração iremos utilizar $\mathbb{Z} / n\mathbb{Z} \overset{def}{=} \mathbb{Z}_n$
+Por construção, temos que $\overline{a}\odot \overline{b} \in \mathbb{Z}_{p}^{*}$.
 
-Comecemos demonstrando que de fato temos:
+Para mostrar a associatividade, sejam $\overline{a}, \overline{b}, \overline{c} \in \mathbb{Z}_{p}^{*}$.
+
+Temos que:
+
+\begin{align*}
+	&\overline{a}\odot (\overline{b}\odot \overline{c}) = \overline{a}\odot (\overline{b\cdot c}) =\\[10pt]
+	&= \overline{a\cdot (b\cdot c)} = \overline{(a\cdot b)\cdot c} = (\overline{a}\odot \overline{b})\odot \overline{c}.
+\end{align*}
+
+O elemento neutro é evidentemente o elemento $\overline{1}\in \mathbb{Z}_{p}^{*}$, pois:
 
 \[
-\forall (\bar{a}, \bar{b}) \in \mathbb{Z}_p \times \mathbb{Z}_p \implies \bar{a} \odot \bar{b} \in \mathbb{Z}_p
+\overline{a}\odot \overline{1} = \overline{a\cdot 1} = \overline{a}, \; \forall \overline{a} \in \mathbb{Z}_{p}^{*}.
 \]
 
-Ora 
+Também temos que para todo elemento de $\mathbb{Z}_{p}^{*}$, existe elemento inverso, pois, sabemos que:
+
+\[
+\forall \overline{a}\in \mathbb{Z}_{p}^{*} \implies \text{mdc}(a, p) = 1.
+\]
+
+Logo, pelo Teorema de Bézout, temos que existem $x$ e $y$ inteiros tais que:
+
+\[
+ax - py = 1
+\]
+
+Ora mas isso é a mesma coisa que afirmar que existe uma solução para a equação: 
+
+\[
+a \cdot x \equiv 1 \pmod{p} \iff \overline{a} \odot \overline{x} = \overline{1}. 
+\]
+
+Logo, deduzimos que $\forall \overline{a} \in \mathbb{Z}_{p}^{*}, \; \exists \overline{a}^{-1} \in \mathbb{Z}_{p}^{*}$.
+
+Além disso, é evidente que a operação $\odot$ é comutativa.
+
+Portanto, provamos que $(\mathbb{Z}_{p}^{*}, \odot)$ é um grupo abeliano.
+
+\qed
+
+}
 
 \begin{example}
      Seja $G = \;]-1, 1[, \; (G, \star)$ tal que 
@@ -648,7 +683,7 @@ Portanto, $G$ é um grupo abeliano. \qed
 \end{definition}
 
 \begin{example}
-    $\vert \mathbb{Z} \vert = \infty , \; \vert\mathbb{Z}/n\mathbb{Z}\vert = n, \; \vert S_n \vert = n!$
+    $\vert \mathbb{Z} \vert = \infty, \; \vert\mathbb{Z}/n\mathbb{Z}\vert = n, \; \vert S_n \vert = n!$
 \end{example}
 
 \section{Teorema de Lagrange}
@@ -809,9 +844,13 @@ Logo, o único subgrupo gerado por $x$ é o próprio $G$, $\langle x\rangle = G$
 
 \begin{theorem}
     \textbf{Pequeno Teorema de Fermat} \\
-    
-    
+   	Seja $p$ um número primo e $a\in \mathbb{Z} \setminus p\mathbb{Z}$, então:
+	\[
+	a^{p-1} \equiv 1 \pmod{p}.
+	\] 
 \end{theorem}
+
+\textbf{Demonstração:}
 
 \section{Grupos Quocientes}
 
