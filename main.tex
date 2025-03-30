@@ -605,12 +605,30 @@ A partir das notações acima temos que:
 
 \textbf{Demonstração}:
 
+PARA FAZER !
 
 \begin{proposition}
 A partir das notações acima temos que $\langle X \rangle$ é o menor subgrupo de $G$ que contém $X$.
 \end{proposition}
 
+{\color{red}
 \textbf{Demonstração}:
+
+Suponha que $J \leq G$ seja o menor subgrupo de $G$ tal que $X \subseteq J$.
+
+Ora, como $J \leq G$ e $X \subseteq J$, então: $\langle X \rangle \subseteq J$.
+
+Entretanto, também sabemos que $J$ é o menor subgrupo de $G$ tal que $X \subseteq J$.
+
+Portanto, deduzimos que $J \subseteq H$.
+
+Porém, para todo $H$ subgrupo de $G$ temos que $X\subseteq H$, logo, deduzimos que $J \subseteq \langle X \rangle$.
+
+Portanto, $J = \langle X \rangle$. 
+
+\qed  
+
+}
 
 \begin{example}
     Seja o grupo $(\mathbb{R}^*,\cdot)$ e o subconjunto $E\subset \mathbb{R}^*$ tal que $E = \{2\}$. O subgrupo gerado por $E$ é, portanto, $H=\{2^n, n\in \mathbb{Z}\}$.
@@ -668,8 +686,10 @@ y = a^{r_2}, \; r_2 \in \mathbb{Z}
 Logo:
 
 \[
-x\cdot y = a^{r_1} \cdot a^{r_2} = a^{r_1 + r_2} \stackrel{(\mathbb{Z,+})}{=} a^{r_2+ r_1} = a^{r_2}\cdot a^{r_1} = y\cdot x
+x\cdot y = a^{r_1} \cdot a^{r_2} = a^{r_1 + r_2} \stackrel{(*)}{=} a^{r_2+ r_1} = a^{r_2}\cdot a^{r_1} = y\cdot x
 \]
+
+\textit{$(*)$ : deduz-se que $r_1 + r_2 = r_2 + r_1$ pois estamos trabalhando dentro do grupo abeliano $(\mathbb{Z}, +)$}.
 
 Portanto, $G$ é um grupo abeliano. \qed
 
@@ -706,11 +726,11 @@ Portanto, $G$ é um grupo abeliano. \qed
         \item \textit{Quando não houver confusão possível, podemos denominar as classes laterais à esquerda/direita de $H$ em $G$ que contém $x$ como simplesmente: classe lateral à esquerda/direita de $G$}.
     \end{itemize}
 
-\begin{definition}
-	\color{red}
-	A cardinalidade do conjunto das classes laterais à esquerda \textit{ou} à direita é definida como \textbf{o índice de $H$ em $G$}, e será denotada por $[G\; : \; H]$.
+\begin{definition} \hypertarget{def142}
+	{\color{red}
+	A cardinalidade do conjunto das classes laterais à esquerda \textit{ou} à direita é definida como \textbf{o índice de $H$ em $G$}, e será denotada por $[G:H]$.}
+\end{definition} 
 
-\end{definition}
 {\color{red}
 \textit{Observação}: note que o número de classes laterais à direita de $G$ é igual ao número de classes laterais à esquerda de $G$ (por mais que as classes laterais sejam diferentes). 
 
@@ -823,7 +843,12 @@ Como $G$ é finito, o processo terá finalizado após $n$ etapas.
 
 Portanto, temos: $\vert G\vert = n\vert H\vert$. \qed
 
-\textit{Observação: segue como consequência direta do \textbf{Teorema de Lagrange} que caso $G$ seja um grupo finito e $\alpha \in G$, então $\mathcal{O}(\alpha)$ divide $\vert G\vert$}.
+\textit{Observações:} 
+
+\begin{enumerate}
+	\item Segue como consequência direta do \textbf{Teorema de Lagrange} que caso $G$ seja um grupo finito e $\alpha \in G$, então $\mathcal{O}(\alpha)$ divide $\vert G\vert$.
+	\item Temos diretamente pela \hyperlink{def142}{\textbf{Definição 1.4.2}} que: $\vert G\vert = \vert H\vert [G:H]$.
+\end{enumerate}
 
 \begin{proposition}
     Seja $G$ um grupo finito de ordem $p\in \mathbb{N}^*$. \\
@@ -841,6 +866,19 @@ Seja $x\in G$ tal que $x \neq e$, onde $e$ é o elemento neutro de $G$.
 Logo, o único subgrupo gerado por $x$ é o próprio $G$, $\langle x\rangle = G$ \qed
 
 \textit{Observação: como visto na \hyperlink{prop132}{\textbf{Proposição 1.3.2}}, $G$ também é abeliano!}
+
+\begin{theorem}
+	\textbf{Teorema de Euler (Grupos)} \\
+	Seja $(G, \cdot)$ um grupo finito tal que $\vert G \vert = n, \; n\in \mathbb{Z}$.
+	Então:
+	\[
+	\forall g \in G, \; g^n = 1.
+	\]
+\end{theorem}
+
+\textbf{Demonstração:}
+
+
 
 \begin{theorem}
     \textbf{Pequeno Teorema de Fermat} \\
