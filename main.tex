@@ -596,13 +596,39 @@ Matematicamente temos:
 \begin{proposition}
 A partir das notações da \hyperlink{def133}{\textbf{Definição 1.3.3}}, temos que:
 \[
-\langle X \rangle = \{a_1 a_2 ... a_n : a_i \in X \; \; \text{ou} \; \; a^{-1}_{i} \in X, \; n \geq 1 \}
+\langle X \rangle = \{x_1 x_2 ... x_n : x_i \in X\cup X^{-1}, \; n \geq 1 \}
 \]
 \end{proposition}
 
 \textbf{Demonstração}:
 
-PARA FAZER !
+Sejam:
+
+\[
+\dot{X} \overset{def}{=} \bigcap \{H : H \leq G \; \; \text{e} \; \; X \subseteq H\}
+\]
+
+\[
+\bar{X} \overset{def}{=} \{x_1 x_2 ... x_n : x_i \in X\cup X^{-1}, \; n \geq 1 \}
+\]
+
+Queremos mostrar que: $\dot{X} = \bar{X}$.
+
+Realizemos, primeiramente, algumas convenções de notação:
+
+\[
+x_p \overset{def}{=} x_1 x_2 ... x_p, \; p\in \mathbb{Z}^{*}_{+}
+\]
+
+\[
+x_{p}^{-1} \overset{def}{=} x_{1}^{-1} x_{2}^{-1} ... x_{p}^{-1}, \; p \in \mathbb{Z}_{+}^{*}
+\]
+
+É evidente que $x_p,\; x_{p}^{-1} \in \bar{X}$. Assim como $x_p x_{p}^{-1} \in \bar{X}$, o que nos mostra que $\bar{X} \leq G$.
+
+Mostremos que $\dot{X} \subseteq \bar{X}$:
+
+
 
 \begin{proposition}
 A partir das notações da \hyperlink{def133}{\textbf{Definição 1.3.3}},temos que $\langle X \rangle$ é o menor subgrupo de $G$ que contém $X$.
