@@ -623,8 +623,6 @@ A partir das notações da \hyperlink{def133}{\textbf{Definição 1.3.3}}, temos
 
 \textbf{Demonstração}:
 
-{\color{red}
-
 Sejam:
 
 \[
@@ -654,7 +652,7 @@ Mostremos que $\dot{X} \subseteq \bar{X}$:
 Sabemos que: 
 
 \[
-\bar{X} = \{\bar{x}_p : x_p \in X \cup X^{-1}, p\in \mathbb{Z}_{+}^{*} \}
+\bar{X} = \{\bar{x}_p : x_i \in X \cup X^{-1}, p\in \mathbb{Z}_{+}^{*} \; \; \text{e} \; \; 1 \leq i \leq p \}
 \]
 
 Evidentemente temos que: 
@@ -669,19 +667,33 @@ Isso se dá pelo fato de que $\dot{X}$ é o menor subgrupo de $G$ contendo $X$, 
 
 Mostremos agora que $\bar{X} \subseteq \dot{X}$:
 
-Ora, analogamente, temos que: 
+Seja $H \leq G$ tal que: 
 
 \[
-\forall x \in \bar{X} \implies x \in X
+H \leq G \; \; \text{e} \; \; X \subseteq H.
 \]
 
-Evidentemente temos então que $x \in \dot{X}$.
+Ora, temos evidentemente que:
+
+\[
+\forall \bar{x}_p \in \bar{X} \implies \bar{x}_p \in H.
+\]
+
+Logo:
+
+\[
+\bar{x}_p \in H \implies \bar{x}_p \in \bigcap_{i \in I} H_i
+\]
+
+Onde $I$ é um conjunto não-vazio de índices.
+
+Evidentemente temos então que $\bar{x}_p \in \dot{X}$.
 
 Logo, $\bar{X} \subseteq \dot{X}$.
 
 Portanto, mostramos que: $\bar{X} = \dot{X}$. 
 
-\qed}
+\qed
 
 \begin{example}
     Seja o grupo $(\mathbb{R}^*,\cdot)$ e o subconjunto $E\subset \mathbb{R}^*$ tal que $E = \{2\}$. O subgrupo gerado por $E$ é, portanto, $H=\{2^n, n\in \mathbb{Z}\}$.
@@ -766,7 +778,6 @@ Portanto, $G$ é um grupo abeliano. \qed
 \end{proposition}
 
 \textbf{Demonstração:}
-{\color{red}
 Provemos a \hyperlink{prop135}{\textbf{Proposição 1.3.5}} via absurdo.
 
 Suponha que $\mathcal{O}(\alpha) \geq \infty$, logo podemos gerar $n$ valores distintos a partir de potências de $\alpha$, onde $n \in \mathbb{Z}$.
@@ -775,10 +786,9 @@ Ora, a partir da geração de infinitos valores distintos de potências de $\alp
 
 Portanto, temos que $\mathcal{O}(\alpha) < \infty$. 
 
-\qed}  
+\qed  
 
 \begin{proposition}
-\color{red}
 Seja $G$ um grupo e $\alpha$ um elemento de $G$. Então, as seguintes proposições são equivalentes:
 
 $(i)$ A ordem $\mathcal{O}(\alpha)$ é finita. Isto é, $\mathcal{O}(\alpha) < \infty$;
