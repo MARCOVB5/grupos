@@ -962,6 +962,7 @@ Portanto, temos: $\vert G\vert = n\vert H\vert$. \qed
 \begin{enumerate}
 	\item Segue como consequência direta do \textbf{Teorema de Lagrange} que caso $G$ seja um grupo finito e $\alpha \in G$, então $\mathcal{O}(\alpha)$ divide $\vert G\vert$.
 	\item Temos diretamente pela \hyperlink{def142}{\textbf{Definição 1.4.2}} que: $\vert G\vert = \vert H\vert [G:H]$.
+	\item O \textbf{Teorema de Lagrange} também pode ser aplicado no caso em que $G$ é infinito.
 \end{enumerate}
 
 \begin{proposition}
@@ -993,6 +994,7 @@ Logo, o único subgrupo gerado por $x$ é o próprio $G$, $\langle x\rangle = G$
 \end{theorem}
 
 \textbf{Demonstração:}
+{\color{red}
 
 Seja $g$ um elemento do grupo finito $G$. Sabemos que $\langle g \rangle \leq G$. Sabemos também, pelo \hyperlink{lagrange}{\textbf{Teorema de Lagrange}} que $\mathcal{O}(g)$ divide a ordem de $G$. 
 
@@ -1010,7 +1012,7 @@ g^{n} = g^{\vert G \vert} = g^{k\mathcal{O}(g)} = \left(g^{\mathcal{O}(g)}\right
 
 Ora, demonstramos, com o argumento acima, sem perda de generalidade, tal fato para qualquer elemento de $G$.
 
-\qed
+\qed}
 
 \hypertarget{pequenofermat}{}
 
@@ -1023,10 +1025,25 @@ Ora, demonstramos, com o argumento acima, sem perda de generalidade, tal fato pa
 \end{theorem}
 
 \textbf{Demonstração:}
+{\color{red}
 
 O \hyperlink{pequenofermat}{\textbf{Pequeno Teorema de Fermat}} é evidentemente o caso específico do \hyperlink{teoremadeeuler}{\textbf{Teorema de Euler}} em que $(G, \cdot) = ((\mathbb{Z}/p\mathbb{Z})^*, \odot)$.
 
-\qed
+\qed}
+
+\begin{proposition}
+	Seja $G$ um grupo e sejam $K < H < G$.
+
+	Logo $[G : K] = [G : H] \cdot [H : K]$
+
+	Onde $cdot$ denota o produto usual em $\mathbb{Z}$.
+\end{proposition}
+
+\textbf{Demonstração:}
+
+Caso $\vert G \vert < \infty$, podemos utilizar o $\hyperlink{lagrange}{\textbf{Teorema de Lagrange}}$:
+
+
 
 \section{Grupos Quocientes}
 
