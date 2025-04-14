@@ -778,9 +778,10 @@ Portanto, $G$ é um grupo abeliano. \qed
 \end{proposition}
 
 \textbf{Demonstração:}
+
 Provemos a \hyperlink{prop135}{\textbf{Proposição 1.3.5}} via absurdo.
 
-Suponha que $\mathcal{O}(\alpha) \geq \infty$, logo podemos gerar $n$ valores distintos a partir de potências de $\alpha$, onde $n \in \mathbb{Z}$.
+Suponha que $\mathcal{O}(\alpha)$ seja não finito, logo podemos gerar $n$ valores distintos a partir de potências de $\alpha$, onde $n \in \mathbb{Z}$.
 
 Ora, a partir da geração de infinitos valores distintos de potências de $\alpha$, sabemos que, para dado valor inteiro $k$, teremos $\alpha ^k \notin G$. Ora, mas $\langle \alpha \rangle$ é um subgrupo de $G$. Absurdo.
 
@@ -793,12 +794,12 @@ Seja $G$ um grupo e $\alpha$ um elemento de $G$. Então, as seguintes proposiç�
 
 $(i)$ A ordem $\mathcal{O}(\alpha)$ é finita. Isto é, $\mathcal{O}(\alpha) < \infty$;
 
-$(ii)$ $\exists t \in \mathbb{Z}_{+}^{*} : \alpha ^t = e$.
+$(ii)$ $\exists t \in \mathbb{Z}_{+}^{*} : \alpha ^t = e$, onde $t = \min{\{k \in G : k > 0\}}$.
 
 \end{proposition}
 
 \textbf{Demonstração:}
-{\color{red}
+
 Queremos provar que: $(i) \iff (ii)$.
 
 Comecemos provando a implicação $(i) \Longrightarrow (ii):$
@@ -807,17 +808,19 @@ Temos, por definição, que $\langle \alpha \rangle = \{\alpha ^m \; \vert \; m 
 
 Como $\mathcal{O}(\alpha) < \infty$, temos que $\exists p, q \in \mathbb{Z} : p > q$ e $\alpha ^p = \alpha ^q$.
 
-Deduzimos diretamente que: $\alpha ^{p-q} = e$. Como $p-q \in \mathbb{Z}^{*}_{+}$, mostramos $(i) \Longrightarrow (ii)$. 
+Deduzimos diretamente que: $\alpha ^{p-q} = e$. Como $p-q \in \mathbb{Z}^{*}_{+}$, mostramos $(i) \Longrightarrow (ii)$.
+
+Note que a escolha do valor $p-q$ ocorre sem perda de generalidade, uma vez que o conjunto $\mathbb{Z}_{+}^{*}$ é enumerável e sempre podemos garantir a minimalidade de $p-q$. 
 
 Provemos $(ii) \Longrightarrow (i):$
 
-Ora, a partir de $(ii)$ sabemos que $\langle \alpha \rangle$ é finito e sua ordem é igual à $t$.
+Ora, a partir de $(ii)$ sabemos que $\langle \alpha \rangle$ é finito e, pela minimalidade de $t$, sua ordem é igual à $t$.
 
 Portanto, a partir da \hyperlink{prop135}{\textbf{Proposição 1.3.5}} temos diretamente que $\mathcal{O}(\alpha) < \infty$.
 
 Portanto, com isso, mostramos que $(ii) \Longrightarrow (i)$ e, consequentemente, mostramos $(i) \iff (ii)$. 
 
-\qed}
+\qed
 
 \section{Teorema de Lagrange}
 
