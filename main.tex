@@ -958,8 +958,64 @@ Portanto, temos: $\vert G\vert = n\vert H\vert$. \qed
 \begin{enumerate}
 	\item Segue como consequência direta do \textbf{Teorema de Lagrange} que caso $G$ seja um grupo finito e $\alpha \in G$, então $\mathcal{O}(\alpha)$ divide $\vert G\vert$.
 	\item Temos diretamente pela \hyperlink{def142}{\textbf{Definição 1.4.2}} que: $\vert G\vert = \vert H\vert [G:H]$.
-	\item O \textbf{Teorema de Lagrange} também pode ser aplicado no caso em que $G$ é infinito.
 \end{enumerate}
+
+\begin{proposition}
+	Seja $G$ um grupo não finito e $H \leq G$. 
+
+	Então vale o \hyperlink{lagrange}{\textbf{Teorema de Lagrange}}. 
+
+	Isto é: 
+
+	\[
+	\vert G\vert =\vert H\vert [G:H].
+	\]
+
+\end{proposition}
+
+\textbf{Demonstração:}
+
+Demonstraremos novamente o \hyperlink{lagrange}{\textbf{Teorema de Lagrange}} de forma que a proposição acima possa ser justificada de forma clara. 
+
+Seja $G$ um grupo e $H \leq G$.
+
+Ora, sabemos que:
+
+\[
+\text{Ou} \; \; xH = yH \; \; \text{ou} \; \; xH \cap yH = \emptyset, \; \forall (x,y) \in G \times G.
+\]
+
+Sabemos também que, sendo $I$ um conjunto não vazio de índices:
+
+\[
+\bigcup_{i \in I}^{\bullet} x_i H = G.
+\]
+
+Logo, podemos deduzir:
+
+\[
+\sum _{i \in I} \vert x_i H\vert = \vert G\vert \implies [G:H] \vert H\vert = \vert G\vert.
+\]
+
+Isso se dá pois, por definição:
+
+\[
+\text{Card}(I) = [G:H].
+\]
+
+Também deduzimos da demonstração anterior do \hyperlink{lagrange}{\textbf{Teorema de Lagrange}} que:
+
+\[
+\text{Card}(xH) = \vert H\vert.
+\]
+
+Logo, com isso, provamos para qualquer que seja o grupo $G$ (finito ou não finito) e $H \leq G$, que vale:
+
+\[
+\vert G\vert = \vert H\vert [G : H].
+\]
+
+\qed
 
 \begin{proposition}
     Seja $G$ um grupo finito de ordem $p\in \mathbb{N}^*$. \\
@@ -990,7 +1046,6 @@ Logo, o único subgrupo gerado por $x$ é o próprio $G$, $\langle x\rangle = G$
 \end{theorem}
 
 \textbf{Demonstração:}
-{\color{red}
 
 Seja $g$ um elemento do grupo finito $G$. Sabemos que $\langle g \rangle \leq G$. Sabemos também, pelo \hyperlink{lagrange}{\textbf{Teorema de Lagrange}} que $\mathcal{O}(g)$ divide a ordem de $G$. 
 
@@ -1008,7 +1063,7 @@ g^{n} = g^{\vert G \vert} = g^{k\mathcal{O}(g)} = \left(g^{\mathcal{O}(g)}\right
 
 Ora, demonstramos, com o argumento acima, sem perda de generalidade, tal fato para qualquer elemento de $G$.
 
-\qed}
+\qed
 
 \hypertarget{pequenofermat}{}
 
@@ -1021,11 +1076,10 @@ Ora, demonstramos, com o argumento acima, sem perda de generalidade, tal fato pa
 \end{theorem}
 
 \textbf{Demonstração:}
-{\color{red}
 
 O \hyperlink{pequenofermat}{\textbf{Pequeno Teorema de Fermat}} é evidentemente o caso específico do \hyperlink{teoremadeeuler}{\textbf{Teorema de Euler}} em que $(G, \cdot) = ((\mathbb{Z}/p\mathbb{Z})^*, \odot)$.
 
-\qed}
+\qed
 
 \begin{proposition}
 	Seja $G$ um grupo e sejam $K < H < G$.
@@ -1037,22 +1091,39 @@ O \hyperlink{pequenofermat}{\textbf{Pequeno Teorema de Fermat}} é evidentemente
 
 \textbf{Demonstração:}
 
-Caso $\vert G \vert < \infty$, podemos utilizar o $\hyperlink{lagrange}{\textbf{Teorema de Lagrange}}$:
+Ora, basta aplicar sucessivamente o \hyperlink{lagrange}{\textbf{Teorema de Lagrange}}:
 
+\begin{align*}
+&\text{(1) } H < G &&\Rightarrow && \lvert G \rvert = \lvert H \rvert \cdot [G : H] \\
+&\text{(2) } K < H &&\Rightarrow && \lvert H \rvert = \lvert K \rvert \cdot [H : K] \\
+&\text{(3) } K < G &&\Rightarrow && \lvert G \rvert = \lvert K \rvert \cdot [G : K]
+\end{align*}
 
+Combinando as expressões (1) e (2), obtemos:
+
+\[
+\lvert G \rvert = \lvert K \rvert \cdot [H : K] \cdot [G : H] = \lvert K \rvert \cdot [G : K]
+\]
+
+Portanto:
+
+\[
+[G : K] = [G : H] \cdot [H : K]
+\]
+
+\qed
 
 \section{Grupos Quocientes}
 
 \begin{definition}
-	Seja $G$ um grupo. O subgrupo $H$ de $G$ é chamado de \textbf{subgrupo normal de $G$} se:
-	\[
-	\forall (g, h) \in G \times H, \; \; ghg^{-1} \in H.
-	\]
-	Denotamos:
-	\[
-	H \triangleleft G.
-	\] 
+	Seja $G$ um grupo e $H \leq G$.
+
+	Chamamos de \textbf{conjunto quociente} o conjunto $G/H$ (ou $\frac{G}{H}$) \textbf{cujos elementos são as classes laterais à esquerda (ou à direita) de $H$ em $G$}. 
 \end{definition}
+
+\textit{Observação:}
+
+\textit{decorre da definição acima que $\vert G/H\vert = [G:H]$}.
 
 
 \end{document}
