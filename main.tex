@@ -26,8 +26,8 @@
 
 % fontes AMS EULER !!! 
 % \usepackage{eulervm} 
-\usepackage[T1]{fontenc} 
-\usepackage{mathpazo}
+%\usepackage[T1]{fontenc} 
+%\usepackage{mathpazo}
 
 \theoremstyle{definition}
 
@@ -98,7 +98,7 @@
     \titlepagecontent
 \end{titlepage}
 
-\fontsize{14}{22}\selectfont
+\fontsize{12}{14}\selectfont
 
 \chapter{Generalidades sobre Grupos}
 
@@ -159,11 +159,11 @@ A partir das notações acima, definimos \textbf{lei de composição interna de 
 
 \textit{Observações:}
 
-Levando em consideração as notações acima, temos:
+\textit{Levando em consideração as notações acima, temos:}
 \begin{enumerate}
-	\item Primeiramente, notamos que $e$ e $\hat{x}$ são únicos, uma vez que:
+	\item \textit{Primeiramente, notamos que $e$ e $\hat{x}$ são únicos, uma vez que:}
 
-    Supondo que existam $e$ e $e'$ pertencentes à $G$ que satisfazem o item 1, temos:
+    \textit{Supondo que existam $e$ e $e'$ pertencentes à $G$ que satisfazem o item 1, temos:}
     \[
         x \cdot e = x = x \cdot e' 
         \;\;\;\implies\;\;\;
@@ -174,7 +174,7 @@ Levando em consideração as notações acima, temos:
         \quad \qedsymbol
     \]
 
-    Supondo agora que existam $\hat{x}$ e $\hat{x}'$ que satisfaçam o item 2, temos:
+    \textit{Supondo agora que existam $\hat{x}$ e $\hat{x}'$ que satisfaçam o item 2, temos:}
     \[
         \hat{x}\cdot x 
         = e 
@@ -189,17 +189,16 @@ Levando em consideração as notações acima, temos:
         \hat{x} = \hat{x}' 
         \quad \qedsymbol
     \]
-    \item Notamos por convenção $x^{-1}$ no lugar de $\hat{x}$ no \textbf{item 2} (dada sua unicidade).
+    \item \textit{Notamos por convenção $x^{-1}$ no lugar de $\hat{x}$ no \textbf{item 2} (dada sua unicidade).}
     
-    \item Caso $\forall \,(x,y) \in G \times G:\; x \cdot y = y \cdot x$, dizemos que $G$ é um grupo \emph{abeliano} (ou \emph{comutativo}).
+    \item \textit{Caso $\forall \,(x,y) \in G \times G:\; x \cdot y = y \cdot x$, dizemos que $G$ é um grupo \emph{abeliano} (ou \emph{comutativo}).}
     
-    \item Caso $G$ seja um grupo abeliano, então 
+    \item \textit{Caso $G$ seja um grupo abeliano, então} 
     \[
       (x\cdot y)^n = x^n \cdot y^n, 
       \quad \forall n \in \mathbb{Z}.
     \]
 \end{enumerate}
-
 
 \begin{example}
 $(\mathbb{Z, +}), \;(\mathbb{Z}/n\mathbb{Z}, +),\;(\mathbb{R}^*, \cdot), \; (\mathbb{R}, +), \; (\mathbb{C, +}),\; (\mathbb{C^*, \cdot}), \; (\mathbb{Q}^*, \cdot)$ \\ são grupos abelianos (onde $+$ e $\cdot$ denotam as operações usuais de adição e produto em $\mathbb{C}$).
@@ -842,9 +841,9 @@ Portanto, com isso, mostramos que $(ii) \Longrightarrow (i)$ e, consequentemente
 	A cardinalidade do conjunto das classes laterais à esquerda \textit{ou} à direita é definida como \textbf{o índice de $H$ em $G$}, e será denotada por $[G:H]$.
 \end{definition} 
 
-\textit{Observação}: note que o número de classes laterais à direita de $H$ é igual ao número de classes laterais à esquerda de $H$ (por mais que as classes laterais sejam diferentes). 
+\textit{Observação: note que o número de classes laterais à direita de $H$ é igual ao número de classes laterais à esquerda de $H$ (por mais que as classes laterais sejam diferentes).} 
 
-Isto se dá pelo fato de que a função: 
+\textit{Isto se dá pelo fato de que a função:} 
 
 \[
 \phi: 
@@ -854,7 +853,7 @@ xH \mapsto Hx^{-1}
 \end{array}
 \]
 
-é claramente uma bijeção.
+\textit{é claramente uma bijeção.}
 
 \begin{theorem} \hypertarget{lagrange}
 {\bfseries Teorema de Lagrange (Grupos)}\normalfont
@@ -956,21 +955,14 @@ Portanto, temos: $\vert G\vert = n\vert H\vert$. \qed
 \textit{Observações:} 
 
 \begin{enumerate}
-	\item Segue como consequência direta do \textbf{Teorema de Lagrange} que caso $G$ seja um grupo finito e $\alpha \in G$, então $\mathcal{O}(\alpha)$ divide $\vert G\vert$.
-	\item Temos diretamente pela \hyperlink{def142}{\textbf{Definição 1.4.2}} que: $\vert G\vert = \vert H\vert [G:H]$.
+	\item \textit{Segue como consequência direta do \textbf{Teorema de Lagrange} que caso $G$ seja um grupo finito e $\alpha \in G$, então $\mathcal{O}(\alpha)$ divide $\vert G\vert$.}
+	\item \textit{Temos diretamente pela \hyperlink{def142}{\textbf{Definição 1.4.2}} que: $\vert G\vert = \vert H\vert [G:H]$.}
 \end{enumerate}
 
 \begin{proposition}
 	Seja $G$ um grupo não finito e $H \leq G$. 
 
 	Então vale o \hyperlink{lagrange}{\textbf{Teorema de Lagrange}}. 
-
-	Isto é: 
-
-	\[
-	\vert G\vert =\vert H\vert [G:H].
-	\]
-
 \end{proposition}
 
 \textbf{Demonstração:}
@@ -985,7 +977,7 @@ Ora, sabemos que:
 \text{Ou} \; \; xH = yH \; \; \text{ou} \; \; xH \cap yH = \emptyset, \; \forall (x,y) \in G \times G.
 \]
 
-Sabemos também que, sendo $I$ um conjunto não vazio de índices:
+Sabemos também que, sendo $I$ um conjunto não vazio de índices tal que Card($I$) $= [G:H]$:
 
 \[
 \bigcup_{i \in I}^{\bullet} x_i H = G.
@@ -1006,7 +998,7 @@ Isso se dá pois, por definição:
 Também deduzimos da demonstração anterior do \hyperlink{lagrange}{\textbf{Teorema de Lagrange}} que:
 
 \[
-\text{Card}(xH) = \vert H\vert.
+\text{Card}(xH) = \vert H\vert, \; \forall x \in G.
 \]
 
 Logo, com isso, provamos para qualquer que seja o grupo $G$ (finito ou não finito) e $H \leq G$, que vale:
@@ -1084,22 +1076,20 @@ O \hyperlink{pequenofermat}{\textbf{Pequeno Teorema de Fermat}} é evidentemente
 \begin{proposition}
 	Seja $G$ um grupo e sejam $K < H < G$.
 
-	Logo $[G : K] = [G : H] \cdot [H : K]$
-
-	Onde $\cdot$ denota o produto usual em $\mathbb{Z}$.
+	Logo $[G : K] = [G : H][H : K].$
 \end{proposition}
 
 \textbf{Demonstração:}
 
-Ora, basta aplicar sucessivamente o \hyperlink{lagrange}{\textbf{Teorema de Lagrange}}:
+Basta aplicar sucessivamente o \hyperlink{lagrange}{\textbf{Teorema de Lagrange}}:
 
 \begin{align*}
-&\text{(1) } H < G &&\Rightarrow && \lvert G \rvert = \lvert H \rvert \cdot [G : H] \\
-&\text{(2) } K < H &&\Rightarrow && \lvert H \rvert = \lvert K \rvert \cdot [H : K] \\
-&\text{(3) } K < G &&\Rightarrow && \lvert G \rvert = \lvert K \rvert \cdot [G : K]
+& H < G &&\Rightarrow && \lvert G \rvert = \lvert H \rvert \cdot [G : H] \; \; \; \text{(I)} \\
+& K < H &&\Rightarrow && \lvert H \rvert = \lvert K \rvert \cdot [H : K] \; \; \; \text{(II)} \\
+& K < G &&\Rightarrow && \lvert G \rvert = \lvert K \rvert \cdot [G : K] \; \; \; \text{(III)}
 \end{align*}
 
-Combinando as expressões (1) e (2), obtemos:
+Combinando as expressões (I) e (II), obtemos:
 
 \[
 \lvert G \rvert = \lvert K \rvert \cdot [H : K] \cdot [G : H] = \lvert K \rvert \cdot [G : K]
@@ -1121,9 +1111,141 @@ Portanto:
 	Chamamos de \textbf{conjunto quociente} o conjunto $G/H$ (ou $\frac{G}{H}$) \textbf{cujos elementos são as classes laterais à esquerda (ou à direita) de $H$ em $G$}. 
 \end{definition}
 
-\textit{Observação:}
+\textit{Observação: decorre da definição acima que $\vert G/H\vert = [G:H]$}.
 
-\textit{decorre da definição acima que $\vert G/H\vert = [G:H]$}.
+\hypertarget{def152}{}
 
+\begin{definition}
+	Seja $G$ um grupo e $H\leq G$. 
+
+	\textbf{Definimos a seguinte operação entre as classes laterais à esquerda de $H$ em $G$:}
+
+\[
+\square \; : 
+\begin{array}{c}
+G/H \times G/H \to G/H \\
+(xH, yH)  \mapsto xyH
+\end{array}
+\]
+
+\end{definition}
+
+\textit{Observações:}
+
+\begin{itemize}
+	\item \textit{Note que, por convenção, estamos tratando das classes laterais à esquerda de $H$ em $G$. Entretanto, a definição é válida para classes laterais à direita também.}
+	\item \textit{A operação definida é uma \textbf{lei de composição interna} por construção.}
+	\item \textit{Não mostramos ainda que a operação está de fato bem definida, isto é:}
+	
+	\[
+	\begin{cases}
+	(x_1 H, y_1 H) \in G/H \times G/H \\	
+	(x_2 H, y_2 H) \in G/H \times G/H
+	\end{cases}
+	\]
+	\[
+	\text{\textit{Se}} \; \; (x_1 H, y_1 H) = (x_2 H, y_2 H) \implies x_1 y_1 H = x_2 y_2 H.
+	\]
+	\textit{Tal fato será destacado na \hyperlink{prop151}{\textbf{Proposição 1.5.1}}.}
+\end{itemize}
+
+\hypertarget{prop151}{}
+
+\begin{proposition}
+Seja $G$ um grupo e $H\leq G$. 
+
+As afirmações a seguir são equivalentes:
+
+$(i)$ A operação definida na \hyperlink{def152}{\textbf{Definição 1.5.2}} está bem definida;
+
+$(ii)$ $gHg^{-1} \subseteq H, \; \forall g \in G$;
+
+$(iii)$ $gHg^{-1} = H, \; \forall g \in G$;
+
+$(iv)$ $gH = Hg, \; \forall g \in G$.
+
+\end{proposition}
+
+\textbf{Demonstração:}
+
+Mostremos as equivalências:
+
+\[
+(i) \iff (ii) \; \; \; \text{(I)}
+\]
+
+\[
+(ii) \iff (iii) \; \; \; \text{(II)}
+\]
+
+\[
+(iii) \iff (iv) \; \; \; \text{(III)}
+\]
+
+Comecemos mostrando a equivalência (I):
+
+...
+
+Com isso mostramos a equivalência (I).
+
+Mostremos a equivalência (II):
+
+Para a implicação $(ii) \implies (iii)$ mostremos que:
+
+\[
+gHg^{-1} \subseteq H \implies H \subseteq gHg^{-1}, \; \forall g \in G.
+\]
+
+Ora, temos diretamente da hipótese:
+
+\[
+gHg^{-1} \subseteq H \implies g^{-1}Hg \subseteq H \implies g(g^{-1}Hg)g^{-1} \subseteq gHg^{-1}
+\]
+
+\[
+\implies H \subseteq gHg^{-1}
+\]
+
+Logo, podemos concluir que:
+
+\[
+gHg^{-1} \subseteq H \implies H = gHg^{-1}.
+\]
+
+A implicação $(iii) \implies (ii)$ é evidente.
+
+Com isso mostramos a equivalência (II).
+
+A equivalência (III) é evidente.
+
+Tendo mostrado as equivalências (I), (II) e (III), mostramos que todas as afirmações são duas a duas equivalentes. 
+
+\qed
+
+\begin{definition}
+	Um subgrupo $H$ é um \textbf{subgrupo normal} de $G$ caso ele satisfaça as afirmações equivalentes da \hyperlink{prop151}{\textbf{Proposição 1.5.1}}.
+	
+	Neste caso, denotamos:
+
+	\[
+	H \trianglelefteq G
+	\]
+
+\end{definition}
+
+\textit{Observações:}
+
+\begin{itemize}
+	\item \textit{Note que caso $H \trianglelefteq G$ então as classes laterais à esquerda e à direita de H são iguais;}
+	\item \textit{Denotamos $H\triangleleft G$ se $H$ é um \textbf{subgrupo normal próprio de $G$}}.
+\end{itemize}
+
+\begin{example}
+$G$ e $\{e\}$ (subgrupos triviais de $G$) são claramente subgrupos normais de $G$.
+\end{example}
+
+\begin{example}
+
+\end{example}
 
 \end{document}
