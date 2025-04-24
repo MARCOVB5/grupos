@@ -967,8 +967,6 @@ Portanto, temos: $\vert G\vert = n\vert H\vert$. \qed
 	Então vale o \hyperlink{lagrange}{\textbf{Teorema de Lagrange}}. 
 \end{proposition}
 
-{\color{red}
-
 \textbf{Demonstração:}
 
 Demonstraremos novamente o \hyperlink{lagrange}{\textbf{Teorema de Lagrange}} de forma que a proposição acima possa ser justificada de forma clara. 
@@ -987,31 +985,49 @@ Sabemos também que, sendo $I$ um conjunto não vazio de índices tal que Card($
 \bigcup_{i \in I}^{\bullet} x_i H = G.
 \]
 
-Logo, podemos deduzir:
+Como $\vert G\vert$ é não finito, então se $\vert H\vert$ ou $[G:H]$ são não finitos, vale que $\vert G\vert = \vert H\vert[G:H]$.
+
+Suponhamos, agora, que $\vert H\vert < \infty$ e $[G:H] < \infty$.
+
+Como $[G:H] < \infty$, então $\vert I\vert < \infty$.
+
+Logo, podemos escrever $I$ como:
 
 \[
-\sum _{i \in I} \vert x_i H\vert = \vert G\vert \implies [G:H] \vert H\vert = \vert G\vert.
+I = \{i_1, i_2, \dots, i_n, \; n\in \mathbb{N} \}.
 \]
 
-Isso se dá pois, por definição:
+Logo:
 
 \[
-\text{Card}(I) = [G:H].
+G = \bigcup_{i_1 \leq i \leq n}^{\bullet}.
 \]
 
-Também deduzimos da demonstração anterior do \hyperlink{lagrange}{\textbf{Teorema de Lagrange}} que:
+Portanto, podemos escrever:
 
 \[
-\text{Card}(xH) = \vert H\vert, \; \forall x \in G.
+\vert G\vert = \sum_{k = 1}^{n} \vert x_{i_k} H\vert.
 \]
 
-Logo, com isso, provamos para qualquer que seja o grupo $G$ (finito ou não finito) e $H \leq G$, que vale:
+Ora, deduzimos na demonstração do \hyperlink{langrange}{\textbf{Teorema de Lagrange}} que $\vert xH\vert = \vert H\vert, \; \forall x \in G$.
+
+Portanto temos que:
 
 \[
-\vert G\vert = \vert H\vert [G : H].
+\vert G\vert = n\vert H\vert.
 \]
 
-\qed}
+Ora, mas $\vert G\vert$ é não finito e $\vert H\vert < \infty$. Absurdo !
+
+Portanto, deduzimos que $\vert H\vert$ ou $[G:H]$ são não finitos.
+
+Assim, provamos que o \hyperlink{lagrange}{\textbf{Teorema de Lagrange}} vale também para $\vert G\vert$ não finito. Isto é:
+
+\[
+\vert G\vert = \vert H\vert [G:H].
+\]
+
+\qed
 
 \begin{proposition}
     Seja $G$ um grupo finito de ordem $p\in \mathbb{N}^*$. \\
@@ -1078,7 +1094,6 @@ O \hyperlink{pequenofermat}{\textbf{Pequeno Teorema de Fermat}} é evidentemente
 \qed
 
 \begin{proposition}
-	\color{red}
 	Seja $G$ um grupo e sejam $K < H < G$.
 
 	Logo $[G : K] = [G : H][H : K].$
