@@ -1000,7 +1000,7 @@ I = \{i_1, i_2, \dots, i_n, \; n\in \mathbb{N} \}.
 Logo:
 
 \[
-G = \bigcup_{i_1 \leq i \leq n}^{\bullet}.
+G = \bigcup_{i_1 \leq i \leq n}^{\bullet} x_i H.
 \]
 
 Portanto, podemos escrever:
@@ -1141,7 +1141,7 @@ Portanto:
 	\textbf{Definimos a seguinte operação entre as classes laterais à esquerda de $H$ em $G$:}
 
 \[
-\square \; : 
+\bullet \; : 
 \begin{array}{c}
 G/H \times G/H \to G/H \\
 (xH, yH)  \mapsto xyH
@@ -1204,15 +1204,29 @@ Mostremos as equivalências:
 
 Comecemos mostrando a equivalência (I):
 
-Mostremos a implicação $(i) \implies (ii)$:
+Ora, perceba que para $(x,y) \in G\times G$ e $(h, h')\in H\times H$, temos que:
 
-Se a operação '$\square$' está bem definida, então temos:
+$x$ e $xh$ são representantes distintos para a mesma classe lateral $xH$.
 
+$y$ e $yh'$ são representantes distintos para a mesma classe lateral $yH$.
 
+Portanto, podemos deduzir que a operação "$\bullet$" definida na \hyperlink{def152}{\textbf{Definição 1.5.2}} só estará bem definida se, e somente se:
 
-Mostremos a implicação $(ii) \implies (i)$:
+\[
+xyH = xhyh'H, \; \forall (x,y)\in G\times G \; \; \; \text{e} \; \; \; \forall (h,h')\in H\times H.
+\]
 
+Logo:
 
+\[
+xyH = xhyh'H \iff y^{-1}x^{-1}xyH = y^{-1}x^{-1}xhyh'H \iff H = y^{-1}hyh'H.
+\]
+
+Ora, mas isso é equivalente à dizer que a operação só estará bem definida se, e somente se:
+
+\[
+ghg^{-1} \in H,\; \forall g\in G, \; \forall h\in H.
+\]
 
 Com isso mostramos a equivalência (I).
 
@@ -1244,7 +1258,13 @@ A implicação $(iii) \implies (ii)$ é evidente.
 
 Com isso mostramos a equivalência (II).
 
-A equivalência (III) é evidente.
+Mostremos a equivalência (III):
+
+\[
+gHg^{-1} = H \iff gHg^{-1}g = Hg \iff gH = Hg.
+\]
+
+Assim mostramos a equivalência (III).
 
 Tendo mostrado as equivalências (I), (II) e (III), mostramos que todas as afirmações são duas a duas equivalentes. 
 
@@ -1303,6 +1323,10 @@ gzg^{-1} = zgg^{-1} = z \in Z(G).
 
 \textit{Observação:} de forma geral, é evidente que se $H < Z(G)$, então $H \trianglelefteq G$.
 
+\begin{example}
+Em particular, percebemos que se $G$ é um grupo abeliano, então todos seus subgrupos são subgrupos normais de %$G$.
+\end{example}
+
 \begin{proposition}
 Seja $G$ um grupo e $H\leq G$.
 
@@ -1344,5 +1368,51 @@ gH = Hg
 Logo: $H \trianglelefteq G$.
 
 \qed
+
+\begin{definition}
+Seja $G$ um grupo e $H\trianglelefteq G$.
+
+\textbf{Então $(G/H, \bullet)$ é um grupo chamado de grupo quociente.}
+\end{definition}
+
+\textbf{Demonstração:}
+
+Mostremos que $(G/H, \bullet)$ é de fato um grupo.
+
+Ora, pela \hyperlink{def152}{\textbf{Definição 1.5.2}} sabemos que a operação "$\bullet$" é uma lei de composição interna por construção. Sabemos também, pela \hyperlink{prop151}{\textbf{Proposição 1.5.1}} que caso $H\trianglelefteq G$, então "$\bullet$" está bem definida. 
+
+Nos resta mostrar que $(G/H, \bullet)$ satisfaz os axiomas de grupo.
+
+De fato, $G/H$ é associativo em relação à operação "$\bullet$" pois:
+
+Sejam $xH, yH, zH \in G/H$, temos:
+
+\[
+(xH\bullet yH)\bullet zH = (xy)H \bullet zH = (xy)zH \overset{(*)}{=} x(yz)H = xH\bullet(yH\bullet zH).
+\]
+
+Também temos evidentemente que o elemento neutro é dado por $H \in G/H$.
+
+Ora, seja $xH\in G/H$, temos evidentemente:
+
+\[
+xH\bullet H = xH = H\bullet xH.
+\]
+
+Por fim, temos que para dado $xH \in G/H$, seu elemento inverso é dado por $x^{-1}H \in G/H$. 
+
+De fato:
+
+\[
+xH\bullet x^{-1}H = xx^{-1}H = H = x^{-1}xH = x^{-1}H\bullet xH.
+\]
+
+Portanto, $(G/H, \bullet)$ é de fato um grupo.
+
+\textit{Observações:}
+
+\begin{itemize}
+	\item (*) \textit{Note que a operação implícita denotada multiplicativamente é a operação do grupo $G$};
+\end{itemize}
 
 \end{document}
