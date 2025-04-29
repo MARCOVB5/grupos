@@ -1324,8 +1324,16 @@ gzg^{-1} = zgg^{-1} = z \in Z(G).
 \textit{Observação:} de forma geral, é evidente que se $H < Z(G)$, então $H \trianglelefteq G$.
 
 \begin{example}
-Em particular, percebemos que se $G$ é um grupo abeliano, então todos seus subgrupos são subgrupos normais de $G$.
+Se $G$ é um grupo abeliano, então todos seus subgrupos são subgrupos normais de $G$.
 \end{example}
+
+\begin{definition}
+Seja $G$ um grupo não-trivial. 
+
+\textbf{Chamamos $G$ de grupo simples caso seus únicos subgrupos normais sejam $\{e\}$ e $G$}. 
+
+Isto é, caso seus únicos subgrupos normais sejam os subgrupos triviais. 
+\end{definition}
 
 \begin{proposition}
 Seja $G$ um grupo e $H\leq G$.
@@ -1368,6 +1376,62 @@ gH = Hg
 Logo: $H \trianglelefteq G$.
 
 \qed
+
+\begin{proposition}
+Seja $G$ um grupo e $H,K \leq G$. Logo:
+
+\[
+HK \; \; \text{é um subgrupo de $G$} \; \; \iff HK = KH.
+\]
+\end{proposition}
+
+\textbf{Demonstração:}
+
+Mostremos a implicação ($\Longrightarrow$):
+
+Seja $HK$ um subgrupo de $G$. 
+
+Logo, temos que:
+
+\[
+(h, k) \in H\times K \implies hk\in HK \overset{HK\leq G}{\iff} (hk)^{-1}\in HK \iff k^{-1}h^{-1}\in HK.
+\]
+
+Ora, deduzimos, então que $KH = HK$.
+
+Mostremos, agora, a implicação ($\Longleftarrow$):
+
+Seja $HK = KH$, mostremos que $HK \leq G$.
+
+Para mostrar que $HK \leq G$ é suficiente mostrar que:
+
+\[
+(HK)(HK) = HK
+\]
+
+\[
+(HK)^{-1} = HK
+\]
+
+Note que essa é uma forma diferente, porém equivalente, de enunciar a \hyperlink{prop131}{\textbf{Proposição 1.3.1}}. 
+
+Ora, temos diretamente que:
+
+\[
+(HK)(HK) = H(KH)K = H(HK)K = (HH)(KK) = HK
+\]
+
+\[
+(HK)^{-1} = K^{-1}H^{-1} = KH = HK
+\]
+
+Com isso mostramos a proposição proposta.
+
+\qed
+
+\begin{proposition}
+
+\end{proposition}
 
 \begin{definition}
 Seja $G$ um grupo e $H\trianglelefteq G$.
@@ -1412,11 +1476,13 @@ Portanto, $(G/H, \bullet)$ é de fato um grupo.
 \qed
 
 \begin{example}
-
+O grupo $\mathbb{Z}/n\mathbb{Z}$ é um grupo quociente formado pelo quociente entre $\mathbb{Z}$ e $n\mathbb{Z}\trianglelefteq \mathbb{Z}$.
 \end{example}
 
 \begin{proposition}
-	Seja $G$ um grupo e $Z(G)$ seu centro. Se $G/Z(G)$ for cíclico, então $G = Z(G)$.
+	Seja $G$ um grupo e $Z(G)$ seu centro. 
+
+	Se o grupo $G/Z(G)$ for cíclico, então $G = Z(G)$.
 \end{proposition}
 	
 \textbf{Demonstração:}
@@ -1425,23 +1491,41 @@ Seja $G/Z(G)$ um grupo cíclico.
 
 Mostremos que $G = Z(G)$, isto é, que $G$ é um grupo abeliano.
 
-Seja $x$ um gerador de $G/Z(G)$, isto é, $\langle x \rangle = G/Z(G)$.
+Como $G/Z(G)$ é cíclico, então existe $x\in G/Z(G)$ tal que $\langle x\rangle = G$.
 
-Portanto, sendo $f$ um número inteiro, podemos escrever $x$ como $x = g^fz', \; (g, z') \in G\times Z(G)$.
-
-Isso ainda equivale a escrever: $g = x^kz, \; $
-
+Portanto, sabemos que, para determinado inteiro $k\in \mathbb{Z}$, temos:
 
 \[
-x_1 \overset{=}{def} g_{1}^{k_1}z_1, \; (g_1, z_1) \in G\times Z(G) 
+gz' = x^k, \; (g,z')\in G\times Z(G)
+\]
+
+Podemos reescrever a expressão acima como:
+
+\[
+g = x^kz, \; (g,z)\in G\times Z(G)
+\]
+
+Tomemos $g_1, g_2 \in G$ tal que:
+
+\[
+g_1 \overset{def}{=} x^{k_1}z_1, \; (k_1, z_1) \in \mathbb{Z}\times Z(G)
 \]
 
 \[
-x_2 \overset{=}{def} g_{2}^{k_2}z_2, \; (g_2, z_2) \in G\times Z(G)
+g_2 \overset{def}{=} x^{k_2}z_2, \; (k_2, z_2) \in \mathbb{Z}\times Z(G)
 \]
 
-Logo:
+Portanto temos:
 
+\[
+g_1g_2 = x^{k_1}z_1x^{k_2}z_2 = x^{k_1 + k_2}z_1z_2 = x^{k_2}x^{k_1}z_1z_2 = x^{k_2}z_2x^{k_1}z_1 = g_2g_1. 
+\]
+
+Isso se dá pelo fato de qualquer elemento de $z\in Z(G)$ comutar com elementos de $G$ e, portanto, elementos de $G/Z(G)$.
+
+Com isso, mostramos que $G$ é um grupo abeliano e, portanto, $G = Z(G)$. 
+
+\qed
 
 \section{Homomorfismos de Grupos}
 
