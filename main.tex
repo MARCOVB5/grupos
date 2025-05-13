@@ -22,7 +22,7 @@
 \tcbuselibrary{breakable}
 \usepackage{xcolor}
 \usepackage{hyperref}
-
+\definecolor{lightred}{rgb}{1,0.6,0.6}
 
 % fontes AMS EULER !!! 
 % \usepackage{eulervm} 
@@ -35,6 +35,7 @@
 \newtheorem{example}{Exemplo}[section]       % Exemplos numerados por subseção
 \newtheorem{theorem}{Teorema}[section]     % Teoremas numerados como as definições
 \newtheorem{proposition}{Proposição}[section] % Proposições numeradas como as definições
+\newtheorem{corollary}{Colorário}[section] % Colorários numerados como as definições
 
 \newtcolorbox{mybox}[2]{%
   colback=#1!10!white, % Fundo colorido
@@ -66,6 +67,12 @@
   \refstepcounter{proposition}%
   \begin{mybox}{red}{Proposição \thesection.\arabic{proposition}}%
 }{\end{mybox}}
+
+\renewenvironment{corollary}[1][]{%
+  \refstepcounter{corollary}%
+  \begin{mybox}{lightred}{Corolário \thesection.\arabic{corollary}}%
+}{\end{mybox}}
+
 
 \newcommand{\titlepagecontent}{
     \begin{center}
@@ -1440,15 +1447,19 @@ Com isso mostramos a proposição.
 
 \qed}
 
-\begin{proposition}
-Sejam $H$ e $K$ dois subgrupos de $G$. Se $H$ ou $K$ for normal em $G$, então $HK \leq G$.
-\end{proposition}
+\begin{corollary}
+\color{red}
+\hypertarget{col151}
+Seja $G$ um grupo e $H, K \leq G$. Se $H \trianglelefteq G$ ou $K \trianglelefteq G$, então $HK \leq G$.
+\end{corollary}
 
 \textbf{Demonstração:}
 
+{\color{red}
+
 Sejam $H, K \leq G$. Tomemos $H$ como subgrupo normal de $G$ e mostremos, sem perda de generalidade, que $HK \leq G$.
 
-Para mostrarmos que $HK \leq G$ é suficiente mostrar que a operação de $HK$ é uma lei de composição interna e que para todo elemento de $HK$, existe elemento inverso.
+Para mostrarmos que $HK \leq G$ é suficiente mostrar que a operação de $HK$ é uma lei de composição interna em $HK$ e que para todo elemento de $HK$, existe elemento inverso.
 
 Note, primeiramente, que $HK$ é não vazio, uma vez que $H, K \leq G$.
 
@@ -1467,15 +1478,65 @@ b = h'k', \; h'\in H, \; k'\in K
 Portanto, temos que:
 
 \[
-ab = hkh'k' =  
+ab = hkh'k' = hkh'k^{-1}kk' = (h\underbrace{kh'k^{-1}}_{\in H})(kk') \in HK
 \]
 
 Mostremos, agora, que para $a\in HK, \; \exists a^{-1} \in HK$.
 
+Ora, como $a \in HK$, então analogamente ao passo anterior temos que: 
+
+\[
+a = hk, \; h\in H, \; k\in K
+\]
+
+Portanto:
+
+\[
+a^{-1} = k^{-1}h^{-1} = k^{-1}h^{-1}kk^{-1} = (\underbrace{k^{-1}h^{-1}k}_{\in H})(k^{-1}) \in HK
+\]
+
+Portanto, mostramos que $HK \leq G$.
+
+\qed}
+
+\begin{corollary}
+\color{red}
+Seja $G$ um grupo e $H, K \trianglelefteq G$. Então $HK \trianglelefteq G$.
+\end{corollary}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+Sabemos a partir do \hyperlink{col151}{\textbf{Corolário 1.5.1}} que se $H \trianglelefteq G$ ou $K \trianglelefteq G$, temos que $HK \leq G$.
+
+Mostremos que se $H\trianglelefteq G$ e $H\trianglelefteq G$, temos $HK \trianglelefteq G$.
+
+Para isso, é suficiente mostrarmos que $gHKg^{-1} \in HK$.
+
+Ora, como $H, K \trianglelefteq G$, temos:
+
+\[
+gHKg^{-1} = gHg^{-1}gKg^{-1} = (\underbrace{gHg^{-1}}_{\in H})(\underbrace{gKg^{-1}}_{\in K}) \in HK
+\]
+
+\qed}
 
 \begin{proposition}
+\color{red}
+Seja $G$ um grupo finito e $H, K \leq G$. Então:
 
+\[
+\text{Card}(HK) = \frac{\vert H\vert \vert K\vert}{\vert H\cap K\vert}
+\]
 \end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+
+
+\qed}
 
 \begin{definition}
 Seja $G$ um grupo e $H\trianglelefteq G$.
@@ -1524,13 +1585,11 @@ O grupo $\mathbb{Z}/n\mathbb{Z}$ é um grupo quociente formado pelo quociente en
 \end{example}
 
 \begin{proposition}
-	\color{red}
 	Seja $G$ um grupo e $Z(G)$ seu centro. 
 
 	Se o grupo $G/Z(G)$ for cíclico, então $G = Z(G)$.
 \end{proposition}
 	
-{\color{red}
 
 \textbf{Demonstração:}
 
@@ -1572,10 +1631,19 @@ Isso se dá pelo fato de qualquer elemento de $z\in Z(G)$ comutar com elementos 
 
 Com isso, mostramos que $G$ é um grupo abeliano e, portanto, $G = Z(G)$. 
 
-\qed}
+\qed
 
 \section{Homomorfismos de Grupos}
 
+\begin{definition}
+\color{red}
+Sejam $(G, \cdot)$ e $(\mathcal{G}, *)$ dois grupos. \textbf{Uma função $\phi : G \rightarrow \mathcal{G}$ é chamada de homomorfismo de grupos se:}
+
+\[
+\phi(a\cdot b) = \phi(a)*\phi(b), \; \forall a,b \in G
+\]
+
+\end{definition}
 
 
 \end{document}
