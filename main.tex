@@ -1335,7 +1335,6 @@ gzg^{-1} = zgg^{-1} = z \in Z(G).
 \end{itemize}
 
 \begin{definition}
-\color{red}
 Seja $G$ um grupo não-trivial. 
 
 \textbf{Chamamos $G$ de grupo simples caso seus únicos subgrupos normais sejam $\{e\}$ e $G$}. 
@@ -1386,7 +1385,6 @@ Logo: $H \trianglelefteq G$.
 \qed
 
 \begin{definition}
-\color{red}
 Sejam $G$ um grupo e $A, B \leq G$. \textbf{Definimos o conjunto $AB$ da seguinte forma:}
 
 \[
@@ -1404,7 +1402,7 @@ HK \; \; \text{é um subgrupo de $G$} \; \; \iff HK = KH.
 \end{proposition}
 
 \textbf{Demonstração:}
-{\color{red}
+
 Mostremos a implicação ($\Longrightarrow$):
 
 Seja $HK$ um subgrupo de $G$. 
@@ -1412,10 +1410,8 @@ Seja $HK$ um subgrupo de $G$.
 Logo, temos que:
 
 \[
-(h, k) \in H\times K \implies hk\in HK \overset{HK\leq G}{\iff} (hk)^{-1}\in HK \iff k^{-1}h^{-1}\in HK.
+HK = (HK)^{-1} = K^{-1}H^{-1} = KH
 \]
-
-Ora, deduzimos, então que $KH = HK$.
 
 Mostremos, agora, a implicação ($\Longleftarrow$):
 
@@ -1445,17 +1441,14 @@ Ora, temos diretamente que:
 
 Com isso mostramos a proposição.
 
-\qed}
+\qed
 
-\begin{corollary}
-\color{red}
-\hypertarget{col151}
+\begin{proposition}
+\hypertarget{prop154}
 Seja $G$ um grupo e $H, K \leq G$. Se $H \trianglelefteq G$ ou $K \trianglelefteq G$, então $HK \leq G$.
-\end{corollary}
+\end{proposition}
 
 \textbf{Demonstração:}
-
-{\color{red}
 
 Sejam $H, K \leq G$. Tomemos $H$ como subgrupo normal de $G$ e mostremos, sem perda de generalidade, que $HK \leq G$.
 
@@ -1497,18 +1490,15 @@ a^{-1} = k^{-1}h^{-1} = k^{-1}h^{-1}kk^{-1} = (\underbrace{k^{-1}h^{-1}k}_{\in H
 
 Portanto, mostramos que $HK \leq G$.
 
-\qed}
+\qed
 
-\begin{corollary}
-\color{red}
+\begin{proposition}
 Seja $G$ um grupo e $H, K \trianglelefteq G$. Então $HK \trianglelefteq G$.
-\end{corollary}
-
-{\color{red}
+\end{proposition}
 
 \textbf{Demonstração:}
 
-Sabemos a partir do \hyperlink{col151}{\textbf{Corolário 1.5.1}} que se $H \trianglelefteq G$ ou $K \trianglelefteq G$, temos que $HK \leq G$.
+Sabemos a partir do \hyperlink{prop154}{\textbf{Proposição 1.5.4}} que se $H \trianglelefteq G$ ou $K \trianglelefteq G$, temos que $HK \leq G$.
 
 Mostremos que se $H\trianglelefteq G$ e $H\trianglelefteq G$, temos $HK \trianglelefteq G$.
 
@@ -1520,10 +1510,9 @@ Ora, como $H, K \trianglelefteq G$, temos:
 gHKg^{-1} = gHg^{-1}gKg^{-1} = (\underbrace{gHg^{-1}}_{\in H})(\underbrace{gKg^{-1}}_{\in K}) \in HK
 \]
 
-\qed}
+\qed
 
 \begin{proposition}
-\color{red}
 Seja $G$ um grupo finito e $H, K \leq G$. Então:
 
 \[
@@ -1636,13 +1625,11 @@ Com isso, mostramos que $G$ é um grupo abeliano e, portanto, $G = Z(G)$.
 \section{Homomorfismos de Grupos}
 
 \begin{definition}
-\color{red}
 Sejam $(G, \cdot)$ e $(\mathcal{G}, *)$ dois grupos. \textbf{Uma função $\phi : G \rightarrow \mathcal{G}$ é chamada de homomorfismo de grupos se:}
 
 \[
 \phi(a\cdot b) = \phi(a)*\phi(b), \; \forall a,b \in G
 \]
-
 \end{definition}
 
 
