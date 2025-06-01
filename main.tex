@@ -1425,7 +1425,56 @@ B = \left\{
 \right\}.
 \]
 
-\textit{Note que $A$ e $B$ são de fato subgrupos de $S_3$, entretanto, tal fato não será mostrado pois não cabe ao nosso objetivo final.}
+\textit{Note que $A$ e $B$ são de fato subgrupos de $S_3$, pois:}
+
+\[
+\begin{aligned}
+& A = \left\{
+  \begin{pmatrix}
+    1 & 2 & 3 \\[4pt]
+    1 & 2 & 3
+  \end{pmatrix},\,
+  \begin{pmatrix}
+    1 & 2 & 3 \\[4pt]
+    2 & 1 & 3
+  \end{pmatrix}
+\right\}, 
+\quad
+e = \begin{pmatrix}
+1 & 2 & 3 \\[4pt]
+1 & 2 & 3
+\end{pmatrix}, 
+\quad
+\sigma = \begin{pmatrix}
+1 & 2 & 3 \\[4pt]
+2 & 1 & 3
+\end{pmatrix}, 
+\; \sigma^2 = e, 
+\\
+&\qquad e,\sigma,\sigma^{-1}=\sigma \in A 
+\;\;\Longrightarrow\;\; A \le S_3. 
+\\
+& B = \left\{
+  \begin{pmatrix}
+    1 & 2 & 3 \\[4pt]
+    1 & 2 & 3
+  \end{pmatrix},\,
+  \begin{pmatrix}
+    1 & 2 & 3 \\[4pt]
+    3 & 2 & 1
+  \end{pmatrix}
+\right\}, 
+\quad
+\tau = \begin{pmatrix}
+1 & 2 & 3 \\[4pt]
+3 & 2 & 1
+\end{pmatrix}, 
+\; \tau^2 = e, 
+\\
+&\qquad e,\tau,\tau^{-1}=\tau \in B 
+\;\;\Longrightarrow\;\; B \le S_3.
+\end{aligned}
+\]
 
 \textit{Temos que o conjunto $AB$ é dado por:}
 
@@ -1448,6 +1497,7 @@ AB = \Bigl\{\,
 \end{pmatrix}
 \; \notin\; AB
 \]
+
 
 \begin{proposition}
 Seja $G$ um grupo e $H,K \leq G$. Logo:
@@ -1724,21 +1774,96 @@ Sejam $(G, \cdot)$ e $(\mathcal{G}, *)$ dois grupos. \textbf{Uma função $\varp
 e_\mathcal{G} = \varphi(e_G) = \varphi(x\cdot x^{-1}) = \varphi(x)*\varphi(x^{-1}) \implies \varphi(x^{-1}) = \varphi(x)^{-1}
 \]
 
-\begin{example}
+\textit{$*$ Note também que muitas vezes as operações de $G$ e de $\mathcal{G}$ serão confundidas para fins de simplificação, isto é: $\varphi(ab) = \varphi(a)\varphi(b)$.}
 
+\begin{example}
+$\text{Id}: (G, \cdot) \rightarrow (G, \cdot), \; \text{Id}(g) = g$ é um homomorfismo chamado \textit{identidade}.
 \end{example}
 
-\begin{definition}
-Definimos o \textbf{núcleo de um homomorfismo $\varphi$ o subgrupo normal de $G$, $\ker \varphi$, tal que:}
+\begin{example}
+$e: G \rightarrow \mathcal{G},\; e(g) = e_{\mathcal{G}}, \; \forall g\in G$, é um homomorfismo chamado \textit{homomorfismo trivial}.
+\end{example}
+
+\begin{example}
+A função:
 
 \[
-\ker \varphi \overset{def}{=} \{\varphi(x) = e_\mathcal{G}, \; x\in G\}.
+\text{det} \colon \begin{cases}
+GL_n(\mathbb{K}) \to \mathbb{K}^* \\
+A \mapsto \text{det}(A)
+\end{cases}
 \]
-\end{definition}
+
+é um homomorfismo de grupos, pois sabemos que $\forall A, B\in GL_n(\mathbb{K})$ temos:
+
+\[
+\text{det}(AB) = \text{det}(A)\text{det}(B).
+\]
+\end{example}
+
+\begin{example}
+Seja $G$ um grupo e $N \trianglelefteq G$, logo a função:
+
+\[
+\pi \colon \begin{cases}
+G \to G/N \\
+x \mapsto xN
+\end{cases}
+\]
+
+é um homomorfismo chamado de \textit{projeção canônica}.
+\end{example}
 
 \textbf{Demonstração:}
 
-Mostremos que $\ker \varphi$ é de fato um subgrupo normal de $G$.
+Sejam $x,y \in G$, ora:
+
+\[
+\pi(xy) = xyN = xN\bullet yN = \pi(x)\bullet \pi(y).
+\]
+\qed
+
+\begin{example}
+Seja $G = \mathbb{R}_{+}^{*}\times \mathbb{R}$ munido da operação $\heartsuit$ definida por:
+
+\[
+(a,b) \heartsuit (a', b') = (aa', b+b'), 
+\]
+\[
+(a,b), (a',b') \in G
+\]
+
+A função:
+
+\[
+\spadesuit \colon \begin{cases}
+G \to \mathbb{C}^* \\
+(r, \theta) \mapsto re^{i\theta}
+\end{cases}
+\] 
+
+é um homomorfismo de grupos, onde $e$ é o número de Euler e $i^2 = -1$.
+\end{example}
+
+\textbf{Demonstração:}
+
+Mostremos primeiramente que $(G, \heartsuit)$ é de fato um grupo.
+
+
+
+\begin{definition}
+Definimos o \textbf{núcleo de um homomorfismo $\varphi$ o subconjunto $\ker \varphi \subseteq G$, tal que:}
+
+\[
+\ker \varphi \overset{def}{=} \{x \in G,\; \varphi(x) = e_\mathcal{G}\}.
+\]
+\end{definition}
+
+\begin{proposition}
+O núcleo de um homomorfismo $\varphi$ é um subgrupo normal de $G$.
+\end{proposition}
+
+\textbf{Demonstração:}
 
 Note, primeiramente, que $\ker \varphi$ é não-vazio, uma vez que sempre teremos $\varphi(e_G) = e_\mathcal{G}$.
 
@@ -1773,12 +1898,47 @@ Portanto, deduzimos que:
 \qed
 
 \begin{definition}
-Definimos a \textbf{imagem de um homomorfismo $\varphi$ o subgrupo de $G$, $\operatorname{Im} \varphi$, tal que:}
+Definimos a \textbf{imagem de um homomorfismo $\varphi$ o subconjunto $\operatorname{Im} \varphi \subseteq \mathcal{G}$ tal que:}
 
 \[
 \operatorname{Im} \varphi \overset{\text{def}}{=} \{ y \in \mathcal{G} \mid \exists x \in G,\, y = \varphi(x) \}
 \]
 \end{definition}
 
+\begin{proposition}
+A imagem de um homomorfismo $\varphi$ é um subgrupo de $\mathcal{G}$.
+\end{proposition}
+
+\textbf{Demonstração:}
+
+Note, primeiramente, que $\operatorname{Im} \varphi$ é não vazio uma vez que $e_{\mathcal{G}}\in \operatorname{Im} \varphi$.
+
+Mostremos agora que $\forall x, y \in \operatorname{Im} \varphi, \; xy^{-1} \in \operatorname{Im} \varphi$:
+
+Temos que:
+
+\[
+x, y \in \operatorname{Im} \varphi \implies \exists a, b\in G, \; x = \varphi(a) \; \; \text{e} \; \; y = \varphi(b)
+\]
+
+Ora, mas então temos:
+
+\[
+\exists b^{-1} \in G \implies y^{-1} = \varphi(b^{-1}) = \varphi(b)^{-1}
+\]
+
+Também temos que:
+
+\[
+ab^{-1} \in G, \; \; \text{logo,} \; \; \varphi(ab^{-1}) = \varphi(a)\varphi(b)^{-1} = xy^{-1} \in \operatorname{Im} \varphi
+\]
+
+Logo, mostramos que $\operatorname{Im} \varphi \leq \mathcal{G}$. 
+
+\qed
+
+\begin{proposition}
+
+\end{proposition}
 
 \end{document}
