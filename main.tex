@@ -1836,7 +1836,7 @@ A função:
 
 \[
 \spadesuit \colon \begin{cases}
-G \to \mathbb{C}^* \\
+(G, \heartsuit) \to (\mathbb{C}^*, \cdot) \\
 (r, \theta) \mapsto re^{i\theta}
 \end{cases}
 \] 
@@ -1852,7 +1852,23 @@ e^{i\theta} \overset{def}{=} \cos \theta + i \sin \theta, \; \forall \theta \in 
 
 Mostremos primeiramente que $(G, \heartsuit)$ é de fato um grupo.
 
-}
+Por construção temos diretamente que $\heartsuit$ é uma lei de composição interna em $G$.
+
+Também sabemos que, pelo fato de $\mathbb{R}_{+}^{*}$ ser um grupo com o produto usual e $\mathbb{R}$ ser um grupo com a adição usual, temos diretamente que a dupla formada pela operação $\heartsuit$ é um grupo.
+
+Portanto, mostramos que $(G, \heartsuit)$ é de fato um grupo.
+
+Mostremos que $\spadesuit$ é um homomorfimo de grupos.
+
+Sejam $(r, \theta), (r', \theta') \in G$, temos que:
+
+\[
+\spadesuit((r, \theta)\heartsuit(r', \theta')) = \spadesuit(rr',\theta + \theta') = rr'e^{i(\theta + \theta')} = \spadesuit(r, \theta)\cdot \spadesuit(r', \theta')
+\]
+
+Logo, $\spadesuit$ é de fato um homomorfismo de grupos.
+
+\qed}
 
 \begin{definition}
 Definimos o \textbf{núcleo de um homomorfismo $\varphi$ o subconjunto $\ker \varphi \subseteq G$, tal que:}
@@ -2012,7 +2028,54 @@ Portanto, concluímos que:
 \color{red}
 Sejam $\varphi : G \to \mathcal{G}$ e $\xi : \mathcal{G} \to \mathfrak{G}$ homomorfismos de grupos.
 
-Logo, $\xi \circ \varphi$ é um homomorfismo de grupos. 
+Logo, $(\xi \circ \varphi) : G \to \mathfrak{G}$ é um homomorfismo de grupos. 
 \end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Sejam $a,b \in G$.
+
+Queremos mostrar que:
+
+\[
+(\xi \circ \varphi) (ab) = (\xi \circ \varphi) (a)(\xi \circ \varphi) (b)
+\]
+
+Sabemos que $\varphi$ e $\xi$ são homomorfismos de grupos, portanto:
+
+\[
+(\xi \circ \varphi) (ab) = \xi(\varphi(ab)) = \xi(\varphi(a)\varphi(b)) = \xi(\varphi(a))\xi(\varphi(b)) = (\xi \circ \varphi)(a)(\xi\circ \varphi) (b)
+\]
+
+Portanto, mostramos que $(\xi \circ \varphi)$ é de fato um homomorfismo de grupos.
+
+\qed}
+
+\begin{definition}
+\color{red}
+Sejam $G$ e $\mathcal{G}$ grupos. Um homomorfismo $\varphi : G \to \mathcal{G}$ \textbf{é chamado de isomorfismo de grupos se $\varphi$ é bijetivo}. 
+
+Caso $\varphi$ seja um isomorfismo, dizemos que $G$ e $\mathcal{G}$ são \textbf{isomorfos} e denotamos-os como:
+
+\[
+G \cong \mathcal{G}
+\]
+\end{definition}
+
+\begin{proposition}
+\color{red}
+Sejam $G$ e $\mathcal{G}$ tal que $\varphi : G \to \mathcal{G}$ é um isomorfismo de grupos. 
+
+Logo, $\varphi^{-1}$ é um homomorfismo de grupos.
+\end{proposition}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+\qed}
+
+
 
 \end{document}
