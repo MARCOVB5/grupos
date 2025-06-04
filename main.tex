@@ -1393,7 +1393,6 @@ AB = \{ab, \; a\in A, \; b\in B \}.
 
 \end{definition}
 
-{\color{red}
 \textit{Observação:}
 
 \textit{Note que o conjunto $AB$ não necessariamente é um grupo mesmo que $A$ e $B$ sejam.}
@@ -1498,7 +1497,6 @@ AB = \Bigl\{\,
 \end{pmatrix}
 \; \notin\; AB
 \]
-}
 
 \begin{proposition}
 Seja $G$ um grupo e $H,K \leq G$. Logo:
@@ -1775,22 +1773,17 @@ Sejam $(G, \cdot)$ e $(\mathcal{G}, *)$ dois grupos. \textbf{Uma função $\varp
 e_\mathcal{G} = \varphi(e_G) = \varphi(x\cdot x^{-1}) = \varphi(x)*\varphi(x^{-1}) \implies \varphi(x^{-1}) = \varphi(x)^{-1}
 \]
 
-
-{\color{red}
 \textit{$*$ Note também que muitas vezes as operações de $G$ e de $\mathcal{G}$ serão confundidas para fins de simplificação, isto é: $\varphi(ab) = \varphi(a)\varphi(b)$.}
-}
+
 \begin{example}
-\color{red}
 $\text{Id}: (G, \cdot) \rightarrow (G, \cdot), \; \text{Id}(g) = g$ é um homomorfismo chamado \textit{identidade}.
 \end{example}
 
 \begin{example}
-\color{red}
 $e: G \rightarrow \mathcal{G},\; e(g) = e_{\mathcal{G}}, \; \forall g\in G$, é um homomorfismo chamado \textit{homomorfismo trivial}.
 \end{example}
 
 \begin{example}
-\color{red}
 A função:
 
 \[
@@ -1808,7 +1801,6 @@ A \mapsto \text{det}(A)
 \end{example}
 
 \begin{example}
-\color{red}
 Seja $G$ um grupo e $N \trianglelefteq G$, logo a função:
 
 \[
@@ -1821,7 +1813,6 @@ x \mapsto xN
 é um homomorfismo chamado de \textit{projeção canônica}.
 \end{example}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Sejam $x,y \in G$, ora:
@@ -1829,10 +1820,9 @@ Sejam $x,y \in G$, ora:
 \[
 \pi(xy) = xyN = xN\bullet yN = \pi(x)\bullet \pi(y).
 \]
-\qed}
+\qed
 
 \begin{example}
-\color{red}
 Seja $G = \mathbb{R}_{+}^{*}\times \mathbb{R}$ munido da operação $\heartsuit$ definida por:
 
 \[
@@ -1851,7 +1841,10 @@ G \to \mathbb{C}^* \\
 \end{cases}
 \] 
 
-é um homomorfismo de grupos, onde $e$ é o número de Euler e $i^2 = -1$.
+é um homomorfismo de grupos, onde $e$ é o número de Euler, $i^2 = -1$ e:
+\[
+e^{i\theta} \overset{def}{=} \cos \theta + i \sin \theta, \; \forall \theta \in \mathbb{R} 
+\]
 \end{example}
 
 {\color{red}
@@ -1862,7 +1855,6 @@ Mostremos primeiramente que $(G, \heartsuit)$ é de fato um grupo.
 }
 
 \begin{definition}
-\color{red}
 Definimos o \textbf{núcleo de um homomorfismo $\varphi$ o subconjunto $\ker \varphi \subseteq G$, tal que:}
 
 \[
@@ -1871,7 +1863,6 @@ Definimos o \textbf{núcleo de um homomorfismo $\varphi$ o subconjunto $\ker \va
 \end{definition}
 
 \begin{proposition}
-\color{red}
 O núcleo de um homomorfismo $\varphi$ é um subgrupo normal de $G$.
 \end{proposition}
 
@@ -1910,7 +1901,6 @@ Portanto, deduzimos que:
 \qed
 
 \begin{definition}
-\color{red}
 Definimos a \textbf{imagem de um homomorfismo $\varphi$ o subconjunto $\operatorname{Im} \varphi \subseteq \mathcal{G}$ tal que:}
 
 \[
@@ -1919,11 +1909,9 @@ Definimos a \textbf{imagem de um homomorfismo $\varphi$ o subconjunto $\operator
 \end{definition}
 
 \begin{proposition}
-\color{red}
 A imagem de um homomorfismo $\varphi$ é um subgrupo de $\mathcal{G}$.
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Note, primeiramente, que $\operatorname{Im} \varphi$ é não vazio uma vez que $e_{\mathcal{G}}\in \operatorname{Im} \varphi$.
@@ -1945,15 +1933,20 @@ Ora, mas então temos:
 Também temos que:
 
 \[
-ab^{-1} \in G, \; \; \text{logo,} \; \; \varphi(ab^{-1}) = \varphi(a)\varphi(b)^{-1} = xy^{-1} \in \operatorname{Im} \varphi
+ab^{-1} \in G, \; \; \text{logo,} \; \; \varphi(ab^{-1}) = \varphi(a)\varphi(b)^{-1} = xy^{-1}
+\]
+
+Portanto, via a definição de imagem de um homomorfismo de grupos deduzimos que:
+
+\[
+xy^{-1} \in \operatorname{Im} \varphi
 \]
 
 Logo, mostramos que $\operatorname{Im} \varphi \leq \mathcal{G}$. 
 
-\qed}
+\qed
 
 \begin{proposition}
-\color{red}
 Sejam $G$ e $\mathcal{G}$ grupos tais que a função $\varphi : G \to \mathcal{G}$ define um homomorfismo de grupos. Logo: 
 \[
 \ker \varphi = \{e_G\} \iff \varphi \; \; \text{injetiva}.
@@ -1964,5 +1957,62 @@ Sejam $G$ e $\mathcal{G}$ grupos tais que a função $\varphi : G \to \mathcal{G
 \textbf{Demonstração:}
 
 Mostremos a implicação $(\Rightarrow)$:
-}
+
+Para mostrar que $\varphi$ é injetiva, é necessário mostrar a seguinte implicação:
+
+\[
+\varphi(x) = \varphi(y) \implies x = y, \; \forall x,y \in G
+\]
+
+Suponhamos que $\varphi(x) = \varphi(y)$, logo:
+
+\[
+\varphi(x) = \varphi(y) \implies \varphi(x)\varphi(y)^{-1} = e_{\mathcal{G}} \implies \varphi(x)\varphi(y^{-1}) = e_{\mathcal{G}} \implies \varphi(xy^{-1}) = e_{\mathcal{G}}
+\]
+
+Deduzimos, portanto, que $xy^{-1} \in \ker \varphi$.
+
+Ora, por hipótese, temos que $\ker \varphi = \{e_G\}$, logo deduzimos que:
+
+\[
+x = y 
+\]
+
+Portanto, concluímos que $\varphi$ é injetiva.
+
+Mostremos a implicação $(\Leftarrow)$:
+
+Agora, supondo que $\varphi$ é injetiva, mostremos que $\ker \varphi = \{e_G \}$.
+
+Para mostrar que $\ker \varphi = \{e_G\}$ é necessário mostrar:
+
+\[
+\text{Se} \; \; \varphi(x) = e_{\mathcal{G}} \implies x = e_G, \; \forall x \in G
+\]
+
+Sabemos por hipótese que $\varphi$ é injetiva, logo, supondo que $\varphi(x) = e_{\mathcal{G}}$ e que $\varphi(x) = \varphi(y)$, para $x,y \in G$, temos:
+
+\[
+\varphi(x) = \varphi(y) \implies \varphi(x)\varphi(y)^{-1} = e_{\mathcal{G}} \implies \varphi(x)\varphi(y^{-1}) = e_{\mathcal{G}} \implies \varphi(xy^{-1}) = e_{\mathcal{G}}
+\]
+
+Logo deduzimos que $xy^{-1} \in \ker \varphi$. 
+
+Ora, mas sabemos pela hipótese de que $\varphi$ é injetiva que $x = y$.
+
+Portanto, concluímos que:
+
+\[
+\ker \varphi = \{e_G\}
+\]
+
+\qed}
+
+\begin{proposition}
+\color{red}
+Sejam $\varphi : G \to \mathcal{G}$ e $\xi : \mathcal{G} \to \mathfrak{G}$ homomorfismos de grupos.
+
+Logo, $\xi \circ \varphi$ é um homomorfismo de grupos. 
+\end{proposition}
+
 \end{document}
