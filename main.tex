@@ -406,6 +406,40 @@ Sabemos que $H \subseteq G$, logo, se $h_1 \cdot h_2 \in H \Longrightarrow h_1 \
 \end{example}
 
 \begin{example}
+\color{red}
+Seja $n\in \mathbb{N}^*$ tal que:
+
+\[
+SL_n(\mathbb{K}) \overset{def}{=} \{A \in GL_n(\mathbb{K}), \; \text{det}(A) = 1 \}
+\]
+
+Temos que $(SL_n(\mathbb{K}), \cdot) \leq (GL_n(\mathbb{K}), \cdot)$, onde $\cdot$ denota o produto usual de matrizes.
+
+Chamamos $SL_n(\mathbb{K})$ de \textbf{grupo linear especial}.
+\end{example}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Mostremos que temos de fato $SL_n(\mathbb{K}) \leq GL_n(\mathbb{K})$.
+
+Primeiramente, note que é evidente que $SL_n(\mathbb{K})$ é não vazio, pois $\text{Id}_n \in SL_n(\mathbb{K})$.
+
+Mostremos que $\forall A, B \in SL_n(\mathbb{K}), \; AB^{-1} \in SL_n(\mathbb{K})$.
+
+Sabemos que se $A, B \in SL_n(\mathbb{K})$ então $\text{det}(A) = \text{det}(B) = 1$.
+
+Ora, sabemos que:
+
+\[
+\text{det}(AB^{-1}) = \text{det}(A)\text{det}(B^{-1}) = \text{det}(A)\text{det}(B)^{-1} = 1\cdot 1 = 1. 
+\]
+
+Logo, mostramos que $SL_n(\mathbb{K}) \leq GL_n(\mathbb{K})$.
+
+\qed}
+
+\begin{example}
     Seja $n\in \mathbb{Z}$, $(n\mathbb{Z}, +)$ são subgrupos de $(\mathbb{Z},+)$, e, em particular, são os únicos.
 \end{example}
 \textbf{Demonstração:}
