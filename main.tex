@@ -1368,6 +1368,42 @@ gzg^{-1} = zgg^{-1} = z \in Z(G).
 	\item \textit{Isso equivale ainda a dizer que se $G$ é um grupo abeliano, então todos seus subgrupos são normais.}
 \end{itemize}
 
+\begin{example}
+\color{red}
+Seja $n\in \mathbb{N}^*$.
+
+Temos que $SL_n(\mathbb{K}) \trianglelefteq GL_n(\mathbb{K})$
+\end{example}
+
+{\color{red}
+\textbf{Demonstração:}
+	
+Sabemos que $SL_n(\mathbb{K}) \leq GL_n(\mathbb{K})$, mostremos portanto que:
+
+\[
+GSG^{-1} \in SL_n(\mathbb{K}), \; \forall (G, S) \in GL_n(\mathbb{K})\times SL_n(\mathbb{K})
+\]
+
+Ora, sabemos que $\text{det}(G) \neq 0$ e que $\text{det}(G^{-1}) = \text{det}(G)^{-1}, \; \forall G \in GL_n(\mathbb{K})$.
+
+Portanto:
+
+\[
+\text{det}(GSG^{-1}) =\text{det}(G)\text{det}(S)\text{det}(G^{-1}) = \text{det}(G)\text{det}(S)\text{det}(G)^{-1} = 
+\]
+
+\[
+= \text{det}(G)\text{det}(G)^{-1}\text{det}(S) = \text{det}(S) = 1 \Longrightarrow GSG^{-1} \in SL_n(\mathbb{K}) 
+\]
+
+Isto é,
+
+\[
+SL_n(\mathbb{K}) \trianglelefteq GL_n(\mathbb{K})
+\]
+
+\qed}
+
 \begin{definition}
 Seja $G$ um grupo não-trivial. 
 
@@ -1949,6 +1985,24 @@ Portanto, deduzimos que:
 \]
 
 \qed
+
+\begin{example}
+\color{red}
+Seja \( n \in \mathbb{N}^* \). O núcleo do homomorfismo 
+\[
+\det : GL_n(\mathbb{K}) \to \mathbb{K}^*, \quad A \mapsto \det(A)
+\]
+é dado por 
+\[
+\ker(\det) = SL_n(\mathbb{K}).
+\]
+\end{example}
+
+{\color{red}
+\textbf{Demonstração:}
+
+
+\qed}
 
 \begin{definition}
 Definimos a \textbf{imagem de um homomorfismo $\varphi$ o subconjunto $\operatorname{Im} \varphi \subseteq \mathcal{G}$ tal que:}
