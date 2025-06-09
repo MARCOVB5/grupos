@@ -1963,16 +1963,11 @@ Para isso, mostremos que $x,y \in \ker \varphi \implies xy^{-1} \in \ker \varphi
 Sejam $x, y \in \ker \varphi$, temos:
 
 \[
-\varphi(x\cdot y) = \varphi(x) * \varphi(y) = e_\mathcal{G} * e_\mathcal{G} = e_\mathcal{G}; 
-\]
-
-\[
-\varphi(x^{-1}) = \varphi(x)^{-1} = e_{\mathcal{G}}^{-1} = e_\mathcal{G}.
-\]
+\varphi(x\cdot y^{-1}) = \varphi(x) * \varphi(y^{-1}) = \varphi(x)*\varphi(y)^{-1} = e_\mathcal{G} * e_\mathcal{G} = e_\mathcal{G};\]
 
 Deduzimos que $\ker \varphi \leq G$, mostremos, por fim, que $\ker \varphi \trianglelefteq G$:
 
-Sejam $g, x \in G\times \ker \varphi$, mostremos que $gkg^{-1} \in \ker \varphi$.
+Sejam $g, x \in G\times \ker \varphi$, mostremos que $gxg^{-1} \in \ker \varphi$.
 
 \[
 \varphi(gxg^{-1}) = \varphi(g) * \varphi(x) * \varphi(g^{-1}) = \varphi(g) * e_\mathcal{G} * \varphi(g^{-1}) = \varphi(g) * \varphi(g^{-1}) = \varphi(g) * \varphi(g)^{-1} = e_\mathcal{G}. 
