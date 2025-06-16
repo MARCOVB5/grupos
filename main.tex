@@ -1461,7 +1461,7 @@ AB = \{ab, \; a\in A, \; b\in B \}.
 
 \textit{Observação:}
 
-\textit{Note que o conjunto $AB$ não necessariamente é um grupo mesmo que $A$ e $B$ sejam.}
+\textit{Note que o conjunto $AB$ não necessariamente é um grupo mesmo que $A$ e $B$ o sejam.}
 
 \textit{Note, por exemplo, o caso do grupo $S_3$:}
 
@@ -1713,6 +1713,7 @@ Seja $G$ um grupo e $H, K\leq G$ tal que $HK \leq G$. Então:
 
 
 \qed}
+
 \begin{definition}
 Seja $G$ um grupo e $H\trianglelefteq G$.
 
@@ -2133,19 +2134,66 @@ G \cong \mathcal{G}
 \]
 \end{definition}
 
+\begin{example}
+\color{red}
+$(\mathbb{R}^{*}, \cdot) \cong (\mathbb{R}_{+}^{*}, +)$, onde $+$ e $\cdot$ denotam as operações usuais de soma e produto, respectivamente, nos reais.
+\end{example}
+
+{\color{red}
+\textbf{Demonstração}:
+
+
+\qed}
+
 \begin{proposition}
 \color{red}
-Sejam $G$ e $\mathcal{G}$ tal que $\varphi : G \to \mathcal{G}$ é um isomorfismo de grupos. 
+Sejam $G$ e $\mathcal{G}$ grupos tal que $\varphi : G \to \mathcal{G}$ é um isomorfismo de grupos. 
 
-Logo, $\varphi^{-1}$ é um homomorfismo de grupos.
+Logo, $\varphi^{-1} : \mathcal{G} \to G$ é um isomorfismo de grupos.
 \end{proposition}
 
 {\color{red}
 
 \textbf{Demonstração:}
 
+Seja $\varphi : G \to \mathcal{G}$ um isomorfismo de grupos. 
+
+Logo:
+
+\[
+\forall y\in \mathcal{G},\; \exists ! x\in G : \varphi(x) = y
+\]
+
+Portanto, temos que:
+
+\[
+\varphi^{-1}(\varphi(x)) = \varphi^{-1}(y) \iff x = \varphi^{-1}(y)
+\]
+
+Dada a bijetividade de $\varphi$ temos diretamente que $\varphi^{-1}$ é também uma função bijetiva.
+
+Mostremos que $\varphi^{-1}$ é de fato um homomorfismo de grupos.
+
+Sejam $x, y \in \mathcal{G}$, mostremos que:
+
+\[
+\varphi^{-1}(x)\varphi^{-1}(y) = \varphi^{-1}(xy)
+\]
+
+Dada a bijetividade de $\varphi$, sabemos que existem $a,b\in G$ tais que $\varphi(a) = x$ e $\varphi(b) = y$.
+
+Logo:
+
+\[
+\varphi^{-1}(xy) = \varphi^{-1}(\varphi(a)\varphi(b)) = \varphi^{-1}(\varphi(ab)) = ab = \varphi^{1}(x)\varphi^{-1}(y)
+\]
+
+Portanto, $\varphi^{-1} : \mathcal{G} \to G$ é isomorfismo de grupos.
+
 \qed}
 
+\begin{theorem}
 
+\end{theorem}
 
 \end{document}
