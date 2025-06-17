@@ -1756,6 +1756,10 @@ Portanto, $(G/H, \bullet)$ é de fato um grupo.
 
 \qed
 
+{\color{red}
+\textit{Observação: muitas vezes iremos denotar $\bar{x} \overset{def}{=} xH$ para elementos de $G/H$ por uma questão de simplificação de escrita.}
+}
+
 \begin{example}
 O grupo $\mathbb{Z}/n\mathbb{Z}$ é um grupo quociente formado pelo quociente entre $\mathbb{Z}$ e $n\mathbb{Z}\trianglelefteq \mathbb{Z}$.
 \end{example}
@@ -2136,12 +2140,39 @@ G \cong \mathcal{G}
 
 \begin{example}
 \color{red}
-$(\mathbb{R}^{*}, \cdot) \cong (\mathbb{R}_{+}^{*}, +)$, onde $+$ e $\cdot$ denotam as operações usuais de soma e produto, respectivamente, nos reais.
+$(\mathbb{R}^{*}_{+}, \cdot) \cong (\mathbb{R}, +)$, onde $+$ e $\cdot$ denotam as operações usuais de soma e produto, respectivamente, no conjunto $\mathbb{R}$.
 \end{example}
 
 {\color{red}
 \textbf{Demonstração}:
 
+Seja $\varphi : \mathbb{R}^{*}_{+} \to \mathbb{R}, \; x \mapsto \log(x)$.
+
+Mostremos que $\varphi$ é um homomorfismo de grupos bijetivo. 
+
+Primeiramente, note que $(\mathbb{R}_{+}^{*}, \cdot)$ e $(\mathbb{R}, +)$ são de fato grupos.
+
+Sabemos também que a função:
+
+\[
+\varphi(x) = \log(x), \; x\in \; ]0, \infty[\;  = \mathbb{R}_{+}^{*}
+\] 
+
+é uma bijeção com imagem igual à $\mathbb{R}$.
+
+Mostremos que $\varphi$ é um homomorfismo de grupos.
+
+Sejam $x,y\in \mathbb{R}_{+}^{*}$
+
+\[
+\varphi(xy) = \log(xy) = \log(x) + \log(y) = \varphi(x) + \varphi(y)
+\]
+
+Logo, deduzimos que $\varphi$ é um isomorfismo de grupos e, portanto, temos:
+
+\[
+(\mathbb{R}^{*}_{+}, \cdot) \cong (\mathbb{R}, +)
+\]
 
 \qed}
 
@@ -2193,7 +2224,100 @@ Portanto, $\varphi^{-1} : \mathcal{G} \to G$ é isomorfismo de grupos.
 \qed}
 
 \begin{theorem}
+\color{red}
+\textbf{Primeiro Teorema dos Isomorfismos}
 
+Sejam $G$ e $\mathcal{G}$ grupos tais que $\varphi : G \to \mathcal{G}$ é um homomorfismo de grupos. Então, a função $\psi$ tal que:
+
+\[
+\psi: 
+\begin{array}{c}
+G/\ker \varphi \to \operatorname{Im}\varphi \\
+g\ker\varphi \mapsto \varphi(g)
+\end{array}
+\]
+
+é um isomorfismo de grupos.
+
+Isto é:
+
+\[
+\frac{G}{\ker \varphi} \cong \operatorname{Im} \varphi
+\]
 \end{theorem}
+
+{\color{red}
+\textbf{Demonstração}:
+
+Mostremos que $\psi$ é uma função bem definida e que se trata de uma função injetiva:
+
+Sejam $\bar{x},\bar{y}\in G/\ker\varphi$, temos:
+
+\[
+\bar{x} = \bar{y} \iff \bar{x}\bar{y}^{-1} \in \ker\varphi \iff \varphi(\bar{x}\bar{y}^{-1}) = e_{\mathcal{G}} \iff
+\]
+
+\[
+\iff \varphi(\bar{x})\varphi(\bar{y})^{-1} = e_{\mathcal{G}} \iff \varphi(\bar{x}) = \varphi(\bar{y}) \iff \psi(\bar{x}) = \psi(\bar{y})
+\]
+
+Logo, a função $\psi$ está de fato bem definida e é injetiva.
+
+Mostremos que $\psi$ é uma função sobrejetora. 
+
+Seja $y\in \operatorname{Im}\varphi$, então:
+
+\[
+\exists x\in G ;\; \varphi(x) = y
+\]
+
+Temos, portanto:
+
+\[
+\psi(\bar{x}) = \varphi(x) = y
+\] 
+
+Logo, $\psi$ é sobrejetora.
+
+Mostremos que $\psi$ é um homomorfismo de grupos.
+
+Primeiramente, note que $G/\ker\varphi$ e $\operatorname{Im}\varphi$ são de fato grupos (já demonstrado).
+
+Sejam $\bar{x},\bar{y} \in G/\ker\varphi$, logo:
+
+\[
+\psi(\bar{x}\bar{y}) = \psi(\bar{xy}) = \varphi(xy) = \varphi(x)\varphi(y) = \psi(\bar{x})\psi(\bar{y})
+\]
+
+Com isso, mostramos que $\psi$ se trata se um isomorfismo de grupos e deduzimos que:
+
+\[
+\frac{G}{\ker\varphi} \cong \operatorname{Im}\varphi
+\]
+
+\qed}
+
+\begin{theorem}
+\color{red}
+\textbf{Segundo Teorema dos Isomorfismos}
+
+Seja $G$ um grupo,\; $H\trianglelefteq G$ e $K\leq G$. Temos:
+
+\[
+H\cap K \trianglelefteq H
+\]
+
+e,
+
+\[
+\frac{K}{H\cap K} \cong \frac{HK}{H}
+\]
+\end{theorem}
+
+{\color{red}
+\textbf{Demonstração}:
+
+
+\qed}
 
 \end{document}
