@@ -1756,9 +1756,7 @@ Portanto, $(G/H, \bullet)$ é de fato um grupo.
 
 \qed
 
-{\color{red}
 \textit{Observação: muitas vezes iremos denotar $\bar{x} \overset{def}{=} xH$ para elementos de $G/H$ por uma questão de simplificação de escrita.}
-}
 
 \begin{example}
 O grupo $\mathbb{Z}/n\mathbb{Z}$ é um grupo quociente formado pelo quociente entre $\mathbb{Z}$ e $n\mathbb{Z}\trianglelefteq \mathbb{Z}$.
@@ -2139,11 +2137,9 @@ G \cong \mathcal{G}
 \end{definition}
 
 \begin{example}
-\color{red}
 $(\mathbb{R}^{*}_{+}, \cdot) \cong (\mathbb{R}, +)$, onde $+$ e $\cdot$ denotam as operações usuais de soma e produto, respectivamente, no conjunto $\mathbb{R}$.
 \end{example}
 
-{\color{red}
 \textbf{Demonstração}:
 
 Seja $\varphi : \mathbb{R}^{*}_{+} \to \mathbb{R}, \; x \mapsto \log(x)$.
@@ -2174,16 +2170,14 @@ Logo, deduzimos que $\varphi$ é um isomorfismo de grupos e, portanto, temos:
 (\mathbb{R}^{*}_{+}, \cdot) \cong (\mathbb{R}, +)
 \]
 
-\qed}
+\qed
 
 \begin{proposition}
-\color{red}
 Sejam $G$ e $\mathcal{G}$ grupos tal que $\varphi : G \to \mathcal{G}$ é um isomorfismo de grupos. 
 
 Logo, $\varphi^{-1} : \mathcal{G} \to G$ é um isomorfismo de grupos.
 \end{proposition}
 
-{\color{red}
 
 \textbf{Demonstração:}
 
@@ -2216,15 +2210,14 @@ Dada a bijetividade de $\varphi$, sabemos que existem $a,b\in G$ tais que $\varp
 Logo:
 
 \[
-\varphi^{-1}(xy) = \varphi^{-1}(\varphi(a)\varphi(b)) = \varphi^{-1}(\varphi(ab)) = ab = \varphi^{1}(x)\varphi^{-1}(y)
+\varphi^{-1}(xy) = \varphi^{-1}(\varphi(a)\varphi(b)) = \varphi^{-1}(\varphi(ab)) = ab = \varphi^{-1}(x)\varphi^{-1}(y)
 \]
 
 Portanto, $\varphi^{-1} : \mathcal{G} \to G$ é isomorfismo de grupos.
 
-\qed}
+\qed
 
 \begin{theorem}
-\color{red}
 \textbf{Primeiro Teorema dos Isomorfismos}
 
 Sejam $G$ e $\mathcal{G}$ grupos tais que $\varphi : G \to \mathcal{G}$ é um homomorfismo de grupos. Então, a função $\psi$ tal que:
@@ -2246,7 +2239,6 @@ Isto é:
 \]
 \end{theorem}
 
-{\color{red}
 \textbf{Demonstração}:
 
 Mostremos que $\psi$ é uma função bem definida e que se trata de uma função injetiva:
@@ -2254,11 +2246,11 @@ Mostremos que $\psi$ é uma função bem definida e que se trata de uma função
 Sejam $\bar{x},\bar{y}\in G/\ker\varphi$, temos:
 
 \[
-\bar{x} = \bar{y} \iff \bar{x}\bar{y}^{-1} \in \ker\varphi \iff \varphi(\bar{x}\bar{y}^{-1}) = e_{\mathcal{G}} \iff
+\bar{x} = \bar{y} \iff xy^{-1} \in \ker\varphi \iff \varphi(xy^{-1}) = e_{\mathcal{G}} \iff
 \]
 
 \[
-\iff \varphi(\bar{x})\varphi(\bar{y})^{-1} = e_{\mathcal{G}} \iff \varphi(\bar{x}) = \varphi(\bar{y}) \iff \psi(\bar{x}) = \psi(\bar{y})
+\iff \varphi(x)\varphi(y)^{-1} = e_{\mathcal{G}} \iff \varphi(x) = \varphi(y) \iff \psi(\bar{x}) = \psi(\bar{y})
 \]
 
 Logo, a função $\psi$ está de fato bem definida e é injetiva.
@@ -2286,7 +2278,7 @@ Primeiramente, note que $G/\ker\varphi$ e $\operatorname{Im}\varphi$ são de fat
 Sejam $\bar{x},\bar{y} \in G/\ker\varphi$, logo:
 
 \[
-\psi(\bar{x}\bar{y}) = \psi(\bar{xy}) = \varphi(xy) = \varphi(x)\varphi(y) = \psi(\bar{x})\psi(\bar{y})
+\psi(\bar{x}\bar{y}) = \psi(\overline{xy}) = \varphi(xy) = \varphi(x)\varphi(y) = \psi(\bar{x})\psi(\bar{y})
 \]
 
 Com isso, mostramos que $\psi$ se trata se um isomorfismo de grupos e deduzimos que:
@@ -2295,16 +2287,15 @@ Com isso, mostramos que $\psi$ se trata se um isomorfismo de grupos e deduzimos 
 \frac{G}{\ker\varphi} \cong \operatorname{Im}\varphi
 \]
 
-\qed}
+\qed
 
 \begin{theorem}
-\color{red}
 \textbf{Segundo Teorema dos Isomorfismos}
 
 Seja $G$ um grupo,\; $H\trianglelefteq G$ e $K\leq G$. Temos:
 
 \[
-H\cap K \trianglelefteq H
+H\cap K \trianglelefteq K
 \]
 
 e,
