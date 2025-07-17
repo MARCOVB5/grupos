@@ -1663,6 +1663,7 @@ Portanto, mostramos que $HK \leq G$.
 
 \qed
 
+\hypertarget{proposicaoHKsub}{}
 \begin{proposition}
 Seja $G$ um grupo e $H, K \trianglelefteq G$. Então $HK \trianglelefteq G$.
 \end{proposition}
@@ -2217,6 +2218,7 @@ Portanto, $\varphi^{-1} : \mathcal{G} \to G$ é isomorfismo de grupos.
 
 \qed
 
+\hypertarget{primteoiso}{}
 \begin{theorem}
 \textbf{Primeiro Teorema dos Isomorfismos}
 
@@ -2295,7 +2297,7 @@ Com isso, mostramos que $\psi$ se trata se um isomorfismo de grupos e deduzimos 
 Seja $G$ um grupo,\; $H\trianglelefteq G$ e $K\leq G$. Temos:
 
 \[
-H\cap K \trianglelefteq K
+H \trianglelefteq HK
 \]
 
 e,
@@ -2307,6 +2309,101 @@ e,
 
 {\color{red}
 \textbf{Demonstração}:
+
+Note que $HK$ é de fato um grupo, pois $H\trianglelefteq G$ e $K\leq G$.
+
+Tal fato foi mostrado na \hyperlink{prop154}{\textbf{Proposição 1.5.4}}. 
+
+Mostremos, primeiramente, que $H \trianglelefteq HK$:
+
+Seja $x\in HK$, logo, é suficiente mostrar que $xHx^{-1} \subseteq H$.
+
+Como $H\trianglelefteq G$, temos que:
+
+\[
+gH = Hg, \; \; \forall g\in G
+\]
+
+Portanto:
+
+\[
+xHx^{-1} = Hxx^{-1} = H
+\]
+
+Logo, deduzimos que $H \trianglelefteq HK$.
+
+Seja $\varphi$ o homomorfismo de grupos definido a seguir:
+
+\[
+\varphi: 
+\begin{array}{c}
+K \to \frac{HK}{H} \\
+k \mapsto xH
+\end{array}
+\]
+
+Note que $\frac{HK}{H}$ é de fato um grupo, uma vez que $H\triangleleft HK$.
+
+Note também que $\varphi$ se trata mesmo de um homomorfismo (projeção canônica).
+
+Mostremos que $\varphi$ é um homomorfismo sobrejetivo.
+
+Tome $x\in \frac{HK}{H}$, logo:
+
+\[
+x = \underbrace{hk}_{\in HK}H = Hhk = Hk = kH = \varphi(k)
+\]
+
+Logo, mostramos que $\varphi$ é sobrejetiva, isto é:
+
+\[
+\operatorname{Im}(\varphi) = \frac{HK}{H}
+\]
+
+Mostremos agora que $\ker \varphi = H\cap K$.
+
+Sabemos que, por definição:
+
+\[
+\ker \varphi = \{k\in K : \varphi(k) = H\}
+\]
+
+Deduzimos portanto que $k\in \ker\varphi \iff k\in H\cap K$.
+
+Logo, deduzimos que $\ker \varphi = H\cap K$.
+
+Aplicando o \hyperlink{primteoiso}{\textbf{Primeiro Teorema do Isomorfismo}} deduzimos diretamente que:
+
+\[
+\frac{K}{H\cap K} \cong \frac{HK}{H}
+\]
+
+\qed}
+
+\begin{theorem}
+\color{red}
+\textbf{Terceiro Teorema dos Isomorfismos}
+
+Seja $G$ um grupo e $H,K \trianglelefteq G$ tal que $K\subseteq H$.
+
+Logo, 
+
+\[
+\frac{H}{K} \trianglelefteq \frac{G}{K}
+\]
+
+e,
+
+\[
+\frac{G/K}{H/K} \cong \frac{G}{H}
+\]
+
+\end{theorem}
+
+{\color{red}
+
+\textbf{Demonstração}:
+
 
 
 \qed}
