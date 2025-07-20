@@ -215,6 +215,7 @@ $(\mathbb{Z, +}), \;(\mathbb{Z}/n\mathbb{Z}, +),\;(\mathbb{R}^*, \cdot), \; (\ma
     $(GL_n(\mathbb{K}), \times)$ define uma estrutura de grupo, onde $\mathbb{K}= \mathbb{C}$ ou $\mathbb{R}$ e $GL_n(\mathbb{K})$ define o conjunto das matrizes $n\times n$ invertíveis com entradas em $\mathbb{K}$.
 \end{example}
 
+\hypertarget{exem123}{}
 \begin{example}
     Seja $A$ um conjunto não-vazio. Seja 
     \[
@@ -2106,6 +2107,7 @@ Logo, concluímos que:
 
 \qed
 
+\hypertarget{prop164}{}
 \begin{proposition}
 Sejam $\varphi : G \to \mathcal{G}$ e $\xi : \mathcal{G} \to \mathfrak{G}$ homomorfismos de grupos.
 
@@ -2182,6 +2184,7 @@ Logo, deduzimos que $\varphi$ é um isomorfismo de grupos e, portanto, temos:
 
 \qed
 
+\hypertarget{prop165}{}
 \begin{proposition}
 Sejam $G$ e $\mathcal{G}$ grupos tal que $\varphi : G \to \mathcal{G}$ é um isomorfismo de grupos. 
 
@@ -2488,8 +2491,28 @@ Denotamos o \textbf{conjunto de todos os automorfismos de $G$ por $\operatorname
 
 \begin{proposition}
 \color{red}
-
+Seja $G$ um grupo, então $(\operatorname{Aut}(G), \circ)$ é um grupo, onde $\circ$ denota a composição usual de funções.
 \end{proposition}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+Note que $\operatorname{Aut}(G)$ não é vazio, uma vez que o isomorfismo $e: G\to G, \; e(g) = g$ está em $\operatorname{Aut}(G)$.
+
+Evidentemente a função $e$ é o elemento neutro de $\operatorname{Aut}(G)$.
+
+Também sabemos que a operação $\circ$ é associativa via associatividade de composição usual de funções.
+
+Pela \hyperlink{prop165}{\textbf{Proposição 1.6.5}}, sabemos que o homomorfismo inverso, $\varphi^{-1}$, existe e é um isomorfismo. Logo, concluímos que $\varphi^{-1} \in \operatorname{Aut}(G)$.
+
+Por fim, sabemos que a composição de funções bijetivas resulta em uma função bijetiva e pela \hyperlink{prop164}{\textbf{Proposição 1.6.4}} sabemos que a composição de homomorfismo de $G$ em $G$ é um homomorfismo de $G$ em $G$.
+
+Portanto, concluímos que $\circ$ é uma lei de composição interna em $\operatorname{Aut}(G)$.
+
+Logo, deduzimos que $(\operatorname{Aut}(G), \circ)$ é um grupo. 
+
+\qed}
 
 \section{Produto Direto de Grupos}
 
