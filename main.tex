@@ -1685,6 +1685,7 @@ gHKg^{-1} = gHg^{-1}gKg^{-1} = (\underbrace{gHg^{-1}}_{\in H})(\underbrace{gKg^{
 
 \qed
 
+\hypertarget{prop156}{}
 \begin{proposition}
 Seja $G$ um grupo finito e $H, K \leq G$. Então:
 
@@ -1696,7 +1697,40 @@ Seja $G$ um grupo finito e $H, K \leq G$. Então:
 {\color{red}
 \textbf{Demonstração:}
 
+Note que \( H \cap K \le H \) e \( H \cap K \le K \), então podemos escrever:
 
+\[
+H = \overset{\bullet}{\bigcup}_{1 \le i\le r} a_i (H \cap K), \quad \text{com } r = [H : H \cap K],
+\]
+
+\[
+K = \overset{\bullet}{\bigcup}_{1 \le j \le s} (H \cap K) b_j, \quad \text{com } s = [K : H \cap K].
+\]
+
+Assim, o conjunto \( HK = \{ hk \mid h \in H,\, k \in K \} \) pode ser escrito como:
+\[
+HK = \bigcup_{i=1}^r \bigcup_{j=1}^s a_i (H \cap K) b_j.
+\]
+
+Cada conjunto \( a_i (H \cap K) b_j \) possui \( |H \cap K| \) elementos. A união acima é disjunta: se
+\[
+a_i (H \cap K) b_j = a_{i'} (H \cap K) b_{j'},
+\]
+então, por multiplicações à esquerda e direita, deduz-se que \( i = i' \) e \( j = j' \), dado que os \( a_i \) e \( b_j \) representam classes distintas.
+
+Logo, temos \( rs \) conjuntos disjuntos de tamanho \( |H \cap K| \), e portanto:
+\[
+\text{Card}(HK) = rs \cdot |H \cap K| = [H : H \cap K][K : H \cap K] \cdot |H \cap K|.
+\]
+
+Mas
+\[
+|H| = [H : H \cap K] \cdot |H \cap K|,\quad |K| = [K : H \cap K] \cdot |H \cap K|,
+\]
+e portanto:
+\[
+\text{Card}(HK) = \frac{|H||K|}{|H \cap K|}.
+\]
 
 \qed}
 
@@ -1708,11 +1742,34 @@ Seja $G$ um grupo e $H, K\leq G$ tal que $HK \leq G$. Então:
 \]
 \end{proposition}
 
+{\color{red}
 \textbf{Demonstração:}
 
-{\color{red}
+Note, primeiramente, que $K \leq HK$, uma vez que $K\subseteq HK$, $K\leq G$ e $HK \leq G$.
 
+Logo, pelo \hyperlink{lagrange}{\textbf{Teorema de Lagrange}}, temos:
 
+\[
+\vert HK\vert = \vert K\vert \cdot [HK : K] \iff \frac{\vert HK\vert}{\vert K\vert} = [HK : K]
+\]
+
+Sabemos também que $H\cap K \leq H$, logo, analogamente:
+
+\[
+\vert H\vert = \vert H\cap K\vert \cdot [H : H\cap K] \iff \frac{\vert H \vert}{\vert H\cap K\vert} = [H : H\cap K]
+\]
+
+Pela \hyperlink{prop156}{\textbf{Proposição 1.5.6}}, temos diretamente:
+
+\[
+\vert HK\vert = \frac{\vert H\vert \vert K\vert}{\vert H\cap K\vert} \iff \frac{\vert HK\vert}{\vert K\vert} = \frac{\vert H\vert}{\vert H\cap K\vert}
+\]
+
+Logo, deduzimos que:
+
+\[
+[HK : K] = [H : H\cap K]
+\]
 
 \qed}
 
