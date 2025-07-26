@@ -2571,6 +2571,101 @@ Logo, deduzimos que $(\operatorname{Aut}(G), \circ)$ é um grupo.
 
 \qed}
 
+\begin{example}
+\color{red}
+A função:
+
+\[
+\mathcal{I}_g: 
+\begin{array}{c}
+G \to G \\
+x \mapsto gxg^{-1}
+\end{array}
+\]
+
+é um automorfismo de $G$ denominado \textbf{automorfismo interno de $G$ associado a $g\in G$}.
+
+O automorfismo $\mathcal{I}_g$ é também chamado de \textbf{conjugação por $g$}.
+\end{example}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+Mostremos que $\mathcal{I}_g$ é de fato um automorfismo de $G$.
+
+Mostremos, primeiramente, que $\mathcal{I}_g$ é um homomorfismo de grupos.
+
+Sejam $x, y \in G$, temos:
+
+\[
+\mathcal{I}_g(xy) = gxyg^{-1} = gx(g^{-1}g)yg^{-1} = (gxg^{-1})(gyg^{-1}) = \mathcal{I}_g(x)\mathcal{I}_g(y)
+\]
+
+Portanto, concluímos que $\mathcal{I}_g$ é um homomorfismo de grupos. 
+
+Mostremos que $\mathcal{I}_g$ é uma função bijetiva.
+
+Sejam $x, y \in G$:
+
+\[
+\mathcal{I}_g(x) = \mathcal{I}_g(y) \Rightarrow gxg^{-1} = gyg^{-1} \Rightarrow g^{-1}gxg^{-1}g = g^{-1}gyg^{-1}g \Rightarrow x = y
+\]
+
+Logo, $\mathcal{I}_g$ é injetiva.
+
+Temos ainda também que, se definirmos $y \overset{def}{=} \mathcal{I}_g(x)$:
+
+\[
+\mathcal{I}_g(x) = y = gxg^{-1} \iff g^{-1}yg = x
+\]
+
+Logo, $\mathcal{I}_g$ é sobrejetiva.
+
+Como $\mathcal{I}_g : G \to G$, concluímos que $\mathcal{I}_g$ é um automorfismo de $G$.
+
+\qed}
+
+\begin{definition}
+\color{red}
+Seja $G$ um grupo, definimos:
+
+\[
+\operatorname{Inn}(G) = \{\mathcal{I}_g \in \operatorname{Aut}(G) : g \in G \}
+\]
+
+o \textbf{conjunto de todos os automorfismos internos de $G$ associados à $g\in G$}.
+\end{definition}
+
+\begin{proposition}
+\color{red}
+Seja $G$ um grupo, temos:
+
+\[
+\operatorname{Inn}(G) \trianglelefteq \operatorname{Aut}(G).
+\]
+\end{proposition}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+Sabemos que $\operatorname{Inn}(G) \subseteq \operatorname{Aut}(G)$.
+
+Mostremos, primeiramente, que para $y_1, y_2 \in \operatorname{Inn}(G), \; y_1y_{2}^{-1}\in \operatorname{Inn}(G)$.
+
+Ora, como $y_1, y_2 \in \operatorname{Inn}(G)$, podemos escrevê-los como:
+
+
+
+Logo, concluímos que $\operatorname{Inn}(G) \leq \operatorname{Aut}(G)$.
+
+Provemos agora que para $(x, a)\in \operatorname{Inn}(G) \times \operatorname{Aut}(G), \; axa^{-1} \in \operatorname{Inn}(G)$.
+
+
+
+\qed}
+
 \section{Produto Direto de Grupos}
 
 \end{document}
