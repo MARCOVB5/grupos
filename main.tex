@@ -22,6 +22,8 @@
 \tcbuselibrary{breakable}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage{pict2e}
+\usepackage{tikz}
 \definecolor{lightred}{rgb}{1,0.6,0.6}
 
 % fontes AMS EULER !!! 
@@ -86,6 +88,32 @@
         {\Large Universidade Tecnológica Federal do Paraná} \\[0.5cm]
         {\Large Curitiba, Novembro de 2024}
     \end{center}
+}
+
+\newcommand{\trianglechar}{
+  \mathrel{
+    \unitlength=1mm
+    \begin{picture}(5,3)(0,-1.5)
+      % Triângulo maior
+      \polyline(0,0)(4,1.5)(4,-1.5)(0,0)
+      % Triângulo menor
+      \polyline(1.25,0)(3,0.75)(3,-0.75)(1.25,0)
+    \end{picture}
+  }
+}
+
+\newcommand{\trianglechareq}{
+  \mathrel{
+    \unitlength=1mm
+    \begin{picture}(5,3)(0,-1.5)
+      % Triângulo maior
+      \polyline(0,0)(4,1.5)(4,-1.5)(0,0)
+      % Triângulo menor
+      \polyline(1.25,0)(3,0.75)(3,-0.75)(1.25,0)
+      % Barra horizontal
+      \polyline(0,-1.9)(4,-1.9)
+    \end{picture}
+  }
 }
 
 \newtheoremstyle{no-italic}  % Nome do estilo
@@ -2650,21 +2678,178 @@ Seja $G$ um grupo, temos:
 
 \textbf{Demonstração:}
 
-Sabemos que $\operatorname{Inn}(G) \subseteq \operatorname{Aut}(G)$.
+Sabemos que $\operatorname{Inn}(G) \subseteq \operatorname{Aut}(G)$, por construção.
 
-Mostremos, primeiramente, que para $y_1, y_2 \in \operatorname{Inn}(G), \; y_1y_{2}^{-1}\in \operatorname{Inn}(G)$.
+Mostremos, primeiramente, que para $y_1, y_2 \in \operatorname{Inn}(G), \; y_1\circ y_{2}^{-1}\in \operatorname{Inn}(G)$, onde $\circ$ é a composição usual de funções.
+
+Como o domínio e contradomínio das funções em $\operatorname{Inn}(G)$ são iguais para as funções em $\operatorname{Aut}(G)$, mostremos apenas a igualdade de suas leis de correspondência.
 
 Ora, como $y_1, y_2 \in \operatorname{Inn}(G)$, podemos escrevê-los como:
 
+\[
+y_1(x) = g_1xg_{1}^{-1},\; \forall x \in G
+\]
 
+\[
+y_2(x) = g_2xg_{2}^{-1}, \; \forall x \in G
+\]
+
+Temos:
+
+\[
+y_1\circ y_{2}^{-1} (x) = y_1(y_2(x)^{-1}) = g_1(g_{2}^{-1}xg_2)g_{1}^{-1} = (g_1g_{2}^{-1})x(g_2g_{1}^{-1}) \in \operatorname{Inn}(G)
+\]
 
 Logo, concluímos que $\operatorname{Inn}(G) \leq \operatorname{Aut}(G)$.
 
-Provemos agora que para $(x, a)\in \operatorname{Inn}(G) \times \operatorname{Aut}(G), \; axa^{-1} \in \operatorname{Inn}(G)$.
+Provemos agora que para $(y, a)\in \operatorname{Inn}(G) \times \operatorname{Aut}(G), \; a\circ y\circ a^{-1} \in \operatorname{Inn}(G)$, isto é:
 
+\[
+a\circ y\circ a^{-1} = \mathcal{I}_h,\; \; \mathcal{I}_h\in \operatorname{Inn}(G)
+\]
 
+Temos:
+
+\[
+(a\circ y\circ a^{-1}) (x) = a(y(a^{-1}(x))) = a(ga^{-1}g^{-1}) = a(g)xa(g)^{-1} \in \operatorname{Inn}(G)
+\]
+
+Logo, concluímos que:
+
+\[
+\operatorname{Inn}(G) \trianglelefteq \operatorname{Aut}(G)
+\]
 
 \qed}
+
+\begin{definition}
+\color{red}
+Seja G um grupo e $\varphi : G \to G$ um homomorfismo de grupos. 
+
+Dizemos que $X\subseteq G$ é \textbf{invariante por $\varphi$} se $\varphi(X) \subseteq X$.
+
+Ou ainda, se $\forall x \in X \implies \varphi(x) \in X$.
+\end{definition}
+
+\begin{definition}
+\color{red}
+Sejam $G$ um grupo e $H\leq G$.
+
+$H$ é dito \textbf{subgrupo característico de $G$} se $H$ é invariante para todo $\varphi \in \operatorname{Aut}(G)$ e o denotamos como:
+
+\[
+H \trianglechareq G
+\]
+\end{definition}
+
+{\color{red}
+
+\textit{Observações:}
+
+\begin{itemize}
+	\item \textit{Note que se $H<G$, então $H\trianglechar G$};
+	\item \textit{Um subgrupo característico é considerado mais forte que apenas ser um subgrupo normal, uma vez que enquanto um subgrupo normal é invariante apenas para automorfismos internos, um subgrupo característico é invariante para todo automorfismo de $G$}:
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+  
+  \node (subgroup) at (0,2) {$H \leq G$};
+  \node (normal) at (0,0) {$H \trianglelefteq G$};
+  \node (char) at (0,-2) {$H \trianglechareq G$};
+  
+  \draw[->, thick] (char) -- (normal);
+  \draw[->, thick] (normal) -- (subgroup);
+  
+  \node[right] at (0.75,-2) {\footnotesize invariante por automorfismos};
+  \node[right] at (0.75,0) {\footnotesize invariante por conjugação};
+  \node[right] at (0.75,2) {\footnotesize operação bem definida};
+  
+\end{tikzpicture}
+\end{center}
+}
+
+\begin{example}
+\color{red}
+Os subgrupos triviais de $G$ são subgrupos característicos de $G$.
+\end{example}
+
+\begin{example}
+\color{red}
+Seja $G$ um grupo e $Z(G)$ seu centro, logo:
+
+\[
+Z(G) \trianglechareq G
+\]
+\end{example}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Seja $z\in Z(G)$, temos por definição que:
+
+\[
+zg = gz, \; \forall g\in G
+\]
+
+Seja $\varphi \in \operatorname{Aut}(G)$, temos:
+
+\[
+\varphi(zg) = \varphi(gz) \iff \varphi(z)\varphi(g) = \varphi(g)\varphi(z)
+\]
+
+Como $\varphi$ é um automorfismo, então sabemos que se trata de uma função bijetora. 
+
+Logo, $\varphi(G) = G$ e podemos escrever $\varphi(g) = h, \; h\in G$.
+
+Temos, portanto:
+
+\[
+\varphi(z)h = h\varphi(z), \; \forall h\in G
+\]
+
+Concluímos que $\varphi(z) \in Z(G)$.
+
+Logo:
+
+\[
+Z(G) \trianglechareq G
+\]
+
+\qed}
+
+\begin{proposition}
+\color{red}
+Seja $G$ um grupo e $H\subseteq G$, logo:
+
+\[
+H\trianglechareq G \Longrightarrow H \trianglelefteq G.
+\]
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Seja $H\trianglechareq G$, sabemos que:
+
+\[
+\forall \varphi \in \operatorname{Aut}(G), \; \varphi(H)\subseteq H
+\]
+
+Sabemos também que $\operatorname{Inn}(G) \subseteq \operatorname{Aut}(G)$, logo:
+
+\[
+(\varphi \vert_{\operatorname{Inn(G)}}) (H) = gHg^{-1} \subseteq H
+\]
+
+Deduzimos diretamente que:
+
+\[
+H\trianglelefteq G
+\]
+
+\qed}
+
 
 \section{Produto Direto de Grupos}
 
