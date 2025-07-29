@@ -2269,6 +2269,7 @@ Logo, deduzimos que $\varphi$ é um isomorfismo de grupos e, portanto, temos:
 
 \qed
 
+
 \hypertarget{prop165}{}
 \begin{proposition}
 Sejam $G$ e $\mathcal{G}$ grupos tal que $\varphi : G \to \mathcal{G}$ é um isomorfismo de grupos. 
@@ -2563,6 +2564,15 @@ Portanto, aplicando o \hyperlink{primteoiso}{\textbf{Primeiro Teorema dos Isomor
 
 \begin{definition}
 \color{red}
+Sejam $G$ e  $\mathcal{G}$ grupos.
+
+\textbf{Um epimorfismo de $G$ em $\mathcal{G}$ é um homomorfismo $\varphi$ tal que $\varphi$ é sobrejetivo}.
+
+Denotamos o \textbf{conjunto de todos os epimorfismos de $G$ em $\mathcal{G}$ por $\operatorname{Epi}(G, \mathcal{G})$}.
+\end{definition}
+
+\begin{definition}
+\color{red}
 Seja $G$ um grupo. 
 
 \textbf{Um automorfismo de $G$ é um isomorfismo $\varphi$} tal que:
@@ -2820,7 +2830,7 @@ Z(G) \trianglechareq G
 
 \begin{proposition}
 \color{red}
-Seja $G$ um grupo e $H\subseteq G$, logo:
+Seja $G$ um grupo e $H\leq G$, logo:
 
 \[
 H\trianglechareq G \Longrightarrow H \trianglelefteq G.
@@ -2850,7 +2860,25 @@ H\trianglelefteq G
 
 \qed}
 
+\begin{proposition}
+\color{red}
+Seja $K\trianglechareq H \trianglelefteq G$, então $K\trianglelefteq G$.
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Como $K\trianglechareq H$, e $H\trianglelefteq G$, então todo conjugado $gKg^{-1}$ (que é a imagem de $K$ por um automorfismo de $H$) está contido em $K$. Como isso vale para todo $g\in G$, então $K\trianglelefteq G$.
+
+\qed}
 
 \section{Produto Direto de Grupos}
+
+\begin{definition}
+\color{red}
+Sejam $H$ e $K$ grupos.
+\end{definition}
+
+\chapter{Grupos de Permutações}
 
 \end{document}
