@@ -2874,10 +2874,59 @@ Como $K\trianglechareq H$, e $H\trianglelefteq G$, então todo conjugado $gKg^{-
 
 \section{Produto Direto de Grupos}
 
+\hypertarget{def171}{}
 \begin{definition}
 \color{red}
-Sejam $H$ e $K$ grupos.
+Sejam $n\in \mathbb{Z}^{*}_{+}$ e $\mathfrak{G} = \{G_1, \ldots, G_n \}$ uma família de grupos.
+
+Definimos \textbf{produto direto de $\mathfrak{G}$} como a $n$-upla ordenada:
+
+\[
+\prod_{i=1}^{n} G_i \overset{def}{=} \{(g_1, \ldots, g_n),\; g_1\in G_1,\ldots, g_n\in G_n \}
+\]
+
+Munida da operação:
+
+\[
+\left(\prod_{i=1}^{n}G_i\right) \cdot \left(\prod_{i=1}^{n} G_i\right) \overset{def}{=} \{(g_1g_1',\ldots g_ng_n'),\; g_1,g_1'\in G_1,\ldots, g_n,g_n'\in G_n \}
+\]
 \end{definition}
+
+{\color{red}
+\textit{Observação: por uma questão de convenção, a operação "$\cdot$" será omitida.}
+}
+
+\begin{proposition} 
+\color{red}
+A partir da \hyperlink{def171}{\textbf{Definição 1.7.1}}, temos que o produto direto de $\mathfrak{G}$ é um grupo.
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Seja $n\in \mathbb{Z}_{+}^{*}$.
+
+Via a \hyperlink{def171}{\textbf{Definição 1.7.1}} temos que a operação "$\cdot$" definida entre dois produtos diretos de $\mathfrak{G}$ é uma lei de composição interna por construção. 
+
+Temos também, de forma evidente, que o elemento neutro e o elemento inverso de $\prod_{i=1}^{n}G_i$ são dados por, respectivamente:
+
+\[
+e = \{(e_1, \ldots, e_n),\; e_1\in G_1, \ldots, e_n\in G_n\}
+\]
+
+Onde $e_n$ representa o elemento neutro do $n$-ésimo grupo do produto direto.
+
+\[
+\left(\prod_{i=1}^{n} G_i\right)^{-1} = \{(g_{1}^{-1},\ldots, g_{n}^{-1}),\; g_{1}^{-1}\in G_1,\ldots, g_{n}^{-1}\in G_n \}
+\] 
+
+Onde $g_{n}^{-1}$ representa o elemento inverso para $g_n$ no $n$-ésimo grupo do produto direto.
+
+Temos também que o produto direto de $\mathfrak{G}$ é evidentemente associativo, uma vez  que $G_1, \ldots, G_n$ são grupos.
+
+Concluímos, portanto, que $(\prod_{i=1}^{n},\cdot)$ é um grupo. 
+
+\qed}
 
 \chapter{Grupos de Permutações}
 
