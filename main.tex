@@ -1770,7 +1770,6 @@ Seja $G$ um grupo e $H, K\leq G$ tal que $HK \leq G$. Então:
 \]
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Note, primeiramente, que $K \leq HK$, uma vez que $K\subseteq HK$, $K\leq G$ e $HK \leq G$.
@@ -1799,7 +1798,7 @@ Logo, deduzimos que:
 [HK : K] = [H : H\cap K]
 \]
 
-\qed}
+\qed
 
 \begin{definition}
 Seja $G$ um grupo e $H\trianglelefteq G$.
@@ -1932,7 +1931,6 @@ e_\mathcal{G} = \varphi(e_G) = \varphi(x\cdot x^{-1}) = \varphi(x)*\varphi(x^{-1
 \textit{$*$ Note também que muitas vezes as operações de $G$ e de $\mathcal{G}$ serão confundidas para fins de simplificação, isto é: $\varphi(ab) = \varphi(a)\varphi(b)$.}
 
 \begin{definition}
-\color{red}
 Sejam $G$ e $\mathcal{G}$ dois grupos. Definimos $\operatorname{Hom}(G,\mathcal{G})$ como o \textbf{conjunto de todos os homomorfismos de $G$ em $\mathcal{G}$}.
 \end{definition}
 
@@ -2229,9 +2227,7 @@ G \cong \mathcal{G}
 \]
 \end{definition}
 
-{\color{red}
 \textit{Observação: note que para que dois grupos sejam isomorfos basta mostrar que existe um isomorfismo entre eles.}
-}
 
 \begin{example}
 $(\mathbb{R}^{*}_{+}, \cdot) \cong (\mathbb{R}, +)$, onde $+$ e $\cdot$ denotam as operações usuais de soma e produto, respectivamente, no conjunto $\mathbb{R}$.
@@ -2405,7 +2401,6 @@ e,
 \]
 \end{theorem}
 
-{\color{red}
 \textbf{Demonstração}:
 
 Note que $HK$ é de fato um grupo, pois $H\trianglelefteq G$ e $K\leq G$.
@@ -2436,20 +2431,20 @@ Seja $\varphi$ o homomorfismo de grupos definido a seguir:
 \varphi: 
 \begin{array}{c}
 K \to \frac{HK}{H} \\
-k \mapsto xH
+x \mapsto xH
 \end{array}
 \]
 
 Note que $\frac{HK}{H}$ é de fato um grupo, uma vez que $H\trianglelefteq HK$.
 
-Note também que $\varphi$ se trata mesmo de um homomorfismo (projeção canônica).
+Note também que $\varphi$ se trata mesmo de um homomorfismo (restrição da projeção canônica).
 
 Mostremos que $\varphi$ é um homomorfismo sobrejetivo.
 
 Tome $x\in \frac{HK}{H}$, logo:
 
 \[
-x = \underbrace{hk}_{\in HK}H = Hhk = Hk = kH = \varphi(k)
+x = \underbrace{hk}_{\in HK}H = Hhk = Hk = kH = \varphi(k), \; k\in K
 \]
 
 Logo, mostramos que $\varphi$ é sobrejetiva, isto é:
@@ -2476,10 +2471,9 @@ Aplicando o \hyperlink{primteoiso}{\textbf{Primeiro Teorema do Isomorfismo}} ded
 \frac{K}{H\cap K} \cong \frac{HK}{H}
 \]
 
-\qed}
+\qed
 
 \begin{theorem}
-\color{red}
 \textbf{Terceiro Teorema dos Isomorfismos}
 
 Seja $G$ um grupo e $H,K \trianglelefteq G$ tal que $K\subseteq H$.
@@ -2498,7 +2492,6 @@ e,
 
 \end{theorem}
 
-{\color{red}
 
 \textbf{Demonstração}:
 
@@ -2530,7 +2523,7 @@ gK \mapsto gH
 \end{array}
 \]
 
-Note que, como $K\subseteq H$, todo elemento de $G/K$ é evidentemente elemento de $G/H$ e a função é bem definida e sobrejetora.
+Note que, como $K\subseteq H$, todo elemento de $G/K$ é evidentemente elemento de $G/H$ e a função é bem definida, sobrejetora e um homomorfismo de grupos.
 
 Logo, deduzimos que: 
 
@@ -2560,10 +2553,9 @@ Portanto, aplicando o \hyperlink{primteoiso}{\textbf{Primeiro Teorema dos Isomor
 \frac{G/K}{H/K} \cong \frac{G}{H}
 \]
 
-\qed}
+\qed
 
 \begin{definition}
-\color{red}
 Sejam $G$ e  $\mathcal{G}$ grupos.
 
 \textbf{Um epimorfismo de $G$ em $\mathcal{G}$ é um homomorfismo $\varphi$ tal que $\varphi$ é sobrejetivo}.
@@ -2572,7 +2564,14 @@ Denotamos o \textbf{conjunto de todos os epimorfismos de $G$ em $\mathcal{G}$ po
 \end{definition}
 
 \begin{definition}
-\color{red}
+Sejam $G$ e $\mathcal{G}$ grupos.
+
+\textbf{Um monomorfismo de $G$ em $\mathcal{G}$ é um homomorfismo $\varphi$ tal que $\varphi$ é injetivo}.
+
+Denotamos o \textbf{conjunto de todos os monomorfismos de $G$ em $\mathcal{G}$ por $\operatorname{Mon}(G, \mathcal{G})$}.
+\end{definition}
+
+\begin{definition}
 Seja $G$ um grupo. 
 
 \textbf{Um automorfismo de $G$ é um isomorfismo $\varphi$} tal que:
@@ -2585,17 +2584,14 @@ Denotamos o \textbf{conjunto de todos os automorfismos de $G$ por $\operatorname
 \end{definition}
 
 \begin{proposition}
-\color{red}
 Seja $G$ um grupo, então $(\operatorname{Aut}(G), \circ)$ é um grupo, onde $\circ$ denota a composição usual de funções.
 \end{proposition}
 
-{\color{red}
-
 \textbf{Demonstração:}
 
-Note que $\operatorname{Aut}(G)$ não é vazio, uma vez que o isomorfismo $e: G\to G, \; e(g) = g$ está em $\operatorname{Aut}(G)$.
+Note que $\operatorname{Aut}(G)$ não é vazio, uma vez que o isomorfismo $e: G\to G, \; \operatorname{id}(g) = g$ está em $\operatorname{Aut}(G)$.
 
-Evidentemente a função $e$ é o elemento neutro de $\operatorname{Aut}(G)$.
+Evidentemente a função $\operatorname{id}$ é o elemento neutro de $\operatorname{Aut}(G)$.
 
 Também sabemos que a operação $\circ$ é associativa via associatividade de composição usual de funções.
 
@@ -2607,10 +2603,9 @@ Portanto, concluímos que $\circ$ é uma lei de composição interna em $\operat
 
 Logo, deduzimos que $(\operatorname{Aut}(G), \circ)$ é um grupo. 
 
-\qed}
+\qed
 
 \begin{example}
-\color{red}
 A função:
 
 \[
@@ -2665,7 +2660,6 @@ Como $\mathcal{I}_g : G \to G$, concluímos que $\mathcal{I}_g$ é um automorfis
 \qed}
 
 \begin{definition}
-\color{red}
 Seja $G$ um grupo, definimos:
 
 \[
@@ -2676,7 +2670,6 @@ o \textbf{conjunto de todos os automorfismos internos de $G$ associados à $g\in
 \end{definition}
 
 \begin{proposition}
-\color{red}
 Seja $G$ um grupo, temos:
 
 \[
@@ -2733,7 +2726,6 @@ Logo, concluímos que:
 \qed}
 
 \begin{definition}
-\color{red}
 Seja G um grupo e $\varphi : G \to G$ um homomorfismo de grupos. 
 
 Dizemos que $X\subseteq G$ é \textbf{invariante por $\varphi$} se $\varphi(X) \subseteq X$.
@@ -2742,7 +2734,6 @@ Ou ainda, se $\forall x \in X \implies \varphi(x) \in X$.
 \end{definition}
 
 \begin{definition}
-\color{red}
 Sejam $G$ um grupo e $H\leq G$.
 
 $H$ é dito \textbf{subgrupo característico de $G$} se $H$ é invariante para todo $\varphi \in \operatorname{Aut}(G)$ e o denotamos como:
@@ -2752,13 +2743,11 @@ H \trianglechareq G
 \]
 \end{definition}
 
-{\color{red}
-
 \textit{Observações:}
 
 \begin{itemize}
-	\item \textit{Note que se $H<G$, então $H\trianglechar G$};
-	\item \textit{Um subgrupo característico é considerado mais forte que apenas ser um subgrupo normal, uma vez que enquanto um subgrupo normal é invariante apenas para automorfismos internos, um subgrupo característico é invariante para todo automorfismo de $G$}:
+	\item \textit{A partir da definição acima temos que, se  $H<G$ e $H$ é subgrupo característico de $G$, denotamos $H\trianglechar G$};
+	\item \textit{A definição de subgrupo característico é considerada mais forte que a definição de subgrupo normal, uma vez que enquanto um subgrupo normal é invariante apenas para automorfismos internos, um subgrupo característico é invariante para todo automorfismo de $G$}:
 \end{itemize}
 
 \begin{center}
@@ -2777,15 +2766,12 @@ H \trianglechareq G
   
 \end{tikzpicture}
 \end{center}
-}
 
 \begin{example}
-\color{red}
 Os subgrupos triviais de $G$ são subgrupos característicos de $G$.
 \end{example}
 
 \begin{example}
-\color{red}
 Seja $G$ um grupo e $Z(G)$ seu centro, logo:
 
 \[
@@ -2793,7 +2779,6 @@ Z(G) \trianglechareq G
 \]
 \end{example}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Seja $z\in Z(G)$, temos por definição que:
@@ -2826,10 +2811,9 @@ Logo:
 Z(G) \trianglechareq G
 \]
 
-\qed}
+\qed
 
 \begin{proposition}
-\color{red}
 Seja $G$ um grupo e $H\leq G$, logo:
 
 \[
