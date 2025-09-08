@@ -1,0 +1,471 @@
+\documentclass{beamer} 
+
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{ragged2e}
+
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+\title{Teorema de Lagrange}
+\subtitle{No Contexto de Teoria de Grupos}
+\author{Marco Busetti}
+\institute{UTFPR}
+\date{\today}
+
+\AtBeginSection[]{
+  \frame{
+    \frametitle{Tabela de Conteúdo}
+    \tableofcontents[currentsection]
+  }
+}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Roteiro}
+\tableofcontents
+\end{frame}
+
+\section{Um Pequeno Histórico}
+
+\begin{frame}
+\frametitle{A pré-história do Teorema de Lagrange}
+\begin{justify}
+\fontsize{15}{16}\selectfont
+Lagrange, em seus escritos de 1770/71, introduziu uma ideia importantíssima que, ao longo de um século, se desenvolveu no que hoje conhecemos como Teorema de Lagrange. Embora o teorema moderno conhecido em Teoria de Grupos — que afirma que a ordem de um subgrupo de um grupo finito sempre divide a ordem do grupo — não estivesse presente em seu trabalho original, sua percepção inicial foi o alicerce para essa descoberta fundamental.
+\end{justify}
+\end{frame}
+
+\begin{frame}
+\fontsize{15}{16}\selectfont
+\frametitle{Os $m$-valores para funções de $n$ variáveis}
+\begin{justify}
+Supondo $f$ uma função bem definida de $n$ entradas, definimos $m$ como o número de diferentes funções obtidas em permutar as $n$ variáveis de entrada. Isto é, os 'valores' de $f$.
+\end{justify}
+Denotamos:
+\begin{itemize} 
+\item $n\;\rightarrow$ um inteiro positivo;
+
+\item $x_1, x_2, x_3, \ldots, x_n\;\rightarrow$ $n$ variáveis;
+
+\item $f(x_1,x_2,x_3, \ldots, x_n)\;\rightarrow$ uma função avaliada em $n$ variáveis;
+
+\item $m\; \rightarrow$ o número de diferentes funções obtidas via permutação das variáveis $x_1, x_2, x_3, \ldots, x_n$.
+
+\end{itemize}
+{\color{blue} Lagrange:} Dado $n$, quais são os diferentes valores que $m$ pode ter? 
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Valores possíveis para $m$ e a conjectura de Lagrange}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{n} & \textbf{m (valores possíveis para $f$)} \\
+\hline
+1 &  1 \\
+\hline 
+2 &  1, 2 \\
+\hline
+3 &  1, 2, 3, 6 \\
+\hline
+4 & 1, 2, 3, 4, 6, 8, 12, 24 \\
+\hline
+5 &  {\color{red} E quanto a esta linha ??}\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item Na seção 97 de \textit{Réflexions} de Lagrange, é conjecturado:
+\end{itemize}
+
+\begin{center}
+\boxed{
+\text{O número $m$ de valores possíveis para $f$ divide $n!$}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Teorema de Lagrange: 1770 e 1870}
+\fontsize{15}{16}\selectfont
+\begin{justify}
+
+{\color{blue} Teorema de Lagrange ~1770:} o número $m$ de valores possíveis de uma função de $n$ varíaveis divide $n!$
+
+\vspace{0.7cm}
+
+
+{\color{blue} Teorema de Lagrange ~1870:} Si le groupe $H$ est contenu dans le
+groupe $G$, son ordre $n$ est un diviseur de $N$, ordre de $G$. 
+
+[{\color{green}Camille Jordan,} \textit{Traité des Substitutions et des Équations Algébriques} (1870), p. 25— onde foi dada a origem do nome ao teorema que conhecemos hoje como Teorema de Lagrange.
+
+\vspace{0.7cm}
+
+\textbf{{\color{blue} A pergunta central:} Como esses teoremas se conectam??}
+
+\end{justify}
+
+\end{frame}
+
+\section{Conceitos Fundamentais}
+
+\begin{frame}
+\frametitle{Operação Binária}
+
+\begin{block}{Definição}
+Sejam $G$ e $E$ conjuntos não-vazios e $\oplus$ uma função tal que:
+\[
+\oplus: 
+\begin{array}{c}
+G\times G \to E \\
+(a, b) \mapsto a \oplus b
+\end{array}
+\]
+Definimos $\oplus$ como uma \textbf{operação binária} de dois elementos de $G$ em $E$.
+\end{block}
+
+\pause
+
+\begin{block}{Definição}
+Dizemos que $\oplus$ é uma \textbf{lei de composição interna} em $G$ se $E = G$.
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Definição de Grupo}
+
+\begin{block}{Definição}
+Seja $G$ um conjunto não-vazio. Dizemos que $(G, \cdot)$ é um \textbf{grupo} se, e somente se, $\cdot$ é uma lei de composição interna em $G$ tal que:
+
+\begin{enumerate}
+\item \textbf{Elemento neutro:} $\exists \,e \in G \; , \forall \,x \in G \; : x\cdot e = e\cdot x = x$
+\item \textbf{Elemento inverso:} $\forall x \in G, \exists x^{-1}\in G: \; x\cdot x^{-1} = x^{-1} \cdot x = e$
+\item \textbf{Associatividade:} $\forall \, x,y,z \in G : (x\cdot y)\cdot z = x\cdot (y\cdot z)$
+\end{enumerate}
+\end{block}
+
+\pause
+
+\textbf{Observação:} Se $\forall \,(x,y) \in G \times G:\; x \cdot y = y \cdot x$, dizemos que $G$ é um grupo \emph{abeliano} (ou \emph{comutativo}).
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Exemplos de Grupos}
+
+\begin{itemize}
+\item $(\mathbb{Z}, +)$, $(\mathbb{R}, +)$, $(\mathbb{C}, +)$ - grupos abelianos
+\pause
+\item $(\mathbb{R}^*, \cdot)$, $(\mathbb{C}^*, \cdot)$, $(\mathbb{Q}^*, \cdot)$ - grupos abelianos
+\pause
+\item $(GL_n(\mathbb{K}), \times)$ - grupo das matrizes $n\times n$ invertíveis
+\pause
+\item $(\mathbb{Z}/n\mathbb{Z}, +)$ - grupos cíclicos finitos
+\pause
+\item $(\mathbb{Z}_p^*, \odot)$ - grupo multiplicativo módulo $p$ primo
+\pause
+\item $S_n$ - grupo simétrico (permutações de $n$ elementos)
+\end{itemize}
+
+\end{frame}
+
+\section{Subgrupos}
+
+\begin{frame}
+\frametitle{Definição de Subgrupo}
+
+\begin{block}{Definição}
+Seja $(G, \cdot)$ um grupo. Um subconjunto $H \subseteq G$ é chamado de \textbf{subgrupo} de $G$ (denotamos $H \leq G$) se, e somente se, $(H, \cdot)$ é um grupo.
+\end{block}
+
+\pause
+
+\begin{alertblock}{Teorema}
+Seja $H \subseteq G$ tal que $H \neq \emptyset$ e $(G, \cdot)$ é um grupo. Então $H \leq G$ se, e somente se:
+\begin{enumerate}
+\item $h_1 \cdot h_2 \in H,\; \forall (h_1,h_2) \in H \times H$
+\item $h^{-1} \in H, \; \forall h\in H$
+\end{enumerate}
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Exemplos de Subgrupos}
+
+\begin{itemize}
+\item $G$ e $\{e\}$ são subgrupos \textbf{triviais} de $G$
+\pause
+\item $(n\mathbb{Z}, +) \leq (\mathbb{Z}, +)$ para todo $n \in \mathbb{Z}$
+\pause
+\item $SL_n(\mathbb{K}) = \{A \in GL_n(\mathbb{K}) : \det(A) = 1\} \leq GL_n(\mathbb{K})$
+\pause
+\item Centro do grupo: $Z(G) = \{x \in G : xg = gx, \; \forall g \in G\}$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Subgrupo Gerado}
+
+\begin{block}{Definição}
+Seja $(G, \cdot)$ um grupo e $X \subseteq G$ não-vazio. O \textbf{subgrupo gerado por $X$} é:
+\[
+\langle X \rangle = \bigcap \{H : H \leq G \text{ e } X \subseteq H\}
+\]
+\end{block}
+
+\pause
+
+\begin{exampleblock}{Proposição}
+\[
+\langle X \rangle = \{x_1 x_2 \ldots x_n : x_i \in X \cup X^{-1}, \; n \geq 1\}
+\]
+\end{exampleblock}
+
+\pause
+
+Para um único elemento: $\langle a \rangle = \{a^n : n \in \mathbb{Z}\}$
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Grupos Cíclicos}
+
+\begin{block}{Definição}
+Um grupo $G$ é chamado de \textbf{cíclico} quando pode ser gerado por um único elemento $a \in G$, isto é, $G = \langle a \rangle$.
+\end{block}
+
+\pause
+
+\begin{exampleblock}{Proposição}
+Se $G$ é um grupo cíclico, então $G$ é abeliano.
+\end{exampleblock}
+
+\pause
+
+\textbf{Exemplos:}
+\begin{itemize}
+\item $\mathbb{Z} = \langle 1 \rangle$
+\item $\mathbb{Z}/n\mathbb{Z} = \langle \overline{1} \rangle$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Ordem de Elementos}
+
+\begin{block}{Definição}
+Seja $(G, \cdot)$ um grupo.
+\begin{itemize}
+\item A \textbf{ordem do grupo} $G$ é $|G|$ (número de elementos)
+\item A \textbf{ordem de um elemento} $\alpha \in G$ é $\mathcal{O}(\alpha) = |\langle \alpha \rangle|$
+\end{itemize}
+\end{block}
+
+\pause
+
+\begin{exampleblock}{Proposição}
+Seja $G$ um grupo e $\alpha \in G$. São equivalentes:
+\begin{enumerate}
+\item $\mathcal{O}(\alpha) < \infty$
+\item $\exists t \in \mathbb{Z}^*_+ : \alpha^t = e$ (onde $t$ é minimal)
+\end{enumerate}
+\end{exampleblock}
+
+\end{frame}
+
+\section{Classes Laterais}
+
+\begin{frame}
+\frametitle{Classes Laterais}
+
+\begin{block}{Definição}
+Seja $G$ um grupo, $H \leq G$ e $x \in G$.
+\begin{itemize}
+\item \textbf{Classe lateral à esquerda:} $xH = \{xh : h \in H\}$
+\item \textbf{Classe lateral à direita:} $Hx = \{hx : h \in H\}$
+\end{itemize}
+\end{block}
+
+\pause
+
+\begin{block}{Definição}
+O \textbf{índice de $H$ em $G$} é o número de classes laterais distintas:
+\[
+[G:H] = |\{\text{classes laterais à esquerda de } H\}|
+\]
+\end{block}
+
+\pause
+
+\textbf{Propriedade importante:} O número de classes laterais à esquerda é igual ao número de classes laterais à direita.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Propriedades das Classes Laterais}
+
+\begin{exampleblock}{Proposição}
+Seja $G$ um grupo, $H \leq G$ e $x, y \in G$. Então:
+\begin{enumerate}
+\item $x \in xH$ (todo elemento está em sua classe lateral)
+\pause
+\item $xH = yH$ se, e somente se, $x^{-1}y \in H$
+\pause
+\item Ou $xH = yH$ ou $xH \cap yH = \emptyset$
+\pause
+\item $|xH| = |H|$ para todo $x \in G$
+\end{enumerate}
+\end{exampleblock}
+
+\pause
+
+\textbf{Conclusão:} As classes laterais formam uma \textbf{partição} de $G$.
+
+\end{frame}
+
+\section{Teorema de Lagrange}
+
+\begin{frame}
+\frametitle{Teorema de Lagrange}
+
+\begin{alertblock}{Teorema de Lagrange}
+Seja $G$ um grupo finito e $H$ um subgrupo de $G$.
+
+Então $|H|$ divide $|G|$.
+
+Mais precisamente: $|G| = |H| \cdot [G:H]$
+\end{alertblock}
+
+\pause
+
+\textbf{Ideia da Demonstração:}
+\begin{itemize}
+\item As classes laterais de $H$ particionam $G$
+\item Cada classe lateral tem cardinalidade $|H|$
+\item Existem $[G:H]$ classes laterais distintas
+\item Logo: $|G| = |H| \cdot [G:H]$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Consequências do Teorema de Lagrange}
+
+\begin{exampleblock}{Corolário}
+Se $G$ é um grupo finito e $\alpha \in G$, então $\mathcal{O}(\alpha)$ divide $|G|$.
+\end{exampleblock}
+
+\pause
+
+\begin{exampleblock}{Corolário}
+Se $G$ é um grupo finito de ordem $p$ primo, então $G$ é cíclico.
+\end{exampleblock}
+
+\pause
+
+\begin{alertblock}{Teorema de Euler}
+Seja $G$ um grupo finito com $|G| = n$. Então:
+\[
+\forall g \in G, \quad g^n = e
+\]
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Pequeno Teorema de Fermat}
+
+\begin{alertblock}{Pequeno Teorema de Fermat}
+Seja $p$ um número primo e $a \in \mathbb{Z} \setminus p\mathbb{Z}$. Então:
+\[
+a^{p-1} \equiv 1 \pmod{p}
+\]
+\end{alertblock}
+
+\pause
+
+\textbf{Demonstração:} Aplicação direta do Teorema de Euler ao grupo $(\mathbb{Z}_p^*, \odot)$, que tem ordem $p-1$.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Multiplicatividade do Índice}
+
+\begin{exampleblock}{Proposição}
+Seja $G$ um grupo e sejam $K \leq H \leq G$. Então:
+\[
+[G:K] = [G:H] \cdot [H:K]
+\]
+\end{exampleblock}
+
+\pause
+
+\textbf{Demonstração:} Aplicação sucessiva do Teorema de Lagrange:
+\begin{align}
+|G| &= |H| \cdot [G:H] \\
+|H| &= |K| \cdot [H:K] \\
+|G| &= |K| \cdot [G:K]
+\end{align}
+
+\end{frame}
+
+\section{Voltando ao Teorema de 1770}
+
+\begin{frame}
+
+{\color{blue} Teorema de Lagrange (1770):} O número $m$ de valores de uma função $f$ de $n$ variáveis divide n!
+\vspace{0.7cm}
+
+Seja $G = S_n$ o grupo de todas as permutações dos elementos em $\{x_1, x_2, \ldots, x_n\}$.
+
+Seja $f^g$ a função obtida ao aplicar a permutação $g\in G$ nas variáveis em $f$.
+
+Tomemos $H$ como a família de todas as permutações $h\in G$ tais que $f^h = f$.
+
+Logo, $H$ é subgrupo de $G$ e 2 'valores' de $f$, $f^{g_1}$ e $f^{g_2}$ são iguais se e somente se $g_1$ e $g_2$ estão na mesma classe lateral de $H$.
+
+Portanto, o número de 'valores' de $f$ é o número de classes laterais de $H$ em $G$ e, logo, divide $n!$
+
+\qed 
+
+\end{frame}
+
+\section{Agradecimentos/Referências}
+
+\begin{frame}
+\frametitle{Obrigado!}
+
+\begin{center}
+\Large
+Dúvidas?
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Referências}
+
+\begin{itemize}
+\item https://m-a.org.uk/resources/downloads/3H-Peter-Neumann-Lagrange-Theorem.pdf
+\item https://github.com/MARCOVB5/grupos
+\item GARCIA, Arnaldo; LEQUAIN, Yves. \textit{Elementos de Álgebra}. Rio de Janeiro: IMPA, 2003. 
+\end{itemize}
+
+\end{frame}
+
+\end{document}
