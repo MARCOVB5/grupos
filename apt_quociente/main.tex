@@ -1,0 +1,302 @@
+\documentclass{beamer} 
+
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{ragged2e}
+
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+\title{Grupos Quocientes}
+\subtitle{Subgrupos Normais e Estruturas Quocientes}
+\author{Marco Busetti}
+\institute{UTFPR}
+\date{\today}
+
+\AtBeginSection[]{
+  \frame{
+    \frametitle{Tabela de Conteúdo}
+    \tableofcontents[currentsection]
+  }
+}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Roteiro}
+\tableofcontents
+\end{frame}
+
+\section{Conjunto Quociente e Operações}
+
+\begin{frame}
+\frametitle{Conjunto Quociente}
+
+\begin{block}{Definição}
+Seja $G$ um grupo e $H \leq G$.
+
+Chamamos de \textbf{conjunto quociente} o conjunto $G/H$ cujos elementos são as classes laterais à esquerda de $H$ em $G$.
+\end{block}
+
+\pause
+
+\begin{block}{Observação}
+Decorre da definição que $|G/H| = [G:H]$ (índice de $H$ em $G$).
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Operação entre Classes Laterais}
+
+\begin{block}{Definição}
+Seja $G$ um grupo e $H \leq G$. Definimos a seguinte operação:
+\[
+\bullet : G/H \times G/H \to G/H
+\]
+\[
+(xH, yH) \mapsto xyH
+\]
+\end{block}
+
+\pause
+
+\begin{alertblock}{Problema}
+Esta operação nem sempre está bem definida!
+
+Para que $xH \bullet yH = xyH$ esteja bem definida, precisamos que representantes diferentes da mesma classe lateral produzam o mesmo resultado.
+\end{alertblock}
+
+\end{frame}
+
+\section{Subgrupos Normais}
+
+\begin{frame}
+\frametitle{Condições para Operação Bem Definida}
+
+\begin{alertblock}{Proposição}
+Seja $G$ um grupo e $H \leq G$. As seguintes afirmações são equivalentes:
+
+\begin{enumerate}
+\item A operação $\bullet$ está bem definida
+\item $gHg^{-1} \subseteq H$, $\forall g \in G$
+\item $gHg^{-1} = H$, $\forall g \in G$
+\item $gH = Hg$, $\forall g \in G$
+\end{enumerate}
+\end{alertblock}
+
+\pause
+
+\textbf{Ideia da demonstração:} A operação está bem definida se e somente se elementos conjugados por qualquer $g \in G$ permanecem no subgrupo $H$.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Subgrupos Normais}
+
+\begin{block}{Definição}
+Um subgrupo $H$ é um \textbf{subgrupo normal} de $G$ caso satisfaça as condições equivalentes da proposição anterior.
+
+Denotamos: $H \trianglelefteq G$
+\end{block}
+
+\pause
+
+\begin{exampleblock}{Observações}
+\begin{itemize}
+\item Se $H \trianglelefteq G$, então classes laterais à esquerda e à direita são iguais
+\item $H \triangleleft G$ denota subgrupo normal próprio
+\item Para verificar normalidade: mostrar que $ghg^{-1} \in H$
+\end{itemize}
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Exemplos de Subgrupos Normais}
+
+\begin{exampleblock}{Exemplos}
+\begin{itemize}
+\item $G$ e $\{e\}$ são sempre subgrupos normais (triviais)
+\pause
+\item O centro $Z(G) \trianglelefteq G$ para qualquer grupo $G$
+\pause
+\item $SL_n(\mathbb{K}) \trianglelefteq GL_n(\mathbb{K})$
+\pause
+\item Se $[G:H] = 2$, então $H \trianglelefteq G$
+\pause
+\item Em grupos abelianos, todos os subgrupos são normais
+\end{itemize}
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Grupos Simples}
+
+\begin{block}{Definição}
+Um grupo $G$ não-trivial é chamado de \textbf{grupo simples} se seus únicos subgrupos normais são $\{e\}$ e $G$.
+\end{block}
+
+\pause
+
+\begin{exampleblock}{Interpretação}
+Grupos simples são os "blocos de construção" da teoria de grupos - não podem ser "decompostos" em grupos menores via quocientes não-triviais.
+\end{exampleblock}
+
+\end{frame}
+
+\section{Operações com Subgrupos}
+
+\begin{frame}
+\frametitle{Produto de Subgrupos}
+
+\begin{block}{Definição}
+Sejam $A, B \leq G$. Definimos:
+\[
+AB = \{ab : a \in A, b \in B\}
+\]
+\end{block}
+
+\pause
+
+\begin{alertblock}{Proposição}
+$HK$ é subgrupo de $G$ se e somente se $HK = KH$.
+\end{alertblock}
+
+\pause
+
+\begin{exampleblock}{Consequência}
+Se $H \trianglelefteq G$ ou $K \trianglelefteq G$, então $HK \leq G$.
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Cardinalidade do Produto}
+
+\begin{alertblock}{Proposição (Grupos Finitos)}
+Seja $G$ um grupo finito e $H, K \leq G$. Então:
+\[
+|HK| = \frac{|H||K|}{|H \cap K|}
+\]
+\end{alertblock}
+
+\pause
+
+\begin{exampleblock}{Corolário}
+Se $HK \leq G$, então:
+\[
+[HK:K] = [H:H \cap K]
+\]
+\end{exampleblock}
+
+\end{frame}
+
+\section{Grupos Quocientes}
+
+\begin{frame}
+\frametitle{Definição de Grupo Quociente}
+
+\begin{alertblock}{Teorema}
+Seja $G$ um grupo e $H \trianglelefteq G$.
+
+Então $(G/H, \bullet)$ é um grupo, chamado de \textbf{grupo quociente}.
+\end{alertblock}
+
+\pause
+
+\textbf{Verificação dos axiomas:}
+\begin{itemize}
+\item \textbf{Associatividade:} $(xH \bullet yH) \bullet zH = xH \bullet (yH \bullet zH)$
+\item \textbf{Elemento neutro:} $H$
+\item \textbf{Elemento inverso:} $(xH)^{-1} = x^{-1}H$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Exemplo Principal}
+
+\begin{exampleblock}{$\mathbb{Z}/n\mathbb{Z}$}
+O grupo $\mathbb{Z}/n\mathbb{Z}$ é um grupo quociente formado por:
+\begin{itemize}
+\item $G = \mathbb{Z}$ (grupo aditivo dos inteiros)
+\item $H = n\mathbb{Z}$ (múltiplos de $n$)
+\item Classes: $\{0, 1, 2, \ldots, n-1\} + n\mathbb{Z}$
+\end{itemize}
+\end{exampleblock}
+
+\pause
+
+\textbf{Operação:} $\overline{a} + \overline{b} = \overline{a+b}$
+
+onde $\overline{a} = a + n\mathbb{Z}$
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Propriedade do Centro}
+
+\begin{alertblock}{Proposição}
+Seja $G$ um grupo e $Z(G)$ seu centro.
+
+Se $G/Z(G)$ é cíclico, então $G = Z(G)$ (isto é, $G$ é abeliano).
+\end{alertblock}
+
+\pause
+
+\textbf{Ideia da demonstração:}
+\begin{itemize}
+\item Se $G/Z(G) = \langle xZ(G) \rangle$, então todo elemento de $G$ é da forma $x^k z$
+\item Elementos desta forma comutam entre si
+\item Logo $G$ é abeliano, portanto $G = Z(G)$
+\end{itemize}
+
+\end{frame}
+
+\section{Considerações Finais}
+
+\begin{frame}
+\frametitle{Importância dos Grupos Quocientes}
+
+\begin{itemize}
+\item \textbf{Estrutura fundamental:} Permite "simplificar" grupos removendo subgrupos normais
+\pause
+\item \textbf{Classificação:} Essencial para classificar grupos via séries de composição
+\pause
+\item \textbf{Homomorfismos:} Conecta-se diretamente com o teorema fundamental dos homomorfismos
+\pause
+\item \textbf{Aplicações:} Base para teoria de Galois, geometria algébrica, topologia algébrica
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Obrigado!}
+
+\begin{center}
+\Large
+Dúvidas?
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Referências}
+
+\begin{itemize}
+\item GARCIA, Arnaldo; LEQUAIN, Yves. \textit{Elementos de Álgebra}. Rio de Janeiro: IMPA, 2003.
+\item https://github.com/MARCOVB5/grupos
+\end{itemize}
+
+\end{frame}
+
+\end{document}
