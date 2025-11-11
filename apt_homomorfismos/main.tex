@@ -1,0 +1,323 @@
+\documentclass{beamer} 
+
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{pict2e}
+
+\title{Homomorfismos de Grupos}
+\subtitle{Definições, Propriedades e Teoremas de Isomorfismo}
+\author{Marco Busetti}
+\institute{UTFPR}
+\date{\today}
+
+\AtBeginSection[]{
+  \frame{
+    \frametitle{Tabela de Conteúdo}
+    \tableofcontents[currentsection]
+  }
+}
+
+\newcommand{\trianglechar}{
+  \mathrel{
+    \unitlength=1mm
+    \begin{picture}(5,3)(0,-1.5)
+      \polyline(0,0)(4,1.5)(4,-1.5)(0,0)
+      \polyline(1.25,0)(3,0.75)(3,-0.75)(1.25,0)
+    \end{picture}
+  }
+}
+
+\newcommand{\trianglechareq}{
+  \mathrel{
+    \unitlength=1mm
+    \begin{picture}(5,3)(0,-1.5)
+      \polyline(0,0)(4,1.5)(4,-1.5)(0,0)
+      \polyline(1.25,0)(3,0.75)(3,-0.75)(1.25,0)
+      \polyline(0,-1.9)(4,-1.9)
+    \end{picture}
+  }
+}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Roteiro}
+\tableofcontents
+\end{frame}
+
+\section{Definição e Exemplos}
+
+\begin{frame}
+\frametitle{Definição de Homomorfismo}
+
+\begin{block}{Definição}
+Sejam $(G, \cdot)$ e $(\mathcal{G}, *)$ dois grupos. Uma função $\varphi : G \rightarrow \mathcal{G}$ é chamada de \textbf{homomorfismo de grupos} se:
+\[
+\varphi(a\cdot b) = \varphi(a)*\varphi(b), \; \forall a,b \in G
+\]
+\end{block}
+
+\pause
+
+\begin{exampleblock}{Propriedades Imediatas}
+Se $\varphi$ é um homomorfismo, então:
+\begin{enumerate}
+	\item $\varphi(e_G) = e_\mathcal{G}$
+	\item $\varphi(x^{-1}) = \varphi(x)^{-1}, \; \forall x \in G$
+\end{enumerate}
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Exemplos de Homomorfismos}
+
+\begin{exampleblock}{Exemplos Comuns}
+\begin{itemize}
+    \item \textbf{Homomorfismo Trivial:} $\theta: G \to \mathcal{G}$ dado por $\theta(g) = e_{\mathcal{G}}, \; \forall g\in G$.
+    
+    \pause
+    \item \textbf{Determinante:} A função $\det: GL_n(\mathbb{K}) \to \mathbb{K}^*$ é um homomorfismo, pois $\det(AB) = \det(A)\det(B)$.
+    
+    \pause
+    \item \textbf{Projeção Canônica:} Se $N \trianglelefteq G$, a função $\pi: G \to G/N$ dada por $\pi(x) = xN$ é um homomorfismo sobrejetivo.
+\end{itemize}
+\end{exampleblock}
+
+\end{frame}
+
+\section{Núcleo e Imagem}
+
+\begin{frame}
+\frametitle{Núcleo de um Homomorfismo}
+
+\begin{block}{Definição (Núcleo)}
+Definimos o \textbf{núcleo} (ou kernel) de um homomorfismo $\varphi: G \to \mathcal{G}$ como o subconjunto:
+\[
+\ker \varphi \overset{\text{def}}{=} \{x \in G \mid \varphi(x) = e_\mathcal{G}\}
+\]
+\end{block}
+
+\pause
+
+\begin{alertblock}{Proposição Fundamental}
+O núcleo de um homomorfismo $\varphi$ é sempre um \textbf{subgrupo normal} de $G$.
+\[
+\ker \varphi \trianglelefteq G
+\]
+\end{alertblock}
+
+\pause
+
+\begin{exampleblock}{Exemplo}
+Para o homomorfismo $\det: GL_n(\mathbb{K}) \to \mathbb{K}^*$:
+\[
+\ker(\det) = \{A \in GL_n(\mathbb{K}) \mid \det(A) = 1\} = SL_n(\mathbb{K})
+\]
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Imagem de um Homomorfismo}
+
+\begin{block}{Definição (Imagem)}
+Definimos a \textbf{imagem} de um homomorfismo $\varphi: G \to \mathcal{G}$ como:
+\[
+\operatorname{Im} \varphi \overset{\text{def}}{=} \{ y \in \mathcal{G} \mid \exists x \in G,\, y = \varphi(x) \}
+\]
+\end{block}
+
+\pause
+
+\begin{alertblock}{Proposição}
+A imagem de um homomorfismo $\varphi$ é sempre um \textbf{subgrupo} de $\mathcal{G}$.
+\[
+\operatorname{Im} \varphi \leq \mathcal{G}
+\]
+(Note: A imagem não é, em geral, um subgrupo normal de $\mathcal{G}$.)
+\end{alertblock}
+
+\end{frame}
+
+\section{Isomorfismos}
+
+\begin{frame}
+\frametitle{Monomorfismos (Homomorfismos Injetivos)}
+
+\begin{block}{Definição}
+Um homomorfismo $\varphi$ que é \textbf{injetivo} é chamado de \textbf{monomorfismo}.
+\end{block}
+
+\pause
+
+\begin{alertblock}{Teste de Injetividade}
+Um homomorfismo $\varphi$ é injetivo se, e somente se, seu núcleo contém apenas o elemento neutro:
+\[
+\varphi \text{ é injetiva} \iff \ker \varphi = \{e_G\}
+\]
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Isomorfismos (Grupos "Iguais")}
+
+\begin{block}{Definição}
+Um homomorfismo $\varphi : G \to \mathcal{G}$ é um \textbf{isomorfismo} se $\varphi$ for \textbf{bijetivo} (injetivo e sobrejetivo).
+\end{block}
+
+\pause
+
+\begin{block}{Grupos Isomorfos}
+Se existe um isomorfismo entre $G$ e $\mathcal{G}$, dizemos que os grupos são \textbf{isomorfos} e denotamos $G \cong \mathcal{G}$.
+\end{block}
+
+\pause
+
+\begin{exampleblock}{Exemplo Clássico}
+$(\mathbb{R}, +) \cong (\mathbb{R}^{*}_{+}, \cdot)$
+\begin{itemize}
+    \item O isomorfismo pode ser $\varphi(x) = \log(x)$ ou $\psi(x) = e^x$.
+    \item $\varphi(x \cdot y) = \log(xy) = \log(x) + \log(y) = \varphi(x) + \varphi(y)$
+\end{itemize}
+\end{exampleblock}
+
+\end{frame}
+
+\section{Teoremas de Isomorfismo}
+
+\begin{frame}
+\frametitle{Primeiro Teorema dos Isomorfismos}
+
+\begin{alertblock}{Teorema}
+Seja $\varphi : G \to \mathcal{G}$ um homomorfismo de grupos. Então, temos um isomorfismo:
+\[
+\frac{G}{\ker \varphi} \cong \operatorname{Im} \varphi
+\]
+\end{alertblock}
+
+\pause
+
+\begin{block}{Interpretação}
+\begin{itemize}
+    \item Este é talvez o teorema mais importante da teoria de grupos.
+    \item Ele conecta os dois conceitos centrais que vimos:
+    \begin{enumerate}
+        \item \textbf{Grupos Quocientes} (via $\ker \varphi$, que é normal)
+        \item \textbf{Subgrupos} (via $\operatorname{Im} \varphi$)
+    \end{enumerate}
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Segundo e Terceiro Teoremas}
+
+\begin{block}{Segundo Teorema dos Isomorfismos}
+Seja $G$ um grupo, $H \trianglelefteq G$ e $K \leq G$. Então:
+\[
+\frac{K}{H\cap K} \cong \frac{HK}{H}
+\]
+\end{block}
+
+\pause
+
+\begin{block}{Terceiro Teorema dos Isomorfismos}
+Seja $G$ um grupo e $H, K \trianglelefteq G$ tal que $K \subseteq H$. Então $H/K \trianglelefteq G/K$ e:
+\[
+\frac{G/K}{H/K} \cong \frac{G}{H}
+\]
+(Este teorema é sobre "cancelar" o subgrupo $K$).
+\end{block}
+
+\end{frame}
+
+\section{Automorfismos}
+
+\begin{frame}
+\frametitle{Automorfismos}
+
+\begin{block}{Definição}
+Um \textbf{automorfismo} de $G$ é um isomorfismo $\varphi: G \to G$.
+\end{block}
+
+\pause
+
+\begin{block}{Grupo de Automorfismos}
+O conjunto de todos os automorfismos de $G$, denotado por $\operatorname{Aut}(G)$, forma um grupo sob a operação de composição de funções $(\circ)$.
+\end{block}
+
+\pause
+
+\begin{exampleblock}{Exemplo: Automorfismo Interno}
+Para qualquer $g \in G$, a função "conjugação por $g$":
+\[
+\mathcal{I}_g(x) = gxg^{-1}
+\]
+é um automorfismo de $G$.
+\end{exampleblock}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Automorfismos Internos e Subgrupos}
+
+\begin{block}{Grupo de Automorfismos Internos}
+O conjunto de todos os automorfismos internos, $\operatorname{Inn}(G)$, é um subgrupo de $\operatorname{Aut}(G)$.
+\end{block}
+
+\pause
+
+\begin{alertblock}{Proposição}
+O grupo de automorfismos internos é um subgrupo normal do grupo de automorfismos:
+\[
+\operatorname{Inn}(G) \trianglelefteq \operatorname{Aut}(G)
+\]
+\end{alertblock}
+
+\pause
+
+\begin{block}{Subgrupos Característicos}
+Um subgrupo $H \leq G$ é \textbf{característico} ($H \trianglechareq G$) se ele é invariante por \textit{todos} os automorfismos (não apenas os internos).
+\begin{itemize}
+    \item Exemplo: O centro $Z(G)$ é sempre característico.
+    \item $H \trianglechareq G \implies H \trianglelefteq G$.
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Obrigado!}
+
+\begin{center}
+\Large
+Dúvidas?
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Referências}
+
+\begin{itemize}
+\item GARCIA, Arnaldo; LEQUAIN, Yves. \textit{Elementos de Álgebra}. Rio de Janeiro: IMPA, 2003.
+\item Material de IC: \textit{IC Grupos: Iniciação Científica em Teoria de Grupos}
+\item \url{https://github.com/MARCOVB5/grupos}
+\end{itemize}
+
+\end{frame}
+
+\end{document}
