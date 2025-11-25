@@ -826,12 +826,17 @@ x\cdot y = a^{r_1} \cdot a^{r_2} = a^{r_1 + r_2} \stackrel{(*)}{=} a^{r_2+ r_1} 
 Portanto, $G$ é um grupo abeliano. \qed
 
 \begin{definition} \hypertarget{defglinha}{}
-    Definimos $\langle \{ xyx^{-1}y^{-1} \vert (x,y) \in G \times G \} \rangle$ como o subgrupo dos comutadores do grupo $G$. Denotaremos-o por $G'$.
+\color{red}
+    Definimos $G' \overset{def}{=} \langle \{ xyx^{-1}y^{-1} \vert (x,y) \in G \times G \} \rangle$ como o subgrupo dos comutadores do grupo $G$.
+	
+	Podemos também denotar $G' \overset{def}{=} [G,G]$, onde, para $x,y \in G$, temos:
+
+	\[
+	[x,y] \overset{def}{=} xyx^{-1}y^{-1}.
+	\]
 \end{definition}
 
-{\color{red}
 \textit{Observação: note que $G'$ é de fato um subgrupo de $G$, uma vez que ele é, por definição, um subgrupo gerado.}
-}
 
 \begin{definition}
     Seja $(G, \cdot)$ um grupo. \textbf{Definimos ordem do grupo $(G, \cdot)$ a quantidade de elementos no conjunto $G$} e a denotamos por $\vert G \vert$. \\
@@ -865,13 +870,13 @@ Seja $G$ um grupo e $\alpha$ um elemento de $G$. Então, as seguintes proposiç�
 
 $(i)$ A ordem $\mathcal{O}(\alpha)$ é finita. Isto é, $\mathcal{O}(\alpha) < \infty$;
 
-$(ii)$ $\exists t \in \mathbb{Z}_{+}^{*} : \alpha ^t = e$, onde $t = \min{\{k \in G : k > 0\}}$ e $\mathcal{O}(\alpha) = t$.
+$(ii)$ $\exists t \in \mathbb{Z}_{+}^{*} : \alpha ^t = e$, onde $t = \min{\{k \in G : k > 0\}}$.
+
+Note que, caso a proposição seja satisfeita, então temos $\mathcal{O}(\alpha) = t$.
 
 \end{proposition}
 
 \textbf{Demonstração:}
-
-{\color{red}
 
 Queremos provar que: $(i) \iff (ii)$.
 
@@ -921,7 +926,7 @@ Absurdo, pois $r_1 - r_2 < t$, porém $t$ é minimal.
 
 Logo, como todos elementos de $\langle \alpha \rangle$ são distintos, deduzimos que $\mathcal{O}(\alpha) = t$.
 
-\qed}
+\qed
 
 \section{Teorema de Lagrange}
 
@@ -1440,25 +1445,31 @@ Seja $G$ um grupo e $G'$ o subgrupo dos comutadores de $G$. Logo $G' \trianglele
 
 \textbf{Demonstração:}
 
-Sabemos, a partir da \hyperlink{defglinha}{\textbf{Definição1.3.5}} que $G' \leq G$.
+Sabemos, a partir da \hyperlink{defglinha}{\textbf{Definição 1.3.5}} que $G' \leq G$.
 
-Seja $g \in G$.
-
-Definimos ainda, sem perda de generalidade, $g'\in G'$ tal que $g' = xyx^{-1}y^{-1}$.
+Seja $g \in G$ e tomemos $q = xyx^{-1}y^{-1} = [x,y], \; x,y\in G$.
 
 Temos, portanto:
 
 \[
-gg'g^{-1} = g(xyx^{-1}y^{-1})g^{-1} = (gxg^{-1})(gyg^{-1})(gx^{-1}g^{-1})(gy^{-1}g^{-1})
+gqg^{-1} = g(xyx^{-1}y^{-1})g^{-1} = (gxg^{-1})(gyg^{-1})(gx^{-1}g^{-1})(gy^{-1}g^{-1})
 \]
 
 Tomando $k = gxg^{-1}$ e $l = gyg^{-1}$, deduzimos que:
 
 \[
-gg'g^{-1} = klk^{-1}l^{-1} \in G'
+gqg^{-1} = klk^{-1}l^{-1} = [k,l] \in G'
 \]
 
-Portanto, $G' \trianglelefteq G$.
+Temos, portanto, recursivamente para um elemento genérico $g' \in G'$:
+
+\[
+gg'g^{-1} = \underbrace{\prod_{i=1}^{n\in\mathbb{N}}(\underbrace{g[x_i, y_i]g^{-1}}_{\in G'})}_{\in G'}
+\]
+
+Concluímos que $gg'g^{-1} \in G'$.
+
+Logo, $G' \trianglelefteq G$.
 
 \qed}
 
