@@ -826,7 +826,6 @@ x\cdot y = a^{r_1} \cdot a^{r_2} = a^{r_1 + r_2} \stackrel{(*)}{=} a^{r_2+ r_1} 
 Portanto, $G$ é um grupo abeliano. \qed
 
 \begin{definition} \hypertarget{defglinha}{}
-\color{red}
     Definimos $G' \overset{def}{=} \langle \{ xyx^{-1}y^{-1} \vert (x,y) \in G \times G \} \rangle$ como o subgrupo dos comutadores do grupo $G$.
 	
 	Podemos também denotar $G' \overset{def}{=} [G,G]$, onde, para $x,y \in G$, temos:
@@ -836,8 +835,6 @@ Portanto, $G$ é um grupo abeliano. \qed
 	\]
 \end{definition}
 
-{\color{red}
-
 \textit{Observações}: 
 
 \begin{itemize}
@@ -846,8 +843,6 @@ Portanto, $G$ é um grupo abeliano. \qed
 \item \textit{Note que, para um dado grupo $G$ e $x,y\in G$, \textbf{não} necessariamente temos [x,y]=[y,x].}
 
 \end{itemize}
-
-}
 
 \begin{definition}
     Seja $(G, \cdot)$ um grupo. \textbf{Definimos ordem do grupo $(G, \cdot)$ a quantidade de elementos no conjunto $G$} e a denotamos por $\vert G \vert$. \\
@@ -1448,11 +1443,8 @@ gzg^{-1} = zgg^{-1} = z \in Z(G).
 \end{itemize}
 
 \begin{example}
-\color{red}
 Seja $G$ um grupo e $G'$ o subgrupo dos comutadores de $G$. Logo $G' \trianglelefteq G$.
 \end{example}
-
-{\color{red}
 
 \textbf{Demonstração:}
 
@@ -1482,7 +1474,7 @@ Concluímos que $gg'g^{-1} \in G'$.
 
 Logo, $G' \trianglelefteq G$.
 
-\qed}
+\qed
 
 \begin{example}
 Seja $n\in \mathbb{N}^*$.
@@ -1988,26 +1980,23 @@ Com isso, mostramos que $G$ é um grupo abeliano e, portanto, $G = Z(G)$.
 \qed
 
 \begin{proposition}
-\color{red}
 Seja $G$ um grupo e $G'$ o seu subgrupo de comutadores. 
 
 O grupo quociente $G/G'$ é abeliano.
 
 Este grupo é denominado como \textit{abelianização} de $G$ e é denotado como $G^{ab}$.
 
-Note que, $G'$ é o menor subgrupo normal de $G$ com essa propriedade e $G^{ab}$ representa o maior quociente abeliano de $G$.
+Note que $G'$ é o menor subgrupo normal de $G$ com essa propriedade e $G^{ab}$ representa o maior quociente abeliano de $G$.
 \end{proposition}
-
-{\color{red}
 
 \textbf{Demonstração:}
 
 Note, primeiramente, que $G^{ab}$ é de fato um grupo, uma vez que $G' \trianglelefteq G$.
 
-Sejam $x,y \in G$, sabemos que:
+Sejam $\bar{x} = xG', \bar{y} = yG'$ elementos de $G^{ab}$, com $x,y\in G$, sabemos que:
 
 \[
-xyx^{-1}y^{-1} \in G' \iff xy(yx)^{-1} \in G' \iff xyG' = yxG' \iff \bar{x}\bar{y}=\bar{y}\bar{x}, \; \bar{x},\bar{y}\in G^{ab}
+xyx^{-1}y^{-1} \in G' \iff xy(yx)^{-1} \in G' \iff xyG' = yxG' \iff \bar{x}\bar{y}=\bar{y}\bar{x}
 \]
 
 Concluímos, portanto, que $G^{ab}$ é um grupo abeliano.
@@ -2019,14 +2008,14 @@ Suponha, por absurdo, que $G/H$ é um grupo abeliano e $G'\nsubseteq H$.
 Ora, então temos, para $x,y\in G$:
 
 \[
-xyH = yxH \iff xy(yx)^{-1} \in H \iff xyx^{-1}y^{-1} \in H \Longrightarrow \; \text{Absurdo!}
+xyH = yxH \iff xy(yx)^{-1} \in H \iff xyx^{-1}y^{-1} \in H
 \]
 
-Sabemos que $xyx^{-1}y^{-1}\in G'$, mas $G' \nsubseteq H$.
+Sabemos que $xyx^{-1}y^{-1}\in G'$, mas $G' \nsubseteq H$, portanto induzimos um absurdo.
 
-Deduzimos, portanto, que $G' \subseteq H$.
+Concluímos que $G' \subseteq H$.
 
-\qed}
+\qed
 
 \section{Homomorfismos de Grupos}
 
@@ -2752,8 +2741,6 @@ x \mapsto gxg^{-1}
 O automorfismo $\mathcal{I}_g$ é também chamado de \textbf{conjugação por $g$}.
 \end{example}
 
-{\color{red}
-
 \textbf{Demonstração:}
 
 Mostremos que $\mathcal{I}_g$ é de fato um automorfismo de $G$, dado $g\in G$.
@@ -2790,7 +2777,7 @@ Logo, $\mathcal{I}_g$ é sobrejetiva.
 
 Concluímos, portanto, que $\mathcal{I}_g$ é um automorfismo de $G$.
 
-\qed}
+\qed
 
 \begin{definition}
 Seja $G$ um grupo, definimos:
@@ -2810,8 +2797,6 @@ Seja $G$ um grupo, temos:
 \]
 \end{proposition}
 
-{\color{red}
-
 \textbf{Demonstração:}
 
 Sabemos que $\operatorname{Inn}(G) \subseteq \operatorname{Aut}(G)$, por construção.
@@ -2823,22 +2808,32 @@ Como o domínio e contradomínio das funções em $\operatorname{Inn}(G)$ são i
 Ora, como $\varphi_1, \varphi_2 \in \operatorname{Inn}(G)$, podemos escrevê-los, sem perda de generalidade, para um dado $x\in G$, como:
 
 \[
-\varphi_1(x) = g_1xg_{1}^{-1}
+\varphi_1(x) = g_1xg_{1}^{-1},\; g_1 \in G
 \]
 
 \[
-\varphi_2(x) = g_2xg_{2}^{-1}
+\varphi_2(x) = g_2xg_{2}^{-1}, \; g_2 \in G
 \]
 
 Temos:
 
 \[
-\varphi_1\circ \varphi_{2}^{-1} (x) = \varphi_1(\varphi^{-1}_2(x)) = g_1(g_{2}^{-1}xg_2)g_{1}^{-1} = (g_1g_{2}^{-1})x(g_2g_{1}^{-1}) = (g_1g_{2}^{-1})x(g_1g_{2}^{-1})^{-1} \in \operatorname{Inn}(G)
+\varphi_1\circ \varphi_{2}^{-1} (x) = \varphi_1(\varphi^{-1}_2(x)) = g_1(g_{2}^{-1}xg_2)g_{1}^{-1} = (g_1g_{2}^{-1})x(g_2g_{1}^{-1}) = 
+\]
+
+\[
+= (g_1g_{2}^{-1})x(g_1g_{2}^{-1})^{-1} \in \operatorname{Inn}(G)
 \]
 
 Logo, concluímos que $\operatorname{Inn}(G) \leq \operatorname{Aut}(G)$.
 
-Provemos agora que para $(\varphi, \phi)\in \operatorname{Inn}(G) \times \operatorname{Aut}(G), \; \phi \circ \varphi \circ \phi^{-1} \in \operatorname{Inn}(G)$. Temos:
+Provemos agora que para $(\varphi, \phi)\in \operatorname{Inn}(G) \times \operatorname{Aut}(G), \; \phi \circ \varphi \circ \phi^{-1} \in \operatorname{Inn}(G)$. Seja $x\in G$ tal que:
+
+\[
+\varphi(x) = gxg^{-1},\; g\in G
+\]
+
+Temos:
 
 \[
 (\phi \circ \varphi \circ \phi^{-1}) (x) = \phi(\varphi(\phi^{-1}(x))) = \phi(g\phi^{-1}(x)g^{-1}) = \phi(g)x\phi(g)^{-1} \in \operatorname{Inn}(G)
@@ -2850,7 +2845,7 @@ Logo, concluímos que:
 \operatorname{Inn}(G) \trianglelefteq \operatorname{Aut}(G)
 \]
 
-\qed}
+\qed
 
 \begin{definition}
 Seja G um grupo e $\varphi : G \to G$ um homomorfismo de grupos. 
@@ -2895,7 +2890,6 @@ H \trianglechareq G
 \end{center}
 
 \begin{itemize}
-	\color{red}
 	\item \textit{Temos, portanto, diretamente que $H \trianglechareq G \Longrightarrow H \trianglelefteq G$.}
 \end{itemize}
 
@@ -2946,20 +2940,13 @@ Z(G) \trianglechareq G
 \qed
 
 \begin{proposition}
-\color{red}
 Seja $K\trianglechareq H \trianglelefteq G$, então $K\trianglelefteq G$.
 \end{proposition}
 
 {\color{red}
 \textbf{Demonstração:}
 
-Sabemos que $K\trianglechareq H \implies K \trianglelefteq H$.
 
-Como $H \trianglelefteq G$ e a relação de normalidade é evidentemente transitiva, temos:
-
-\[
-K \trianglelefteq G
-\]
 
 \qed}
 
@@ -3020,7 +3007,6 @@ Concluímos, portanto, que $(\prod_{i=1}^{n} G_i,\cdot)$ é um grupo.
 \qed}
 
 \begin{theorem}
-\color{red}
 Sejam $G$ e $G_1, \ldots, G_n$ grupos. Temos que:
 
 \[
