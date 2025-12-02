@@ -2953,7 +2953,13 @@ Seja $K\trianglechareq H \trianglelefteq G$, então $K\trianglelefteq G$.
 {\color{red}
 \textbf{Demonstração:}
 
-Como $K\trianglechareq H$, e $H\trianglelefteq G$, então todo conjugado $gKg^{-1}$ (que é a imagem de $K$ por um automorfismo de $H$) está contido em $K$. Como isso vale para todo $g\in G$, então $K\trianglelefteq G$.
+Sabemos que $K\trianglechareq H \implies K \trianglelefteq H$.
+
+Como $H \trianglelefteq G$ e a relação de normalidade é evidentemente transitiva, temos:
+
+\[
+K \trianglelefteq G
+\]
 
 \qed}
 
@@ -2964,16 +2970,16 @@ Como $K\trianglechareq H$, e $H\trianglelefteq G$, então todo conjugado $gKg^{-
 \color{red}
 Sejam $n\in \mathbb{Z}^{*}_{+}$ e $\mathfrak{G} = \{G_1, \ldots, G_n \}$ uma família de grupos.
 
-Definimos \textbf{produto direto de $\mathfrak{G}$} como a $n$-upla ordenada:
+Definimos \textbf{produto direto de $\mathfrak{G}$} como sendo o produto cartesiano $G_1 \times \ldots \times G_n$ com a operação: 
 
 \[
-\prod_{i=1}^{n} G_i \overset{def}{=} \{(g_1, \ldots, g_n),\; g_1\in G_1,\ldots, g_n\in G_n \}
+(x_1,\ldots, x_n)\cdot (y_1,\ldots, y_n) \overset{def}{=} (x_1y_1, \ldots, x_ny_n).
 \]
 
-Munida da operação:
+Denotamos, comumente:
 
 \[
-\left(\prod_{i=1}^{n}G_i\right) \cdot \left(\prod_{i=1}^{n} G_i\right) \overset{def}{=} \{(g_1g_1',\ldots g_ng_n'),\; g_1,g_1'\in G_1,\ldots, g_n,g_n'\in G_n \}
+\prod_{i=1}^{n} G_i \overset{def}{=} G_1 \times \ldots \times G_n
 \]
 \end{definition}
 
@@ -2991,25 +2997,55 @@ A partir da \hyperlink{def171}{\textbf{Definição 1.7.1}}, temos que o produto 
 
 Seja $n\in \mathbb{Z}_{+}^{*}$.
 
-Via a \hyperlink{def171}{\textbf{Definição 1.7.1}} temos que a operação "$\cdot$" definida entre dois produtos diretos de $\mathfrak{G}$ é uma lei de composição interna por construção. 
+Via a \hyperlink{def171}{\textbf{Definição 1.7.1}} temos que a operação "$\cdot$" é uma lei de composição interna por construção. 
 
-Temos também, de forma evidente, que o elemento neutro e o elemento inverso de $\prod_{i=1}^{n}G_i$ são dados por, respectivamente:
+Temos também, de forma evidente, que o elemento neutro e o elemento inverso de $(x_1,\ldots,x_n)$ são dados por, respectivamente:
 
 \[
-e = \{(e_1, \ldots, e_n),\; e_1\in G_1, \ldots, e_n\in G_n\}
+e = (e_1, \ldots, e_n) \in \prod_{i=1}^{n} G_i
 \]
 
 Onde $e_n$ representa o elemento neutro do $n$-ésimo grupo do produto direto.
 
 \[
-\left(\prod_{i=1}^{n} G_i\right)^{-1} = \{(g_{1}^{-1},\ldots, g_{n}^{-1}),\; g_{1}^{-1}\in G_1,\ldots, g_{n}^{-1}\in G_n \}
-\] 
+x^{-1} = (x_{1}^{-1},\ldots, x_{n}^{-1})\in \prod_{i=1}^{n} G_i
+\]
 
-Onde $g_{n}^{-1}$ representa o elemento inverso para $g_n$ no $n$-ésimo grupo do produto direto.
+Onde $x_{n}^{-1}$ representa o elemento inverso para $x_n$ no $n$-ésimo grupo do produto direto.
 
 Temos também que o produto direto de $\mathfrak{G}$ é evidentemente associativo, uma vez  que $G_1, \ldots, G_n$ são grupos.
 
-Concluímos, portanto, que $(\prod_{i=1}^{n},\cdot)$ é um grupo. 
+Concluímos, portanto, que $(\prod_{i=1}^{n} G_i,\cdot)$ é um grupo. 
+
+\qed}
+
+\begin{theorem}
+\color{red}
+Sejam $G$ e $G_1, \ldots, G_n$ grupos. Temos que:
+
+\[
+G \cong \prod_{i=1}^{n}G_i \iff \forall i\in \llbracket 1,n \rrbracket,\; \exists H_i \leq G \; \text{e} \; H_i\cong G_i, \; \text{tal que:}
+\]
+
+\begin{enumerate}
+	\item $G = H_1\ldots H_n$;
+	\item $H_i \trianglelefteq G,\; \forall i\in \llbracket 1,n\rrbracket$;
+	\item $H_i \cap H_1\ldots H_{i-1}H_{i+1}\ldots H_n = \{e\},\; \forall i\in \llbracket 1,n\rrbracket$.
+\end{enumerate}
+
+Caso $G$ e $H_1,\ldots ,H_n$ satisfaçam as condições acima, denotamos:
+
+\[
+G \overset{def}{=} \bigoplus_{i=1}^{n} H_i.
+\]
+
+\end{theorem}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+
 
 \qed}
 
