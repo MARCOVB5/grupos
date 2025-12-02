@@ -836,7 +836,18 @@ Portanto, $G$ é um grupo abeliano. \qed
 	\]
 \end{definition}
 
-\textit{Observação: note que $G'$ é de fato um subgrupo de $G$, uma vez que ele é, por definição, um subgrupo gerado.}
+{\color{red}
+
+\textit{Observações}: 
+
+\begin{itemize}
+
+\item \textit{Note que $G'$ é de fato um subgrupo de $G$, uma vez que ele é, por definição, um subgrupo gerado;}
+\item \textit{Note que, para um dado grupo $G$ e $x,y\in G$, \textbf{não} necessariamente temos [x,y]=[y,x].}
+
+\end{itemize}
+
+}
 
 \begin{definition}
     Seja $(G, \cdot)$ um grupo. \textbf{Definimos ordem do grupo $(G, \cdot)$ a quantidade de elementos no conjunto $G$} e a denotamos por $\vert G \vert$. \\
@@ -1447,7 +1458,7 @@ Seja $G$ um grupo e $G'$ o subgrupo dos comutadores de $G$. Logo $G' \trianglele
 
 Sabemos, a partir da \hyperlink{defglinha}{\textbf{Definição 1.3.5}} que $G' \leq G$.
 
-Seja $g \in G$ e tomemos $q = xyx^{-1}y^{-1} = [x,y], \; x,y\in G$.
+Seja $g \in G$ e tomemos $q = xyx^{-1}y^{-1} = [x,y]$, para $x,y\in G$.
 
 Temos, portanto:
 
@@ -1800,7 +1811,8 @@ Seja $G$ um grupo finito e $H, K \leq G$. Então:
 \]
 \end{proposition}
 
-{\color{red}
+{\color{blue}
+
 \textbf{Demonstração:}
 
 Note que \( H \cap K \le H \) e \( H \cap K \le K \), então podemos escrever:
@@ -1975,6 +1987,47 @@ Com isso, mostramos que $G$ é um grupo abeliano e, portanto, $G = Z(G)$.
 
 \qed
 
+\begin{proposition}
+\color{red}
+Seja $G$ um grupo e $G'$ o seu subgrupo de comutadores. 
+
+O grupo quociente $G/G'$ é abeliano.
+
+Este grupo é denominado como \textit{abelianização} de $G$ e é denotado como $G^{ab}$.
+
+Note que, $G'$ é o menor subgrupo normal de $G$ com essa propriedade e $G^{ab}$ representa o maior quociente abeliano de $G$.
+\end{proposition}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+Note, primeiramente, que $G^{ab}$ é de fato um grupo, uma vez que $G' \trianglelefteq G$.
+
+Sejam $x,y \in G$, sabemos que:
+
+\[
+xyx^{-1}y^{-1} \in G' \iff xy(yx)^{-1} \in G' \iff xyG' = yxG' \iff \bar{x}\bar{y}=\bar{y}\bar{x}, \; \bar{x},\bar{y}\in G^{ab}
+\]
+
+Concluímos, portanto, que $G^{ab}$ é um grupo abeliano.
+
+Para mostrar que $G'$ é o menor subgrupo normal de $G$ tal que $G/G'$ é abeliano, basta mostrar que para quaisquer $H\trianglelefteq G$, se $G/H$ for abeliano, então $G'\subseteq H$.
+
+Suponha, por absurdo, que $G/H$ é um grupo abeliano e $G'\nsubseteq H$.
+
+Ora, então temos, para $x,y\in G$:
+
+\[
+xyH = yxH \iff xy(yx)^{-1} \in H \iff xyx^{-1}y^{-1} \in H \Longrightarrow \; \text{Absurdo!}
+\]
+
+Sabemos que $xyx^{-1}y^{-1}\in G'$, mas $G' \nsubseteq H$.
+
+Deduzimos, portanto, que $G' \subseteq H$.
+
+\qed}
+
 \section{Homomorfismos de Grupos}
 
 \begin{definition}
@@ -2017,7 +2070,7 @@ $\text{Id}: (G, \cdot) \rightarrow (G, \cdot), \; \text{Id}(g) = g$ é um homomo
 \end{example}
 
 \begin{example}
-$e: G \rightarrow \mathcal{G},\; e(g) = e_{\mathcal{G}}, \; \forall g\in G$, é um homomorfismo chamado \textit{homomorfismo trivial}.
+$\theta: G \rightarrow \mathcal{G},\; \theta (g) = e_{\mathcal{G}}, \; \forall g\in G$, é um homomorfismo chamado \textit{homomorfismo trivial}.
 \end{example}
 
 \begin{example}
@@ -2703,11 +2756,13 @@ O automorfismo $\mathcal{I}_g$ é também chamado de \textbf{conjugação por $g
 
 \textbf{Demonstração:}
 
-Mostremos que $\mathcal{I}_g$ é de fato um automorfismo de $G$.
+Mostremos que $\mathcal{I}_g$ é de fato um automorfismo de $G$, dado $g\in G$.
 
 Mostremos, primeiramente, que $\mathcal{I}_g$ é um homomorfismo de grupos.
 
-Sejam $x, y \in G$, temos:
+Sabemos, trivialmente, que $\mathcal{I}_g$ é de fato uma função.
+
+Sejam $x, y \in G$, temos, por definição:
 
 \[
 \mathcal{I}_g(xy) = gxyg^{-1} = gx(g^{-1}g)yg^{-1} = (gxg^{-1})(gyg^{-1}) = \mathcal{I}_g(x)\mathcal{I}_g(y)
@@ -2725,15 +2780,15 @@ Sejam $x, y \in G$:
 
 Logo, $\mathcal{I}_g$ é injetiva.
 
-Temos ainda também que, se definirmos $y \overset{def}{=} \mathcal{I}_g(x)$:
+Tomemos, ainda, $y \in G$ e $x = g^{-1}yg$. Temos, portanto:
 
 \[
-\mathcal{I}_g(x) = y = gxg^{-1} \iff g^{-1}yg = x
+\mathcal{I}_g(x) = g(g^{-1} yg)g^{-1} = y
 \]
 
 Logo, $\mathcal{I}_g$ é sobrejetiva.
 
-Como $\mathcal{I}_g : G \to G$, concluímos que $\mathcal{I}_g$ é um automorfismo de $G$.
+Concluímos, portanto, que $\mathcal{I}_g$ é um automorfismo de $G$.
 
 \qed}
 
@@ -2761,38 +2816,32 @@ Seja $G$ um grupo, temos:
 
 Sabemos que $\operatorname{Inn}(G) \subseteq \operatorname{Aut}(G)$, por construção.
 
-Mostremos, primeiramente, que para $y_1, y_2 \in \operatorname{Inn}(G), \; y_1\circ y_{2}^{-1}\in \operatorname{Inn}(G)$, onde $\circ$ é a composição usual de funções.
+Mostremos primeiramente que para $\varphi_1, \varphi_2 \in \operatorname{Inn}(G), \; \varphi_1\circ \varphi_{2}^{-1}\in \operatorname{Inn}(G)$, onde $\circ$ é a composição usual de funções.
 
 Como o domínio e contradomínio das funções em $\operatorname{Inn}(G)$ são iguais para as funções em $\operatorname{Aut}(G)$, mostremos apenas a igualdade de suas leis de correspondência.
 
-Ora, como $y_1, y_2 \in \operatorname{Inn}(G)$, podemos escrevê-los como:
+Ora, como $\varphi_1, \varphi_2 \in \operatorname{Inn}(G)$, podemos escrevê-los, sem perda de generalidade, para um dado $x\in G$, como:
 
 \[
-y_1(x) = g_1xg_{1}^{-1},\; \forall x \in G
+\varphi_1(x) = g_1xg_{1}^{-1}
 \]
 
 \[
-y_2(x) = g_2xg_{2}^{-1}, \; \forall x \in G
+\varphi_2(x) = g_2xg_{2}^{-1}
 \]
 
 Temos:
 
 \[
-y_1\circ y_{2}^{-1} (x) = y_1(y_2(x)^{-1}) = g_1(g_{2}^{-1}xg_2)g_{1}^{-1} = (g_1g_{2}^{-1})x(g_2g_{1}^{-1}) \in \operatorname{Inn}(G)
+\varphi_1\circ \varphi_{2}^{-1} (x) = \varphi_1(\varphi^{-1}_2(x)) = g_1(g_{2}^{-1}xg_2)g_{1}^{-1} = (g_1g_{2}^{-1})x(g_2g_{1}^{-1}) = (g_1g_{2}^{-1})x(g_1g_{2}^{-1})^{-1} \in \operatorname{Inn}(G)
 \]
 
 Logo, concluímos que $\operatorname{Inn}(G) \leq \operatorname{Aut}(G)$.
 
-Provemos agora que para $(y, a)\in \operatorname{Inn}(G) \times \operatorname{Aut}(G), \; a\circ y\circ a^{-1} \in \operatorname{Inn}(G)$, isto é:
+Provemos agora que para $(\varphi, \phi)\in \operatorname{Inn}(G) \times \operatorname{Aut}(G), \; \phi \circ \varphi \circ \phi^{-1} \in \operatorname{Inn}(G)$. Temos:
 
 \[
-a\circ y\circ a^{-1} = \mathcal{I}_h,\; \; \mathcal{I}_h\in \operatorname{Inn}(G)
-\]
-
-Temos:
-
-\[
-(a\circ y\circ a^{-1}) (x) = a(y(a^{-1}(x))) = a(ga^{-1}g^{-1}) = a(g)xa(g)^{-1} \in \operatorname{Inn}(G)
+(\phi \circ \varphi \circ \phi^{-1}) (x) = \phi(\varphi(\phi^{-1}(x))) = \phi(g\phi^{-1}(x)g^{-1}) = \phi(g)x\phi(g)^{-1} \in \operatorname{Inn}(G)
 \]
 
 Logo, concluímos que:
@@ -2845,6 +2894,11 @@ H \trianglechareq G
 \end{tikzpicture}
 \end{center}
 
+\begin{itemize}
+	\color{red}
+	\item \textit{Temos, portanto, diretamente que $H \trianglechareq G \Longrightarrow H \trianglelefteq G$.}
+\end{itemize}
+
 \begin{example}
 Os subgrupos triviais de $G$ são subgrupos característicos de $G$.
 \end{example}
@@ -2890,37 +2944,6 @@ Z(G) \trianglechareq G
 \]
 
 \qed
-
-\begin{proposition}
-Seja $G$ um grupo e $H\leq G$, logo:
-
-\[
-H\trianglechareq G \Longrightarrow H \trianglelefteq G.
-\]
-\end{proposition}
-
-{\color{red}
-\textbf{Demonstração:}
-
-Seja $H\trianglechareq G$, sabemos que:
-
-\[
-\forall \varphi \in \operatorname{Aut}(G), \; \varphi(H)\subseteq H
-\]
-
-Sabemos também que $\operatorname{Inn}(G) \subseteq \operatorname{Aut}(G)$, logo:
-
-\[
-(\varphi \vert_{\operatorname{Inn(G)}}) (H) = gHg^{-1} \subseteq H
-\]
-
-Deduzimos diretamente que:
-
-\[
-H\trianglelefteq G
-\]
-
-\qed}
 
 \begin{proposition}
 \color{red}
