@@ -1518,6 +1518,7 @@ Seja $G$ um grupo não-trivial.
 Isto é, caso seus únicos subgrupos normais sejam os subgrupos triviais. 
 \end{definition}
 
+\hypertarget{prop152}{}
 \begin{proposition}
 Seja $G$ um grupo e $H\leq G$.
 
@@ -2946,9 +2947,49 @@ Seja $K\trianglechareq H \trianglelefteq G$, então $K\trianglelefteq G$.
 {\color{red}
 \textbf{Demonstração:}
 
+Seja $\varphi \in \operatorname{Aut}(H)$ tal que:
 
+\[
+\varphi(K) \overset{def}{=} gKg^{-1}
+\]
 
-\qed}
+Note que a função acima é bem definida uma vez que $K\subseteq H$ e $gHg^{-1}\in H$.
+
+Como $K \trianglechareq H$, então $\varphi(K) \subseteq K$.
+
+Concluímos que:
+
+\[
+gKg^{-1} \in K \Longrightarrow K \trianglelefteq G.
+\]
+
+\qed
+
+\textit{Observações: note que $K \trianglelefteq H \trianglelefteq G \nRightarrow K\trianglelefteq G$.}
+
+\textit{Tomemos como contraexemplo a seguinte cadeia de normalidade:}
+
+\[
+\underbrace{\{e,s\}}_{\overset{def}{=} K} \trianglelefteq \underbrace{\{e, r^2, s, r^2s\}}_{\overset{def}{=} H} \trianglelefteq \underbrace{D_4}_{\overset{def}{=} G}.
+\]
+
+\textit{Onde $D_4$ é o Grupo Diedral $D_4$. Note que de fato a cadeia de normalidade é verificada, uma vez que:}
+
+\begin{itemize}
+	\item \textit{Primeiramente, note que $K \leq H \leq G$, evidentemente};
+	\item \textit{$H$ é abeliano, e, portanto, $K\trianglelefteq H$;}
+	\item \textit{$\frac{\vert G\vert}{\vert H\vert} = 2$ e, pela \hyperlink{prop152}{\textbf{Proposição 1.5.2}} temos diretamente que $H \trianglelefteq G$}.
+\end{itemize}
+
+\textit{
+Note, porém, que $K$ não é normal a $G$, uma vez que:}
+
+\[
+\underbrace{r}_{\in G} \cdot \underbrace{s}_{\in K} \cdot \underbrace{r^{-1}}_{\in G} = r^2s \notin K
+\]
+
+\textit{Concluímos, portanto, via contraexemplo, que a normalidade não é transitiva.}
+}
 
 \section{Produto Direto de Grupos}
 
@@ -2957,7 +2998,7 @@ Seja $K\trianglechareq H \trianglelefteq G$, então $K\trianglelefteq G$.
 \color{red}
 Sejam $n\in \mathbb{Z}^{*}_{+}$ e $\mathfrak{G} = \{G_1, \ldots, G_n \}$ uma família de grupos.
 
-Definimos \textbf{produto direto de $\mathfrak{G}$} como sendo o produto cartesiano $G_1 \times \ldots \times G_n$ com a operação: 
+Definimos \textbf{produto direto de $\mathfrak{G}$} como sendo o conjunto $G_1 \times \ldots \times G_n$ munido da operação: 
 
 \[
 (x_1,\ldots, x_n)\cdot (y_1,\ldots, y_n) \overset{def}{=} (x_1y_1, \ldots, x_ny_n).
@@ -2966,7 +3007,7 @@ Definimos \textbf{produto direto de $\mathfrak{G}$} como sendo o produto cartesi
 Denotamos, comumente:
 
 \[
-\prod_{i=1}^{n} G_i \overset{def}{=} G_1 \times \ldots \times G_n
+\prod_{i=1}^{n} G_i \overset{def}{=} G_1 \times \ldots \times G_n.
 \]
 \end{definition}
 
@@ -2986,7 +3027,7 @@ Seja $n\in \mathbb{Z}_{+}^{*}$.
 
 Via a \hyperlink{def171}{\textbf{Definição 1.7.1}} temos que a operação "$\cdot$" é uma lei de composição interna por construção. 
 
-Temos também, de forma evidente, que o elemento neutro e o elemento inverso de $(x_1,\ldots,x_n)$ são dados por, respectivamente:
+Temos também, de forma evidente, que o elemento neutro e o elemento inverso de $x \overset{def}{=}(x_1,\ldots,x_n)\in \prod_{i=1}^{n} G_i$ são dados por, respectivamente:
 
 \[
 e = (e_1, \ldots, e_n) \in \prod_{i=1}^{n} G_i
