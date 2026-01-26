@@ -146,9 +146,9 @@ Sejam $G$ e $E$ conjuntos não-vazios e $\oplus$ uma função tal que:
 
 \[
 \oplus: 
-\begin{array}{c}
-G\bigtimes G \to E \\
-(a, b) \mapsto \oplus (a,b)
+\begin{array}{r c l}
+G\bigtimes G &\to &E \\
+(a, b) &\mapsto &\oplus (a,b)
 \end{array}
 \]
 
@@ -2993,12 +2993,13 @@ Note, porém, que $K$ não é normal a $G$, uma vez que:}
 
 \section{Produto Direto de Grupos}
 
+Nesta seção inteira a variável $n$ representa um número inteiro positivo.
+
 \hypertarget{def171}{}
 \begin{definition}
-\color{red}
-Sejam $n\in \mathbb{Z}^{*}_{+}$ e $\mathfrak{G} = \{G_1, \ldots, G_n \}$ uma família de grupos.
+Seja $\mathfrak{G} = \{G_1, \ldots, G_n \}$ uma família de grupos.
 
-Definimos \textbf{produto direto de $\mathfrak{G}$} como sendo o conjunto $G_1 \times \ldots \times G_n$ munido da operação: 
+Definimos \textbf{produto direto externo de $\mathfrak{G}$} como sendo o conjunto $G_1 \times \ldots \times G_n$ munido da operação: 
 
 \[
 (x_1,\ldots, x_n)\cdot (y_1,\ldots, y_n) \overset{def}{=} (x_1y_1, \ldots, x_ny_n).
@@ -3011,70 +3012,181 @@ Denotamos, comumente:
 \]
 \end{definition}
 
-{\color{red}
 \textit{Observação: por uma questão de convenção, a operação "$\cdot$" será omitida.}
-}
 
 \begin{proposition} 
-\color{red}
-A partir da \hyperlink{def171}{\textbf{Definição 1.7.1}}, temos que o produto direto de $\mathfrak{G}$ é um grupo.
+A partir da \hyperlink{def171}{\textbf{Definição 1.7.1}}, temos que o produto direto externo de $\mathfrak{G}$ é um grupo.
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
-
-Seja $n\in \mathbb{Z}_{+}^{*}$.
 
 Via a \hyperlink{def171}{\textbf{Definição 1.7.1}} temos que a operação "$\cdot$" é uma lei de composição interna por construção. 
 
 Temos também, de forma evidente, que o elemento neutro e o elemento inverso de $x \overset{def}{=}(x_1,\ldots,x_n)\in \prod_{i=1}^{n} G_i$ são dados por, respectivamente:
 
 \[
-e = (e_1, \ldots, e_n) \in \prod_{i=1}^{n} G_i
+e \overset{def}{=} (e_1, \ldots, e_n) \in \prod_{i=1}^{n} G_i
 \]
 
-Onde $e_n$ representa o elemento neutro do $n$-ésimo grupo do produto direto.
+Onde $e_n$ representa o elemento neutro do $n$-ésimo grupo do produto direto externo.
 
 \[
-x^{-1} = (x_{1}^{-1},\ldots, x_{n}^{-1})\in \prod_{i=1}^{n} G_i
+x^{-1} \overset{def}{=} (x_{1}^{-1},\ldots, x_{n}^{-1})\in \prod_{i=1}^{n} G_i
 \]
 
-Onde $x_{n}^{-1}$ representa o elemento inverso para $x_n$ no $n$-ésimo grupo do produto direto.
+Onde $x_{n}^{-1}$ representa o elemento inverso para $x_n$ no $n$-ésimo grupo do produto direto externo.
 
-Temos também que o produto direto de $\mathfrak{G}$ é evidentemente associativo, uma vez  que $G_1, \ldots, G_n$ são grupos.
+Temos também que o produto direto externo de $\mathfrak{G}$ é evidentemente associativo, uma vez  que $G_1, \ldots, G_n$ são grupos.
 
 Concluímos, portanto, que $(\prod_{i=1}^{n} G_i,\cdot)$ é um grupo. 
 
-\qed}
+\qed
 
-\begin{theorem}
-Sejam $n\in \mathbb{Z}_{+}^{*}$ e $G,\;G_1, \ldots, G_n$ grupos. Temos que:
+\hypertarget{def172}{}
+\begin{definition}
+Sejam $G$ um grupo e $H_1, \ldots, H_n \leq G$.
+
+Dizemos que $G$ é um \textbf{produto direto interno} de $H_1, \ldots, H_n$ se, e somente se, as seguintes condições são satisfeitas:
+
+\begin{itemize}
+	\item $G = H_1 \ldots H_n$;
+	\item $H_i \trianglelefteq G, \; \forall i\in \llbracket 1, n \rrbracket$;
+	\item $H_i \cap H_1 \ldots H_{i-1}H_{i+1}\ldots H_n = \{e\},\; \forall i \in \llbracket 2, n-1 \rrbracket$.
+\end{itemize}
+
+Caso $G$ e $H_1, \ldots, H_n$ satisfaçam as condições acima, denotamos:
 
 \[
-G \cong \prod_{i=1}^{n}G_i \iff \forall i\in \llbracket 1,n \rrbracket,\; \exists H_i \leq G \; \text{e} \; H_i\cong G_i, \; \text{tal que:}
+G \overset{def}{=} \bigodot_{i=1}^{n} H_i
 \]
 
-\begin{enumerate}
-	\item $G = H_1\ldots H_n$;
-	\item $H_i \trianglelefteq G,\; \forall i\in \llbracket 1,n\rrbracket$;
-	\item $H_i \cap H_1\ldots H_{i-1}H_{i+1}\ldots H_n = \{e\},\; \forall i\in \llbracket 1,n\rrbracket$.
-\end{enumerate}
+\end{definition}
 
-Caso $G$ e $H_1,\ldots ,H_n$ satisfaçam as condições acima, denotamos:
+\hypertarget{prop172}{}
+\begin{proposition}
+Sejam $G$ um grupo e $H_1, \ldots, H_n \leq G$.
 
-\[
-G \overset{def}{=} \bigoplus_{i=1}^{n} H_i.
-\]
-
-\end{theorem}
-
-{\color{red}
+Se $G$ for um produto direto interno de $H_1, \ldots, H_n$, então quaisquer elementos de $H_i, \ldots, H_n$ distintos comutam entre si.
+\end{proposition}
 
 \textbf{Demonstração:}
 
+Sejam $(h_i, h_j) \in H_i \times H_j$, onde $i, j \in \llbracket 1, n \rrbracket$ e $i \neq j$.
+
+Tomemos o elemento $g \overset{def}{=} [h_i, h_j] = h_ih_jh_{i}^{-1}h_{j}^{-1} \in G$.
+
+Note que:
+
+\[
+h_ih_jh_{i}^{-1}h_{j}^{-1} = (h_ih_jh_{i}^{-1})h_{j}^{-1} \in H_j, \; \; \text{pois} \; \; H_j \trianglelefteq G
+\]
+
+\[
+h_ih_jh_{i}^{-1}h_{j}^{-1} = h_i(h_jh_{i}^{-1}h_{j}^{-1}) \in H_i, \; \; \text{pois} \; \; H_i \trianglelefteq G
+\]
+
+Temos, portanto, que $[h_i, h_j] \in H_i \cap H_j = \{e\}$.
+
+Logo:
+
+\[
+h_ih_jh_{i}^{-1}h_{j}^{-1} = e \iff h_ih_j = h_jh_i
+\]
+
+Logo, quaisquer fatores de $H_i, \ldots, H_n$ distintos comutam entre si.
+
+\qed
+
+\hypertarget{teo171}{}
+\begin{theorem}
+Sejam $G$ um grupo e $H_1, \ldots, H_n \leq G$.
+
+Temos, a partir das notações nas definições \hyperlink{def171}{1.7.1} e \hyperlink{def172}{1.7.2}, que:
+
+\[
+G = \bigodot_{i=1}^{n} H_i \Longrightarrow G \cong \prod_{i=1}^{n} H_i
+\]
+\end{theorem}
+
+\textbf{Demonstração:}
+
+Suponha que $G = \bigodot_{i=1}^{n} H_i$.
+
+Tomemos a função $\mu$ tal que:
+
+\[
+\mu:
+\begin{array}{r c l}
+  G & \to & \displaystyle \prod_{i=1}^{n} H_i \\[10pt]
+  h_1 \ldots h_n & \mapsto & (h_1, \ldots, h_n)
+\end{array}
+\]
+
+Note que a função está de fato bem definida e é trivialmente bijetiva. 
+
+Mostremos, por fim, que $\mu$ é um homomorfismo de grupos.
+
+Sejam $g \overset{def}{=} h_1\ldots h_n$ e $g'\overset{def}{=} h_{1}' \ldots h_{n}'$.
+
+Temos:
+
+\begin{align*}
+    \mu(gg') &= \mu\bigl( (h_1 \ldots h_n)(h'_{1} \ldots h'_{n}) \bigr) \\
+             &= \mu(h_1 h'_{1} \ldots h_n h'_{n}) \; \; \; \text{(\hyperlink{prop172}{\textbf{Proposição 1.7.2}})} \\
+             &= (h_1 h'_{1}, \ldots, h_n h'_{n}) \\
+             &= (h_1, \ldots, h_n)(h'_{1}, \ldots, h'_{n}) \\
+             &= \mu(g)\mu(g')
+\end{align*}
+
+Logo, $\mu$ é um isomorfismo de grupos e temos que:
+
+\[
+G \cong \prod_{i=1}^{n} H_i
+\]
+
+\qed
 
 
-\qed}
+\begin{theorem}
+\textbf{Teorema Chinês do Resto}
+
+Seja $M \overset{def}{=} m_1\ldots m_n \in \mathbb{Z}_{+}^{*}$ tal que $\text{mdc}(m_i, m_j) = 1, \; \forall i,j\in \llbracket 1,n \rrbracket$ e $i\neq j$.
+
+Então:
+
+\[
+\mathbb{Z}/M\mathbb{Z} \cong \prod_{i=1}^{n} \mathbb{Z}/m_i\mathbb{Z}
+\]  
+
+\end{theorem}
+
+\textbf{Demonstração:}
+
+Como $M \overset{def}{=} m_1\ldots m_n$, temos, evidentemente, que $\mathbb{Z}/m_i\mathbb{Z} \leq \mathbb{Z}/M\mathbb{Z}, \; \forall i\in\llbracket 1,n\rrbracket$.
+
+Note que, como $\mathbb{Z}/m\mathbb{Z}$ é abeliano $\forall m\in\mathbb{Z}_{+}^{*}$, então $\mathbb{Z}/m_i\mathbb{Z} \trianglelefteq \mathbb{Z}/M\mathbb{Z}, \; \forall i \in \llbracket 1, n\rrbracket$.
+
+Temos também que, pelo fato dos elementos de $\mathbb{Z}/m\mathbb{Z}$ serem classes laterais, $\mathbb{Z}/m_i\mathbb{Z} \cap \mathbb{Z}/m_j\mathbb{Z} = \{\bar{1}\}, \; \forall i,j \in \llbracket 1, n \rrbracket$ e $i\neq j$.
+
+Pelo mesmo motivo (elementos sendo classes laterais), temos, utilizando notação aditiva:
+
+\[
+\sum_{i=1}^{n} \mathbb{Z}/m_i\mathbb{Z} = \mathbb{Z}/M\mathbb{Z}
+\]
+
+Temos, portanto, que:
+
+\[
+\mathbb{Z}/M\mathbb{Z} = \bigodot_{i=1}^{n} \mathbb{Z}/m_i\mathbb{Z}
+\] 
+
+Pelo \hyperlink{teo171}{\textbf{Teorema 1.7.1}}, temos diretamente que:
+
+\[
+\mathbb{Z}/M\mathbb{Z} \cong \prod_{i=1}^{n} \mathbb{Z}/m_i\mathbb{Z}
+\]
+
+\qed
 
 \chapter{Grupos de Permutações}
 
