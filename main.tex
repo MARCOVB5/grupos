@@ -1124,7 +1124,7 @@ Portanto, podemos escrever:
 \vert G\vert = \sum_{k = 1}^{n} \vert x_{i_k} H\vert.
 \]
 
-Ora, deduzimos na demonstração do \hyperlink{langrange}{\textbf{Teorema de Lagrange}} que $\vert xH\vert = \vert H\vert, \; \forall x \in G$.
+Ora, deduzimos na demonstração do \hyperlink{lagrange}{\textbf{Teorema de Lagrange}} que $\vert xH\vert = \vert H\vert, \; \forall x \in G$.
 
 Portanto temos que:
 
@@ -2386,8 +2386,59 @@ Logo, deduzimos que $\varphi$ é um isomorfismo de grupos e, portanto, temos:
 
 \qed
 
-
 \hypertarget{prop165}{}
+\begin{proposition}
+\color{red}
+Seja $G$ um grupo finito e $g\in G$ tal que $\mathcal{O}(g) = k\in \mathbb{Z}_{+}^{*}$. Então $\mathbb{Z}/k\mathbb{Z} \cong \langle g \rangle$.
+
+\end{proposition}
+
+{\color{red} 
+\textbf{Demonstração:}
+
+Nesta demonstração, a notação aditiva será utilizada para denotar a operação de soma usual em $\mathbb{Z}/k\mathbb{Z}$ e a operação do grupo $G$. Também serão considerados como elementos de $\mathbb{Z}/k\mathbb{Z}$, sem perda de generalidade, apenas os representantes de cada classe lateral do conjunto.
+
+Seja a função $\varphi$ definida a seguir:
+
+\[
+\varphi:
+\begin{array}{r c l}
+  \mathbb{Z}/k\mathbb{Z} & \to & \displaystyle \langle g \rangle \\[10pt]
+  x & \mapsto & xg
+\end{array}
+\]
+
+Note que $\varphi$ é de fato uma função e é injetiva. Sejam $x,y\in \mathbb{Z}/k\mathbb{Z}$.
+
+\[
+\varphi(x) = \varphi(y) \iff xg = yg \iff xg - yg = 0 \iff g(x-y) = 0
+\]
+
+Como $x,y \in \mathbb{Z}/k\mathbb{Z}$, então $x,y \in \llbracket 0, k-1\rrbracket$. Temos também que $\mathcal{O}(g) = k$. Portanto, temos:
+
+\[
+g(x-y) = 0 \iff x-y = 0 \iff x = y
+\]
+
+Logo, $\varphi$ é de fato função e é injetora.
+
+Note também que $\varphi$ é trivialmente sobrejetora, uma vez que $\varphi$ é injetora e $\vert \mathbb{Z}/k\mathbb{Z} \vert = \mathcal{O}(g) = k$.
+
+Mostremos, por fim, que $\varphi$ é um homomorfismo de grupos. Sejam $x,y\in \mathbb{Z}/k\mathbb{Z}$.
+
+\[
+\varphi(x+y) = (x+y)g = xg + yg = \varphi(x) + \varphi(y) 
+\]
+
+Concluímos que $\varphi$ é de fato um isomorfismo de grupos e portanto:
+
+\[
+\mathbb{Z}/k\mathbb{Z} \cong \langle g \rangle
+\]
+
+\qed}
+
+\hypertarget{prop166}{}
 \begin{proposition}
 Sejam $G$ e $\mathcal{G}$ grupos tal que $\varphi : G \to \mathcal{G}$ é um isomorfismo de grupos. 
 
@@ -2716,7 +2767,7 @@ Evidentemente a função $\operatorname{id}$ é o elemento neutro de $\operatorn
 
 Também sabemos que a operação $\circ$ é associativa via associatividade de composição usual de funções.
 
-Pela \hyperlink{prop165}{\textbf{Proposição 1.6.5}}, sabemos que o homomorfismo inverso, $\varphi^{-1}$, existe e é um isomorfismo. Logo, concluímos que $\varphi^{-1} \in \operatorname{Aut}(G)$.
+Pela \hyperlink{prop166}{\textbf{Proposição 1.6.6}}, sabemos que o homomorfismo inverso, $\varphi^{-1}$, existe e é um isomorfismo. Logo, concluímos que $\varphi^{-1} \in \operatorname{Aut}(G)$.
 
 Por fim, sabemos que a composição de funções bijetivas resulta em uma função bijetiva e pela \hyperlink{prop164}{\textbf{Proposição 1.6.4}} sabemos que a composição de homomorfismo de $G$ em $G$ é um homomorfismo de $G$ em $G$.
 
@@ -2973,16 +3024,34 @@ gKg^{-1} \in K \Longrightarrow K \trianglelefteq G.
 \underbrace{\{e,s\}}_{\overset{def}{=} K} \trianglelefteq \underbrace{\{e, r^2, s, r^2s\}}_{\overset{def}{=} H} \trianglelefteq \underbrace{D_4}_{\overset{def}{=} G}.
 \]
 
-\textit{Onde $D_4$ é o Grupo Diedral $D_4$. Note que de fato a cadeia de normalidade é verificada, uma vez que:}
+\textit{Onde $D_4$ é o Grupo Diedral $D_4$, $s$ representa uma reflexão/espelhamento, $r$ representa uma rotação de $90^\circ$ no sentido antihorário e $e$ representa o elemento neutro.} 
 
-\begin{itemize}
-	\item \textit{Primeiramente, note que $K \leq H \leq G$, evidentemente};
-	\item \textit{$H$ é abeliano, e, portanto, $K\trianglelefteq H$;}
+
+\textit{Note que de fato a cadeia de normalidade é verificada, uma vez que:}
+
+\begin{enumerate}
+	\item \textit{Temos que $K \leq H \leq G$};
+	\item \textit{$K$ é evidentemente abeliano e portanto $K\trianglelefteq H$;}
 	\item \textit{$\frac{\vert G\vert}{\vert H\vert} = 2$ e, pela \hyperlink{prop152}{\textbf{Proposição 1.5.2}} temos diretamente que $H \trianglelefteq G$}.
-\end{itemize}
+\end{enumerate}
 
-\textit{
-Note, porém, que $K$ não é normal a $G$, uma vez que:}
+\textit{Mostremos que o item $1.$ é de fato verdadeiro, validando os itens $2.$ e $3.$.}
+
+\textit{Note que $H \subseteq D_4$ e é evidentemente não vazio. Além disso, cada elemento de $H$ é seu próprio elemento inverso.}
+
+\textit{Temos também para os resultados não triviais gerados a partir das operações entre os elementos de $H$:}
+
+\[
+r^2r^2s = r^4s = s, \; sr^2 = r^2s, \; sr^2s = r^2,\; r^2sr^2 = s, \; r^2s^2 = r^2 
+\]
+
+\textit{Note que todos os resultados pertencem ao conjunto $H$}.
+
+\textit{Portanto, $H \leq G$. Note que $K \leq H$, trivialmente.}
+
+\textit{Concluímos que $K \leq H \leq G$ e, pelos itens $2.$ e $3.$, $K\trianglelefteq H \trianglelefteq G$.}
+
+\textit{Note, porém, que $K$ não é normal a $G$, uma vez que:}
 
 \[
 \underbrace{r}_{\in G} \cdot \underbrace{s}_{\in K} \cdot \underbrace{r^{-1}}_{\in G} = r^2s \notin K
@@ -3122,7 +3191,7 @@ Tomemos a função $\mu$ tal que:
 \end{array}
 \]
 
-Note que a função está de fato bem definida e é trivialmente bijetiva. 
+Note que a função está de fato bem definida e é trivialmente bijetiva por construção (a representação dos elementos $h_1 \ldots h_n$ é considerada por definição única). 
 
 Mostremos, por fim, que $\mu$ é um homomorfismo de grupos.
 
@@ -3162,31 +3231,19 @@ Então:
 
 \textbf{Demonstração:}
 
-Como $M \overset{def}{=} m_1\ldots m_n$, temos, evidentemente, que $\mathbb{Z}/m_i\mathbb{Z} \leq \mathbb{Z}/M\mathbb{Z}, \; \forall i\in\llbracket 1,n\rrbracket$.
+Seja $M_i \overset{def}{=} \frac{M}{m_i}, \; \forall i\in \llbracket 1, n\rrbracket$. Note que $\bar{M_i} \in \mathbb{Z}/M\mathbb{Z}$, uma vez que $M_i \in \llbracket 1, M-1\rrbracket$.
 
-Note que, como $\mathbb{Z}/m\mathbb{Z}$ é abeliano $\forall m\in\mathbb{Z}_{+}^{*}$, então $\mathbb{Z}/m_i\mathbb{Z} \trianglelefteq \mathbb{Z}/M\mathbb{Z}, \; \forall i \in \llbracket 1, n\rrbracket$.
+Note também que, evidentemente, temos $\mathcal{O}(M_i) = m_i$, uma vez que $m_iM_i = M$.
 
-Temos também que, pelo fato dos elementos de $\mathbb{Z}/m\mathbb{Z}$ serem classes laterais, $\mathbb{Z}/m_i\mathbb{Z} \cap \mathbb{Z}/m_j\mathbb{Z} = \{\bar{0}\}, \; \forall i,j \in \llbracket 1, n \rrbracket$ e $i\neq j$.
+A partir da \hyperlink{prop165}{\textbf{Proposição 1.6.5}} temos portanto $\mathbb{Z}/m_i\mathbb{Z} \cong \langle M_i \rangle$. 
 
-Pelo mesmo motivo (elementos sendo classes laterais), temos, utilizando notação aditiva:
+Mostremos que $\mathbb{Z}/M\mathbb{Z} = \bigodot_{i=1}^{n} \langle M_i \rangle$.
 
-\[
-\sum_{i=1}^{n} \mathbb{Z}/m_i\mathbb{Z} = \mathbb{Z}/M\mathbb{Z}
-\]
+É evidente que $\langle M_i \rangle \leq \mathbb{Z}/M\mathbb{Z}$, uma vez que, por definição, ele é um subgrupo gerado. Além disso, por estar munido da soma usual dos inteiros, também é um grupo abeliano. Temos diretamente que $\langle M_i \rangle \trianglelefteq \mathbb{Z}/M\mathbb{Z}$.
 
-Temos, portanto, que:
 
-\[
-\mathbb{Z}/M\mathbb{Z} = \bigodot_{i=1}^{n} \mathbb{Z}/m_i\mathbb{Z}
-\] 
 
-Pelo \hyperlink{teo171}{\textbf{Teorema 1.7.1}}, temos diretamente que:
-
-\[
-\mathbb{Z}/M\mathbb{Z} \cong \prod_{i=1}^{n} \mathbb{Z}/m_i\mathbb{Z}
-\]
-
-\qed
+\section{Produto Semidireto de Grupos}
 
 \chapter{Grupos de Permutações}
 
