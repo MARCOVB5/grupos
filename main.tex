@@ -3215,6 +3215,11 @@ G \cong \prod_{i=1}^{n} H_i
 
 \qed
 
+\textit{Observação: note que pela \hyperlink{prop164}{\textbf{Proposição 1.6.4}} temos também diretamente que:}
+
+\[
+G \cong \bigodot_{i=1}^{n} H_i \implies G \cong \prod_{i=1}^{n} H_i
+\]
 
 \begin{theorem}
 \textbf{Teorema Chinês do Resto}
@@ -3231,17 +3236,67 @@ Então:
 
 \textbf{Demonstração:}
 
-Seja $M_i \overset{def}{=} \frac{M}{m_i}, \; \forall i\in \llbracket 1, n\rrbracket$. Note que $\bar{M_i} \in \mathbb{Z}/M\mathbb{Z}$, uma vez que $M_i \in \llbracket 1, M-1\rrbracket$.
+Seja $M_i \overset{def}{=} \frac{M}{m_i}, \; \forall i\in \llbracket 1, n\rrbracket$. Note que $\overline{M_i} \in \mathbb{Z}/M\mathbb{Z}$, uma vez que $M_i \in \llbracket 1, M-1\rrbracket$.
 
 Note também que, evidentemente, temos $\mathcal{O}(M_i) = m_i$, uma vez que $m_iM_i = M$.
 
-A partir da \hyperlink{prop165}{\textbf{Proposição 1.6.5}} temos portanto $\mathbb{Z}/m_i\mathbb{Z} \cong \langle M_i \rangle$. 
+A partir da \hyperlink{prop165}{\textbf{Proposição 1.6.5}} temos portanto $\mathbb{Z}/m_i\mathbb{Z} \cong \langle M_i \rangle \cong \langle \overline{M_i} \rangle$.  
 
-Mostremos que $\mathbb{Z}/M\mathbb{Z} = \bigodot_{i=1}^{n} \langle M_i \rangle$.
+Mostremos que $\mathbb{Z}/M\mathbb{Z} = \bigodot_{i=1}^{n} \langle \overline{M_i} \rangle$.
 
-É evidente que $\langle M_i \rangle \leq \mathbb{Z}/M\mathbb{Z}$, uma vez que, por definição, ele é um subgrupo gerado. Além disso, por estar munido da soma usual dos inteiros, também é um grupo abeliano. Temos diretamente que $\langle M_i \rangle \trianglelefteq \mathbb{Z}/M\mathbb{Z}$.
+É evidente que $\langle \overline{M_i} \rangle \leq \mathbb{Z}/M\mathbb{Z}$, uma vez que, por definição, ele é um subgrupo gerado. Além disso, por estar munido da soma usual dos inteiros, também é um grupo abeliano. Temos diretamente que $\langle \overline{M_i} \rangle \trianglelefteq \mathbb{Z}/M\mathbb{Z}$.
 
+Portanto, devido a operação de soma usual de inteiros, denotemos:
 
+\[
+\langle \overline{M_1} \rangle \ldots \langle \overline{M_n} \rangle \overset{def}{=} \sum_{i=1}^{n} \langle \overline{M_i} \rangle
+\]
+
+Mostremos que:
+
+\[
+\mathfrak{M} \overset{def}{=} \langle \overline{M_i} \rangle \cap \sum_{\substack{j\neq i \\ j\in\llbracket 1, n\rrbracket}} \langle \overline{M_j} \rangle = \{0\}, \; \forall i\in \llbracket 1,n\rrbracket
+\]
+
+Tomemos $\overline{x}\in \mathfrak{M}$.
+
+Seja $\overline{x}\in \langle \overline{M_i} \rangle \setminus \{0\}$, temos por definição (e pela coprimalidade entre $m_1,\ldots, m_n$) que $m_i \nmid x$, onde $x$ é qualquer representante da classe lateral $\overline{x}$.
+
+Seja $\overline{x}\in \langle \overline{M_i} \rangle \cup \mathfrak{M}$, logo $x$ é expresso como combinação linear de elementos de $\langle \overline{M_1} \rangle,\ldots, \langle \overline{M_{i-1}}\rangle,\langle \overline{M_{i+1}}\rangle,\ldots,\langle \overline{M_n}\rangle$. Perceba que, por definição, todos os representantes de classe dos elementos de tais conjuntos são divisíveis por $m_i$, portanto $m_i \mid x$.
+
+Como para $\overline{x}\in \mathfrak{M}$ temos $m_i \mid x$ e $m_i \nmid x$, concluímos que $\overline{x} = \overline{0}$.
+
+Mostremos, por fim, que:
+
+\[
+\sum_{i=1}^{n} \langle \overline{M_i} \rangle = \mathbb{Z}/M\mathbb{Z}
+\]
+
+Note que pela \hyperlink{prop156}{\textbf{Proposição 1.5.6}} temos que:
+
+\[
+\left\vert \sum_{i=1}^{n} \langle \overline{M_i} \rangle \right\vert = \left\vert \langle \overline{M_1} \rangle + \sum_{i=2}^{n} \langle \overline{M_i} \rangle \right\vert = \frac{\vert \langle \overline{M_1} \rangle\vert \displaystyle\left\vert \sum_{i=2}^{n} \langle \overline{M_i} \rangle \right\vert}{\underbrace{\left\vert \langle \overline{M_1}\rangle \cap \sum_{i=2}^{n} \langle \overline{M_i} \rangle \right\vert}_{=1}} = m_1\left\vert \sum_{i=2}^{n}\langle \overline{M_i} \rangle \right\vert
+\]
+
+Aplicando a fórmula indutivamente em $i$, temos que:
+
+\[
+\left\vert \sum_{i=1}^{n} \langle \overline{M_i}\rangle \right\vert = m_1\left\vert \sum_{i=2}^{n}\langle \overline{M_i} \rangle \right\vert = \ldots = m_1 \ldots m_n = M
+\]
+
+Como $\sum_{i=1}^{n} \langle \overline{M_i} \rangle \subseteq \mathbb{Z}/M\mathbb{Z}$, deduzimos diretamente que:
+
+\[
+\sum_{i=1}^{n} \langle \overline{M_i} \rangle = \mathbb{Z}/M\mathbb{Z}
+\]
+
+Concluímos, finalmente, que:
+
+\[
+\mathbb{Z}/M\mathbb{Z} = \bigodot_{i=1}^{n} \langle \overline{M_i} \rangle \implies \mathbb{Z}/M\mathbb{Z} \cong \prod_{i=1}^{n} \mathbb{Z}/m_i\mathbb{Z}
+\]
+
+\qed
 
 \section{Produto Semidireto de Grupos}
 
