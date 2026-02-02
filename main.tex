@@ -3066,6 +3066,7 @@ Nesta seção inteira a variável $n$ representa um número inteiro positivo.
 
 \hypertarget{def171}{}
 \begin{definition}
+\color{red}
 Seja $\mathfrak{G} = \{G_1, \ldots, G_n \}$ uma família de grupos.
 
 Definimos \textbf{produto direto externo de $\mathfrak{G}$} como sendo o conjunto $G_1 \times \ldots \times G_n$ munido da operação: 
@@ -3081,12 +3082,16 @@ Denotamos, comumente:
 \]
 \end{definition}
 
+{\color{red}
 \textit{Observação: por uma questão de convenção, a operação "$\cdot$" será omitida.}
+}
 
 \begin{proposition} 
+\color{red}
 A partir da \hyperlink{def171}{\textbf{Definição 1.7.1}}, temos que o produto direto externo de $\mathfrak{G}$ é um grupo.
 \end{proposition}
 
+{\color{red}
 \textbf{Demonstração:}
 
 Via a \hyperlink{def171}{\textbf{Definição 1.7.1}} temos que a operação "$\cdot$" é uma lei de composição interna por construção. 
@@ -3109,10 +3114,11 @@ Temos também que o produto direto externo de $\mathfrak{G}$ é evidentemente as
 
 Concluímos, portanto, que $(\prod_{i=1}^{n} G_i,\cdot)$ é um grupo. 
 
-\qed
+\qed}
 
 \hypertarget{def172}{}
 \begin{definition}
+\color{red}
 Sejam $G$ um grupo e $H_1, \ldots, H_n \leq G$.
 
 Dizemos que $G$ é um \textbf{produto direto interno} de $H_1, \ldots, H_n$ se, e somente se, as seguintes condições são satisfeitas:
@@ -3133,11 +3139,13 @@ G \overset{def}{=} \bigodot_{i=1}^{n} H_i
 
 \hypertarget{prop172}{}
 \begin{proposition}
+\color{red}
 Sejam $G$ um grupo e $H_1, \ldots, H_n \leq G$.
 
 Se $G$ for um produto direto interno de $H_1, \ldots, H_n$, então quaisquer elementos de $H_i, \ldots, H_n$ distintos comutam entre si.
 \end{proposition}
 
+{\color{red}
 \textbf{Demonstração:}
 
 Sejam $(h_i, h_j) \in H_i \times H_j$, onde $i, j \in \llbracket 1, n \rrbracket$ e $i \neq j$.
@@ -3164,10 +3172,11 @@ h_ih_jh_{i}^{-1}h_{j}^{-1} = e \iff h_ih_j = h_jh_i
 
 Logo, quaisquer fatores de $H_i, \ldots, H_n$ distintos comutam entre si.
 
-\qed
+\qed}
 
 \hypertarget{teo171}{}
 \begin{theorem}
+\color{red}
 Sejam $G$ um grupo e $H_1, \ldots, H_n \leq G$.
 
 Temos, a partir das notações nas definições \hyperlink{def171}{1.7.1} e \hyperlink{def172}{1.7.2}, que:
@@ -3177,6 +3186,7 @@ G = \bigodot_{i=1}^{n} H_i \Longrightarrow G \cong \prod_{i=1}^{n} H_i
 \]
 \end{theorem}
 
+{\color{red}
 \textbf{Demonstração:}
 
 Suponha que $G = \bigodot_{i=1}^{n} H_i$.
@@ -3221,8 +3231,11 @@ G \cong \prod_{i=1}^{n} H_i
 G \cong \bigodot_{i=1}^{n} H_i \implies G \cong \prod_{i=1}^{n} H_i
 \]
 
+}
+
 \hypertarget{teochi}{}
 \begin{theorem}
+\color{red}
 \textbf{Teorema Chinês do Resto}
 
 Seja $M \overset{def}{=} m_1\ldots m_n \in \mathbb{Z}_{+}^{*}$ tal que $\text{mdc}(m_i, m_j) = 1, \; \forall i,j\in \llbracket 1,n \rrbracket$ e $i\neq j$.
@@ -3235,6 +3248,7 @@ Então:
 
 \end{theorem}
 
+{\color{red}
 \textbf{Demonstração:}
 
 Seja $M_i \overset{def}{=} \frac{M}{m_i}, \; \forall i\in \llbracket 1, n\rrbracket$. Note que $\overline{M_i} \in \mathbb{Z}/M\mathbb{Z}$, uma vez que $M_i \in \llbracket 1, M-1\rrbracket$.
@@ -3297,9 +3311,10 @@ Concluímos, finalmente, que:
 \mathbb{Z}/M\mathbb{Z} = \bigodot_{i=1}^{n} \langle \overline{M_i} \rangle \implies \mathbb{Z}/M\mathbb{Z} \cong \prod_{i=1}^{n} \mathbb{Z}/m_i\mathbb{Z}
 \]
 
-\qed
+\qed}
 
 \begin{example}
+\color{red}
 Seja $\mathbb{Z}/6\mathbb{Z} = \{\overline{0},\overline{1},\overline{2},\overline{3},\overline{4},\overline{5}\}$. Como $6 = 3\cdot 2$ e $\text{mdc}(2,3)=1$, temos que:
 
 \[
@@ -3320,29 +3335,36 @@ Onde $\mathbb{Z}/2\mathbb{Z} = \{\overline{0},\overline{1} \}$, $\mathbb{Z}/3\ma
 
 \section{Generalidades sobre o grupo simétrico}
 
+{\color{red}
 Retomemos com mais detalhes a construção do \textit{grupo simétrico}, introduzido de forma breve no \hyperlink{exem123}{\textbf{Exemplo 1.2.3}}.
+}
 
 \begin{definition}
+\color{red}
 Seja $X$ um conjunto finito e não vazio. A função bijetiva $\sigma : X\to X$  é chamada de \textbf{permutação de $X$}.
 
 Denotamos o conjunto de todas as permutações de $X$ como $\mathfrak{S}_X$. Se $X = \{1,\ldots,n\}$ então também podemos denotar $\mathfrak{S}_X$ como $\mathfrak{S}_n$, onde $n\in \mathbb{Z}_{+}^{*}$.
 \end{definition}
 
+{\color{red}
 \textit{Observação: por convenção o símbolo para composição usual de funções será omitido, isto é, para $\sigma, \tau \in \mathfrak{S}_X$:}
 
 \[
 \sigma\tau \overset{def}{=} \sigma \circ \tau
 \]
 
+}
+
 \begin{definition}
+\color{red}
 O conjunto $\mathfrak{S}_X$ munido da operação usual de composição de funções é chamado de \textbf{grupo de permutações de $X$}, ou \textbf{grupo simétrico de $X$}. 
 \end{definition}
 
+{\color{red}
 \textit{Observações:}
 
 \begin{itemize}
 	\item \textit{Note que o conjunto $\mathfrak{S}_X$ com a composição usual de funções forma de fato um grupo, uma vez que a composição de funções bijetivas retorna de fato uma função bijetiva, a composição é associativa, toda função bijetiva admite uma função inversa e o elemento neutro é a função identidade, qual denotaremos $e \overset{def}{=} \text{id}_X$}.
-
 	\item \textit{Seja $X = \{1,\ldots, n\}$ e $\sigma\in\mathfrak{S}_n$, utilizamos comumente a notação a seguir para descrever a permutação $\sigma$:}
 
 \[
@@ -3353,8 +3375,10 @@ O conjunto $\mathfrak{S}_X$ munido da operação usual de composição de funç�
 \]
 
 \end{itemize}
+}
 
 \begin{example}
+\color{red}
 Sejam $\sigma, \tau \in \mathfrak{S}_3$, tal que:
 
 \[
@@ -3405,7 +3429,34 @@ Note que $\sigma\tau \neq \tau\sigma$, logo $\mathfrak{S}_3$ não é grupo abeli
 Evidentemente, $\mathfrak{S}_X$ não é abeliano para $\text{Card}(X)\geq 3$.
 \end{example}
 
+\hypertarget{prop211}{}
+\begin{proposition}
+\color{red}
+Seja $X$ um conjunto não vazio tal que $\text{Card}(X) = n\in\mathbb{Z}_{+}^{*}$.
+
+Então $\vert \mathfrak{S}_X \vert = n!$.
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Seja $\sigma\in \mathfrak{S}_X$ e $X \overset{def}{=}\{a_1,\ldots,a_n\}$.
+
+Como $\sigma$ é uma função bijetiva, então para um elemento $a_i \in X$ é possível realizar $n$ escolhas de imagem de $a_i$ para $a_j \in X$, com $i,j\in \llbracket 1,n\rrbracket$.
+
+Uma vez tomada essa relação entre os dois elementos de $X$ tomamos novamente um $a_k \in X \setminus \{a_i\}$ e escolhemos uma imagem no conjunto $X\setminus \{a_j\}$. Como $X\setminus\{a_j\}$ possui $\text{Card}(X)-1$ elementos, possuimos $n-1$ escolhas de bijeção.
+
+Realizamos esse passo a passo recursivamente até bijetarmos todo os elementos do domínio $X$.
+
+Como todos as escolhas de bijeção em cada passo formam escolhas independentes, podemos utilizar o princípio multiplicativo para mostrar diretamente que existem no total $n\cdot(n-1)\cdot\ldots\cdot 1 = n!$ possibilidades de funções bijetoras em $\mathfrak{S}_X$.
+
+Portanto, $\vert \mathfrak{S}_X \vert = n!$.
+
+\qed}
+
+\hypertarget{cayley}{}
 \begin{theorem}
+\color{red}
 \textbf{Teorema de Cayley}
 
 Sejam $G$ um grupo finito tal que $\vert G\vert = n\in \mathbb{Z}_{+}^{*}$ e $G_0$ seu conjunto subjacente (isto é, o conjunto $G$ sem a estrutura de grupo).
@@ -3414,7 +3465,7 @@ A função $\Upsilon$:
 
 \[
 \begin{array}{r@{\;}c@{\;}l}
-\Upsilon: G & \longrightarrow & \mathcal{P}(G_0) \\
+\Upsilon: G & \longrightarrow & \mathfrak{S}_{G_0} \\
 g & \longmapsto & \Upsilon_g: G_0 \longrightarrow G_0 \\
 & & \phantom{\Upsilon_g: \ } x \longmapsto gx
 \end{array}
@@ -3423,6 +3474,7 @@ g & \longmapsto & \Upsilon_g: G_0 \longrightarrow G_0 \\
 é um homomorfismo injetivo. 
 \end{theorem}
 
+{\color{red}
 \textbf{Demonstração:}
 
 Mostremos que $\Upsilon$ é de fato função e é injetiva.
@@ -3446,4 +3498,47 @@ Sejam $g_1, g_2 \in G$, temos que:
 Portanto, $\Upsilon$ é um homomorfismo injetivo.
 
 \qed
+
+\textit{Observações:}
+
+\begin{itemize}
+	\item \textit{Note que $G$ não é isomorfo a $\mathfrak{S}_{G_0}$, uma vez que $\vert G\vert = n \neq \vert \mathfrak{S}_{G_0}\vert = n!$, como mostrado na \hyperlink{prop211}{\textbf{Proposição 2.1.1}};}
+	\item \textit{Como mostramos que se trata de um homomorfismo de grupos injetivo, então a estrutura de grupo é preservada e é possível mapear cada elemento de $G$ para algum elemento de $\mathfrak{S}_{G_0}$, em outras palavras:}
+
+\textbf{\textit{"Todo grupo finito é isomorfo a um subgrupo de um grupo simétrico".}}
+
+\end{itemize}
+
+\begin{example}
+\color{red}
+Colocar algum exemplo do Teorema de Cayley...
+\end{example}
+
+\begin{definition}
+\color{red}
+Seja $X$ um conjunto finito e não vazio. Chamamos de \textbf{suporte de uma permutação $\sigma$ de $X$} o conjunto de elementos em $X$ cuja imagem é diferente do elemento no domínio. Isto é:
+
+\[ 
+\text{supp}(\sigma) \overset{def}{=} \{x\in X,\; \sigma(x) \neq x\}.
+\]
+\end{definition}
+
+\begin{example}
+\color{red}
+Seja $\sigma \in \mathfrak{S}_5$ tal que:
+
+\[
+\sigma = \begin{pmatrix}
+1 & 2 & 3 & 4 & 5 \\
+2 & 3 & 1 & 4 & 5
+\end{pmatrix}
+\]
+
+Temos que $\text{supp}(\sigma) = \{1,2,3\}$.
+\end{example}
+
+\begin{definition}
+
+\end{definition}
+
 \end{document}
