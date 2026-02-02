@@ -3316,6 +3316,134 @@ Onde $\mathbb{Z}/2\mathbb{Z} = \{\overline{0},\overline{1} \}$, $\mathbb{Z}/3\ma
 
 \section{Produto Semidireto de Grupos}
 
-\chapter{Grupos de Permutações}
+\chapter{Grupo Simétrico}
 
+\section{Generalidades sobre o grupo simétrico}
+
+Retomemos com mais detalhes a construção do \textit{grupo simétrico}, introduzido de forma breve no \hyperlink{exem123}{\textbf{Exemplo 1.2.3}}.
+
+\begin{definition}
+Seja $X$ um conjunto finito e não vazio. A função bijetiva $\sigma : X\to X$  é chamada de \textbf{permutação de $X$}.
+
+Denotamos o conjunto de todas as permutações de $X$ como $\mathfrak{S}_X$. Se $X = \{1,\ldots,n\}$ então também podemos denotar $\mathfrak{S}_X$ como $\mathfrak{S}_n$, onde $n\in \mathbb{Z}_{+}^{*}$.
+\end{definition}
+
+\textit{Observação: por convenção o símbolo para composição usual de funções será omitido, isto é, para $\sigma, \tau \in \mathfrak{S}_X$:}
+
+\[
+\sigma\tau \overset{def}{=} \sigma \circ \tau
+\]
+
+\begin{definition}
+O conjunto $\mathfrak{S}_X$ munido da operação usual de composição de funções é chamado de \textbf{grupo de permutações de $X$}, ou \textbf{grupo simétrico de $X$}. 
+\end{definition}
+
+\textit{Observações:}
+
+\begin{itemize}
+	\item \textit{Note que o conjunto $\mathfrak{S}_X$ com a composição usual de funções forma de fato um grupo, uma vez que a composição de funções bijetivas retorna de fato uma função bijetiva, a composição é associativa, toda função bijetiva admite uma função inversa e o elemento neutro é a função identidade, qual denotaremos $e \overset{def}{=} \text{id}_X$}.
+
+	\item \textit{Seja $X = \{1,\ldots, n\}$ e $\sigma\in\mathfrak{S}_n$, utilizamos comumente a notação a seguir para descrever a permutação $\sigma$:}
+
+\[
+\sigma = \begin{pmatrix}
+1 & 2 & \ldots & n \\
+\sigma(1) & \sigma(2) & \ldots & \sigma(n)
+\end{pmatrix}
+\]
+
+\end{itemize}
+
+\begin{example}
+Sejam $\sigma, \tau \in \mathfrak{S}_3$, tal que:
+
+\[
+\sigma = \begin{pmatrix}
+1 & 2 & 3 \\
+2 & 1 & 3
+\end{pmatrix}, \; \; 
+\tau = \begin{pmatrix}
+1 & 2 & 3 \\
+1 & 3 & 2
+\end{pmatrix}
+\]
+
+Temos:
+
+\[
+\sigma\tau = \begin{pmatrix}
+1 & 2 & 3 \\
+2 & 1 & 3
+\end{pmatrix}
+\begin{pmatrix}
+1 & 2 & 3 \\
+1 & 3 & 2
+\end{pmatrix} = 
+\begin{pmatrix}
+1 & 2 & 3 \\
+2 & 3 & 1
+\end{pmatrix}
+\]
+
+\[
+\tau\sigma = \begin{pmatrix}
+1 & 2 & 3 \\
+1 & 3 & 2
+\end{pmatrix}
+\begin{pmatrix}
+1 & 2 & 3 \\
+2 & 1 & 3
+\end{pmatrix} = 
+\begin{pmatrix}
+1 & 2 & 3 \\
+3 & 1 & 2
+\end{pmatrix}
+\]
+
+Note que $\sigma\tau \neq \tau\sigma$, logo $\mathfrak{S}_3$ não é grupo abeliano.
+
+Evidentemente, $\mathfrak{S}_X$ não é abeliano para $\text{Card}(X)\geq 3$.
+\end{example}
+
+\begin{theorem}
+\textbf{Teorema de Cayley}
+
+Sejam $G$ um grupo finito tal que $\vert G\vert = n\in \mathbb{Z}_{+}^{*}$ e $G_0$ seu conjunto subjacente (isto é, o conjunto $G$ sem a estrutura de grupo).
+
+A função $\Upsilon$:
+
+\[
+\begin{array}{r@{\;}c@{\;}l}
+\Upsilon: G & \longrightarrow & \mathcal{P}(G_0) \\
+g & \longmapsto & \Upsilon_g: G_0 \longrightarrow G_0 \\
+& & \phantom{\Upsilon_g: \ } x \longmapsto gx
+\end{array}
+\]
+ 
+é um homomorfismo injetivo. 
+\end{theorem}
+
+\textbf{Demonstração:}
+
+Mostremos que $\Upsilon$ é de fato função e é injetiva.
+
+Sejam $g_1,g_2 \in G$ tais que $g_1 = g_2$, temos que:
+
+\[
+g_1 = g_2 \iff g_1x = g_2x \iff \Upsilon_{g_1}= \Upsilon_{g_2} \iff \Upsilon(g_1) = \Upsilon(g_2) 
+\]
+
+Portanto, $\Upsilon$ é função injetiva.
+
+Mostremos que $\Upsilon$ é um homomorfismo de grupos.
+
+Sejam $g_1, g_2 \in G$, temos que:
+
+\[
+\Upsilon(g_1g_2) = \Upsilon_{g_1g_2}(x) = g_1g_2x = g_1(g_2x) = \Upsilon_{g_1}\Upsilon_{g_2} = \Upsilon(g_1)\Upsilon(g_2)   
+\]
+
+Portanto, $\Upsilon$ é um homomorfismo injetivo.
+
+\qed
 \end{document}
