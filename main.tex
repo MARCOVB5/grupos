@@ -1097,7 +1097,7 @@ Ora, sabemos que:
 Sabemos também que, sendo $I$ um conjunto não vazio de índices tal que Card($I$) $= [G:H]$:
 
 \[
-\bigcup_{i \in I}^{\bullet} x_i H = G.
+\bigsqcup_{i \in I} x_i H = G.
 \]
 
 Como $\vert G\vert$ é não finito, então se $\vert H\vert$ ou $[G:H]$ são não finitos, vale que $\vert G\vert = \vert H\vert[G:H]$.
@@ -1115,7 +1115,7 @@ I = \{i_1, i_2, \dots, i_n, \; n\in \mathbb{N} \}.
 Logo:
 
 \[
-G = \bigcup_{i_1 \leq i \leq n}^{\bullet} x_i H.
+G = \bigsqcup_{i_1 \leq i \leq n} x_i H.
 \]
 
 Portanto, podemos escrever:
@@ -1548,7 +1548,7 @@ G/H = \{H, gH\}
 Logo:
 
 \[
-G = H \dot{\cup} gH = H\dot{\cup} Hg
+G = H \sqcup gH = H\sqcup Hg
 \]
 
 Portanto, deduzimos de imediato que:
@@ -3536,6 +3536,34 @@ Seja $\sigma \in \mathfrak{S}_5$ tal que:
 
 Temos que $\text{supp}(\sigma) = \{1,2,3\}$.
 \end{example}
+
+\begin{proposition}
+\color{red}
+Sejam $X$ um conjunto finito não vazio e $\sigma \in \mathfrak{S}_X$. 
+
+Se $x\in\text{supp}(\sigma)$, então $\sigma^{n}(x) \in \text{supp}(\sigma),\; \forall n\in\mathbb{Z}$.
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Suponha que $x\in \text{supp}(\sigma)$, por definição temos que $\sigma(x) \neq x$.
+
+Pela bijetividade, temos que $\sigma(\sigma(x))=\sigma^2(x) \neq \sigma(x)$ e, portanto, $\sigma(x) \in \text{supp}(\sigma)$.
+
+Realizando recursivamente este procedimento temos evidentemente que $\sigma^n(x) \in \text{supp}(\sigma), \; \forall n\in \mathbb{Z}_{+}$.
+
+Como $X$ é um conjunto finito, observamos que quaisquer potências negativas de $\sigma$ equivalem à potências positivas, pois a ordem de $\sigma$ é finita. Portanto, o resultado vale para qualquer $n\in\mathbb{Z}$.
+
+\qed
+
+\textit{Observação: deduzimos, portanto, que o suporte de uma permutação $\sigma$ de $X$ é invariante sob $\sigma$}.
+}
+
+\begin{proposition}
+\color{red}
+
+\end{proposition}
 
 \begin{definition}
 
