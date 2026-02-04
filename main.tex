@@ -3509,6 +3509,8 @@ Portanto, $\Upsilon$ é um homomorfismo injetivo.
 
 \end{itemize}
 
+}
+
 \begin{example}
 \color{red}
 Colocar algum exemplo do Teorema de Cayley...
@@ -3537,6 +3539,7 @@ Seja $\sigma \in \mathfrak{S}_5$ tal que:
 Temos que $\text{supp}(\sigma) = \{1,2,3\}$.
 \end{example}
 
+\hypertarget{prop212}{}
 \begin{proposition}
 \color{red}
 Sejam $X$ um conjunto finito não vazio e $\sigma \in \mathfrak{S}_X$. 
@@ -3560,13 +3563,167 @@ Como $X$ é um conjunto finito, observamos que quaisquer potências negativas de
 \textit{Observação: deduzimos, portanto, que o suporte de uma permutação $\sigma$ de $X$ é invariante sob $\sigma$}.
 }
 
+\hypertarget{prop213}{}
 \begin{proposition}
 \color{red}
+Sejam $X$ um conjunto finito e não vazio tal que $\text{Card}(X) = n\in\mathbb{Z}_{+}^{*}$ e $\tau_1,\ldots,\tau_k \in \mathfrak{S}_X$ de suporte dois a dois disjuntos, onde $k\in\llbracket 1, n\rrbracket$.
+
+Seja $\sigma\in\mathfrak{S}_X$ tal que $\sigma = \tau_1\ldots\tau_k$, então para $x\in X$ temos:
+
+\[
+\sigma(x) = 
+\begin{cases} 
+   \tau_i(x) & \text{se } x \in \text{supp}(\tau_i) \;\; \text{para } i\in \llbracket 1,k\rrbracket,\\
+   x & \text{se } x \notin \text{supp}(\tau_i) \;\; \text{para } i\in \llbracket 1,k\rrbracket.
+\end{cases}
+\]
+
+Temos também que os elementos $\tau_1,\ldots,\tau_k$ comutam entre si e:
+
+\[
+\text{supp}(\sigma) = \bigsqcup_{i=1}^{k} \text{supp}(\tau_i).
+\]
 
 \end{proposition}
 
+{\color{red}
+
+\textbf{Demonstração:}
+
+Seja $x\in \text{supp}(\tau_i)$, para algum $i\in\llbracket 1,k\rrbracket$. Pela \hyperlink{prop212}{\textbf{Proposição 2.1.2}} temos que $\tau_i(x) \in \text{supp}(\tau_i)$. 
+
+Como $\forall j\in\llbracket 1,k\rrbracket$ tal que $i\neq j$ temos que $\text{supp}(\tau_j)\cap\text{supp}(\tau_i) = \emptyset$, então $\sigma(x) = \tau_i(x)$.
+
+Caso $x\notin \text{supp}(\tau_i)$, para algum $i\in\llbracket 1,k\rrbracket$, temos evidentemente que $\sigma(x) = x$, uma vez que $\sigma = \tau_1\ldots\tau_k$.
+
+Note que a composição entre os elementos $\tau_1,\ldots,\tau_k$ também comuta. 
+
+Sejam $i,j\in\llbracket 1,k\rrbracket$ tais que $i\neq j$. Suponha que $x\in\text{supp}(\tau_i)$. Como $\text{supp}(\tau_i)\cap\text{supp}(\tau_j) = \emptyset$, temos que:
+
+\[
+\tau_i(\tau_j(x)) = \underbrace{\tau_i(x)}_{\in\text{supp}(\tau_i)} = \tau_j(\tau_i(x))
+\]
+
+Simetricamente o mesmo é válido para $x\in\text{supp}(\tau_j)$. Suponha, agora, que $x\notin \text{supp}(\tau_i)\sqcup\text{supp}(\tau_j)$, temos trivialmente que:
+
+\[
+\tau_i(\tau_j(x)) = \tau_i(x) = x = \tau_j(x) = \tau_j(\tau_i(x))
+\]
+
+Portanto temos que $\tau_i\tau_j=\tau_j\tau_i, \; \forall i,j\in\llbracket 1,k\rrbracket$ tais que $i\neq j$.
+
+A partir das observações feitas acima temos diretamente que:
+
+\[
+\text{supp}(\sigma) = \bigsqcup_{i=1}^k \text{supp}(\tau_i).
+\]
+
+\qed}
+
+\section{Ciclos e transposições}
+
 \begin{definition}
+\color{red}
+Seja $X = \{x_1,\ldots,x_n\}$ tal que $\text{Card}(X)\geq 2$.
+Uma permutação $\sigma\in\mathfrak{S}_X$ é chamada de $k$\textbf{-ciclo} (onde $k\in\llbracket 2,n\rrbracket$) se:
+\begin{align*}
+    &\sigma(x_1) = x_2 \\
+    &\sigma(x_2) = x_3 \\
+    &\dots \\
+    &\sigma(x_{k-1}) = x_k \\
+    &\sigma(x_k) = x_1 \\
+    &\sigma(y) = y, \; y\in X\setminus\{x_1,\ldots,x_k\} 
+\end{align*}
+
+Denotamos tal $k$-ciclo como:
+
+\[
+\sigma \overset{def}{=} (x_1\;\dots\;x_k).
+\]
 
 \end{definition}
+
+{\color{red}
+\textit{Observações:}
+
+\begin{itemize}
+	\item \textit{Note que, por definição, se $\sigma = (x_1\;x_2\;\ldots\;x_k)$, então $\text{supp}(\sigma) = \{x_1\;x_2\;\ldots\;x_k\}$};
+	\item \textit{Perceba que a escolha de $x_1$ como ponto de partida para o $k$-ciclo $\sigma$ é arbitrária, é possível começar com qualquer outro $x_i\in\text{supp}(\sigma)$:}
+
+\[
+(x_1\;x_2\;\ldots\;x_k) = (x_{i}\;x_{i+1}\;\ldots\;x_k\;x_1\;\ldots\;x_{i-1});
+\]
+
+	\item \textit{Chamamos também um $k$-ciclo de \textbf{ciclo de largura $k$}};
+	\item \textit{Caso $\sigma,\tau$ sejam ciclos com suportes dois a dois disjuntos, temos diretamente via a \hyperlink{prop213}{\textbf{Proposição 2.1.3}} que $\sigma\tau=\tau\sigma$};
+
+	\item \textit{Note que nem toda permutação é um ciclo. Tomemos $\sigma\in\mathfrak{S}_4$ tal que:}
+
+\[
+\sigma =
+\begin{pmatrix}
+1 & 2 & 3 & 4 \\
+2 & 1 & 4 & 3
+\end{pmatrix}
+=
+(1\;2)(3\;4)
+\]
+
+	\textit{Evidentemente $\sigma$ não é um ciclo, porém pode ser escrito como produto de $2$ ciclos de suportes disjuntos}.
+\end{itemize}
+
+}
+
+\begin{definition}
+\color{red}
+Uma \textbf{transposição} é um $2$-ciclo.
+\end{definition}
+
+\begin{example}
+\color{red}
+Tomemos alguns exemplos de permutações em $\mathfrak{S}_3$:
+
+\[
+\begin{pmatrix}
+1 & 2 & 3 \\
+2 & 1 & 3
+\end{pmatrix}
+= (1\; 2) = (2\; 1)
+\]
+
+\[
+\begin{pmatrix}
+1 & 2 & 3 \\
+1 & 3 & 2
+\end{pmatrix}
+= (2\; 3) = (3\; 2)
+\]
+
+\[
+\begin{pmatrix}
+1 & 2 & 3 \\
+2 & 3 & 1
+\end{pmatrix}
+= (1\; 2\; 3) = (2\; 3\; 1) = (3\;1\;2)
+\]
+
+Note que podemos escrever $(1\;2\;3) = (1\; 2)(2\;3)$.
+\end{example}
+
+\begin{proposition}
+\color{red}
+Sejam $X$ um conjunto finito e não vazio tal que $\text{Card}(X)=n\in\mathbb{Z}_{\geq 2}$ e $\sigma\in\mathfrak{S}_X$ um $k$-ciclo, onde $k\in\llbracket 2,n\rrbracket$. Então $\mathcal{O}(\sigma) = k$.
+\end{proposition}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+
+
+\qed}
+
+\begin{proposition}
+\end{proposition}
 
 \end{document}
