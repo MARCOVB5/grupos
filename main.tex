@@ -3669,7 +3669,7 @@ Denotamos tal $k$-ciclo como:
 (1\;2)(3\;4)
 \]
 
-	\textit{Evidentemente $\sigma$ não é um ciclo, porém pode ser escrito como produto de $2$ ciclos de suportes disjuntos}.
+	\textit{Evidentemente $\sigma$ não é um ciclo, porém $\sigma$ pode ser escrito como produto de $2$ ciclos de suportes disjuntos}.
 \end{itemize}
 
 }
@@ -3678,6 +3678,24 @@ Denotamos tal $k$-ciclo como:
 \color{red}
 Uma \textbf{transposição} é um $2$-ciclo.
 \end{definition}
+
+\begin{proposition}
+\color{red}
+Sejam $X =\{x_1,\ldots,x_n\}$ para $n\geq 2$. Logo, todo $k$-ciclo de $\mathfrak{S}_X$ é igual a um produto de $k-1$ transposições.
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Seja $\sigma\in\mathfrak{S}_X$ tal que $\sigma = \underbrace{(x_1\;x_k)(x_1\;x_{k-1})\ldots(x_1\;x_2)}_{k-1\;\;\text{transposições}}$.
+
+Sabemos também que se $x\notin\{x_1,\ldots,x_k\}$ então $\sigma(x) = x$.
+
+Perceba pela definição de $\sigma$ que $\sigma(x_1) = x_2,\;\sigma(x_2)=x_3,\;\ldots,\;\sigma(x_k)=x_1$.
+
+Logo temos diretamente que $\sigma = (x_1\;\ldots\;x_k)$.
+
+\qed}
 
 \begin{example}
 \color{red}
@@ -3704,26 +3722,71 @@ Tomemos alguns exemplos de permutações em $\mathfrak{S}_3$:
 1 & 2 & 3 \\
 2 & 3 & 1
 \end{pmatrix}
-= (1\; 2\; 3) = (2\; 3\; 1) = (3\;1\;2)
+= (1\; 2\; 3) = (2\; 3\; 1) = (3\;1\;2) = (1\; 2)(2\; 3).
 \]
-
-Note que podemos escrever $(1\;2\;3) = (1\; 2)(2\;3)$.
 \end{example}
 
 \begin{proposition}
 \color{red}
-Sejam $X$ um conjunto finito e não vazio tal que $\text{Card}(X)=n\in\mathbb{Z}_{\geq 2}$ e $\sigma\in\mathfrak{S}_X$ um $k$-ciclo, onde $k\in\llbracket 2,n\rrbracket$. Então $\mathcal{O}(\sigma) = k$.
+Sejam $X = \{x_1,\ldots,x_n\}$ para $n\geq 2$ e $\sigma\in\mathfrak{S}_X$ um $k$-ciclo, onde $k\in\llbracket 2,n\rrbracket$. Então $\mathcal{O}(\sigma) = k$.
 \end{proposition}
 
 {\color{red}
 
 \textbf{Demonstração:}
 
+Note primeiramente que $\mathcal{O}(\sigma) \geq k$, pois $\forall i\in\llbracket 1, k-1\rrbracket$ temos $\sigma^{i}(x_1) \neq x_1$.
 
+Perceba que $\sigma^{k-1}(x_1) = x_k \implies \sigma^{k}(x_1) = x_1$. 
+
+Analogamente, realizamos o mesmo procedimento $\forall i\in\llbracket 2,k\rrbracket$.
+
+Deduzimos que $\sigma^{k} = \text{id}_X \implies \mathcal{O}(\sigma) = k$.
 
 \qed}
 
 \begin{proposition}
+\color{red}
+Seja $X = \{x_1,\ldots,x_n\}$ para $n\geq 2$. Tomemos $\sigma\in\mathfrak{S}_X$ tal que: 
+
+\[
+\sigma = \gamma_1 \ldots \gamma_t, \; t\in\llbracket 1,n\rrbracket
+\]
+
+Onde $\gamma_i$ é um $k_i$-ciclo, $\forall i \in \llbracket 1, t\rrbracket$ e $\gamma_i,\gamma_j$ tem suportes disjuntos $\forall i,j\in\llbracket 1,t\rrbracket, \; i\neq j$.
+
+Então, $\mathcal{O}(\sigma) = \text{mmc}(k_1,\ldots,k_t)$.
 \end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Seja $h\in\mathbb{Z}_{+}^{*}$ tal que $\sigma^h = \text{id}_X$.
+
+Note que, como $\gamma_i\gamma_j=\gamma_j\gamma_i,\;\forall i,j\in\llbracket 1, t\rrbracket$ tal que $i\neq j$, pela \hyperlink{prop213}{\textbf{Proposição 2.1.3}} temos:
+
+\[
+\sigma^h = (\gamma_1\ldots\gamma_t)^h = \gamma_{1}^{h}\ldots\gamma_{t}^{h} = \text{id}_X
+\]
+
+Como os suportes de cada fator $\gamma$ de $\sigma$ são dois a dois disjuntos, é necessário que $h$ seja um múltiplo de cada ordem $k_i$ para cada $\gamma_i, \; \forall i\in\llbracket 1,t\rrbracket$ simultâneamente.
+
+Por definição, temos que $\text{min}(h) = \text{mmc}(k_1,\ldots,k_t)$.
+
+Como $\mathcal{O}(\sigma) = \text{min}(h)$, deduzimos que $\mathcal{O}(\sigma) = \text{mmc}(k_1,\ldots,k_t)$.
+
+\qed}
+
+\begin{theorem}
+\color{red}
+Seja $X=\{x_1,\ldots,x_n\}$ para $n\geq 2$. Então toda permutação $\sigma\in\mathfrak{S}_X$ pode ser decomposta em um produto de ciclos de suportes dois a dois disjuntos.
+
+Tal decomposição é única, exceto pela ordem em que os ciclos são escritos.
+\end{theorem}
+
+{\color{red}
+\textbf{Demonstração:}
+
+\qed}
 
 \end{document}
