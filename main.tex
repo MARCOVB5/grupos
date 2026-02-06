@@ -136,6 +136,9 @@
 
 \fontsize{12}{14}\selectfont
 
+\tableofcontents
+\newpage
+
 \chapter{Generalidades sobre Grupos}
 
 \section{Operações Binárias}
@@ -3647,6 +3650,7 @@ Denotamos tal $k$-ciclo como:
 \textit{Observações:}
 
 \begin{itemize}
+	\item \textit{A notação $x_1,\ldots,x_k$ utilizada não implica que o ciclo deve atuar necessariamente nos primeiros $k$ elementos indexados do conjunto $X$. De maneira rigorosa, um $k$-ciclo é determinado por uma escolha ordenada de $k$ elementos distintos $a_1,\ldots,a_k\in X$. A definição aplica-se fazendo a correspondência $\sigma(a_i) = a_{i+1}$ (com $a_{k+1} = a_1$ e fixando todos os elementos em $X\setminus\{a_1,\ldots,a_k\}$};
 	\item \textit{Note que, por definição, se $\sigma = (x_1\;x_2\;\ldots\;x_k)$, então $\text{supp}(\sigma) = \{x_1\;x_2\;\ldots\;x_k\}$};
 	\item \textit{Perceba que a escolha de $x_1$ como ponto de partida para o $k$-ciclo $\sigma$ é arbitrária, é possível começar com qualquer outro $x_i\in\text{supp}(\sigma)$:}
 
@@ -3679,6 +3683,7 @@ Denotamos tal $k$-ciclo como:
 Uma \textbf{transposição} é um $2$-ciclo.
 \end{definition}
 
+\hypertarget{prop221}{}
 \begin{proposition}
 \color{red}
 Sejam $X =\{x_1,\ldots,x_n\}$ para $n\geq 2$. Logo, todo $k$-ciclo de $\mathfrak{S}_X$ é igual a um produto de $k-1$ transposições.
@@ -3726,6 +3731,7 @@ Tomemos alguns exemplos de permutações em $\mathfrak{S}_3$:
 \]
 \end{example}
 
+\hypertarget{prop222}{}
 \begin{proposition}
 \color{red}
 Sejam $X = \{x_1,\ldots,x_n\}$ para $n\geq 2$ e $\sigma\in\mathfrak{S}_X$ um $k$-ciclo, onde $k\in\llbracket 2,n\rrbracket$. Então $\mathcal{O}(\sigma) = k$.
@@ -3745,6 +3751,7 @@ Deduzimos que $\sigma^{k} = \text{id}_X \implies \mathcal{O}(\sigma) = k$.
 
 \qed}
 
+\hypertarget{prop223}{}
 \begin{proposition}
 \color{red}
 Seja $X = \{x_1,\ldots,x_n\}$ para $n\geq 2$. Tomemos $\sigma\in\mathfrak{S}_X$ tal que: 
@@ -3779,7 +3786,7 @@ Como $\mathcal{O}(\sigma) = \text{min}(h)$, deduzimos que $\mathcal{O}(\sigma) =
 
 \begin{theorem}
 \color{red}
-Seja $X=\{x_1,\ldots,x_n\}$ para $n\geq 2$. Então toda permutação $\sigma\in\mathfrak{S}_X$ pode ser decomposta em um produto de ciclos de suportes dois a dois disjuntos.
+Seja $X=\{x_1,\ldots,x_n\}$ para $n\geq 2$. Então toda permutação $\sigma\in\mathfrak{S}_X\setminus \{\text{id}_X\}$ pode ser decomposta em um produto de ciclos de suportes dois a dois disjuntos.
 
 Tal decomposição é única, exceto pela ordem em que os ciclos são escritos.
 \end{theorem}
@@ -3787,6 +3794,165 @@ Tal decomposição é única, exceto pela ordem em que os ciclos são escritos.
 {\color{red}
 \textbf{Demonstração:}
 
+Seja $\sigma\in\mathfrak{S}_X\setminus\{\text{id}_X\}$.
+
+Tomemos de forma arbitrária um elemento $x_j$, com $j\in\llbracket 1,n\rrbracket$ tal que $\sigma(x_j)\neq x_j$. Note que é garantido que tal elemento exista, uma vez que $\sigma \neq \text{id}_X$.
+
+Definimos o seguinte conjunto:
+
+\[
+\mathfrak{O}(x) \overset{def}{=} \{\sigma^k(x)\; ; \;k\in\mathbb{Z} \}
+\]
+
+Note que a restrição $\sigma\upharpoonright_{\mathfrak{O}(x_j)}$ forma um $k$-ciclo e $\text{supp}(\sigma\upharpoonright_{\mathfrak{O}(x_j)}) = \mathfrak{O}(x_j)$, pela \hyperlink{prop212}{\textbf{Proposição 2.1.2}}.
+
+Realizamos o mesmo procedimento para todo $x\in X\setminus \mathfrak{O}(x_j)$ tal que $\sigma(x)\neq x$ e assim sucessivamente. Como $X$ é um conjunto finito, realizamos tal procedimento em um número finito de passos.
+
+Pela \hyperlink{prop213}{\textbf{Proposição 2.1.3}} temos que a família $\{\mathfrak{O}(x)\}_{x\in X}$ forma uma partição de $X\setminus I$, onde $I\overset{def}{=} \{ x\in X ; \sigma(x) = x \}$.
+
+Sendo $\mathfrak{R}$ o conjunto dos representantes de cada $k_x$-ciclo $\sigma \upharpoonright_{\mathfrak{O}(x)}, \; \forall x\in X\setminus I$, temos:
+
+\[
+\text{supp}(\sigma) = \bigsqcup_{r\in \mathfrak{R}} \text{supp}(\sigma\upharpoonright_{\mathfrak{O}(r)})
+\]
+
+deduzimos que $\sigma$ é igual a composição de todo $k_x$-ciclo $\sigma\upharpoonright_{\mathfrak{O}(r)}$, onde $r\in \mathfrak{R}$.
+
+Mostremos que tal decomposição é única. 
+
+Sejam $\sigma_1 = \rho_1\ldots \rho_h$ e $\sigma_2 = \eta_1\ldots\eta_m$ duas decomposições em ciclos de suportes dois a dois disjuntos de $\sigma$, onde $h,m\in\llbracket 1,\lfloor\frac{n}{2}\rfloor\rrbracket$.
+
+Perceba que, como os suportes de cada ciclo são dois a dois disjuntos, necessariamente $\rho_i(x) = \eta_j(x)$, para todo $x\in X$ e $i,j\in \llbracket 1,\lfloor\frac{n}{2}\rfloor \rrbracket$.
+
+Utilizando a mesma lógica de forma indutiva em todos os elementos de $X$, concluímos que para todo $x\in X$ iremos obter as mesmas partições $\mathfrak{O}(x)$ nas quais podemos escrever $\text{supp}(\sigma)$.
+
+Como o produto entre quaisquer ciclos de $\sigma$ é comutativo, deduzimos diretamente que $\sigma_1 = \sigma_2$.
+
+\qed
+
+\textit{Observação: note que para calcular a ordem de uma permutação $\sigma\in\mathfrak{S}_X$ basta decompor $\sigma$ em ciclos de suportes dois a dois disjuntos e calcular sua ordem via a regra vista na \hyperlink{prop223}{\textbf{Proposição 2.2.3}}}.
+
+}
+
+\begin{example}
+\color{red}
+\textit{Exercício 5.41 da referência \cite{garcia_yves}}.
+
+\textbf{(a)} Seja $\sigma_{\text{(a)}} \in \mathfrak{S}_9$ tal que:
+
+\[
+\sigma_{\text{(a)}} = \begin{pmatrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+2 & 3 & 4 & 5 & 1 & 6 & 7 & 9 & 8
+\end{pmatrix}
+= 
+\underbrace{(1\;2\;3\;4\;5)}_{\text{ordem }= 5}\underbrace{(8\;9)}_{\text{ordem } = 2}
+\]
+\[
+\implies \mathcal{O}(\sigma_{\text{(a)}}) = \text{mmc}(5,2) = 10
+\]
+
+\textbf{(b)} Seja $\sigma_{\text{(b)}} \in \mathfrak{S}_7$ tal que:
+
+\[
+\sigma_{\text{(b)}} = \begin{pmatrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7\\
+6 & 5 & 4 & 3 & 1 & 2 & 7
+\end{pmatrix}
+=
+\underbrace{(1\;6\;2\;5)}_{\text{ordem } = 4}\underbrace{(3\;4)}_{\text{ordem } = 2}
+\]
+\[
+\implies \mathcal{O}(\sigma_{\text{(b)}}) = \text{mmc}(4,2) = 4
+\]
+
+\textbf{(c)} Seja $\sigma_{\text{(c)}} \in \mathfrak{S}_9$ tal que:
+
+\[
+\sigma_{\text{(c)}} = (1\;2\;3)(4\;5)(1\;6\;8\;7\;9)(1\;5) = (1\;4\;5\;6\;8\;7\;9\;2\;3)  
+\]
+\[
+\implies \mathcal{O}(\sigma_{\text{(c)}}) = 9
+\]
+
+\textbf{(d)} Seja $\sigma_{\text{(d)}} \in \mathfrak{S}_3$ tal que:
+
+\[
+\sigma_{\text{(d)}} = (1\;2)(1\;2\;3)(1\;2) = (1\;3\;2)
+\]
+\[
+\implies \mathcal{O}(\sigma_{\text{(d)}}) = 3.
+\]
+
+\end{example}
+
+\begin{corollary}
+\color{red}
+Seja $X$ um conjunto finito e não vazio tal que $\text{Card}(X) = n\in \mathbb{Z}_{\geq 2}$.
+
+Então, todo elemento de $\mathfrak{S}_X$ é igual a um produto de no máximo $n-1$ transposições.
+\end{corollary}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Seja $\sigma\in\mathfrak{S}_X$ uma permutação tal que:
+
+\[
+\sigma = \gamma_1\ldots\gamma_m,\; m\in\llbracket 1, \left\lfloor \frac{n}{2}\right\rfloor\rrbracket 
+\]
+
+Definimos $\mathcal{O}(\gamma_i) = k_i, \; \forall i\in\llbracket 1,m\rrbracket$ (de tal forma que $\gamma_i$ é um $k_i$-ciclo).
+
+Sabemos a partir da \hyperlink{prop221}{\textbf{Proposição 2.2.1}} que cada $k$-ciclo pode ser escrito como $k-1$ transposições (de suportes não necessariamente disjuntos).
+
+Como possuímos $m$ ciclos dois a dois disjuntos, temos:
+
+\[
+\sum_{i=1}^{m} k_i - 1 = \sum_{i=1}^{m} k_i - \sum_{i=1}^{m} 1 = \sum_{i=1}^{m} k_i - m
+\]  
+
+Como $\sum_{i=1}^m k_i \leq n$ e $m\in\llbracket 1,\lfloor \frac{n}{2}\rfloor\rrbracket$, $\sigma$ pode se fatorar em no máximo $n-1$ transposições (de suportes não necessariamente disjuntos).
+
 \qed}
 
+\begin{example}
+\color{red}
+Seja $\sigma \in \mathfrak{S}_8$ tal que:
+
+\[
+\sigma = \begin{pmatrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+7 & 5 & 6 & 4 & 3 & 2 & 8 & 1
+\end{pmatrix}
+= (1\;7\;8)(2\;5\;3\;6) 
+\]
+
+Note que, seguindo a mesma estratégia de prova da \hyperlink{prop221}{\textbf{Proposição 2.2.1}}, podemos ainda reescrever $\sigma$ como:
+
+\[
+\sigma = (1\;7\;8)(2\;5\;3\;6) = (1\;8)(1\;7)(2\;6)(2\;3)(2\;5)
+\]
+\end{example}
+
+\begin{definition}
+\color{red}
+Seja $X = \{x_1,\ldots,x_n\}$.
+
+Uma \textbf{transposição elementar} é uma transposição $\tau\in\mathfrak{S}_X$ da forma:
+
+\[
+\tau = (x_i\;x_{i+1}), \; i\in\{1,\ldots, n-1\}
+\]
+
+Isto é, uma transposição cujas imagens são elementos consecutivos de $X$.
+\end{definition}
+
+\begin{proposition}
+\color{red}
+
+\end{proposition}
+
+\bibliographystyle{alpha}
+\bibliography{refs}
 \end{document}
