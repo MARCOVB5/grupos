@@ -3886,6 +3886,7 @@ Como o produto entre quaisquer ciclos de $\sigma$ é comutativo, deduzimos diret
 
 \end{example}
 
+\hypertarget{corol221}{}
 \begin{corollary}
 \color{red}
 Seja $X$ um conjunto finito e não vazio tal que $\text{Card}(X) = n\in \mathbb{Z}_{\geq 2}$.
@@ -3948,10 +3949,161 @@ Uma \textbf{transposição elementar} é uma transposição $\tau\in\mathfrak{S}
 Isto é, uma transposição cujas imagens são elementos consecutivos de $X$.
 \end{definition}
 
+\hypertarget{prop224}{}
 \begin{proposition}
 \color{red}
-
+Toda transposição de um conjunto finito e não vazio $X$ pode ser decomposta em transposições elementares de $X$.
 \end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Seja $(x_i\;x_j)$ uma transposição de $X = \{x_1,\ldots, x_n\}$, onde $i<j$.
+
+Note que podemos escrever $(x_i\;x_j)$ como:
+
+\[
+(x_i\;x_j) = (x_{i}\;x_{i+1})(x_{i+1}\;x_{i+2})\ldots(x_{j-2}\;x_{j-1})(x_{j-1}\;x_j)(x_{j-2}\;x_{j-1})\ldots(x_{i+1}\;x_{i+2})(x_i\;x_{i+1})
+\]
+
+Note que de fato, ao realizar o produto das transposições elementares acima, temos que:
+
+\[
+x_i \rightarrow x_{i+1} \rightarrow \ldots \rightarrow x_{j-1} \rightarrow x_{j}
+\]
+
+e,
+
+\[
+x_j \rightarrow x_{j-1} \rightarrow \ldots \rightarrow x_{i+1} \rightarrow x_{i}.
+\]
+
+Além disso, temos também diretamente que:
+
+\[
+x_k \rightarrow x_k,\; \forall k\in \rrbracket i,j\llbracket
+\]
+
+Isto conclui a prova e mostra que de fato podemos escrever quaisquer 
+transposições de um conjunto finito e não vazio $X$ em transposições elementares de $X$.
+
+\qed
+
+\textit{Observação: note que a decomposição de uma dada transposição em transposições elementares não é única. Temos, por exemplo, em $\mathfrak{S}_3$:}
+
+\[
+(1\;3) = (1\;2)(2\;3)(1\;2) = (2\;3)(1\;2)(2\;3)
+\]
+
+}
+
+\begin{example}
+\color{red}
+Seja $\sigma \in \mathfrak{S}_5$ tal que:
+
+\[
+\sigma = \begin{pmatrix}
+1 & 2 & 3 & 4 & 5 \\
+3 & 2 & 5 & 1 & 4
+\end{pmatrix}
+\]
+
+Temos que:
+
+\begin{align*}
+\sigma = (1\;3\;5\;4) = (1\;4)(1\;5)(1\;3) &= \begin{aligned}[t]
+&(1\;2)(2\;3)(3\;4)(2\;3)(1\;2) \\
+&(1\;2)(2\;3)(3\;4)(4\;5)(3\;4)(2\;3)(1\;2) \\
+&(1\;2)(2\;3)(1\;2)
+\end{aligned} \\
+&= (1\;2)(2\;3)(4\;5)(3\;4)(1\;2)
+\end{align*}
+
+\end{example}
+
+\hypertarget{corol222}{}
+\begin{corollary}
+\color{red}
+Seja $X$ um conjunto finito e não vazio tal que $\text{Card}(X) = n\in\mathbb{Z}_{\geq 2}$.
+
+Então, todo elemento de $\mathfrak{S}_X$ é igual a um produto de transposições elementares.
+\end{corollary}
+
+{\color{red}
+\textbf{Demonstração:}
+
+O resultado é consequência imediata da combinação do \hyperlink{corol221}{\textbf{Corolário 2.2.1}} e da \hyperlink{prop224}{\textbf{Proposição 2.2.4}}. 
+
+\qed}
+
+\hypertarget{prop225}{}
+\begin{proposition}
+\color{red}
+Sejam $X = \{x_1,\ldots,x_n\}$ tal que $n\geq 2$ e $(x_i\;x_j)$ uma transposição arbitrária de $X$.
+
+Então, $\forall \sigma \in \mathfrak{S}_X$, temos:
+
+\[
+\sigma (x_i\; x_j) \sigma^{-1} = (\sigma(x_i)\; \sigma(x_j)).
+\]
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Seja $x \in X \setminus \{\sigma(x_i),\;\sigma(x_j)\}$. Temos diretamente que:
+
+\[
+\sigma^{-1}(x) = \underbrace{x'}_{x'\in X\setminus \{x_i,x_j\}} \implies \bigl((x_i\;x_j)\sigma^{-1}\bigr)(x) = x' \implies \bigl(\sigma(x_i\;x_j)\sigma^{-1}\bigr)(x) = \sigma(x') = x
+\]
+
+Tomemos agora $x = \sigma(x_i)$, temos que:
+
+\[
+\sigma^{-1}(\sigma(x_i)) = x_i \implies \bigl((x_i\;x_j)\sigma^{-1}\bigr)(\sigma(x_i)) = x_j \implies \bigl(\sigma(x_i\;x_j)\sigma^{-1}\bigr)(\sigma(x_i)) = \sigma(x_j)
+\]
+
+Analogamente temos que $x = \sigma(x_j) \implies \bigl(\sigma(x_i\;x_j)\sigma^{-1}\bigr)(\sigma(x_j)) = \sigma(x_i)$.
+
+
+Concluímos que $\sigma (x_i\; x_j) \sigma^{-1} = (\sigma(x_i)\; \sigma(x_j))$.
+
+\qed}
+
+\begin{theorem}
+\color{red}
+Seja $X = \{x_1, x_2,\ldots,x_n\}$ tal que $n \geq 3$.
+
+Então, o grupo $\mathfrak{S}_X$ é gerado por $\tau = (x_1\;x_2)$ e $\gamma = (x_1\;x_2\;\ldots\;x_n)$.
+
+Isto é, $\forall \sigma \in \mathfrak{S}_X, \; \exists a_1,\;\ldots, a_p,\;b_1,\ldots,b_p\in \mathbb{Z}$ tal que:
+
+\[
+\sigma = \prod_{i=1}^{p} \tau^{a_i}\gamma^{b_i}
+\]
+
+\end{theorem}
+
+{\color{red}
+\textbf{Demonstração:}
+
+A partir do \hyperlink{corol222}{\textbf{Corolário 2.2.2}}, basta mostrar que o produto de $\tau$ e $\gamma$ formam uma transposição elementar.
+
+Ora, pela \hyperlink{prop225}{\textbf{Proposição 2.2.5}} temos diretamente que:
+
+\[
+\gamma^{k}\tau\gamma^{-k} = (x_{k+1}\; x_{k+2}),\; \forall k\in \llbracket 0, n-2 \rrbracket
+\]
+
+Portanto, concluímos que $\mathfrak{S}_X$ pode ser gerado a partir de apenas $\tau$ e $\gamma$.
+
+\qed
+
+\textit{Observação: a partir do resultado acima deduzimos que $\mathfrak{S}_X$ é um grupo dicíclico.}
+
+}
+
+\section{Assinatura}
 
 \bibliographystyle{alpha}
 \bibliography{refs}
