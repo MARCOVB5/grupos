@@ -3915,7 +3915,11 @@ Como possuímos $m$ ciclos dois a dois disjuntos, temos:
 
 Como $\sum_{i=1}^m k_i \leq n$ e $m\in\llbracket 1,\lfloor \frac{n}{2}\rfloor\rrbracket$, $\sigma$ pode se fatorar em no máximo $n-1$ transposições (de suportes não necessariamente disjuntos).
 
-\qed}
+\qed
+
+\textit{Observação: diferentemente do \hyperlink{teo221}{\textbf{Teorema 2.2.1}}, a decomposição de uma permutação $\sigma\in\mathfrak{S}_X$ em transposições não é necessariamente única. Será mostrado na \hyperlink{prop224}{\textbf{Proposição 2.2.4}} que uma permutação pode também ser decomposta em \textbf{transposições elementares}.}
+
+}
 
 \begin{example}
 \color{red}
@@ -4104,6 +4108,115 @@ Portanto, concluímos que $\mathfrak{S}_X$ pode ser gerado a partir de apenas $\
 }
 
 \section{Assinatura}
+
+\begin{definition}
+\color{red}
+Sejam $X$ um conjunto ordenado, finito e não vazio e uma permutação $\sigma\in\mathfrak{S}_X$.
+
+Chamamos de \textbf{inversão em $\sigma$} o par ordenado $(x,y)\in X^2$ tq. $x<y$ e $\sigma(x) > \sigma(y)$.
+
+Denotamos o número de inversões de uma dada permutação $\sigma$ como $\mathscr{I}(\sigma)$.
+\end{definition}
+
+\hypertarget{ex231}{}
+\begin{example}
+\color{red}
+Seja $\sigma\in\mathfrak{S}_{9}$ tal que:
+
+\[
+\sigma = \begin{pmatrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+3 & 9 & 6 & 4 & 2 & 1 & 7 & 5 & 8
+\end{pmatrix}
+\]
+
+Contando cada par de inversões partindo do primeiro elemento temos que:
+
+\[
+\mathscr{I}(\sigma) = 2 + 7 + 4 + 2 + 1 + 0 + 1 + 0 + 0 = 17.
+\]
+
+\end{example}
+
+\hypertarget{def232}{}
+\begin{definition}
+\color{red}
+Sejam $X$ um conjunto ordenado, finito e não vazio e uma permutação $\sigma\in\mathfrak{S}_X$.
+
+Definimos a \textbf{assinatura de $\sigma$} como o resultado da função $\varepsilon(\sigma) \overset{def}{=} (-1)^{\mathscr{I}(\sigma)}$.
+
+\end{definition}
+
+{\color{red}
+
+\textit{Observação: note que, embora a definição de inversão dependa de uma relação de ordem em $X$, a assinatura $\varepsilon(\sigma)$ é uma propriedade intrínseca da permutação. Se $X$ for um conjunto finito qualquer, podemos sempre munir $X$ de uma ordem total arbitrária para calcular $\varepsilon(\sigma)$; o valor obtido será independente da ordem escolhida.}
+
+}
+
+\begin{definition}
+\color{red}
+A partir das notações da \hyperlink{def232}{\textbf{Definição 2.3.2}}, uma permutação $\sigma\in\mathfrak{S}_X$ é dita \textbf{par} se $\varepsilon(\sigma) = 1$.
+
+Simetricamente, uma permutação $\sigma\in\mathfrak{S}_X$ é dita \textbf{ímpar} se $\varepsilon(\sigma) = -1$.
+\end{definition}
+
+\begin{example}
+\color{red}
+Retomando o \hyperlink{ex231}{\textbf{Exemplo 2.3.1}} temos diretamente que $\sigma$ é uma permutação de assinatura igual à $-1$ e é, portanto, ímpar:
+
+\[
+\varepsilon(\sigma) = (-1)^{\mathscr{I}(\sigma)} = (-1)^{17} = -1.
+\]
+\end{example}
+
+\begin{proposition}
+\color{red}
+Seja $X$ um conjunto finito, não vazio e munido de uma ordem total. Logo, toda transposição de $\mathfrak{S}_X$ é uma permutação ímpar.
+\end{proposition}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+Seja $\tau = (x\;y) \in \mathfrak{S}_X$ uma transposição tal que, pela ordem total de $X$, $x < y$ e $\tau(x) > \tau(y)$.
+
+Note que, como $x<y$ e $\tau(x) > \tau(y)$, então temos diretamente que $\forall z_x\in X_{<x},\; \tau(x) > z$.
+
+Simetricamente, temos que $\forall z_y\in X_{>y},\; \tau(y) < z$.
+
+Portanto, resta contar o número de inversões para $z\in\llbracket x, y\rrbracket$.
+
+Ora, para todo $z\in\llbracket x,y\rrbracket$ temos diretamente que $\tau(y) > z, \; \forall z\in \llbracket x,y\rrbracket$.
+
+Seja $M$ o número de inversões $(\tau(y), z)$ calculado acima. 
+
+Note que, de forma análoga, temos que $\tau(x) < z, \; \forall z\in \llbracket x, y \rrbracket$. 
+
+Portanto, o número de inversões dos pares $(\tau(x), z)$ é também $M$. 
+
+Entretanto, como contabilizamos duas vezes a inversão $(\tau(x),\tau(y))$, temos que $\mathscr{I}(\tau) = 2M-1$. 
+
+Portanto, $\varepsilon(\tau) = -1$ e $\tau$ é ímpar. 
+
+\qed}
+
+\begin{theorem}
+\color{red}
+	Sejam $X$ um conjunto finito tal que $\text{Card}(X) \geq 2$ e munido de uma ordem total e uma permutação $\sigma\in\mathfrak{S}_X$.
+
+Portanto, ao decompor $\sigma = \tau_1\ldots\tau_m$, onde $\tau_i$ é uma transposição, temos que:
+
+\[
+\varepsilon(\sigma) = (-1)^m
+\]
+
+\end{theorem}
+
+{\color{red}
+\textbf{Demonstração}
+
+\qed}
+
 
 \bibliographystyle{alpha}
 \bibliography{refs}
