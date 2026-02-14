@@ -3474,7 +3474,7 @@ g & \longmapsto & \Upsilon_g: G_0 \longrightarrow G_0 \\
 \end{array}
 \]
  
-é um homomorfismo injetivo. 
+é um monomorfismo de grupos. 
 \end{theorem}
 
 {\color{red}
@@ -4169,6 +4169,7 @@ Retomando o \hyperlink{ex231}{\textbf{Exemplo 2.3.1}} temos diretamente que $\si
 \]
 \end{example}
 
+\hypertarget{prop231}{}
 \begin{proposition}
 \color{red}
 Seja $X$ um conjunto finito, não vazio e munido de uma ordem total. Logo, toda transposição de $\mathfrak{S}_X$ é uma permutação ímpar.
@@ -4200,11 +4201,12 @@ Portanto, $\varepsilon(\tau) = -1$ e $\tau$ é ímpar.
 
 \qed}
 
+\hypertarget{teo231}{}
 \begin{theorem}
 \color{red}
-	Sejam $X$ um conjunto finito tal que $\text{Card}(X) \geq 2$ e munido de uma ordem total e uma permutação $\sigma\in\mathfrak{S}_X$.
+Sejam $X$ um conjunto finito munido de uma ordem total tal que $\text{Card}(X) = n\in\mathbb{Z}_{\geq 2}$ e uma permutação $\sigma\in\mathfrak{S}_X$.
 
-Portanto, ao decompor $\sigma = \tau_1\ldots\tau_m$, onde $\tau_i$ é uma transposição, temos que:
+Portanto, ao decompor $\sigma = \tau_1\ldots\tau_m$ para $m\in\mathbb{Z}_{+}^{*}$ onde $\tau_i$ é uma transposição para todo $i\in\llbracket 1,m\rrbracket$, temos que:
 
 \[
 \varepsilon(\sigma) = (-1)^m
@@ -4213,10 +4215,123 @@ Portanto, ao decompor $\sigma = \tau_1\ldots\tau_m$, onde $\tau_i$ é uma transp
 \end{theorem}
 
 {\color{red}
-\textbf{Demonstração}
+\textbf{Demonstração:}
+
+Note, primeiramente, que podemos supor sem perda de generalidade que $\sigma$ é decomposto em um número finito $p\in\mathbb{Z}_{\geq m}$ de transposições elementares. 
+
+Isso se dá pois, pela \hyperlink{prop224}{\textbf{Proposição 2.2.4}}, temos diretamente via a construção da demonstração que uma dada transposição se decompõe em um número ímpar de transposições elementares. Portanto, $(-1)^m = (-1)^p$.
+
+Sejam $\sigma' \in \mathfrak{S}_X$ uma permutação arbitrária e $\tau' = (x_d\; x_{d+1})\in \mathfrak{S}_X$ uma transposição elementar tal que $x_d < x_{d+1}$ via a ordem total de $X$.
+
+Note que, ao tomar sem perda de generalidade o produto $\sigma'\tau'$, a transposição $\tau'$ atua trocando os elementos apenas nas posições adjacentes $d$ e $d+1$. Consequentemente, a quantidade total de inversões envolvendo qualquer outro par de posições permanece idêntica. Temos, portanto, apenas o par $(x_d, x_{d+1})$ a analisar:
+
+Suponha que $\sigma'\tau'(x_d) > \sigma'\tau'(x_{d+1})$. Logo, a aplicação de $\tau'$ gerou uma nova inversão, de modo que $\mathscr{I}(\sigma'\tau') = \mathscr{I}(\sigma') + 1$.
+
+Suponha, agora, que $\sigma'\tau'(x_d) < \sigma'\tau'(x_{d+1})$. Logo, simetricamente, $\mathscr{I}(\sigma'\tau') = \mathscr{I}(\sigma') - 1$.
+
+Logo, concluímos que $\varepsilon(\sigma'\tau') = -\varepsilon(\sigma')$.
+
+Como $\sigma = \tau_{1}'\ldots \tau_{p}'$ onde $\tau_{i}'$ é transposição elementar para todo $i\in\llbracket 1,p\rrbracket$, temos diretamente que:
+
+\[
+\varepsilon(\sigma) = (-1)^p = (-1)^m
+\]
 
 \qed}
 
+A partir do \hyperlink{teo231}{\textbf{Teorema 2.3.1}} podemos enunciar a seguinte definição equivalente para o conceito de \textbf{assinatura de uma permutação}:
+
+\begin{definition}
+\color{red}
+Sejam $X$ um conjunto finito tal que $\text{Card}(X)\geq 2$ e $\sigma\in\mathfrak{S}_X$ uma permutação.
+ 
+Então, se $\sigma = \tau_1\ldots\tau_m$ é a decomposição de $\sigma$ em transposições de $\mathfrak{S}_X$, onde $m\in\mathbb{Z}_{+}^{*}$, definimos a \textbf{assinatura de $\sigma$} o valor denotado $\varepsilon(\sigma)$ dado por:
+
+\[
+\varepsilon(\sigma) = (-1)^m
+\]
+
+\end{definition}
+
+\begin{proposition}
+\color{red}
+Sejam $X$ um conjunto finito tal que $\text{Card}(X)=n\in\mathbb{Z}_{\geq 2}$ e $k\in\llbracket 2, n\rrbracket$. 
+
+Logo, para quaisquer $k$-ciclos $\sigma\in \mathfrak{S}_X$, temos que:
+
+\[
+\varepsilon(\sigma) = (-1)^{k-1}
+\]
+
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+O resultado da proposição é imediato via a \hyperlink{prop221}{\textbf{Proposição 2.2.1}} e o \hyperlink{teo231}{\textbf{Teorema 2.3.1}}.
+
+\qed}
+
+\begin{theorem}
+\color{red}
+Sejam $X$ um conjunto finito com $\text{Card}(X)\geq 2$ e a \textbf{função assinatura $\varepsilon$} tal que:
+
+\[
+\varepsilon: 
+\begin{array}{r c l}
+	\mathfrak{S}_X &\to &\{-1,1\} \\
+	\sigma &\mapsto &\varepsilon (\sigma)
+\end{array}
+\]
+
+Logo, $\varepsilon$ é um epimorfismo de grupos.
+\end{theorem}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Sejam $\sigma,\sigma' \in\mathfrak{S}_X$ tais que suas decomposições em transposições de $\mathfrak{S}_X$ são dadas por:
+
+\[
+\sigma = \tau_1 \ldots \tau_p,\; p\in\mathbb{Z}_{+}^{*}
+\]
+
+e, 
+
+\[
+\sigma' = \tau_{1}' \ldots \tau_{q}',\; q\in\mathbb{Z}_{+}^{*}
+\]
+
+Logo, temos que:
+
+\[
+\varepsilon(\sigma\sigma') = (-1)^{p+q} = (-1)^p(-1)^q = \varepsilon(\sigma)\varepsilon(\sigma').
+\]
+
+Como $\varepsilon(\text{id}_X) = 1$ e $\varepsilon(\tau) = -1$ para qualquer $\tau\in\mathfrak{S}_X$ (cuja existência é garantida, uma vez que $\text{Card}(X)\geq 2$), então concluímos que $\varepsilon$ é um epimorfismo de grupos.
+
+\qed}
+
+\begin{example}
+\color{red}
+Seja $\sigma\in\mathfrak{S}_9$ tal que:
+
+\[
+\sigma = \begin{pmatrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+2 & 5 & 6 & 3 & 1 & 9 & 4 & 7 & 8
+\end{pmatrix}
+=
+(1\; 2\; 5)(3\;6\;9\;8\;7\;4)
+\]
+
+Note que conseguimos calcular a assinatura de $\sigma$ diretamente da seguinte forma:
+
+\[
+\varepsilon(\sigma) = \varepsilon\bigl((1\;2\;5)\bigr)\varepsilon\bigl((3\;6\;9\;8\;7\;4)\bigr) = (-1)^{2}(-1)^{5} = -1
+\]
+
+\end{example}
 
 \bibliographystyle{alpha}
 \bibliography{refs}
