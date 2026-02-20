@@ -4345,10 +4345,8 @@ Note que conseguimos calcular a assinatura de $\sigma$ diretamente da seguinte f
 
 \end{example}
 
-
-\subsection{Quebra-cabeça deslizante}
-
-{\color{red}
+\begin{example}
+\color{red}
 
 \textbf{\textit{Retirado de \href{https://www.bibmath.net/ressources/index.php?action=affiche&quoi=bde/algebre/groupesym&type=fexo}{https://www.bibmath.net}}.}
 
@@ -4382,10 +4380,30 @@ a permutação obtida é:
 \]
 
 Demonstre que só é possível obter permutações de assinatura igual a 1.
+\end{example}
 
+{\color{red}
 \textbf{Demonstração:}
 
-}
+Denotemos $\mathfrak{Q}_{8}$ como o conjunto das permutações possíveis para o quebra-cabeça deslizante.
+
+Note, primeiramente, que para qualquer $\sigma\in\mathfrak{Q}_8$, $\sigma$ é invariante para movimentos horizontais de peças para a casa vazia. Tal invariância é justificada pela convenção de leitura linha por linha da esquerda para a direita.
+
+Temos, portanto, apenas dois casos a analisar: caso a peça deslize verticalmente para cima para a casa vazia ou caso a peça deslize verticalmetne para baixo para a casa vazia.
+
+Consideremos o deslize vertical para baixo de uma peça arbitrária do tabuleiro. Ora, sabemos, por construção, que a peça em questão não pode realizar tal deslize caso esteja na última linha do tabuleiro. 
+
+Seja $i$ a posição inicial da peça na permutação $\sigma\in\mathfrak{Q}_8$, onde $i\in\llbracket 1,6\rrbracket$.
+
+Ora, como existe uma casa vazia abaixo da peça a ser movida, então as peças originalmente à esquerda da casa vazia passarão a estar à esquerda da peça movida. Isto é, realizamos o produto $(i\;i+1\;i+2)\sigma$. 
+
+De forma simétrica, o deslize vertical para cima de uma peça arbitrária no tabuleiro pode apenas ocorrer caso a peça em questão não esteja situada na primeira linha do tabuleiro.
+
+Tomando $i$ sendo a posição inicial da peça a ser movida na permutação $\sigma\in\mathfrak{Q}_8$, onde $i\in\llbracket 3, 8\rrbracket$, realizamos o produto $(i\;i-1\;i-2)\sigma$.
+
+Como $\varepsilon(\text{id}_{\mathfrak{Q}_8}) = 1$ e quaisquer permutações $\sigma\in\mathfrak{Q}_8$ são geradas a partir de produtos de $3$-ciclos, concluímos que $\mathfrak{Q}_8 \subseteq \mathfrak{A}_8$.
+
+\qed}
 
 \section{Grupo Alternado $\mathfrak{A}_X$}
 
