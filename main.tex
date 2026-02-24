@@ -3256,7 +3256,7 @@ Então:
 {\color{red}
 \textbf{Demonstração:}
 
-Seja $M_i \overset{def}{=} \frac{M}{m_i}, \; \forall i\in \llbracket 1, n\rrbracket$. Note que $\overline{M_i} \in \mathbb{Z}/M\mathbb{Z}$, uma vez que $M_i \in \llbracket 1, M-1\rrbracket$.
+Seja $M_i \overset{def}{=} \frac{M}{m_i}, \; \forall i\in \llbracket 1, n\rrbracket$. Note que $\overline{M_i} \in \mathbb{Z}/M\mathbb{Z}$, uma vez que $M_i \in \llbracket 1, M\rrbracket$.
 
 Note também que, evidentemente, temos $\mathcal{O}(M_i) = m_i$, uma vez que $m_iM_i = M$.
 
@@ -4074,7 +4074,19 @@ Analogamente temos que $x = \sigma(x_j) \implies \bigl(\sigma(x_i\;x_j)\sigma^{-
 
 Concluímos que $\sigma (x_i\; x_j) \sigma^{-1} = (\sigma(x_i)\; \sigma(x_j))$.
 
-\qed}
+\qed
+
+\textit{Observação: perceba que a proposição vale também para quaisquer $r$-ciclos tal que $r\leq n$. Basta realizar de forma indutiva em $r$ o mesmo procedimento construtivo. Logo, temos:}
+
+\[
+\sigma(x_1\;x_2\;\ldots\;x_r)\sigma^{-1} = (\sigma(x_1)\;\sigma(x_2\;\ldots\;\sigma(x_r))
+\]
+
+\textit{Isto é, quaisquer ciclos em $\mathfrak{S}_X$ são conjugados a outro ciclo se eles têm o mesmo comprimento.}
+
+}
+
+
 
 \begin{theorem}
 \color{red}
@@ -4583,6 +4595,64 @@ Como $\text{Card}(\{-1,1\}) = 2$, então deduzimos que $[H:H\cap\mathfrak{A}_X] 
 \textit{Observação: isto significa que para quaisquer subgrupos $H$ de $\mathfrak{S}_X$, então ou $H$ é composto de permutações pares ou $H$ possui o mesmo número de permutações pares e permutações ímpares.}
 
 }
+
+
+\hypertarget{prop245}{}
+\begin{proposition}
+\color{red}
+Seja $X$ um conjunto finito tal que $\text{Card}(X) \geq 5$. Logo, todos $3$-ciclos são dois a dois conjugados em $\mathfrak{A}_X$. 
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Sejam $x,y,z\in X$ e $\sigma\in\mathfrak{S}_X$ uma permutação arbitrária.
+
+Sabemos, da \hyperlink{prop225}{\textbf{Proposição 2.2.5}}, que quaisquer ciclos são conjugados entre si em $\mathfrak{S}_X$ se possuem mesmo comprimento. Mostremos que para os $3$-ciclos essa conjugação permanece em $\mathfrak{A}_X$. Isto é:
+
+\[
+\varepsilon(\sigma(x\;y\;z)\sigma^{-1}) = 1
+\]
+
+Note que, se $\sigma$ for par, então está demonstrado. Suponha que $\sigma$ é ímpar, logo, podemos tomar uma transposição $(a\;b),\;a,b\in X\setminus \{x,y,z\}$ da decomposição em transposições de $\sigma$. A existência de $a,b$ é garantida pois $\text{Card}(X)\geq 5$.
+
+Tomemos $\sigma \overset{def}{=} \sigma'(a\;b)$. Temos que:
+
+\[
+	\sigma(x\;y\;z)\sigma^{-1} = \sigma'(a\;b)(x\;y\;z)(\sigma'(a\;b))^{-1} = \sigma'(a\;b)(x\;y\;z)(a\;b)\sigma'^{-1} = \sigma'(x\;y\;z)\sigma'^{-1}
+\]
+
+Como $\sigma'$ é claramente par, então concluímos que $\sigma(x\;y\;z)\sigma^{-1}$ é par para $\sigma$ ímpar quando $\text{Card}(X) \geq 5$.
+
+\qed}
+
+\begin{proposition}
+\color{red}
+Seja $X$ um conjunto finito tal que $\text{Card}(X) \geq 5$. Então, se um subgrupo normal $H\trianglelefteq \mathfrak{A}_X$ contém um $3$-ciclo, temos que $H = \mathfrak{A}_X$.
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Suponha $H\trianglelefteq \mathfrak{A}_X$ tal que $H$ contém um $3$-ciclo. Ora, então, por definição de normalidade, todo elemento conjugado do $3$-ciclo de $H$ por permutações de $\mathfrak{A}_X$ pertence à $H$.
+
+Pela \hyperlink{prop245}{\textbf{Proposição 2.4.5}}, sabemos que, se $\text{Card}(X)\geq 5$, então todos os $3$-ciclos são conjugados entre si. 
+
+Como $\mathfrak{A}_X$ é gerado por $3$-ciclos, concluímos que $H = \mathfrak{A}_X$.
+
+\qed}
+
+\begin{theorem}
+\color{red}
+Seja $X$ um conjunto não vazio e finito, onde $n\overset{def}{=} \text{Card}(X)$. 
+
+Se $n\neq 4$, então $\mathfrak{A}_X$ é um grupo simples.
+\end{theorem}
+
+{\color{red}
+\textbf{Demonstração:}
+
+\qed}
 
 \chapter{Grupos Solúveis}
 
