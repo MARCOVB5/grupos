@@ -1147,6 +1147,7 @@ Assim, provamos que o \hyperlink{lagrange}{\textbf{Teorema de Lagrange}} vale ta
 
 \qed
 
+\hypertarget{prop141}{}
 \begin{proposition}
     Seja $G$ um grupo finito de ordem $p\in \mathbb{N}^*$. \\
     Se $p$ for primo, então $G$ é um grupo cíclico.
@@ -3230,7 +3231,7 @@ G \cong \prod_{i=1}^{n} H_i
 
 \qed
 
-\textit{Observação: note que pela \hyperlink{prop164}{\textbf{Proposição 1.6.4}} temos também diretamente que:}
+\textit{Observação: note que pela \hyperlink{prop164}{\textbf{Proposição 1.6.4}} e pelo fato da composição usual de bijeções ser uma bijeção temos também diretamente que:}
 
 \[
 G \cong \bigodot_{i=1}^{n} H_i \implies G \cong \prod_{i=1}^{n} H_i
@@ -3333,6 +3334,60 @@ Onde $\mathbb{Z}/2\mathbb{Z} = \{\overline{0},\overline{1} \}$, $\mathbb{Z}/3\ma
 \]
 
 \end{example}
+
+\begin{definition}
+\color{red}
+Definimos o grupo $(\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z},\; +)$ como \textbf{grupo de Klein} e denotamos:
+
+\[
+\mathcal{K} \overset{def}{=} \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}.
+\]
+\end{definition}
+
+\textit{Observação: note que o grupo de Klein é de fato, trivialmente, um grupo. Além disso, trata-se de um grupo abeliano e temos que $\vert\mathcal{K}\vert = 4$.}
+
+\begin{example}
+\color{red}
+O grupo de Klein possui $5$ subgrupos normais:
+\begin{itemize}
+	\item Os subgrupos triviais $\{(\overline{0}, \overline{0})\}$ e $\mathcal{K}$;
+	\item O subgrupo gerado por $(\overline{0}, \overline{1})$;
+	\item O subgrupo gerado por $(\overline{1},\overline{0})$;
+	\item O subgrupo gerado por $(\overline{1},\overline{1})$.
+\end{itemize}
+
+Note que os subgrupos de $\mathcal{K}$ são de fato todos normais, uma vez que $\mathcal{K}$ é abeliano.
+\end{example}
+
+\begin{proposition}
+\color{red}
+Seja $\mathcal{K}$ o grupo de Klein, então as duas afirmações são equivalentes:
+\begin{enumerate}
+	\item $\mathcal{K} \ncong \mathbb{Z}/4\mathbb{Z}$;  
+	\item $\mathcal{K}$ é o menor grupo não cíclico.
+\end{enumerate}
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Mostremos primeiramente $(2) \implies (1)$:
+
+Suponha $\mathcal{K}$ como sendo o menor grupo não cíclico. Ora, como $\mathbb{Z}/4\mathbb{Z}$ é um grupo cíclico, então temos diretamente que $\mathcal{K} \ncong \mathbb{Z}/4\mathbb{Z}$.
+
+Mostremos, agora, $(1)\implies (2)$:
+
+Ora, como $\mathcal{K}$ é um grupo finito abeliano tal que $\vert\mathcal{K}\vert = 4$, então se $\mathcal{K}\ncong \mathbb{Z}/4\mathbb{Z}$, deduzimos diretamente que $\mathcal{K}$ não é cíclico.
+
+Note também que se trata do menor grupo com tal propriedade. 
+
+Suponha $G$ um grupo finito. Ora, se $\vert G\vert = 1$, $G$ é trivialmente cíclico.
+
+Suponha, agora, que $\vert G\vert = 2$ ou $\vert G\vert = 3$. Ora, como a ordem de $G$ nos dois casos é prima, então pela \hyperlink{prop141}{\textbf{Proposição 1.4.1}}, temos diretamente que $G$ é cíclico.
+
+Concluímos que $\mathcal{K}$ é o menor grupo finito e não cíclico.
+
+\qed}
 
 \section{Produto Semidireto de Grupos}
 
@@ -4626,6 +4681,7 @@ Como $\sigma'$ é claramente par, então concluímos que $\sigma(x\;y\;z)\sigma^
 
 \qed}
 
+\hypertarget{prop246}{}
 \begin{proposition}
 \color{red}
 Seja $X$ um conjunto finito tal que $\text{Card}(X) \geq 5$. Então, se um subgrupo normal $H\trianglelefteq \mathfrak{A}_X$ contém um $3$-ciclo, temos que $H = \mathfrak{A}_X$.
@@ -4647,6 +4703,112 @@ Como $\mathfrak{A}_X$ é gerado por $3$-ciclos, concluímos que $H = \mathfrak{A
 Seja $X$ um conjunto não vazio e finito, onde $n\overset{def}{=} \text{Card}(X)$. 
 
 Se $n\neq 4$, então $\mathfrak{A}_X$ é um grupo simples.
+\end{theorem}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Note que, caso $n = 1$ ou $n = 2$, temos trivialmente que $\mathfrak{A}_X$ é simples e, pelo \hyperlink{teolagrange}{\textbf{Teorema de Lagrange}}, sabemos que se $n=3$ então $\mathfrak{A}_X$ é simples (uma vez que $\vert \mathfrak{A}_X\vert = 3$ é primo).
+
+Suponhamos que $n\geq 5$. Para mostrar que $\mathfrak{A}_X$ é simples basta mostrar que se existe um subgrupo normal $H\trianglelefteq \mathfrak{A}_X$, então $H$ contém um $3$-ciclo. Pela \hyperlink{prop246}{\textbf{Proposição 2.4.6}} temos $H=\mathfrak{A}_X$.
+
+
+
+\qed}
+
+
+\begin{definition}
+\color{red}
+Seja $X = \{x_1,x_2,x_3,x_4\}$ e $\mathfrak{K} \subseteq \mathfrak{A}_X$ tal que:
+
+\[
+\mathfrak{K} \overset{def}{=} \{\text{id}_X, \underbrace{(x_1\;x_2)(x_3\;x_4)}_{\kappa_1}, \underbrace{(x_1\;x_3)(x_2\;x_4)}_{\kappa_2}, \underbrace{(x_1\;x_4)(x_2\;x_3)}_{\kappa_3}\}
+\]
+
+Definimos o subconjunto $\mathfrak{K}\subseteq \mathfrak{A}_X$ como sendo o \textbf{conjunto simétrico de Klein}.
+\end{definition}
+
+\textit{Observação: note que de fato $\mathfrak{K}\subseteq\mathfrak{A}_X$, uma vez que $\varepsilon(\sigma) = 1, \;\forall \sigma\in\mathfrak{K}$.}
+
+\begin{proposition}
+\color{red}
+Seja $\mathfrak{K}$ o conjunto simétrico de Klein e $\mathcal{K}$ o grupo de Klein. 
+
+Então, se $\mathfrak{K}$ for munido da composição usual de funções, temos:
+
+\[
+\mathfrak{K} \cong \mathcal{K}
+\]
+
+Isto é, $\mathfrak{K}$ é isomorfo ao grupo de Klein.
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Sejam $X = \{x_1,x_2,x_3,x_4\}$ e $\varphi : \mathfrak{K} \to \mathcal{K}$ uma função tal que:
+
+\begin{align*}
+\varphi(\text{id}_X) &= (\overline{0},\overline{0}) \\
+\varphi(\kappa_1) &= (\overline{1},\overline{0}) \\
+\varphi(\kappa_2) &= (\overline{0},\overline{1}) \\
+\varphi(\kappa_3) &= (\overline{1},\overline{1})
+\end{align*}
+
+Note que $\varphi$ é bijetiva por construção. Mostremos que se trata de um homomorfismo de grupos.
+
+Perceba, primeiramente, que: 
+
+\[
+\varphi(\kappa_i\text{id}_X) = \varphi(\text{id}_X\kappa_i) = \varphi(\kappa_i) + \underbrace{(\overline{0},\overline{0})}_{\varphi(\text{id}_X)} = \underbrace{(\overline{0},\overline{0})}_{\varphi(\text{id}_X)} + \varphi(\kappa_i),\;\forall i\in\llbracket 1,3\rrbracket
+\]
+
+Da mesma forma, temos diretamente que:
+
+\[
+\varphi(\kappa_i\kappa_i) = \varphi(\text{id}_X) = \varphi(\kappa_i) + \varphi(\kappa_i),\;\forall i\in\llbracket 1,3\rrbracket 
+\]
+
+Tomando agora o produto de cada elemento distinto e diferente do neutro de $\mathfrak{K}$, temos que:
+
+\[
+\varphi(\kappa_1\kappa_2) = \varphi(\kappa_3) = (\overline{1},\overline{1}) = (\overline{1},\overline{0}) + (\overline{0},\overline{1}) = \varphi(\kappa_1) + \varphi(\kappa_2)
+\]
+
+\[
+\varphi(\kappa_1\kappa_3) = \varphi(\kappa_2) = (\overline{0},\overline{1}) = (\overline{1}+\overline{0})+(\overline{1}+\overline{1}) = \varphi(\kappa_1) + \varphi(\kappa_3)
+\]
+
+\[
+\varphi(\kappa_2\kappa_3) = \varphi(\kappa_1) = (\overline{1},\overline{0}) = (\overline{0},\overline{1})+(\overline{1},\overline{1}) = \varphi(\kappa_2) + \varphi(\kappa_3)
+\]
+
+Ora, de forma análoga, temos que $\varphi(\kappa_1\kappa_2) = \varphi(\kappa_2\kappa_1),\;\varphi(\kappa_1\kappa_3)=\varphi(\kappa_3\kappa_1),\;\varphi(\kappa_2\kappa_3)=\varphi(\kappa_3\kappa_2)$. Como a soma usual de inteiro é abeliana em $\mathcal{K}$, concluímos que todas as imagens preservam, portanto, a estrutura de grupo.
+
+Finalmente, concluímos que $\varphi$ é um isomorfismo de grupos e temos:
+
+\[
+\mathfrak{K} \cong \mathcal{K}
+\]
+
+\qed
+
+
+\textit{Observações:}
+
+\begin{itemize}
+	\item \textit{A partir do resultado acima, \textbf{definimos $\mathfrak{K}$ como grupo simétrico de Klein} ou, quando não houver ambiguidade, simplesmente \textbf{grupo de Klein}};
+	\item \textit{Temos diretamente via o isomorfismo que $\mathfrak{K}$ é abeliano e $\mathfrak{K}\trianglelefteq \mathfrak{A}_X$}.
+\end{itemize}
+}
+
+\begin{theorem}
+\color{red}
+Seja $X = \{x_1,x_2,x_3,x_4\}$, então os únicos subgrupos normais que $\mathfrak{A}_X$ admite são: $\text{id}_X,\;\mathfrak{K}\;\;\text{e}\;\;\mathfrak{A}_X$
+
+Onde $\mathfrak{K}$ é o grupo de Klein. 
+
+Isto é, o único grupo normal não trivial de $\mathfrak{A}_{X}$ é $\mathfrak{K}$, quando $\text{Card}(X)=4$.
 \end{theorem}
 
 {\color{red}
