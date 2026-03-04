@@ -28,7 +28,7 @@
 \usepackage{stmaryrd}
 
 % fontes AMS EULER !!! 
-% \usepackage{eulervm} 
+%\usepackage{eulervm} 
 %\usepackage[T1]{fontenc} 
 %\usepackage{mathpazo}
 
@@ -3740,6 +3740,28 @@ Denotamos tal $k$-ciclo como:
 Uma \textbf{transposição} é um $2$-ciclo.
 \end{definition}
 
+\begin{proposition}
+\color{red}
+Seja $X$ um conjunto finito e não vazio tal que $\text{Card}(X) \geq 3$. 
+
+Então $Z(\mathfrak{S}_X) = \{\text{id}_X\}$.
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Sejam $\sigma,\tau\in \mathfrak{S}_X$ e $(x,y) \in X\setminus\text{supp}(X) \times \text{supp}(X)$. Tomemos $\sigma\neq\text{id}_X$ e $\tau \overset{def}{=} (x\;y)$.
+
+Ora, temos então $y\notin\text{supp}(\tau\sigma\tau^{-1})$, pois $\tau\sigma\tau^{-1}(y) = y$. Portanto, temos diretamente que $\tau\sigma\tau^{-1} \neq \sigma \iff \tau\sigma \neq \sigma\tau$.
+
+Suponha, agora, que $X\setminus\text{supp}(\sigma) = \emptyset$. Então $\exists x_k \in X,\;k\in\llbracket 2,\text{Card}(X)\rrbracket$ tal que $\sigma(x_k) = x_1$.
+
+Ora, como $\text{Card}(X)\geq 3$, tomemos $\tau \overset{def}{=} (x_1 \; x_s)$, tal que $s\neq k$. Analogamente ao caso anterior, temos que $x_1\notin \text{supp}(\tau\sigma\tau^{-1})$ e, portanto, $\tau\sigma\tau^{-1} \neq \sigma \iff \tau\sigma\neq\sigma\tau$.
+
+Como para ambos os casos sempre podemos encontrar uma permutação $\tau$ tal que $\sigma$ não comuta, então deduzimos que $Z(\mathfrak{S}_X) = \{\text{id}_X\}$ para $\text{Card}(X) \geq 3$.
+
+\qed}
+
 \hypertarget{prop221}{}
 \begin{proposition}
 \color{red}
@@ -4710,9 +4732,55 @@ Se $n\neq 4$, então $\mathfrak{A}_X$ é um grupo simples.
 
 Note que, caso $n = 1$ ou $n = 2$, temos trivialmente que $\mathfrak{A}_X$ é simples e, pelo \hyperlink{teolagrange}{\textbf{Teorema de Lagrange}}, sabemos que se $n=3$ então $\mathfrak{A}_X$ é simples (uma vez que $\vert \mathfrak{A}_X\vert = 3$ é primo).
 
-Suponhamos que $n\geq 5$. Para mostrar que $\mathfrak{A}_X$ é simples basta mostrar que se existe um subgrupo normal $H\trianglelefteq \mathfrak{A}_X$, então $H$ contém um $3$-ciclo. Pela \hyperlink{prop246}{\textbf{Proposição 2.4.6}} temos $H=\mathfrak{A}_X$.
+Suponhamos que $n\geq 5$. Para mostrar que $\mathfrak{A}_X$ é simples basta mostrar que se existe um subgrupo normal não trivial $H\trianglelefteq \mathfrak{A}_X$, então $H$ contém um $3$-ciclo. Pela \hyperlink{prop246}{\textbf{Proposição 2.4.6}} temos $H=\mathfrak{A}_X$.
 
+Sabemos que, para qualquer $\sigma\in\mathfrak{S}_X$, se $\text{Card}(\text{supp}(\sigma)) = 3$, então $\sigma$ é um $3$-ciclo. Mostremos que para qualquer permutação de $H$ podemos realizar um número finito de operações tal que a permutação resultante seja um $3$-ciclo de $H$. Mostremos via disjunção de casos.
 
+Suponha, primeiramente, que $\sigma\in H$ é um produto de transposições de suportes dois a dois disjuntos (número par de transposições, uma vez que $\varepsilon(\sigma) = 1$). Consideremos $\sigma = (x\;y)(z\; t)\gamma$, para $\gamma\in \mathfrak{A}_X$ um produto de transposições de suportes dois a dois disjuntos, tal que $\text{supp}\left((x\;y)(z\;t)\right)\cap\text{supp}(\gamma) = \emptyset$, e $\tau \in \mathfrak{A}_X$ tal que $\tau = (x\;y)(z\;s)$, onde $s\notin\text{supp}(\sigma)$ e $\text{supp}\left((x\;y)(z\;s)\right)\cap\text{supp}(\gamma) = \emptyset$.
+
+Note que a existência de $s\in X\setminus\text{supp}(\sigma)$ é garantida, uma vez que $n\geq 5$.
+
+Tomemos $\sigma' \overset{def}{=} [\sigma,\tau]$. Note que $\sigma'\in H$, uma vez que $H\trianglelefteq \mathfrak{A}_X$. Temos que:
+
+\[
+\sigma' = (x\;y)(z\;t)\gamma(x\;y)(z\;s)(x\;y)(z\;t)\gamma(x\;y)(z\;s) = (z\;t)(z\;s)(z\;t)(z\;s) = (z\;t\;s) \in H
+\]
+
+Logo, existe um $3$-ciclo em $H$. 
+
+Suponha, agora, que a decomposição de $\sigma\in H$ em ciclos de suportes dois a dois disjuntos possui um $k$-ciclo, tal que $k\in\mathbb{Z}_{\geq 3}$, mas $\sigma$ não simplesmente um $3$-ciclo.
+
+Note, primeiramente, que $\text{Card}(\text{supp}(\sigma)) \geq 5$, uma vez que um $4$-ciclo possui assinatura igual à $-1$. 
+
+Tomemos $\sigma = (x\;y\;z\;\ldots)\gamma$, onde $\gamma\in\mathfrak{A}_X$ tal que $\text{supp}\left((x\;y\;z\;\ldots)\right)\cap\text{supp}(\gamma) = \emptyset$.
+
+Como $n\geq 5$, existem $p,q\in X\setminus\{x,y,z\}$ tal que $p,q\in\text{supp}(\sigma)$, uma vez que $\text{Card}(\text{supp}(\sigma)) \geq 5$.
+
+Tomemos $\tau = (z\;p\;q)$ e $\sigma'\overset{def}{=} [\sigma,\tau]$. Analogamente ao caso anterior, temos que $\sigma'\in H$.
+
+Note que, para $t\in X\setminus\text{supp}(\sigma)$, temos:
+
+\[
+\sigma'(t) = \sigma(\tau(\sigma^{-1}(\tau^{-1}(t)))) = \sigma(\tau(\sigma^{-1}(t))) = \sigma(\tau(t)) = \sigma(t) = t
+\]
+
+Note, também, que:
+
+\[
+\sigma'(y) = \sigma(\tau(\sigma^{-1}(\tau^{-1}(y)))) = \sigma(\tau(\sigma^{-1}(y))) = \sigma(\tau(x)) = \sigma(x) = y
+\]
+
+Além disso, $\sigma'(p) = z$ e, portanto, concluímos que $\sigma'$ não é trivial e que também diminuiu estritamente o número de elementos do suporte original de $\sigma$. Logo:
+
+\[
+\text{Card}(\text{supp}(\sigma')) < \text{Card}(\text{supp}(\sigma))
+\]
+
+Podemos, portanto, realizar um número finito de operações em $\sigma$ tal que o resultado de tais operações é um elemento de $H$ com cardinal de suporte menor. Em particular, chegamos em um suporte de cardinal igual à $3$. Concluímos que $H$ contém um $3$-ciclo. 
+
+Finalmente, deduzimos que $H$ possui $3$-ciclos para todos os casos e, portanto, $H = \mathfrak{A}_X$. 
+
+Logo, $\mathfrak{A}_X$ é um grupo simples.
 
 \qed}
 
@@ -4776,14 +4844,14 @@ Tomando agora o produto de cada elemento distinto e diferente do neutro de $\mat
 \]
 
 \[
-\varphi(\kappa_1\kappa_3) = \varphi(\kappa_2) = (\overline{0},\overline{1}) = (\overline{1}+\overline{0})+(\overline{1}+\overline{1}) = \varphi(\kappa_1) + \varphi(\kappa_3)
+\varphi(\kappa_1\kappa_3) = \varphi(\kappa_2) = (\overline{0},\overline{1}) = (\overline{1},\overline{0})+(\overline{1},\overline{1}) = \varphi(\kappa_1) + \varphi(\kappa_3)
 \]
 
 \[
 \varphi(\kappa_2\kappa_3) = \varphi(\kappa_1) = (\overline{1},\overline{0}) = (\overline{0},\overline{1})+(\overline{1},\overline{1}) = \varphi(\kappa_2) + \varphi(\kappa_3)
 \]
 
-Ora, de forma análoga, temos que $\varphi(\kappa_1\kappa_2) = \varphi(\kappa_2\kappa_1),\;\varphi(\kappa_1\kappa_3)=\varphi(\kappa_3\kappa_1),\;\varphi(\kappa_2\kappa_3)=\varphi(\kappa_3\kappa_2)$. Como a soma usual de inteiro é abeliana em $\mathcal{K}$, concluímos que todas as imagens preservam, portanto, a estrutura de grupo.
+Ora, de forma análoga, temos que $\varphi(\kappa_1\kappa_2) = \varphi(\kappa_2\kappa_1),\;\varphi(\kappa_1\kappa_3)=\varphi(\kappa_3\kappa_1),\;\varphi(\kappa_2\kappa_3)=\varphi(\kappa_3\kappa_2)$. Como a soma usual de inteiros é abeliana em $\mathcal{K}$, concluímos que todas as imagens preservam, portanto, a estrutura de grupo.
 
 Finalmente, concluímos que $\varphi$ é um isomorfismo de grupos e temos:
 
@@ -4804,15 +4872,16 @@ Finalmente, concluímos que $\varphi$ é um isomorfismo de grupos e temos:
 
 \begin{theorem}
 \color{red}
-Seja $X = \{x_1,x_2,x_3,x_4\}$, então os únicos subgrupos normais que $\mathfrak{A}_X$ admite são: $\text{id}_X,\;\mathfrak{K}\;\;\text{e}\;\;\mathfrak{A}_X$
-
-Onde $\mathfrak{K}$ é o grupo de Klein. 
+Seja $X = \{x_1,x_2,x_3,x_4\}$, então os únicos subgrupos normais que $\mathfrak{A}_X$ admite são: $\text{id}_X,\;\mathfrak{K}\;\;\text{e}\;\;\mathfrak{A}_X$, onde $\mathfrak{K}$ é o grupo de Klein. 
 
 Isto é, o único grupo normal não trivial de $\mathfrak{A}_{X}$ é $\mathfrak{K}$, quando $\text{Card}(X)=4$.
 \end{theorem}
 
 {\color{red}
 \textbf{Demonstração:}
+
+
+
 
 \qed}
 
