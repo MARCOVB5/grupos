@@ -1565,6 +1565,34 @@ Logo: $H \trianglelefteq G$.
 
 \qed
 
+\hypertarget{prop153}{}
+\begin{proposition}
+\color{red}
+Seja $G$ um grupo e $H \leq G$.
+
+Se $[G:H] = 2$, então $\forall x \in G, \; x^2 \in H$.
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Suponha que $x\in H$. Como $H$ é grupo, temos trivialmente que $x^2\in H$.
+
+Suponha, agora, que $x\notin H$. Nesse caso $G$ tem duas classes laterais de $H$ disjuntas representadas por $H$ e $xH$.
+
+Suponha que $x^2 \notin H$. Então:
+
+\[
+xH = x^2H \iff H = xH
+\]
+
+Isto é um absurdo, pois $H$ e $xH$ são classes disjuntas.
+
+Portanto, $x^2 \in H$.
+
+\qed}
+
+
 \begin{definition}
 Sejam $G$ um grupo e $A, B \leq G$. \textbf{Definimos o conjunto $AB$ da seguinte forma:}
 
@@ -3756,7 +3784,7 @@ Ora, temos então $y\notin\text{supp}(\tau\sigma\tau^{-1})$, pois $\tau\sigma\ta
 
 Suponha, agora, que $X\setminus\text{supp}(\sigma) = \emptyset$. Então $\exists x_k \in X,\;k\in\llbracket 2,\text{Card}(X)\rrbracket$ tal que $\sigma(x_k) = x_1$.
 
-Ora, como $\text{Card}(X)\geq 3$, tomemos $\tau \overset{def}{=} (x_1 \; x_s)$, tal que $s\neq k$. Analogamente ao caso anterior, temos que $x_1\notin \text{supp}(\tau\sigma\tau^{-1})$ e, portanto, $\tau\sigma\tau^{-1} \neq \sigma \iff \tau\sigma\neq\sigma\tau$.
+Ora, como $\text{Card}(X)\geq 3$, tomemos $\tau \overset{def}{=} (x_1 \; x_s)$, tal que $s\neq k$ e $\sigma(x_s) = x_k$. Analogamente ao caso anterior, temos que $x_1\notin \text{supp}(\tau\sigma\tau^{-1})$ e, portanto, $\tau\sigma\tau^{-1} \neq \sigma \iff \tau\sigma\neq\sigma\tau$.
 
 Como para ambos os casos sempre podemos encontrar uma permutação $\tau$ tal que $\sigma$ não comuta, então deduzimos que $Z(\mathfrak{S}_X) = \{\text{id}_X\}$ para $\text{Card}(X) \geq 3$.
 
@@ -4669,10 +4697,42 @@ Como $\text{Card}(\{-1,1\}) = 2$, então deduzimos que $[H:H\cap\mathfrak{A}_X] 
 
 \qed
 
-\textit{Observação: isto significa que para quaisquer subgrupos $H$ de $\mathfrak{S}_X$, então ou $H$ é composto de permutações pares ou $H$ possui o mesmo número de permutações pares e permutações ímpares.}
+\textit{Observações:} 
+
+\begin{itemize}
+	\item \textit{Isto significa que para quaisquer subgrupos $H$ de $\mathfrak{S}_X$, então ou $H$ é composto de permutações pares ou $H$ possui o mesmo número de permutações pares e permutações ímpares};
+	\item \textit{Em particular, se $H = \mathfrak{S}_X$, temos que $[\mathfrak{S}_X : \mathfrak{A}_X] = 2$.}
+
+\end{itemize}
 
 }
 
+\hypertarget{teo241}{}
+\begin{theorem}
+\color{red}
+Seja $G$ um grupo de ordem $n \in \mathbb{Z}_{+}^{*}$. Logo, se $d \vert n$, não é possível garantir que exista subgrupo $H \leq G$ tal que $\vert H\vert = d$.
+
+Isto é, a recíproca do \hyperlink{teolagrange}{\textbf{Teorema de Lagrange}} é falsa.
+\end{theorem}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Seja $\mathfrak{A}_4$ o grupo alternado de $\{1,2,3,4\}$. Sabemos que $\vert \mathfrak{A}_4\vert = \frac{4!}{2} = 12$. 
+
+Logo, $\mathfrak{A}_4$ admite subgrupos de ordens $1,2,3,4,6$ e $12$.
+
+Suponha que $\mathfrak{A}_4$ admite um subgrupo $H$ de ordem $6$. Logo, $[\mathfrak{A}_4 : H] = 2$.
+
+Segundo a \hyperlink{prop153}{\textbf{Proposição 1.5.3}}, sabemos que se $\sigma\in \mathfrak{A}_4$, então $\sigma^2 \in H$.
+
+Ora, note que se $\tau\in\mathfrak{A}_4$ for um $3$-ciclo, então $\tau$ pode ser escrito como $\tau = (\tau^2)^2$. Isto é, todo $3$-ciclo é um quadrado de um outro $3$-ciclo.
+
+Sabemos que em $\mathfrak{A}_4$ existem $8$ $3$-ciclos, porém $H$ tem ordem $6$. Absurdo. 
+
+Concluímos que não existe subgrupo $H$ de $\mathfrak{A}_4$ tal que $\vert H\vert = 6$.
+
+\qed}
 
 \hypertarget{prop245}{}
 \begin{proposition}
@@ -4872,7 +4932,7 @@ Finalmente, concluímos que $\varphi$ é um isomorfismo de grupos e temos:
 
 \begin{theorem}
 \color{red}
-Seja $X = \{x_1,x_2,x_3,x_4\}$, então os únicos subgrupos normais que $\mathfrak{A}_X$ admite são: $\text{id}_X,\;\mathfrak{K}\;\;\text{e}\;\;\mathfrak{A}_X$, onde $\mathfrak{K}$ é o grupo de Klein. 
+Seja $X = \{x_1,x_2,x_3,x_4\}$, então os únicos subgrupos normais que $\mathfrak{A}_X$ admite são: $\{\text{id}_X\},\;\mathfrak{K}\;\;\text{e}\;\;\mathfrak{A}_X$, onde $\mathfrak{K}$ é o grupo de Klein. 
 
 Isto é, o único grupo normal não trivial de $\mathfrak{A}_{X}$ é $\mathfrak{K}$, quando $\text{Card}(X)=4$.
 \end{theorem}
@@ -4880,6 +4940,75 @@ Isto é, o único grupo normal não trivial de $\mathfrak{A}_{X}$ é $\mathfrak{
 {\color{red}
 \textbf{Demonstração:}
 
+Sabemos que $\vert \mathfrak{A}_{\{x_1,x_2,x_3,x_4\}}\vert = \frac{4!}{2} = 12$. 
+
+Logo, seus subgrupos podem admitir apenas cardinais $1,2,3,4,6$ e $12$.
+
+Listemos todos seus subgrupos:
+
+\begin{itemize}
+	\item \textbf{Ordem 1 e 12:} subgrupos triviais $\{\text{id}_X\}$ e $\mathfrak{A}_X$ (que são normais); 
+	\item \textbf{Ordem 2:} é necessário haver o elemento neutro e um produto de transposições de suportes dois a dois disjuntos $\tau$, pois $\tau^2 = \tau^{-1}$. Logo, temos subgrupos da forma $H_2 \overset{def}{=}\{\text{id}_X, (x_i\;x_j)(x_p\;x_q)\}$, onde $i,j,p,q\in\llbracket 1,4\rrbracket$ e $i\neq j\neq p\neq q$.
+
+		Tais subgrupos são trivialmente não normais, uma vez que:
+	
+		\[
+		(x_1\;x_2\;x_3)\tau(x_1\;x_2\;x_3)^{-1} \notin H_2,\;\; \text{para}\;\; \tau\in H_2
+		\]
+
+	\item \textbf{Ordem 3:} subgrupos de ordem $3$ são cíclicos, logo, tem forma:
+
+		\[
+		H_3 \overset{def}{=}\{\text{id}_X, (x_i\;x_j\;x_z), (x_i\;x_j\;x_z)^{-1}\}
+		\]
+
+		Tais subgrupos também não são normais, uma vez que: 
+
+		\[
+		(x_1\;x_2)(x_3\;x_4)(x_1\;x_2\;x_3)(x_1\;x_2)(x_3\;x_4) \notin H_3
+		\]
+
+	\item \textbf{Ordem 4:} o único subgrupo de ordem $4$ em $\mathfrak{A}_X$ é o grupo de Klein $\mathfrak{K}$. Tal subgrupo é normal em $\mathfrak{A}_X$.
+
+	\item \textbf{Ordem 6:} segundo o \hyperlink{teo241}{\textbf{Teorema 2.4.1}} não existem subgrupos de ordem $6$.
+
+\end{itemize}
+
+Concluímos, portanto, que os únicos subgrupos normais em $\mathfrak{A}_{X=\{x_1,x_2,x_3,x_4\}}$ são $\{\text{id}_X\},\mathfrak{K},\mathfrak{A}_X$.
+
+\qed}
+
+\begin{theorem}
+\color{red}
+	Seja $X$ um conjunto não vazio e finito. Logo, se $\text{Card}(X)\neq 4$, os únicos subgrupos normais de $\mathfrak{S}_X$ são $\{\text{id}_X\},\mathfrak{A}_X$ e $\mathfrak{S}_X$.
+
+	Caso $\text{Card}(X) = 4$ então os únicos subgrupos normais de $\mathfrak{S}_X$ são $\{\text{id}_X\}, \mathfrak{K}, \mathfrak{A}_X$ e $\mathfrak{S}_X$. 
+\end{theorem}
+
+{\color{red}
+\textbf{Demonstração:}
+
+O resultado é imediato combinando as proposições \hyperlink{prop221}{\textbf{2.2.1}} e \hyperlink{prop244}{\textbf{2.4.4}} e os teoremas \hyperlink{teo242}{\textbf{2.4.2}} e \hyperlink{teo243}{\textbf{2.4.3}}.
+
+\qed}
+
+\begin{proposition}
+\color{red}
+Seja $X$ um conjunto não vazio e finito com $n\overset{def}{=} \text{Card}(X)$, então:
+
+$(i)$ $\mathfrak{S}_X' = \mathfrak{A}_X,\; n\geq 2$; 
+
+$(ii)$ $\mathfrak{A}_X' = \{\text{id}_X\},\; n \leq 3$;
+
+$(iii)$ $[\mathfrak{A}_X : \mathfrak{A}_X'] = 3,\; n = 4$;
+
+$(iv)$ $\mathfrak{A}_X' = \mathfrak{A}_X,\; n\geq 5$.
+
+Onde $G'$ denota o grupo dos comutadores do grupo $G$.
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
 
 
 
