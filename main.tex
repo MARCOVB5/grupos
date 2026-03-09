@@ -848,6 +848,11 @@ Portanto, $G$ é um grupo abeliano. \qed
 \end{itemize}
 
 \begin{definition}
+\color{red}
+Seja $G$ um grupo. Chamamos $G$ de \textbf{grupo perfeito} se $G' = G$.
+\end{definition}
+
+\begin{definition}
     Seja $(G, \cdot)$ um grupo. \textbf{Definimos ordem do grupo $(G, \cdot)$ a quantidade de elementos no conjunto $G$} e a denotamos por $\vert G \vert$. \\
     Se $\alpha \in G$, \textbf{a ordem de $\alpha$ é a ordem do subgrupo gerado por $\alpha$}, denotada por $\mathcal{O}(\alpha)$, isto é,  $ \mathcal{O}(\alpha) = \vert \langle \alpha \rangle \vert$.
 \end{definition}
@@ -4996,22 +5001,55 @@ O resultado é imediato combinando as proposições \hyperlink{prop221}{\textbf{
 \color{red}
 Seja $X$ um conjunto não vazio e finito com $n\overset{def}{=} \text{Card}(X)$, então:
 
-$(i)$ $\mathfrak{S}_X' = \mathfrak{A}_X,\; n\geq 2$; 
+\begin{enumerate}
+	\item $\mathfrak{S}_X' = \mathfrak{A}_X,\; n\geq 2$; 
 
-$(ii)$ $\mathfrak{A}_X' = \{\text{id}_X\},\; n \leq 3$;
+	\item $\mathfrak{A}_X' = \{\text{id}_X\},\; n \leq 3$;
 
-$(iii)$ $[\mathfrak{A}_X : \mathfrak{A}_X'] = 3,\; n = 4$;
+	\item $\mathfrak{A}_X' = \mathfrak{K},\; n = 4$;
 
-$(iv)$ $\mathfrak{A}_X' = \mathfrak{A}_X,\; n\geq 5$.
-
+	\item $\mathfrak{A}_X' = \mathfrak{A}_X,\; n\geq 5$.
+\end{enumerate}
 Onde $G'$ denota o grupo dos comutadores do grupo $G$.
 \end{proposition}
 
 {\color{red}
 \textbf{Demonstração:}
 
+Sabemos que, para um dado grupo $G$, $G' \trianglelefteq G$, pelo \hyperlink{ex153}{\textbf{Exemplo 1.5.3}}.
 
+Mostremos, primeiramente, o item $1.$. Suponha inicialmente $n\neq 4$.
 
+Sabemos que $\mathfrak{S}_X'$ pode ser apenas $\{\text{id}_X\},\mathfrak{A}_X$ ou $\mathfrak{S}_X$.
+
+Note que, como $Z(\mathfrak{S}_X) = \{\text{id}_X\}$, então $\mathfrak{S}_X' \neq \{\text{id}_X\}$.
+
+Além disso, perceba que $\varepsilon(\mathfrak{S}_X') = \{1\}$. Portanto $\mathfrak{S}_X'\leq \mathfrak{A}_X$.
+
+Concluímos que $\mathfrak{S}_X' = \mathfrak{A}_X$. 
+
+Suponha, agora, que $n = 4$. Temos portanto o grupo de Klein $\mathfrak{K} \trianglelefteq \mathfrak{S}_X$. Ora, mas como $\mathfrak{K} \subseteq \mathfrak{A}_X$, temos ainda que $\mathfrak{S}_X' = \mathfrak{A}_X$.
+
+Mostremos o item $2.$.
+
+Ora, se $n\leq 3$, então sabemos que $\mathfrak{A}_X = \{\text{id}_X\}$ para $n=1,2$ e que $\vert\mathfrak{A}_X\vert = \frac{3!}{2} = 3$ para $n = 3$.
+
+Concluímos que $\mathfrak{A}_X$ é abeliano para esses casos e, portanto, temos que $\mathfrak{A}_X' = \{\text{id}_X\}$.
+
+Mostremos o item $3.$. Suponha que $n = 4$.
+
+Ora, mostrar que $[\mathfrak{A}_X : \mathfrak{A}_X'] = 3$ é equivalente a mostrar que $\vert \mathfrak{A}_X / \mathfrak{A}_X' \vert = 3$. 
+
+Sabemos, por definição, que $\mathfrak{A}_{X}^{ab} \overset{def}{=}\mathfrak{A}_X/\mathfrak{A}_X'$ é o maior subgrupo quociente abeliano de $\mathfrak{A}_X$. 
+
+Ora, note que $\vert\mathfrak{A}_X/\mathfrak{K}\vert > \vert\mathfrak{A}_X/\mathfrak{A}_X\vert$ e $\mathfrak{A}_X/\{\text{id}_X\}$ não é abeliano.
+
+Portanto, concluímos que $\mathfrak{A}_X' = \mathfrak{K}$.
+
+Mostremos, por fim, o item $4.$. Supondo $n\geq 5$.
+
+Ora, sabemos que $\mathfrak{A}_X$ é um grupo simples e não abeliano. Portanto temos diretamente que $\mathfrak{A}_X' = \mathfrak{A}_X$. Isto é, $\mathfrak{A}_X$ é perfeito para $n\geq 5$.
+ 
 \qed}
 
 \chapter{Grupos Solúveis}
