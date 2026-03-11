@@ -848,7 +848,6 @@ Portanto, $G$ é um grupo abeliano. \qed
 \end{itemize}
 
 \begin{definition}
-\color{red}
 Seja $G$ um grupo. Chamamos $G$ de \textbf{grupo perfeito} se $G' = G$.
 \end{definition}
 
@@ -1572,13 +1571,11 @@ Logo: $H \trianglelefteq G$.
 
 \hypertarget{prop153}{}
 \begin{proposition}
-\color{red}
 Seja $G$ um grupo e $H \leq G$.
 
 Se $[G:H] = 2$, então $\forall x \in G, \; x^2 \in H$.
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Suponha que $x\in H$. Como $H$ é grupo, temos trivialmente que $x^2\in H$.
@@ -1595,7 +1592,7 @@ Isto é um absurdo, pois $H$ e $xH$ são classes disjuntas.
 
 Portanto, $x^2 \in H$.
 
-\qed}
+\qed
 
 
 \begin{definition}
@@ -2425,15 +2422,13 @@ Logo, deduzimos que $\varphi$ é um isomorfismo de grupos e, portanto, temos:
 
 \hypertarget{prop165}{}
 \begin{proposition}
-\color{red}
 Seja $G$ um grupo finito e $g\in G$ tal que $\mathcal{O}(g) = k\in \mathbb{Z}_{+}^{*}$. Então $\mathbb{Z}/k\mathbb{Z} \cong \langle g \rangle$.
 
 \end{proposition}
 
-{\color{red} 
 \textbf{Demonstração:}
 
-Nesta demonstração, a notação aditiva será utilizada para denotar a operação de soma usual em $\mathbb{Z}/k\mathbb{Z}$ e a operação do grupo $G$. Também serão considerados como elementos de $\mathbb{Z}/k\mathbb{Z}$, sem perda de generalidade, apenas os representantes de cada classe lateral do conjunto.
+Nesta demonstração, a notação aditiva será utilizada para denotar a operação de soma usual em $\mathbb{Z}/k\mathbb{Z}$ e a operação do grupo $G$.
 
 Seja a função $\varphi$ definida a seguir:
 
@@ -2441,17 +2436,17 @@ Seja a função $\varphi$ definida a seguir:
 \varphi:
 \begin{array}{r c l}
   \mathbb{Z}/k\mathbb{Z} & \to & \displaystyle \langle g \rangle \\[10pt]
-  x & \mapsto & xg
+  \overline{x} & \mapsto & xg
 \end{array}
 \]
 
-Note que $\varphi$ é de fato uma função e é injetiva. Sejam $x,y\in \mathbb{Z}/k\mathbb{Z}$.
+Note que $\varphi$ é de fato uma função e é injetiva. Sejam $\overline{x},\overline{y}\in \mathbb{Z}/k\mathbb{Z}$.
 
 \[
-\varphi(x) = \varphi(y) \iff xg = yg \iff xg - yg = 0 \iff g(x-y) = 0
+\varphi(\overline{x}) = \varphi(\overline{y}) \iff xg = yg \iff xg - yg = 0 \iff g(x-y) = 0
 \]
 
-Como $x,y \in \mathbb{Z}/k\mathbb{Z}$, então $x,y \in \llbracket 0, k-1\rrbracket$. Temos também que $\mathcal{O}(g) = k$. Portanto, temos:
+Como $\overline{x},\overline{y} \in \mathbb{Z}/k\mathbb{Z}$, então $x,y \in \llbracket 0, k-1\rrbracket$. Temos também que $\mathcal{O}(g) = k$ e $-k < x-y < k$. Portanto, temos:
 
 \[
 g(x-y) = 0 \iff x-y = 0 \iff x = y
@@ -2461,10 +2456,10 @@ Logo, $\varphi$ é de fato função e é injetora.
 
 Note também que $\varphi$ é trivialmente sobrejetora, uma vez que $\varphi$ é injetora e $\vert \mathbb{Z}/k\mathbb{Z} \vert = \mathcal{O}(g) = k$.
 
-Mostremos, por fim, que $\varphi$ é um homomorfismo de grupos. Sejam $x,y\in \mathbb{Z}/k\mathbb{Z}$.
+Mostremos, por fim, que $\varphi$ é um homomorfismo de grupos. Sejam $\overline{x},\overline{y}\in \mathbb{Z}/k\mathbb{Z}$.
 
 \[
-\varphi(x+y) = (x+y)g = xg + yg = \varphi(x) + \varphi(y) 
+\varphi(\overline{x}+\overline{y}) = \varphi(\overline{x+y}) = (x+y)g = xg + yg = \varphi(\overline{x}) + \varphi(\overline{y}) 
 \]
 
 Concluímos que $\varphi$ é de fato um isomorfismo de grupos e portanto:
@@ -2473,7 +2468,7 @@ Concluímos que $\varphi$ é de fato um isomorfismo de grupos e portanto:
 \mathbb{Z}/k\mathbb{Z} \cong \langle g \rangle
 \]
 
-\qed}
+\qed
 
 \hypertarget{prop166}{}
 \begin{proposition}
@@ -3032,7 +3027,6 @@ Z(G) \trianglechareq G
 Seja $K\trianglechareq H \trianglelefteq G$, então $K\trianglelefteq G$.
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Seja $\varphi \in \operatorname{Aut}(H)$ tal que:
@@ -3041,14 +3035,14 @@ Seja $\varphi \in \operatorname{Aut}(H)$ tal que:
 \varphi(K) \overset{def}{=} gKg^{-1}
 \]
 
-Note que a função acima é bem definida uma vez que $K\subseteq H$ e $gHg^{-1}\in H$.
+Note que a função acima é bem definida uma vez que $K\subseteq H$ e $gHg^{-1}\subseteq H$.
 
 Como $K \trianglechareq H$, então $\varphi(K) \subseteq K$.
 
 Concluímos que:
 
 \[
-gKg^{-1} \in K \Longrightarrow K \trianglelefteq G.
+gKg^{-1} \subseteq K \Longrightarrow K \trianglelefteq G.
 \]
 
 \qed
@@ -3068,8 +3062,7 @@ gKg^{-1} \in K \Longrightarrow K \trianglelefteq G.
 
 \begin{enumerate}
 	\item \textit{Temos que $K \leq H \leq G$};
-	\item \textit{$K$ é evidentemente abeliano e portanto $K\trianglelefteq H$;}
-	\item \textit{$\frac{\vert G\vert}{\vert H\vert} = 2$ e, pela \hyperlink{prop152}{\textbf{Proposição 1.5.2}} temos diretamente que $H \trianglelefteq G$}.
+	\item \textit{$\frac{\vert H\vert}{\vert K\vert} = \frac{\vert G\vert}{\vert H\vert} = 2$ e, pela \hyperlink{prop152}{\textbf{Proposição 1.5.2}} temos diretamente que $K\trianglelefteq H \trianglelefteq G$}.
 \end{enumerate}
 
 \textit{Mostremos que o item $1.$ é de fato verdadeiro, validando os itens $2.$ e $3.$.}
@@ -3088,14 +3081,13 @@ r^2r^2s = r^4s = s, \; sr^2 = r^2s, \; sr^2s = r^2,\; r^2sr^2 = s, \; r^2s^2 = r
 
 \textit{Concluímos que $K \leq H \leq G$ e, pelos itens $2.$ e $3.$, $K\trianglelefteq H \trianglelefteq G$.}
 
-\textit{Note, porém, que $K$ não é normal a $G$, uma vez que:}
+\textit{Note, porém, que $K$ não é normal em $G$, uma vez que:}
 
 \[
 \underbrace{r}_{\in G} \cdot \underbrace{s}_{\in K} \cdot \underbrace{r^{-1}}_{\in G} = r^2s \notin K
 \]
 
 \textit{Concluímos, portanto, via contraexemplo, que a normalidade não é transitiva.}
-}
 
 \section{Produto Direto de Grupos}
 
@@ -3103,7 +3095,6 @@ Nesta seção inteira a variável $n$ representa um número inteiro positivo.
 
 \hypertarget{def171}{}
 \begin{definition}
-\color{red}
 Seja $\mathfrak{G} = \{G_1, \ldots, G_n \}$ uma família de grupos.
 
 Definimos \textbf{produto direto externo de $\mathfrak{G}$} como sendo o conjunto $G_1 \times \ldots \times G_n$ munido da operação: 
@@ -3119,16 +3110,12 @@ Denotamos, comumente:
 \]
 \end{definition}
 
-{\color{red}
 \textit{Observação: por uma questão de convenção, a operação "$\cdot$" será omitida.}
-}
 
 \begin{proposition} 
-\color{red}
 A partir da \hyperlink{def171}{\textbf{Definição 1.7.1}}, temos que o produto direto externo de $\mathfrak{G}$ é um grupo.
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Via a \hyperlink{def171}{\textbf{Definição 1.7.1}} temos que a operação "$\cdot$" é uma lei de composição interna por construção. 
@@ -3151,19 +3138,24 @@ Temos também que o produto direto externo de $\mathfrak{G}$ é evidentemente as
 
 Concluímos, portanto, que $(\prod_{i=1}^{n} G_i,\cdot)$ é um grupo. 
 
-\qed}
+\qed
 
 \hypertarget{def172}{}
 \begin{definition}
-\color{red}
 Sejam $G$ um grupo e $H_1, \ldots, H_n \leq G$.
 
 Dizemos que $G$ é um \textbf{produto direto interno} de $H_1, \ldots, H_n$ se, e somente se, as seguintes condições são satisfeitas:
 
 \begin{itemize}
-	\item $G = H_1 \ldots H_n$;
-	\item $H_i \trianglelefteq G, \; \forall i\in \llbracket 1, n \rrbracket$;
-	\item $H_i \cap H_1 \ldots H_{i-1}H_{i+1}\ldots H_n = \{e\},\; \forall i \in \llbracket 2, n-1 \rrbracket$.
+    \item $G = H_1 \ldots H_n$;
+    \item $H_i \trianglelefteq G, \; \forall i \in \llbracket 1, n \rrbracket$;
+    \item $\left\{
+          \begin{aligned}
+            &H_1 \cap H_2 \ldots H_n = \{e\} \\
+            &H_i \cap H_1 \ldots H_{i-1}H_{i+1}\ldots H_n = \{e\},\; \forall i \in \llbracket 2, n-1 \rrbracket\\
+            &H_n \cap H_1 \ldots H_{n-1} = \{e\}
+          \end{aligned}
+          \right.$
 \end{itemize}
 
 Caso $G$ e $H_1, \ldots, H_n$ satisfaçam as condições acima, denotamos:
@@ -3176,13 +3168,11 @@ G \overset{def}{=} \bigodot_{i=1}^{n} H_i
 
 \hypertarget{prop172}{}
 \begin{proposition}
-\color{red}
 Sejam $G$ um grupo e $H_1, \ldots, H_n \leq G$.
 
-Se $G$ for um produto direto interno de $H_1, \ldots, H_n$, então quaisquer elementos de $H_i, \ldots, H_n$ distintos comutam entre si.
+Se $G$ for um produto direto interno de $H_1, \ldots, H_n$, então quaisquer elementos de $H_1, \ldots, H_n$ distintos comutam entre si.
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Sejam $(h_i, h_j) \in H_i \times H_j$, onde $i, j \in \llbracket 1, n \rrbracket$ e $i \neq j$.
@@ -3207,13 +3197,48 @@ Logo:
 h_ih_jh_{i}^{-1}h_{j}^{-1} = e \iff h_ih_j = h_jh_i
 \]
 
-Logo, quaisquer fatores de $H_i, \ldots, H_n$ distintos comutam entre si.
+Logo, quaisquer fatores de $H_1, \ldots, H_n$ distintos comutam entre si.
+
+\qed
+
+\hypertarget{prop173}{}
+\begin{proposition}
+\color{red}
+Seja $G$ um grupo e $H_1,\ldots,H_n$ subgrupos de $G$ tal que $G = \bigodot_{i=1}^{n}H_i$.
+
+Se $g\in G$ tal que $g = h_1\ldots h_n = h_1'\ldots h_n'$, onde $h_i,h_i'\in H_i$, para $i\in\llbracket 1,n\rrbracket$, então temos $h_i=h_i',\;\forall i\in\llbracket 1,n\rrbracket$.
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Seja $g = h_1\ldots h_n = h_1' \ldots h_n'$. Ora, temos então que:
+
+\[
+h_1\ldots h_n = h_1' \ldots h_n' \iff h_{1}'^{-1}h_1 = (h_2'\ldots h_n')(h_2\ldots h_n)^{-1}
+\]
+
+A partir da \hyperlink{prop172}{\textbf{Proposição 1.7.2}} podemos reescrever a expressão tal que:
+
+\[
+h_{1}'^{-1}h_1 = \underbrace{(h_2'h_{2}^{-1}) \ldots (h_n'h_{n}^{-1})}_{\in H_2\ldots H_n}
+\]
+
+Como $h_{1}'^{-1}h_1 \in H_1$ deduzimos que $(h_2'h_{2}^{-1})\ldots(h_n'h_{n}^{-1})\in H_1$.
+
+Deduzimos que $(h_2'h_{2}^{-1})\ldots(h_n'h_{n}^{-1}) \in H_1\cap H_2\ldots H_n$.
+
+Ora, como $H_1\cap H_2\ldots H_n = \{e\}$, então temos $(h_2'h_{2}^{-1})\ldots(h_n'h_{n}^{-1}) = e$.
+
+Logo $h_{1}'^{-1}h_1 = e \iff h_1 = h_1'$.
+
+Realizando de forma análoga as mesmas operações indutivamente sobre $n$ concluímos que $h_i = h_i',\; \forall i\in\llbracket 1,n\rrbracket$.
 
 \qed}
 
+
 \hypertarget{teo171}{}
 \begin{theorem}
-\color{red}
 Sejam $G$ um grupo e $H_1, \ldots, H_n \leq G$.
 
 Temos, a partir das notações nas definições \hyperlink{def171}{1.7.1} e \hyperlink{def172}{1.7.2}, que:
@@ -3240,7 +3265,7 @@ Tomemos a função $\mu$ tal que:
 
 Note que a função está de fato bem definida e é trivialmente bijetiva: 
 
-A sobrejetividade de $\mu$ segue diretamente da primeira condição da \hyperlink{def172}{\textbf{Definição 1.7.2}}, pois $G = H_1 \ldots H_n$. Além disso, a terceira condição da mesma definição garante que a representação de qualquer elemento $g \in G$ na forma $h_1 \ldots h_n$ é única. Essa unicidade assegura que $\mu$ está bem definida e é injetiva. Logo, $\mu$ é uma bijeção.
+A sobrejetividade de $\mu$ segue diretamente da primeira condição da \hyperlink{def172}{\textbf{Definição 1.7.2}}, pois $G = H_1 \ldots H_n$. Além disso, pela \hyperlink{prop173}{\textbf{Proposição 1.7.3}} temos que a representação de qualquer elemento $g \in G$ na forma $h_1 \ldots h_n$ é única. Essa unicidade assegura que $\mu$ está bem definida e é injetiva. Logo, $\mu$ é uma bijeção.
 
 Mostremos, por fim, que $\mu$ é um homomorfismo de grupos.
 
