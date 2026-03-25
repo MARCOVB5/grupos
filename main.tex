@@ -3203,16 +3203,14 @@ Logo, quaisquer fatores de $H_1, \ldots, H_n$ distintos comutam entre si.
 
 \hypertarget{prop173}{}
 \begin{proposition}
-\color{red}
 Seja $G$ um grupo e $H_1,\ldots,H_n$ subgrupos de $G$ tal que $G = \bigodot_{i=1}^{n}H_i$.
 
 Se $g\in G$ tal que $g = h_1\ldots h_n = h_1'\ldots h_n'$, onde $h_i,h_i'\in H_i$, para $i\in\llbracket 1,n\rrbracket$, então temos $h_i=h_i',\;\forall i\in\llbracket 1,n\rrbracket$.
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
-Seja $g = h_1\ldots h_n = h_1' \ldots h_n'$. Ora, temos então que:
+Seja $g \overset{def}{=} h_1\ldots h_n = h_1' \ldots h_n'$. Ora, temos então que:
 
 \[
 h_1\ldots h_n = h_1' \ldots h_n' \iff h_{1}'^{-1}h_1 = (h_2'\ldots h_n')(h_2\ldots h_n)^{-1}
@@ -3234,7 +3232,7 @@ Logo $h_{1}'^{-1}h_1 = e \iff h_1 = h_1'$.
 
 Realizando de forma análoga as mesmas operações indutivamente sobre $n$ concluímos que $h_i = h_i',\; \forall i\in\llbracket 1,n\rrbracket$.
 
-\qed}
+\qed
 
 
 \hypertarget{teo171}{}
@@ -3248,7 +3246,6 @@ G = \bigodot_{i=1}^{n} H_i \Longrightarrow G \cong \prod_{i=1}^{n} H_i
 \]
 \end{theorem}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Suponha que $G = \bigodot_{i=1}^{n} H_i$.
@@ -3295,11 +3292,9 @@ G \cong \prod_{i=1}^{n} H_i
 G \cong \bigodot_{i=1}^{n} H_i \implies G \cong \prod_{i=1}^{n} H_i
 \]
 
-}
 
 \hypertarget{teochi}{}
 \begin{theorem}
-\color{red}
 \textbf{Teorema Chinês do Resto}
 
 Seja $M \overset{def}{=} m_1\ldots m_n \in \mathbb{Z}_{+}^{*}$ tal que $\text{mdc}(m_i, m_j) = 1, \; \forall i,j\in \llbracket 1,n \rrbracket$ e $i\neq j$.
@@ -3323,9 +3318,9 @@ A partir da \hyperlink{prop165}{\textbf{Proposição 1.6.5}} temos portanto $\ma
 
 Mostremos que $\mathbb{Z}/M\mathbb{Z} = \bigodot_{i=1}^{n} \langle \overline{M_i} \rangle$.
 
-É evidente que $\langle \overline{M_i} \rangle \leq \mathbb{Z}/M\mathbb{Z}$, uma vez que, por definição, ele é um subgrupo gerado. Além disso, por estar munido da soma usual dos inteiros, também é um grupo abeliano. Temos diretamente que $\langle \overline{M_i} \rangle \trianglelefteq \mathbb{Z}/M\mathbb{Z}$.
+É evidente que $\langle \overline{M_i} \rangle \leq \mathbb{Z}/M\mathbb{Z}$, uma vez que, por definição, ele é um subgrupo gerado. Além disso, pelo fato de $\mathbb{Z}/M\mathbb{Z}$ ser um grupo abeliano, temos diretamente que $\langle \overline{M_i} \rangle \trianglelefteq \mathbb{Z}/M\mathbb{Z}$.
 
-Portanto, devido a operação de soma usual de inteiros, denotemos:
+Portanto, devido a operação de soma usual de inteiros módulo $M$, denotemos:
 
 \[
 \langle \overline{M_1} \rangle \ldots \langle \overline{M_n} \rangle \overset{def}{=} \sum_{i=1}^{n} \langle \overline{M_i} \rangle
@@ -3334,16 +3329,18 @@ Portanto, devido a operação de soma usual de inteiros, denotemos:
 Mostremos que:
 
 \[
-\mathfrak{M} \overset{def}{=} \langle \overline{M_i} \rangle \cap \sum_{\substack{j\neq i \\ j\in\llbracket 1, n\rrbracket}} \langle \overline{M_j} \rangle = \{0\}, \; \forall i\in \llbracket 1,n\rrbracket
+\mathfrak{M} \overset{def}{=} \langle \overline{M_i} \rangle \cap \sum_{\substack{j\neq i \\ j\in\llbracket 1, n\rrbracket}} \langle \overline{M_j} \rangle = \{\overline{0}\}, \; \forall i\in \llbracket 1,n\rrbracket
 \]
 
-Tomemos $\overline{x}\in \mathfrak{M}$.
+Suponha que $\overline{x}\in \mathfrak{M}\setminus\{\overline{0}\}$ e $i\in\llbracket 1,n\rrbracket$.
 
-Seja $\overline{x}\in \langle \overline{M_i} \rangle \setminus \{0\}$, temos por definição (e pela coprimalidade entre $m_1,\ldots, m_n$) que $m_i \nmid x$, onde $x$ é qualquer representante da classe lateral $\overline{x}$.
+Ora, temos então que $\overline{x}\in \langle \overline{M_i} \rangle$, logo, $m_i \nmid x$, para algum representante $x$ da classe lateral $\overline{x}$.
 
-Seja $\overline{x}\in \langle \overline{M_i} \rangle \cup \mathfrak{M}$, logo $x$ é expresso como combinação linear de elementos de $\langle \overline{M_1} \rangle,\ldots, \langle \overline{M_{i-1}}\rangle,\langle \overline{M_{i+1}}\rangle,\ldots,\langle \overline{M_n}\rangle$. Perceba que, por definição, todos os representantes de classe dos elementos de tais conjuntos são divisíveis por $m_i$, portanto $m_i \mid x$.
+Além disso, como $\overline{x}\in \langle\overline{M_1}\rangle,\ldots,\langle \overline{M_{i-1}}\rangle,\langle\overline{M_{i+1}}\rangle,\ldots,\langle\overline{M_n}\rangle$, então $m_i \mid x$, para algum representante $x$ da classe lateral $\overline{x}$.
 
-Como para $\overline{x}\in \mathfrak{M}$ temos $m_i \mid x$ e $m_i \nmid x$, concluímos que $\overline{x} = \overline{0}$.
+Deduzimos, portanto, que $m_i \nmid x$ e $m_i \mid x$, para algum representante $x$ da classe lateral $\overline{x}$. Absurdo.
+
+Como $\mathfrak{M}$ é não vazio, concluímos que $\mathfrak{M} = \{\overline{0}\}$.
 
 Mostremos, por fim, que:
 
@@ -3378,7 +3375,6 @@ Concluímos, finalmente, que:
 \qed}
 
 \begin{example}
-\color{red}
 Seja $\mathbb{Z}/6\mathbb{Z} = \{\overline{0},\overline{1},\overline{2},\overline{3},\overline{4},\overline{5}\}$. Como $6 = 3\cdot 2$ e $\text{mdc}(2,3)=1$, temos que:
 
 \[
@@ -3394,8 +3390,7 @@ Onde $\mathbb{Z}/2\mathbb{Z} = \{\overline{0},\overline{1} \}$, $\mathbb{Z}/3\ma
 \end{example}
 
 \begin{definition}
-\color{red}
-Definimos o grupo $(\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z},\; +)$ como \textbf{grupo de Klein} e denotamos:
+Definimos o grupo $(\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z},\; +)$, onde $+$ denota a soma usual de inteiros módulo $2$, como \textbf{grupo de Klein} e denotamos:
 
 \[
 \mathcal{K} \overset{def}{=} \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}.
@@ -3405,7 +3400,6 @@ Definimos o grupo $(\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z},\; +)$ 
 \textit{Observação: note que o grupo de Klein é de fato, trivialmente, um grupo. Além disso, trata-se de um grupo abeliano e temos que $\vert\mathcal{K}\vert = 4$.}
 
 \begin{example}
-\color{red}
 O grupo de Klein possui $5$ subgrupos normais:
 \begin{itemize}
 	\item Os subgrupos triviais $\{(\overline{0}, \overline{0})\}$ e $\mathcal{K}$;
@@ -3419,21 +3413,17 @@ Note que os subgrupos de $\mathcal{K}$ são de fato todos normais, uma vez que $
 
 \begin{proposition}
 \color{red}
-Seja $\mathcal{K}$ o grupo de Klein, então as duas afirmações são equivalentes:
-\begin{enumerate}
-	\item $\mathcal{K} \ncong \mathbb{Z}/4\mathbb{Z}$;  
-	\item $\mathcal{K}$ é o menor grupo não cíclico.
-\end{enumerate}
+Seja $\mathcal{K}$ o grupo de Klein, logo $\mathcal{K} \ncong \mathbb{Z}/4\mathbb{Z}$.
 \end{proposition}
 
 {\color{red}
 \textbf{Demonstração:}
 
-Mostremos primeiramente $(2) \implies (1)$:
+Note que, isto é equivalente a afirmar que $\mathcal{K}$ é o menor grupo não cíclico:
 
 Suponha $\mathcal{K}$ como sendo o menor grupo não cíclico. Ora, como $\mathbb{Z}/4\mathbb{Z}$ é um grupo cíclico, então temos diretamente que $\mathcal{K} \ncong \mathbb{Z}/4\mathbb{Z}$.
 
-Mostremos, agora, $(1)\implies (2)$:
+Mostremos, agora, a afirmação contrária:
 
 Ora, como $\mathcal{K}$ é um grupo finito abeliano tal que $\vert\mathcal{K}\vert = 4$, então se $\mathcal{K}\ncong \mathbb{Z}/4\mathbb{Z}$, deduzimos diretamente que $\mathcal{K}$ não é cíclico.
 
@@ -3444,6 +3434,22 @@ Suponha $G$ um grupo finito. Ora, se $\vert G\vert = 1$, $G$ é trivialmente cí
 Suponha, agora, que $\vert G\vert = 2$ ou $\vert G\vert = 3$. Ora, como a ordem de $G$ nos dois casos é prima, então pela \hyperlink{prop141}{\textbf{Proposição 1.4.1}}, temos diretamente que $G$ é cíclico.
 
 Concluímos que $\mathcal{K}$ é o menor grupo finito e não cíclico.
+
+Mostremos, portanto, que $\mathcal{K}$ é de fato não cíclico:
+
+\[
+(\overline{1}, \overline{0}) + (\overline{1}, \overline{0}) = (\overline{0},\overline{0})
+\]
+
+\[
+(\overline{0}, \overline{1}) + (\overline{0},\overline{1}) = (\overline{0}, \overline{0})
+\]
+
+\[
+(\overline{1}, \overline{1}) + (\overline{1}, \overline{1}) = (\overline{0}, \overline{0})
+\]
+
+Deduzimos, finalmente, que $\mathcal{K}$ é o menor grupo não cíclico e, portanto, $\mathcal{K} \ncong \mathbb{Z}/4\mathbb{Z}$.
 
 \qed}
 
