@@ -3307,7 +3307,6 @@ Então:
 
 \end{theorem}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Seja $M_i \overset{def}{=} \frac{M}{m_i}, \; \forall i\in \llbracket 1, n\rrbracket$. Note que $\overline{M_i} \in \mathbb{Z}/M\mathbb{Z}$, uma vez que $M_i \in \llbracket 1, M\rrbracket$.
@@ -3336,7 +3335,7 @@ Suponha que $\overline{x}\in \mathfrak{M}\setminus\{\overline{0}\}$ e $i\in\llbr
 
 Ora, temos então que $\overline{x}\in \langle \overline{M_i} \rangle$, logo, $m_i \nmid x$, para algum representante $x$ da classe lateral $\overline{x}$.
 
-Além disso, como $\overline{x}\in \langle\overline{M_1}\rangle,\ldots,\langle \overline{M_{i-1}}\rangle,\langle\overline{M_{i+1}}\rangle,\ldots,\langle\overline{M_n}\rangle$, então $m_i \mid x$, para algum representante $x$ da classe lateral $\overline{x}$.
+Além disso, como $\overline{x}\in \sum_{\substack{j\neq i \\ j\in\llbracket 1, n\rrbracket}} \langle \overline{M_j} \rangle$, então $\overline{x}$ pode ser representado como uma combinação linear em que $m_i$ é um fator de cada termo. Portanto, $m_i \mid x$, para algum representante $x$ da classe lateral $\overline{x}$.
 
 Deduzimos, portanto, que $m_i \nmid x$ e $m_i \mid x$, para algum representante $x$ da classe lateral $\overline{x}$. Absurdo.
 
@@ -3372,7 +3371,7 @@ Concluímos, finalmente, que:
 \mathbb{Z}/M\mathbb{Z} = \bigodot_{i=1}^{n} \langle \overline{M_i} \rangle \implies \mathbb{Z}/M\mathbb{Z} \cong \prod_{i=1}^{n} \mathbb{Z}/m_i\mathbb{Z}
 \]
 
-\qed}
+\qed
 
 \begin{example}
 Seja $\mathbb{Z}/6\mathbb{Z} = \{\overline{0},\overline{1},\overline{2},\overline{3},\overline{4},\overline{5}\}$. Como $6 = 3\cdot 2$ e $\text{mdc}(2,3)=1$, temos que:
@@ -3412,11 +3411,9 @@ Note que os subgrupos de $\mathcal{K}$ são de fato todos normais, uma vez que $
 \end{example}
 
 \begin{proposition}
-\color{red}
 Seja $\mathcal{K}$ o grupo de Klein, logo $\mathcal{K} \ncong \mathbb{Z}/4\mathbb{Z}$.
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Note que, isto é equivalente a afirmar que $\mathcal{K}$ é o menor grupo não cíclico:
@@ -3451,7 +3448,7 @@ Mostremos, portanto, que $\mathcal{K}$ é de fato não cíclico:
 
 Deduzimos, finalmente, que $\mathcal{K}$ é o menor grupo não cíclico e, portanto, $\mathcal{K} \ncong \mathbb{Z}/4\mathbb{Z}$.
 
-\qed}
+\qed
 
 \section{Produto Semidireto de Grupos}
 
@@ -3459,32 +3456,27 @@ Deduzimos, finalmente, que $\mathcal{K}$ é o menor grupo não cíclico e, porta
 
 \section{Generalidades sobre o grupo simétrico}
 
-{\color{red}
 Retomemos com mais detalhes a construção do \textit{grupo simétrico}, introduzido de forma breve no \hyperlink{exem123}{\textbf{Exemplo 1.2.3}}.
-}
+
 
 \begin{definition}
-\color{red}
 Seja $X$ um conjunto finito e não vazio. A função bijetiva $\sigma : X\to X$  é chamada de \textbf{permutação de $X$}.
 
 Denotamos o conjunto de todas as permutações de $X$ como $\mathfrak{S}_X$. Se $X = \{1,\ldots,n\}$ então também podemos denotar $\mathfrak{S}_X$ como $\mathfrak{S}_n$, onde $n\in \mathbb{Z}_{+}^{*}$.
 \end{definition}
 
-{\color{red}
 \textit{Observação: por convenção o símbolo para composição usual de funções será omitido, isto é, para $\sigma, \tau \in \mathfrak{S}_X$:}
 
 \[
 \sigma\tau \overset{def}{=} \sigma \circ \tau
 \]
 
-}
+
 
 \begin{definition}
-\color{red}
 O conjunto $\mathfrak{S}_X$ munido da operação usual de composição de funções é chamado de \textbf{grupo de permutações de $X$}, ou \textbf{grupo simétrico de $X$}. 
 \end{definition}
 
-{\color{red}
 \textit{Observações:}
 
 \begin{itemize}
@@ -3499,10 +3491,9 @@ O conjunto $\mathfrak{S}_X$ munido da operação usual de composição de funç�
 \]
 
 \end{itemize}
-}
+
 
 \begin{example}
-\color{red}
 Sejam $\sigma, \tau \in \mathfrak{S}_3$, tal que:
 
 \[
@@ -3555,13 +3546,11 @@ Evidentemente, $\mathfrak{S}_X$ não é abeliano para $\text{Card}(X)\geq 3$.
 
 \hypertarget{prop211}{}
 \begin{proposition}
-\color{red}
 Seja $X$ um conjunto não vazio tal que $\text{Card}(X) = n\in\mathbb{Z}_{+}^{*}$.
 
 Então $\vert \mathfrak{S}_X \vert = n!$.
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Seja $\sigma\in \mathfrak{S}_X$ e $X \overset{def}{=}\{a_1,\ldots,a_n\}$.
@@ -3570,17 +3559,16 @@ Como $\sigma$ é uma função bijetiva, então para um elemento $a_i \in X$ é p
 
 Uma vez tomada essa relação entre os dois elementos de $X$ tomamos novamente um $a_k \in X \setminus \{a_i\}$ e escolhemos uma imagem no conjunto $X\setminus \{a_j\}$. Como $X\setminus\{a_j\}$ possui $\text{Card}(X)-1$ elementos, possuimos $n-1$ escolhas de bijeção.
 
-Realizamos esse passo a passo recursivamente até bijetarmos todo os elementos do domínio $X$.
+Realizamos esse passo a passo recursivamente até bijetarmos (realizarmos uma bijeção) todos os elementos do domínio $X$.
 
-Como todos as escolhas de bijeção em cada passo formam escolhas independentes, podemos utilizar o princípio multiplicativo para mostrar diretamente que existem no total $n\cdot(n-1)\cdot\ldots\cdot 1 = n!$ possibilidades de funções bijetoras em $\mathfrak{S}_X$.
+Como todas as escolhas de bijeção em cada passo formam escolhas independentes, podemos utilizar o princípio multiplicativo para mostrar diretamente que existem no total $n\cdot(n-1)\cdot\ldots\cdot 1 = n!$ possibilidades de funções bijetoras em $\mathfrak{S}_X$.
 
 Portanto, $\vert \mathfrak{S}_X \vert = n!$.
 
-\qed}
+\qed
 
 \hypertarget{cayley}{}
 \begin{theorem}
-\color{red}
 \textbf{Teorema de Cayley}
 
 Sejam $G$ um grupo finito tal que $\vert G\vert = n\in \mathbb{Z}_{+}^{*}$ e $G_0$ seu conjunto subjacente (isto é, o conjunto $G$ sem a estrutura de grupo).
@@ -3598,7 +3586,6 @@ g & \longmapsto & \Upsilon_g: G_0 \longrightarrow G_0 \\
 é um monomorfismo de grupos. 
 \end{theorem}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Mostremos que $\Upsilon$ é de fato função e é injetiva.
@@ -3633,7 +3620,6 @@ Portanto, $\Upsilon$ é um homomorfismo injetivo.
 
 \end{itemize}
 
-}
 
 \begin{example}
 \color{red}
@@ -3641,7 +3627,6 @@ Colocar algum exemplo do Teorema de Cayley...
 \end{example}
 
 \begin{definition}
-\color{red}
 Seja $X$ um conjunto finito e não vazio. Chamamos de \textbf{suporte de uma permutação $\sigma$ de $X$} o conjunto de elementos em $X$ cuja imagem é diferente do elemento no domínio. Isto é:
 
 \[ 
@@ -3650,7 +3635,6 @@ Seja $X$ um conjunto finito e não vazio. Chamamos de \textbf{suporte de uma per
 \end{definition}
 
 \begin{example}
-\color{red}
 Seja $\sigma \in \mathfrak{S}_5$ tal que:
 
 \[
@@ -3665,13 +3649,11 @@ Temos que $\text{supp}(\sigma) = \{1,2,3\}$.
 
 \hypertarget{prop212}{}
 \begin{proposition}
-\color{red}
 Sejam $X$ um conjunto finito não vazio e $\sigma \in \mathfrak{S}_X$. 
 
 Se $x\in\text{supp}(\sigma)$, então $\sigma^{n}(x) \in \text{supp}(\sigma),\; \forall n\in\mathbb{Z}$.
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Suponha que $x\in \text{supp}(\sigma)$, por definição temos que $\sigma(x) \neq x$.
@@ -3685,7 +3667,7 @@ Como $X$ é um conjunto finito, observamos que quaisquer potências negativas de
 \qed
 
 \textit{Observação: deduzimos, portanto, que o suporte de uma permutação $\sigma$ de $X$ é invariante sob $\sigma$}.
-}
+
 
 \hypertarget{prop213}{}
 \begin{proposition}
@@ -5082,6 +5064,108 @@ Mostremos, por fim, o item $4.$. Supondo $n\geq 5$.
 Ora, sabemos que $\mathfrak{A}_X$ é um grupo simples e não abeliano. Portanto temos diretamente que $\mathfrak{A}_X' = \mathfrak{A}_X$. Isto é, $\mathfrak{A}_X$ é perfeito para $n\geq 5$.
  
 \qed}
+
+\chapter{Ações de Grupos}
+
+\section{Generalidades sobre Ações de Grupos}
+
+\begin{definition}
+\color{red}
+Seja $G$ um grupo e $X$ um conjunto não vazio. Definimos a \textbf{ação à esquerda de $G$ sobre $X$} a função:
+
+\[
+\varphi: 
+\begin{array}{r c l}
+G\bigtimes X &\to &X \\
+(g, x) &\mapsto &\varphi (g,x)
+\end{array}
+\]
+
+tal que:
+
+\[
+\begin{cases}
+\varphi(e,x) = x, & \forall x \in X \\
+\varphi(g, \varphi(h,x)) = \varphi(gh, x), & \forall (g,h,x) \in G\times G\times X
+\end{cases}
+\]
+
+Caso $\varphi$ seja uma ação à esquerda de $G$ em $X$ dizemos que \textbf{$G$ age à esquerda sobre $X$} e denotamos:
+
+\[
+G \curvearrowright X.
+\]
+\end{definition}
+
+{\color{red}
+\textit{Observações:}
+
+\begin{itemize}
+  \item \textit{Podemos, de forma análoga, definir a \textbf{ação à direita de $G$ em $X$}. Neste caso denotamos $X \curvearrowleft G$};
+\end{itemize}
+
+}
+
+\begin{example}
+\color{red}
+
+Seja $\varphi : G\times G \to G$ tal que $\varphi(g,h) \overset{def}{=} gh$. Logo, $G\curvearrowright G$. De fato:
+
+\begin{itemize}
+  \item $\varphi(g,h) = gh \in G, \; \forall g,h \in G$;
+  \item $\varphi(e, h) = eh = h, \; \forall h\in G$;
+  \item $\varphi(g,\varphi(g',h)) = \varphi(g, g'h) = gg'h = \varphi(gg',h),\; \forall g,g',h\in G$.
+\end{itemize}
+
+A ação $\varphi$ é denominada \textbf{ação por translação à esquerda de $G$}.
+
+\end{example}
+
+
+\begin{example}
+\color{red}
+Seja $\varphi : G \times G \to G$ tal que $\varphi(g,h) \overset{def}{=} ghg^{-1}$. Logo, $G\curvearrowright G$. De fato:
+
+\begin{itemize}
+  \item $\varphi(g,h) = ghg^{-1} \in G, \; \forall g,h \in G$;
+  \item $\varphi(e, h) = ehe^{-1} = h, \; \forall h\in G$;
+  \item $\varphi(g_1,\varphi(g_2,h)) = \varphi(g_1, g_2hg_{2}^{-1}) = g_1g_2hg_2^{-1}g_1^{-1} = (g_1g_2)h(g_1g_2)^{-1}=\varphi(g_1g_2,h), \; \forall g_1,g_2,h\in G$.
+\end{itemize}
+
+A ação $\varphi$ é denominada \textbf{ação por conjugação de $G$}.
+\end{example}
+
+\begin{example}
+\color{red}
+Seja $G$ um grupo e $H \leq G$. Logo $\varphi : G\times G/H \to G/H$ tal que $\varphi(g, xH) \overset{def}{=} gxH$ é uma ação de $G$ sobre $G/H$. De fato:
+
+\begin{itemize}
+  \item $\varphi(g,xH) = gxH \in G/H, \; \forall (g,xH) \in G\times G/H$;
+  \item $\varphi(e, xH) = exH = xH, \; \forall xH\in G/H$;
+  \item $\varphi(g_1,\varphi(g_2,xH)) = \varphi(g_1, g_2xH) = g_1g_2xH =\varphi(g_1g_2,xH), \; \forall (g_1,g_2, xH) \in G\times G\times G/H$.
+\end{itemize}
+
+\end{example}
+
+
+\begin{example}
+\color{red}
+Seja $\varphi: GL_n(\mathbb{R}) \times \mathbb{R}^n \to \mathbb{R}^n$ tal que $\varphi(M,v) \overset{def}{=} Mv$. Logo, $GL_n(\mathbb{R}) \curvearrowright \mathbb{R}^{n}$. 
+
+De fato:
+
+\begin{itemize}
+  \item $\varphi(M,v) = Mv \in \mathbb{R}^n, \; \forall (M,v) \in GL_n(\mathbb{R}) \times \mathbb{R}^{n}$;
+  \item $\varphi(\text{id}_n, v) = \text{id}_nv = v, \; \forall v\in \mathbb{R}^{n}$;
+  \item $\varphi(M_1,\varphi(M_2,v)) = \varphi(M_1,M_2v) = M_1M_2v = (M_1M_2)v = \varphi(M_1M_2,v), \; \forall (M_1,M_2,v) \in GL_n(\mathbb{R})\times GL_n(\mathbb{R})^{n}\times \mathbb{R}^n$.
+\end{itemize}
+
+\end{example}
+
+\begin{definition}
+\color{red}
+
+\end{definition}
 
 \chapter{Grupos Solúveis}
 
