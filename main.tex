@@ -5090,7 +5090,7 @@ tal que:
 \end{cases}
 \]
 
-Caso $\varphi$ seja uma ação à esquerda de $G$ em $X$ dizemos que \textbf{$G$ age à esquerda sobre $X$} e denotamos:
+Caso $\varphi$ seja uma ação à esquerda de $G$ sobre $X$ dizemos que \textbf{$G$ age à esquerda sobre $X$} e denotamos:
 
 \[
 G \curvearrowright X.
@@ -5101,7 +5101,8 @@ G \curvearrowright X.
 \textit{Observações:}
 
 \begin{itemize}
-  \item \textit{Podemos, de forma análoga, definir a \textbf{ação à direita de $G$ em $X$}. Neste caso denotamos $X \curvearrowleft G$};
+  \item \textit{Podemos, de forma análoga, definir a \textbf{ação à direita de $G$ sobre $X$}. Neste caso denotamos $X \curvearrowleft G$};
+    \item \textit{Quando não houver ambiguidade, a ação à esquerda de $G$ sobre $X$ será denominada apenas como ação de $G$ sobre $X$}.
 \end{itemize}
 
 }
@@ -5135,18 +5136,6 @@ Seja $\varphi : G \times G \to G$ tal que $\varphi(g,h) \overset{def}{=} ghg^{-1
 A ação $\varphi$ é denominada \textbf{ação por conjugação de $G$}.
 \end{example}
 
-\begin{example}
-\color{red}
-Seja $G$ um grupo e $H \leq G$. Logo $\varphi : G\times G/H \to G/H$ tal que $\varphi(g, xH) \overset{def}{=} gxH$ é uma ação de $G$ sobre $G/H$. De fato:
-
-\begin{itemize}
-  \item $\varphi(g,xH) = gxH \in G/H, \; \forall (g,xH) \in G\times G/H$;
-  \item $\varphi(e, xH) = exH = xH, \; \forall xH\in G/H$;
-  \item $\varphi(g_1,\varphi(g_2,xH)) = \varphi(g_1, g_2xH) = g_1g_2xH =\varphi(g_1g_2,xH), \; \forall (g_1,g_2, xH) \in G\times G\times G/H$.
-\end{itemize}
-
-\end{example}
-
 
 \begin{example}
 \color{red}
@@ -5164,8 +5153,61 @@ De fato:
 
 \begin{definition}
 \color{red}
+Sejam $G$ um grupo e $X$ um conjunto não vazio tal que $G\curvearrowright X$ pela função $\varphi$.
 
+Definimos a \textbf{órbita de $x\in X$ como o conjunto:}
+
+\[
+\mathscr{O}(x) \overset{def}{=} \{\varphi(g,x)\; ; \;g\in G\}
+\]
+
+Note que $\mathscr{O}(x) \subseteq X$.
 \end{definition}
+
+\begin{example}
+\color{red}
+
+\end{example}
+
+\begin{proposition}
+\color{red}
+Sejam $G$ um grupo e $X$ um conjunto não vazio tal que $G\curvearrowright X$. Então:
+
+\begin{enumerate}
+  \item $X = \bigcup_{x\in X}\mathscr{O}(x);$
+  \item $\text{Ou}\;\; \mathscr{O}(x) = \mathscr{O}(y) \;\; \text{ou}\;\; \mathscr{O}(x)\cap\mathscr{O}(y) = \emptyset,\; \forall x,y\in X.$
+\end{enumerate}
+
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Mostremos primeiramente o item $1.$. Note que $\bigcup_{x\in X} \mathscr{O}(x) \subseteq X$ é trivial por definição.
+
+Além disso, dado $x\in X$, sempre teremos $x\in \mathscr{O}(x)$, pois $\varphi(e,x) = x\in \mathscr{O}(x)$. Logo, $X\subseteq \bigcup_{x\in X} \mathscr{O}(x)$.
+
+Concluímos que $\bigcup_{x\in X} \mathscr{O}(x) = X$.
+
+Mostremos, agora, o item $2.$. Suponha que $\mathscr{O}(x)\cap\mathscr{O}(y) \neq \emptyset$, para $x,y\in X$. Consideremos ainda $\varphi$ a ação de $G$ em $X$.
+
+Ora, então existe $z\in \mathscr{O}(x)\cap \mathscr{O}(y)$ tal que:
+
+\[
+z = \varphi(g,x) \;\; \text{e} \;\; z = \varphi(h,y),\;\; \text{para}\;\; g,h\in G
+\]
+
+Temos, portanto:
+
+\[
+\varphi(g,x)=\varphi(h,y) \implies x = \varphi(g^{-1}h, y)
+\]
+
+Ora, como $g^{-1}h\in G$, deduzimos que $x\in \mathscr{O}(y)$. De forma análoga mostramos que $y\in\mathscr{O}(x)$.
+
+Concluímos, portanto, que $\mathscr{O}(x) = \mathscr{O}(y)$.
+
+\qed}
 
 \chapter{Grupos Solúveis}
 
