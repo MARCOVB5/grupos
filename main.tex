@@ -5164,9 +5164,20 @@ Definimos a \textbf{órbita de $x\in X$ como o conjunto:}
 Note que $\mathscr{O}(x) \subseteq X$.
 \end{definition}
 
+\begin{definition}
+\color{red}
+Sejam $G$ um grupo e $X$ um conjunto não vazio tal que $G\curvearrowright X$ pela função $\varphi$.
+
+Definimos o \textbf{conjunto das órbitas da ação $\varphi$ como:}
+
+\[
+X/G \overset{def}{=} \{\mathscr{O}(x) \; ; \; x\in X\}.
+\]
+\end{definition}
+
 \begin{example}
 \color{red}
-
+Seja $\varphi: GL_n(\mathbb{R}) \times \mathbb{R}^n \to \mathbb{R}^n$ tal que $\varphi(M,v) \overset{def}{=} Mv$.
 \end{example}
 
 \begin{proposition}
@@ -5184,7 +5195,6 @@ Sejam $G$ um grupo e $X$ um conjunto não vazio tal que $G\curvearrowright X$. E
 \textbf{Demonstração:}
 
 Mostremos primeiramente o item $1.$. Note que $\bigcup_{x\in X} \mathscr{O}(x) \subseteq X$ é trivial por definição.
-
 Além disso, dado $x\in X$, sempre teremos $x\in \mathscr{O}(x)$, pois $\varphi(e,x) = x\in \mathscr{O}(x)$. Logo, $X\subseteq \bigcup_{x\in X} \mathscr{O}(x)$.
 
 Concluímos que $\bigcup_{x\in X} \mathscr{O}(x) = X$.
@@ -5204,10 +5214,68 @@ Temos, portanto:
 \]
 
 Ora, como $g^{-1}h\in G$, deduzimos que $x\in \mathscr{O}(y)$. De forma análoga mostramos que $y\in\mathscr{O}(x)$.
-
 Concluímos, portanto, que $\mathscr{O}(x) = \mathscr{O}(y)$.
 
 \qed}
+
+\begin{definition}
+\color{red}
+Sejam $G$ um grupo e $X$ um conjunto não vazio tal que $G\curvearrowright X$ pela função $\varphi$. Dado $x\in X$, definimos \textbf{o estabilizador de $x$ como o conjunto:}
+
+\[
+G_x \overset{def}{=} \{g\in G \; ; \; \varphi(g,x) = x\}.
+\]
+\end{definition}
+
+\begin{proposition}
+\color{red}
+Sejam $G$ um grupo e $X$ um conjunto não vazio tal que $G\curvearrowright X$ pela função $\varphi$. Então, dado $x\in X$, o conjunto estabilizador $G_x$ é um subgrupo de $G$.
+
+Denominamos tal subgrupo como \textbf{grupo de isotropia de $x$}.
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Note, primeiramente, que $G_x$ é não vazio, pois $\varphi(e,x) = x \in G_x$.
+
+Sejam $g_1,g_2\in G_x$, mostremos que $g_1g_{2}^{-1} \in G_x$. Note, primeiramente, que para dado $g\in G_x$:
+
+\[
+\varphi(e, x) = \varphi(g^{-1}g, x) = \varphi(g^{-1}, \varphi(g,x)) = \varphi(g^{-1}, x) = x
+\]
+
+Portanto, deduzimos:
+
+\[
+\varphi(g_1g_2^{-1}, x) = \varphi(g_1, \varphi(g_2^{-1}, x)) = \varphi(g_1, x) = x
+\]
+
+Portanto, $g_1g_2^{-1} \in G_x$. Concluímos que $G_x \leq G$.
+
+\qed}
+
+\begin{definition}
+\color{red}
+Sejam $G$ um grupo e $X$ um conjunto não vazio tal que $G\curvearrowright X$. Então, dado $x_0\in X$, se $G_{x_0} = G$, dizemos que \textbf{$x_0$ é um ponto fixo da ação de $G$ sobre $X$}.
+\end{definition}
+
+\begin{definition}
+\color{red}
+Sejam $G$ um grupo e $X$ um conjunto não vazio tal que $G\curvearrowright X$ pela função $\varphi$. Definimos o \textbf{conjunto de pontos fixos da ação de $G$ sobre $X$ como}:
+
+\[
+\text{Fix}(X) \overset{def}{=} \{x\in X,\; \varphi(g,x)=x,\; \forall g\in G\}
+\]
+\end{definition}
+
+\begin{example}
+\color{red}
+
+\end{example}
+
+
+% ==================================
 
 \chapter{Grupos Solúveis}
 
