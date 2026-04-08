@@ -3671,7 +3671,6 @@ Como $X$ é um conjunto finito, observamos que quaisquer potências negativas de
 
 \hypertarget{prop213}{}
 \begin{proposition}
-\color{red}
 Sejam $X$ um conjunto finito e não vazio tal que $\text{Card}(X) = n\in\mathbb{Z}_{+}^{*}$ e $\tau_1,\ldots,\tau_k \in \mathfrak{S}_X$ de suporte dois a dois disjuntos, onde $k\in\llbracket 1, n\rrbracket$.
 
 Seja $\sigma\in\mathfrak{S}_X$ tal que $\sigma = \tau_1\ldots\tau_k$, então para $x\in X$ temos:
@@ -3692,15 +3691,13 @@ Temos também que os elementos $\tau_1,\ldots,\tau_k$ comutam entre si e:
 
 \end{proposition}
 
-{\color{red}
-
 \textbf{Demonstração:}
 
 Seja $x\in \text{supp}(\tau_i)$, para algum $i\in\llbracket 1,k\rrbracket$. Pela \hyperlink{prop212}{\textbf{Proposição 2.1.2}} temos que $\tau_i(x) \in \text{supp}(\tau_i)$. 
 
 Como $\forall j\in\llbracket 1,k\rrbracket$ tal que $i\neq j$ temos que $\text{supp}(\tau_j)\cap\text{supp}(\tau_i) = \emptyset$, então $\sigma(x) = \tau_i(x)$.
 
-Caso $x\notin \text{supp}(\tau_i)$, para algum $i\in\llbracket 1,k\rrbracket$, temos evidentemente que $\sigma(x) = x$, uma vez que $\sigma = \tau_1\ldots\tau_k$.
+Caso $x\notin \text{supp}(\tau_i)$, para todos $i\in\llbracket 1,k\rrbracket$, temos evidentemente que $\sigma(x) = x$, uma vez que $\sigma = \tau_1\ldots\tau_k$.
 
 Note que a composição entre os elementos $\tau_1,\ldots,\tau_k$ também comuta. 
 
@@ -3724,12 +3721,11 @@ A partir das observações feitas acima temos diretamente que:
 \text{supp}(\sigma) = \bigsqcup_{i=1}^k \text{supp}(\tau_i).
 \]
 
-\qed}
+\qed
 
 \section{Ciclos e transposições}
 
 \begin{definition}
-\color{red}
 Seja $X = \{x_1,\ldots,x_n\}$ tal que $\text{Card}(X)\geq 2$.
 Uma permutação $\sigma\in\mathfrak{S}_X$ é chamada de $k$\textbf{-ciclo} (onde $k\in\llbracket 2,n\rrbracket$) se:
 \begin{align*}
@@ -3749,7 +3745,6 @@ Denotamos tal $k$-ciclo como:
 
 \end{definition}
 
-{\color{red}
 \textit{Observações:}
 
 \begin{itemize}
@@ -3779,15 +3774,12 @@ Denotamos tal $k$-ciclo como:
 	\textit{Evidentemente $\sigma$ não é um ciclo, porém $\sigma$ pode ser escrito como produto de $2$ ciclos de suportes disjuntos}.
 \end{itemize}
 
-}
 
 \begin{definition}
-\color{red}
 Uma \textbf{transposição} é um $2$-ciclo.
 \end{definition}
 
 \begin{proposition}
-\color{red}
 Seja $X$ um conjunto finito e não vazio tal que $\text{Card}(X) \geq 3$. 
 
 Então $Z(\mathfrak{S}_X) = \{\text{id}_X\}$.
@@ -3796,13 +3788,15 @@ Então $Z(\mathfrak{S}_X) = \{\text{id}_X\}$.
 {\color{red}
 \textbf{Demonstração:}
 
-Sejam $\sigma,\tau\in \mathfrak{S}_X$ e $(x,y) \in X\setminus\text{supp}(X) \times \text{supp}(X)$. Tomemos $\sigma\neq\text{id}_X$ e $\tau \overset{def}{=} (x\;y)$.
+Sejam $\sigma,\tau\in \mathfrak{S}_X$ e $(x,y) \in X\setminus\text{supp}(\sigma) \times \text{supp}(\sigma)$. Tomemos $\sigma\neq\text{id}_X$ e $\tau \overset{def}{=} (x\;y)$.
 
 Ora, temos então $y\notin\text{supp}(\tau\sigma\tau^{-1})$, pois $\tau\sigma\tau^{-1}(y) = y$. Portanto, temos diretamente que $\tau\sigma\tau^{-1} \neq \sigma \iff \tau\sigma \neq \sigma\tau$.
 
-Suponha, agora, que $X\setminus\text{supp}(\sigma) = \emptyset$. Então $\exists x_k \in X,\;k\in\llbracket 2,\text{Card}(X)\rrbracket$ tal que $\sigma(x_k) = x_1$.
+Suponha, agora, que $X\setminus\text{supp}(\sigma) = \emptyset$. Então $\exists x_k \in X$, onde $k\in\llbracket 2,\text{Card}(X)\rrbracket$, tal que $\sigma(x_k) = x_1$.
 
-Ora, como $\text{Card}(X)\geq 3$, tomemos $\tau \overset{def}{=} (x_1 \; x_s)$, tal que $s\neq k$ e $\sigma(x_s) = x_k$. Analogamente ao caso anterior, temos que $x_1\notin \text{supp}(\tau\sigma\tau^{-1})$ e, portanto, $\tau\sigma\tau^{-1} \neq \sigma \iff \tau\sigma\neq\sigma\tau$.
+Ora, como $\text{Card}(X)\geq 3$, tomemos $x_s\in X$ tal que $s\neq k$ e $\sigma(x_s) = x_k$ (como $X\setminus \text{supp}(\sigma) = \emptyset$, então podemos realizar tal escolha). 
+
+Definimos, ainda, $\tau \overset{def}{=} (x_1 \; x_s)$. Portanto, temos que $\tau\sigma\tau^{-1}(x_k) = x_s \neq x_1$ e, portanto, $\tau\sigma\tau^{-1} \neq \sigma \iff \tau\sigma\neq\sigma\tau$.
 
 Como para ambos os casos sempre podemos encontrar uma permutação $\tau$ tal que $\sigma$ não comuta, então deduzimos que $Z(\mathfrak{S}_X) = \{\text{id}_X\}$ para $\text{Card}(X) \geq 3$.
 
