@@ -3788,15 +3788,25 @@ Então $Z(\mathfrak{S}_X) = \{\text{id}_X\}$.
 {\color{red}
 \textbf{Demonstração:}
 
-Sejam $\sigma,\tau\in \mathfrak{S}_X$ e $(x,y) \in X\setminus\text{supp}(\sigma) \times \text{supp}(\sigma)$. Tomemos $\sigma\neq\text{id}_X$ e $\tau \overset{def}{=} (x\;y)$.
+Sejam $\sigma,\tau\in \mathfrak{S}_X$ e $(x,y) \in \left(X\setminus\text{supp}(\sigma)\right) \times \text{supp}(\sigma)$. Tomemos $\sigma\neq\text{id}_X$ e $\tau \overset{def}{=} (x\;y)$.
 
 Ora, temos então $y\notin\text{supp}(\tau\sigma\tau^{-1})$, pois $\tau\sigma\tau^{-1}(y) = y$. Portanto, temos diretamente que $\tau\sigma\tau^{-1} \neq \sigma \iff \tau\sigma \neq \sigma\tau$.
 
-Suponha, agora, que $X\setminus\text{supp}(\sigma) = \emptyset$. Então $\exists x_k \in X$, onde $k\in\llbracket 2,\text{Card}(X)\rrbracket$, tal que $\sigma(x_k) = x_1$.
+Suponha, agora, que $X\setminus\text{supp}(\sigma) = \emptyset$. Procedemos por disjunção de casos. 
+
+Considere, inicialmente, que $\sigma$ possui um ciclo de largura maior ou igual a $3$.
+
+Então $\exists x_k \in X$, onde $k\in\llbracket 2,\text{Card}(X)\rrbracket$, tal que $\sigma(x_k) = x_1$.
 
 Ora, como $\text{Card}(X)\geq 3$, tomemos $x_s\in X$ tal que $s\neq k$ e $\sigma(x_s) = x_k$ (como $X\setminus \text{supp}(\sigma) = \emptyset$, então podemos realizar tal escolha). 
 
 Definimos, ainda, $\tau \overset{def}{=} (x_1 \; x_s)$. Portanto, temos que $\tau\sigma\tau^{-1}(x_k) = x_s \neq x_1$ e, portanto, $\tau\sigma\tau^{-1} \neq \sigma \iff \tau\sigma\neq\sigma\tau$.
+
+Suponha, agora, que $\sigma$ não possui nenhum ciclo de largura maior ou igual a $3$. Isto é, $\sigma$ é apenas composto de transposições de suportes dois a dois disjuntos (note que no mínimo duas transposições, visto que $\text{Card}(X) \geq 3$).
+
+Denotemos $\sigma \overset{def}{=} (x_1\; x_2)(x_3\; x_4)\kappa$, onde $\kappa$ denota o resto do produto de transposições (podendo ser vazio).
+
+Tomemos, neste caso, $\tau = (x_1 \; x_3)$. Temos, portanto, $\tau\sigma\tau^{-1}(x_3) = x_2 \neq x_4 \implies \tau\sigma\tau^{-1} \neq \sigma$.
 
 Como para ambos os casos sempre podemos encontrar uma permutação $\tau$ tal que $\sigma$ não comuta, então deduzimos que $Z(\mathfrak{S}_X) = \{\text{id}_X\}$ para $\text{Card}(X) \geq 3$.
 
