@@ -3940,13 +3940,19 @@ deduzimos que $\sigma$ é igual a composição de todo $k_x$-ciclo $\sigma\uphar
 
 Mostremos que tal decomposição é única. 
 
-Sejam $\sigma_1 = \rho_1\ldots \rho_h$ e $\sigma_2 = \eta_1\ldots\eta_m$ duas decomposições em ciclos de suportes dois a dois disjuntos de $\sigma$, onde $h,m\in\llbracket 1,\lfloor\frac{n}{2}\rfloor\rrbracket$.
+Suponha $\sigma = \rho_1\ldots \rho_h = \eta_1\ldots\eta_m$ duas decomposições de $\sigma$ em ciclos de suportes dois a dois disjuntos.
 
-Perceba que, como os suportes de cada ciclo são dois a dois disjuntos, necessariamente $\rho_i(x) = \eta_j(x)$, para todo $x\in X$ e $i,j\in \llbracket 1,\lfloor\frac{n}{2}\rfloor \rrbracket$.
+Tomemos $x\in \text{supp}(\sigma)$. Como os ciclos dentro de cada decomposição possuem suportes disjuntos, $x$ pertence ao suporte de exatamente um ciclo da primeira decomposição, digamos $\rho_i$, e a exatamente um ciclo da segunda, digamos $\eta_j$.
 
-Utilizando a mesma lógica de forma indutiva em todos os elementos de $X$, concluímos que para todo $x\in X$ iremos obter as mesmas partições $\mathfrak{O}(x)$ nas quais podemos escrever $\text{supp}(\sigma)$.
+Como todos os outros ciclos nas respectivas decomposições fixam $x$, a ação iterada de $\sigma$ sobre $x$ é determinada unicamente por $\rho_i$ e $\eta_j$. Ou seja, para todo $k \in \mathbb{Z}$, temos:
 
-Como o produto entre quaisquer ciclos de $\sigma$ é comutativo, deduzimos diretamente que $\sigma_1 = \sigma_2$.
+\[
+\sigma^k(x) = \rho_i^k(x) = \eta_j^k(x)
+\]
+
+Isso significa que $\rho_i$ e $\eta_j$ possuem o mesmo suporte, e, pelo fato de serem ciclos, temos portanto $\rho_i = \eta_j$.
+
+Como isso vale para qualquer elemento $x \in \text{supp}(\sigma)$, todo ciclo que aparece na primeira decomposição necessariamente aparece na segunda, e vice-versa. Portanto, os conjuntos de ciclos $\{\rho_1, \ldots, \rho_h\}$ e $\{\eta_1, \ldots, \eta_m\}$ coincidem, provando que a decomposição é única exceto pela ordem em que os ciclos são escritos.
 
 \qed
 
