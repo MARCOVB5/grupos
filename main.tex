@@ -3621,11 +3621,6 @@ Portanto, $\Upsilon$ é um homomorfismo injetivo.
 \end{itemize}
 
 
-\begin{example}
-\color{red}
-Colocar algum exemplo do Teorema de Cayley...
-\end{example}
-
 \begin{definition}
 Seja $X$ um conjunto finito e não vazio. Chamamos de \textbf{suporte de uma permutação $\sigma$ de $X$} o conjunto de elementos em $X$ cuja imagem é diferente do elemento no domínio. Isto é:
 
@@ -3800,7 +3795,7 @@ Tomemos, sem perda de generalidade, $\sigma \overset{def}{=} (x_1\;x_s\;x_k)\kap
  
 Definimos, ainda, $\tau \overset{def}{=} (x_1 \; x_s)$. Logo, temos que $\tau\sigma\tau^{-1}(x_k) = x_s \neq x_1$ e, portanto, $\tau\sigma\tau^{-1} \neq \sigma \iff \tau\sigma\neq\sigma\tau$.
 
-Suponha, agora, que $\sigma$ não possui nenhum ciclo de comprimento maior ou igual a $3$. Isto é, $\sigma$ é apenas composto de transposições de suportes dois a dois disjuntos (note que no mínimo duas transposições, visto que $\text{Card}(X) \geq 3$).
+Suponha, agora, que $\sigma$ não possui nenhum ciclo de comprimento maior ou igual a $3$. Isto é, $\sigma$ é apenas composto de transposições de suportes dois a dois disjuntos (note que, no mínimo, duas transposições, visto que $\text{Card}(X) \geq 3$).
 
 Denotemos $\sigma \overset{def}{=} (x_1\; x_2)(x_3\; x_4)\kappa$, onde $\kappa\in\mathfrak{S}_X$ e $\{x_1, x_2, x_3, x_4\}\cap\text{supp}(\kappa)=\emptyset$.
 
@@ -3856,20 +3851,24 @@ Tomemos alguns exemplos de permutações em $\mathfrak{S}_3$:
 
 \hypertarget{prop222}{}
 \begin{proposition}
-Sejam $X = \{x_1,\ldots,x_n\}$ para $n\geq 2$ e $\sigma\in\mathfrak{S}_X$ um $k$-ciclo, onde $k\in\llbracket 2,n\rrbracket$. Então $\mathcal{O}(\sigma) = k$.
+Seja $X \overset{def}{=} \{x_1,\ldots,x_n\}$ para $n\geq 2$ e $\sigma\in\mathfrak{S}_X$ um $k$-ciclo, onde $k\in\llbracket 2,n\rrbracket$. Então $\mathcal{O}(\sigma) = k$.
 \end{proposition}
 
 {\color{red}
 
 \textbf{Demonstração:}
 
-Note primeiramente que $\mathcal{O}(\sigma) \geq k$, pois $\forall i\in\llbracket 1, k-1\rrbracket$ temos $\sigma^{i}(x_1) \neq x_1$.
+Seja $\sigma\in\mathfrak{S}_X$ um $k$-ciclo. Tomemos, sem perda de generalidade, $\sigma\overset{def}{=}(x_1\;\ldots\;x_k)$.
 
-Perceba que $\sigma^{k-1}(x_1) = x_k \implies \sigma^{k}(x_1) = x_1$. 
+Note primeiramente que para qualquer $i\in\llbracket 1,k-1\rrbracket$ a aplicação de $\sigma$ iteradas $i$ vezes sobre o elemento $x_1$ resulta em $\sigma^{i}(x_1) = x_{i+1}$. Como $x_{i+1}\neq x_1$, deduzimos que $\sigma^i \neq \text{id}_X$ e, portanto, $\mathcal{O}(\sigma)\geq k$.
 
-Analogamente, realizamos o mesmo procedimento $\forall i\in\llbracket 2,k\rrbracket$.
+Mostremos que $\sigma^k(x) = x, \forall x\in X$. Provamos por disjunção de casos:
 
-Deduzimos que $\sigma^{k} = \text{id}_X \implies \mathcal{O}(\sigma) = k$.
+Suponha que $x_j\in \text{supp}(\sigma)$ para algum $j\in\llbracket 1,k\rrbracket$. Ora, neste caso, ao iterarmos a aplicação $\sigma$ $k$ vezes sobre $x_j$ temos $\sigma^k(x_j) = x_j$. 
+
+Suponha, agora, que $x\in X\setminus \text{supp}(\sigma)$. Ora, temos portanto trivialmente que $\sigma^k(x) = x$.
+
+Como $\sigma^k(x)=x$ para todo $x\in X$ e $k$ é o menor inteiro positivo com essa propriedade, deduzimos que $\mathcal{O}(\sigma) = k$. 
 
 \qed}
 
@@ -3897,7 +3896,7 @@ Note que, como $\gamma_i\gamma_j=\gamma_j\gamma_i,\;\forall i,j\in\llbracket 1, 
 \text{id}_X = \sigma^h = (\gamma_1\ldots\gamma_t)^h = \gamma_{1}^{h}\ldots\gamma_{t}^{h}
 \]
 
-Como os suportes de cada fator $\gamma_i$ de $\sigma$ são dois a dois disjuntos para todo $i\in\llbracket 1,t\rrbracket$, é necessário que $h$ seja um múltiplo de cada ordem $k_i$ para cada $\gamma_i$ simultaneamente.
+Como os suportes de cada componente $\gamma_i$ de $\sigma$ são dois a dois disjuntos para todo $i\in\llbracket 1,t\rrbracket$, é necessário que $h$ seja um múltiplo de cada ordem $k_i$ para cada $\gamma_i$ simultaneamente.
 
 Por definição, como $h$ é a ordem de $\sigma$, logo $h$ assume o menor múltiplo comum de cada ordem $k_i$.
 
