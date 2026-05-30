@@ -3774,144 +3774,13 @@ Denotamos tal $k$-ciclo como:
 Uma \textbf{transposição} é um $2$-ciclo.
 \end{definition}
 
-\begin{proposition}
-Seja $X$ um conjunto finito e não vazio tal que $\text{Card}(X) \geq 3$. 
-
-Então $Z(\mathfrak{S}_X) = \{\text{id}_X\}$.
-\end{proposition}
-
-{\color{red}
-\textbf{Demonstração:}
-
-Sejam $\sigma,\tau\in \mathfrak{S}_X$ e $(x,y) \in \left(X\setminus\text{supp}(\sigma)\right) \times \text{supp}(\sigma)$. Tomemos $\sigma\neq\text{id}_X$ e $\tau \overset{def}{=} (x\;y)$.
-
-Ora, temos então $y\notin\text{supp}(\tau\sigma\tau^{-1})$, pois $\tau\sigma\tau^{-1}(y) = y$. Portanto, temos diretamente que $\tau\sigma\tau^{-1} \neq \sigma \iff \tau\sigma \neq \sigma\tau$.
-
-Suponha, agora, que $X\setminus\text{supp}(\sigma) = \emptyset$. Procedemos por disjunção de casos. 
-
-Considere, inicialmente, que $\sigma$ possui um ciclo de comprimento maior ou igual a $3$ (como $\text{Card}(X)\geq 3$, então podemos afirmar que tal caso existe). 
-
-Tomemos, sem perda de generalidade, $\sigma \overset{def}{=} (x_1\;x_s\;x_k)\kappa$, onde $\kappa\in\mathfrak{S}_X$ e $\{x_1, x_s, x_k\}\cap\text{supp}(\kappa)=\emptyset$.
- 
-Definimos, ainda, $\tau \overset{def}{=} (x_1 \; x_s)$. Logo, temos que $\tau\sigma\tau^{-1}(x_k) = x_s \neq x_1$ e, portanto, $\tau\sigma\tau^{-1} \neq \sigma \iff \tau\sigma\neq\sigma\tau$.
-
-Suponha, agora, que $\sigma$ não possui nenhum ciclo de comprimento maior ou igual a $3$. Isto é, $\sigma$ é apenas composto de transposições de suportes dois a dois disjuntos (note que, no mínimo, duas transposições, visto que $\text{Card}(X) \geq 3$).
-
-Denotemos $\sigma \overset{def}{=} (x_1\; x_2)(x_3\; x_4)\kappa$, onde $\kappa\in\mathfrak{S}_X$ e $\{x_1, x_2, x_3, x_4\}\cap\text{supp}(\kappa)=\emptyset$.
-
-Tomemos, neste caso, $\tau = (x_1 \; x_3)$. Temos, portanto, $\tau\sigma\tau^{-1}(x_3) = x_2 \neq x_4 \implies \tau\sigma\tau^{-1} \neq \sigma$.
-
-Como para ambos os casos sempre podemos encontrar uma permutação $\tau$ tal que $\sigma$ não comuta, então deduzimos que $Z(\mathfrak{S}_X) = \{\text{id}_X\}$ para $\text{Card}(X) \geq 3$.
-
-\qed}
-
-\hypertarget{prop221}{}
-\begin{proposition}
-Seja $X \overset{def}{=}\{x_1,\ldots,x_n\}$ para $n\geq 2$. Logo, todo $k$-ciclo de $\mathfrak{S}_X$ é igual a um produto de $k-1$ transposições.
-\end{proposition}
-
-{\color{red}
-\textbf{Demonstração:}
-
-Tomemos $\sigma\in\mathfrak{S}_X$ tal que $\sigma = (x_1\;\ldots\;x_k)$ para $k\in\llbracket 2, n\rrbracket$.
-
-Perceba pela definição de $\sigma$ que $\sigma(x_1) = x_2,\;\sigma(x_2)=x_3,\;\ldots,\;\sigma(x_k)=x_1$.
-
-Logo, podemos reescrever $\sigma$ como $\sigma = \underbrace{(x_1\;x_k)(x_1\;x_{k-1})\ldots(x_1\;x_2)}_{k-1\;\;\text{transposições}}$.
-
-\qed}
-
-\begin{example}
-Tomemos alguns exemplos de permutações em $\mathfrak{S}_3$:
-
-\[
-\begin{pmatrix}
-1 & 2 & 3 \\
-2 & 1 & 3
-\end{pmatrix}
-= (1\; 2) = (2\; 1)
-\]
-
-\[
-\begin{pmatrix}
-1 & 2 & 3 \\
-1 & 3 & 2
-\end{pmatrix}
-= (2\; 3) = (3\; 2)
-\]
-
-\[
-\begin{pmatrix}
-1 & 2 & 3 \\
-2 & 3 & 1
-\end{pmatrix}
-= (1\; 2\; 3) = (2\; 3\; 1) = (3\;1\;2) = (1\; 2)(2\; 3).
-\]
-\end{example}
-
-\hypertarget{prop222}{}
-\begin{proposition}
-Seja $X \overset{def}{=} \{x_1,\ldots,x_n\}$ para $n\geq 2$ e $\sigma\in\mathfrak{S}_X$ um $k$-ciclo, onde $k\in\llbracket 2,n\rrbracket$. Então $\mathcal{O}(\sigma) = k$.
-\end{proposition}
-
-{\color{red}
-
-\textbf{Demonstração:}
-
-Seja $\sigma\in\mathfrak{S}_X$ um $k$-ciclo. Tomemos, sem perda de generalidade, $\sigma\overset{def}{=}(x_1\;\ldots\;x_k)$.
-
-Note primeiramente que para qualquer $i\in\llbracket 1,k-1\rrbracket$ a aplicação de $\sigma$ iteradas $i$ vezes sobre o elemento $x_1$ resulta em $\sigma^{i}(x_1) = x_{i+1}$. Como $x_{i+1}\neq x_1$, deduzimos que $\sigma^i \neq \text{id}_X$ e, portanto, $\mathcal{O}(\sigma)\geq k$.
-
-Mostremos que $\sigma^k(x) = x, \forall x\in X$. Provamos por disjunção de casos:
-
-Suponha que $x_j\in \text{supp}(\sigma)$ para algum $j\in\llbracket 1,k\rrbracket$. Ora, neste caso, ao iterarmos a aplicação $\sigma$ $k$ vezes sobre $x_j$ temos $\sigma^k(x_j) = x_j$. 
-
-Suponha, agora, que $x\in X\setminus \text{supp}(\sigma)$. Ora, temos portanto trivialmente que $\sigma^k(x) = x$.
-
-Como $\sigma^k(x)=x$ para todo $x\in X$ e $k$ é o menor inteiro positivo com essa propriedade, deduzimos que $\mathcal{O}(\sigma) = k$. 
-
-\qed}
-
-\hypertarget{prop223}{}
-\begin{proposition}
-Seja $X \overset{def}{=} \{x_1,\ldots,x_n\}$ para $n\geq 2$. Tomemos $\sigma\in\mathfrak{S}_X$ tal que: 
-
-\[
-\sigma = \gamma_1 \ldots \gamma_t, \; t\in\llbracket 1,n\rrbracket
-\]
-
-Onde $\gamma_i$ é um $k_i$-ciclo, $\forall i \in \llbracket 1, t\rrbracket$ e $\gamma_i,\gamma_j$ tem suportes dois a dois disjuntos $\forall i,j\in\llbracket 1,t\rrbracket, \; i\neq j$.
-
-Então, $\mathcal{O}(\sigma) = \text{mmc}(k_1,\ldots,k_t)$.
-\end{proposition}
-
-{\color{red}
-\textbf{Demonstração:}
-
-Seja $h\in\mathbb{Z}_{+}^{*}$ tal que $h\overset{def}{=}\mathcal{O}(\sigma)$, isto é, $\sigma^h = \text{id}_X$.
-
-Note que, como $\gamma_i\gamma_j=\gamma_j\gamma_i,\;\forall i,j\in\llbracket 1, t\rrbracket$ tal que $i\neq j$, pela \hyperlink{prop213}{\textbf{Proposição 2.1.3}} temos:
-
-\[
-\text{id}_X = \sigma^h = (\gamma_1\ldots\gamma_t)^h = \gamma_{1}^{h}\ldots\gamma_{t}^{h}
-\]
-
-Como os suportes de cada componente $\gamma_i$ de $\sigma$ são dois a dois disjuntos para todo $i\in\llbracket 1,t\rrbracket$, é necessário que $h$ seja um múltiplo de cada ordem $k_i$ para cada $\gamma_i$ simultaneamente.
-
-Por definição, como $h$ é a ordem de $\sigma$, logo $h$ assume o menor múltiplo comum de cada ordem $k_i$.
-
-Concluímos, portanto, que $\mathcal{O}(\sigma) = \text{mmc}(k_1,\ldots,k_t)$.
-
-\qed}
-
+\hypertarget{teo221}{}
 \begin{theorem}
-\color{red}
 Seja $X=\{x_1,\ldots,x_n\}$ para $n\geq 2$. Então toda permutação $\sigma\in\mathfrak{S}_X\setminus \{\text{id}_X\}$ pode ser decomposta em um produto de ciclos de suportes dois a dois disjuntos.
 
 Tal decomposição é única, exceto pela ordem em que os ciclos são escritos.
 \end{theorem}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Seja $\sigma\in\mathfrak{S}_X\setminus\{\text{id}_X\}$.
@@ -3956,12 +3825,133 @@ Como isso vale para qualquer elemento $x \in \text{supp}(\sigma)$, todo ciclo qu
 
 \qed
 
-\textit{Observação: note que para calcular a ordem de uma permutação $\sigma\in\mathfrak{S}_X$ basta decompor $\sigma$ em ciclos de suportes dois a dois disjuntos e calcular sua ordem via a regra vista na \hyperlink{prop223}{\textbf{Proposição 2.2.3}}}.
+\begin{proposition}
+Seja $X$ um conjunto finito e não vazio tal que $\text{Card}(X) \geq 3$. 
 
-}
+Então $Z(\mathfrak{S}_X) = \{\text{id}_X\}$.
+\end{proposition}
+
+\textbf{Demonstração:}
+
+Sejam $\sigma,\tau\in \mathfrak{S}_X$ e $(x,y) \in \left(X\setminus\text{supp}(\sigma)\right) \times \text{supp}(\sigma)$. Tomemos $\sigma\neq\text{id}_X$ e $\tau \overset{def}{=} (x\;y)$.
+
+Ora, temos então $y\notin\text{supp}(\tau\sigma\tau^{-1})$, pois $\tau\sigma\tau^{-1}(y) = y$. Portanto, temos diretamente que $\tau\sigma\tau^{-1} \neq \sigma \iff \tau\sigma \neq \sigma\tau$.
+
+Suponha, agora, que $X\setminus\text{supp}(\sigma) = \emptyset$. Procedemos por disjunção de casos. 
+
+Considere, inicialmente, que $\sigma$ possui um ciclo de comprimento maior ou igual a $3$ (como $\text{Card}(X)\geq 3$, então podemos afirmar que tal caso existe). 
+
+Tomemos, sem perda de generalidade, $\sigma \overset{def}{=} (x_1\;x_s\;x_k)\kappa$, onde $\kappa\in\mathfrak{S}_X$ e $\{x_1, x_s, x_k\}\cap\text{supp}(\kappa)=\emptyset$. Sabemos que $\sigma$ pode ser decomposto unicamente de tal forma pelo \hyperlink{teo221}{\textbf{Teorema 2.2.1}}.
+ 
+Definimos, ainda, $\tau \overset{def}{=} (x_1 \; x_s)$. Logo, temos que $\tau\sigma\tau^{-1}(x_k) = x_s \neq x_1$ e, portanto, $\tau\sigma\tau^{-1} \neq \sigma \iff \tau\sigma\neq\sigma\tau$.
+
+Suponha, agora, que $\sigma$ não possui nenhum ciclo de comprimento maior ou igual a $3$. Isto é, $\sigma$ é apenas composto de transposições de suportes dois a dois disjuntos (note que, no mínimo, duas transposições, visto que $\text{Card}(X) \geq 3$).
+
+Denotemos $\sigma \overset{def}{=} (x_1\; x_2)(x_3\; x_4)\kappa$, onde $\kappa\in\mathfrak{S}_X$ e $\{x_1, x_2, x_3, x_4\}\cap\text{supp}(\kappa)=\emptyset$.
+
+Tomemos, neste caso, $\tau = (x_1 \; x_3)$. Temos, portanto, $\tau\sigma\tau^{-1}(x_3) = x_2 \neq x_4 \implies \tau\sigma\tau^{-1} \neq \sigma$.
+
+Como para ambos os casos sempre podemos encontrar uma permutação $\tau$ tal que $\sigma$ não comuta, então deduzimos que $Z(\mathfrak{S}_X) = \{\text{id}_X\}$ para $\text{Card}(X) \geq 3$.
+
+\qed
+
+\hypertarget{prop221}{}
+\begin{proposition}
+Seja $X \overset{def}{=}\{x_1,\ldots,x_n\}$ para $n\geq 2$. Logo, todo $k$-ciclo de $\mathfrak{S}_X$ é igual a um produto de $k-1$ transposições.
+\end{proposition}
+
+\textbf{Demonstração:}
+
+Tomemos $\sigma\in\mathfrak{S}_X$ tal que $\sigma = (x_1\;\ldots\;x_k)$ para $k\in\llbracket 2, n\rrbracket$.
+
+Perceba pela definição de $\sigma$ que $\sigma(x_1) = x_2,\;\sigma(x_2)=x_3,\;\ldots,\;\sigma(x_k)=x_1$.
+
+Logo, podemos reescrever $\sigma$ como $\sigma = \underbrace{(x_1\;x_k)(x_1\;x_{k-1})\ldots(x_1\;x_2)}_{k-1\;\;\text{transposições}}$.
+
+\qed
 
 \begin{example}
-\color{red}
+Tomemos alguns exemplos de permutações em $\mathfrak{S}_3$:
+
+\[
+\begin{pmatrix}
+1 & 2 & 3 \\
+2 & 1 & 3
+\end{pmatrix}
+= (1\; 2) = (2\; 1)
+\]
+
+\[
+\begin{pmatrix}
+1 & 2 & 3 \\
+1 & 3 & 2
+\end{pmatrix}
+= (2\; 3) = (3\; 2)
+\]
+
+\[
+\begin{pmatrix}
+1 & 2 & 3 \\
+2 & 3 & 1
+\end{pmatrix}
+= (1\; 2\; 3) = (2\; 3\; 1) = (3\;1\;2) = (1\; 2)(2\; 3).
+\]
+\end{example}
+
+\hypertarget{prop222}{}
+\begin{proposition}
+Seja $X \overset{def}{=} \{x_1,\ldots,x_n\}$ para $n\geq 2$ e $\sigma\in\mathfrak{S}_X$ um $k$-ciclo, onde $k\in\llbracket 2,n\rrbracket$. Então $\mathcal{O}(\sigma) = k$.
+\end{proposition}
+
+\textbf{Demonstração:}
+
+Seja $\sigma\in\mathfrak{S}_X$ um $k$-ciclo. Tomemos, sem perda de generalidade, $\sigma\overset{def}{=}(x_1\;\ldots\;x_k)$.
+
+Note primeiramente que para qualquer $i\in\llbracket 1,k-1\rrbracket$ a aplicação de $\sigma$ iteradas $i$ vezes sobre o elemento $x_1$ resulta em $\sigma^{i}(x_1) = x_{i+1}$. Como $x_{i+1}\neq x_1$, deduzimos que $\sigma^i \neq \text{id}_X$ e, portanto, $\mathcal{O}(\sigma)\geq k$.
+
+Mostremos que $\sigma^k(x) = x, \forall x\in X$. Provamos por disjunção de casos:
+
+Suponha que $x_j\in \text{supp}(\sigma)$ para algum $j\in\llbracket 1,k\rrbracket$. Ora, neste caso, ao iterarmos a aplicação $\sigma$ $k$ vezes sobre $x_j$ temos $\sigma^k(x_j) = x_j$. 
+
+Suponha, agora, que $x\in X\setminus \text{supp}(\sigma)$. Ora, temos portanto trivialmente que $\sigma^k(x) = x$.
+
+Como $\sigma^k(x)=x$ para todo $x\in X$ e $k$ é o menor inteiro positivo com essa propriedade, deduzimos que $\mathcal{O}(\sigma) = k$. 
+
+\qed
+
+\hypertarget{prop223}{}
+\begin{proposition}
+Seja $X \overset{def}{=} \{x_1,\ldots,x_n\}$ para $n\geq 2$. Tomemos $\sigma\in\mathfrak{S}_X$ tal que: 
+
+\[
+\sigma = \gamma_1 \ldots \gamma_t, \; t\in\llbracket 1,n\rrbracket
+\]
+
+Onde $\gamma_i$ é um $k_i$-ciclo, $\forall i \in \llbracket 1, t\rrbracket$ e $\gamma_i,\gamma_j$ tem suportes dois a dois disjuntos $\forall i,j\in\llbracket 1,t\rrbracket, \; i\neq j$.
+
+Então, $\mathcal{O}(\sigma) = \text{mmc}(k_1,\ldots,k_t)$.
+\end{proposition}
+
+\textbf{Demonstração:}
+
+Seja $h\in\mathbb{Z}_{+}^{*}$ tal que $h\overset{def}{=}\mathcal{O}(\sigma)$, isto é, $\sigma^h = \text{id}_X$.
+
+Note que, como $\gamma_i\gamma_j=\gamma_j\gamma_i,\;\forall i,j\in\llbracket 1, t\rrbracket$ tal que $i\neq j$, pela \hyperlink{prop213}{\textbf{Proposição 2.1.3}} temos:
+
+\[
+\text{id}_X = \sigma^h = (\gamma_1\ldots\gamma_t)^h = \gamma_{1}^{h}\ldots\gamma_{t}^{h}
+\]
+
+Como os suportes de cada componente $\gamma_i$ de $\sigma$ são dois a dois disjuntos para todo $i\in\llbracket 1,t\rrbracket$, é necessário que $h$ seja um múltiplo de cada ordem $k_i$ para cada $\gamma_i$ simultaneamente.
+
+Por definição, como $h$ é a ordem de $\sigma$, logo $h$ assume o menor múltiplo comum de cada ordem $k_i$.
+
+Concluímos, portanto, que $\mathcal{O}(\sigma) = \text{mmc}(k_1,\ldots,k_t)$.
+
+\qed
+
+
+\begin{example}
 \textit{Exercício 5.41 da referência \cite{garcia_yves}}.
 
 \textbf{(a)} Seja $\sigma_{\text{(a)}} \in \mathfrak{S}_9$ tal que:
@@ -4014,13 +4004,11 @@ Como isso vale para qualquer elemento $x \in \text{supp}(\sigma)$, todo ciclo qu
 
 \hypertarget{corol221}{}
 \begin{corollary}
-\color{red}
 Seja $X$ um conjunto finito e não vazio tal que $\text{Card}(X) = n\in \mathbb{Z}_{\geq 2}$.
 
 Então, todo elemento de $\mathfrak{S}_X$ é igual a um produto de no máximo $n-1$ transposições.
 \end{corollary}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Seja $\sigma\in\mathfrak{S}_X$ uma permutação tal que:
@@ -4039,16 +4027,14 @@ Como possuímos $m$ ciclos dois a dois disjuntos, temos:
 \sum_{i=1}^{m} k_i - 1 = \sum_{i=1}^{m} k_i - \sum_{i=1}^{m} 1 = \sum_{i=1}^{m} k_i - m
 \]  
 
-Como $\sum_{i=1}^m k_i \leq n$ e $m\in\llbracket 1,\lfloor \frac{n}{2}\rfloor\rrbracket$, $\sigma$ pode se fatorar em no máximo $n-1$ transposições (de suportes não necessariamente disjuntos).
+Como $\sum_{i=1}^m k_i \leq n$, pelo Princípio da Casa de Pombos, e $m\in\llbracket 1,\lfloor \frac{n}{2}\rfloor\rrbracket$, $\sigma$ pode se fatorar em no máximo $n-1$ transposições (de suportes não necessariamente disjuntos).
 
 \qed
 
 \textit{Observação: diferentemente do \hyperlink{teo221}{\textbf{Teorema 2.2.1}}, a decomposição de uma permutação $\sigma\in\mathfrak{S}_X$ em transposições não é necessariamente única. Será mostrado na \hyperlink{prop224}{\textbf{Proposição 2.2.4}} que uma permutação pode também ser decomposta em \textbf{transposições elementares}.}
 
-}
 
 \begin{example}
-\color{red}
 Seja $\sigma \in \mathfrak{S}_8$ tal que:
 
 \[
@@ -4067,7 +4053,6 @@ Note que, seguindo a mesma estratégia de prova da \hyperlink{prop221}{\textbf{P
 \end{example}
 
 \begin{definition}
-\color{red}
 Seja $X = \{x_1,\ldots,x_n\}$.
 
 Uma \textbf{transposição elementar} é uma transposição $\tau\in\mathfrak{S}_X$ da forma:
@@ -4081,11 +4066,9 @@ Isto é, uma transposição cujas imagens são elementos consecutivos de $X$.
 
 \hypertarget{prop224}{}
 \begin{proposition}
-\color{red}
 Toda transposição de um conjunto finito e não vazio $X$ pode ser decomposta em transposições elementares de $X$.
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Seja $(x_i\;x_j)$ uma transposição de $X = \{x_1,\ldots, x_n\}$, onde $i<j$.
@@ -4125,10 +4108,7 @@ transposições de um conjunto finito e não vazio $X$ em transposições elemen
 (1\;3) = (1\;2)(2\;3)(1\;2) = (2\;3)(1\;2)(2\;3)
 \]
 
-}
-
 \begin{example}
-\color{red}
 Seja $\sigma \in \mathfrak{S}_5$ tal que:
 
 \[
@@ -4153,18 +4133,16 @@ Temos que:
 
 \hypertarget{corol222}{}
 \begin{corollary}
-\color{red}
 Seja $X$ um conjunto finito e não vazio tal que $\text{Card}(X) = n\in\mathbb{Z}_{\geq 2}$.
 
 Então, todo elemento de $\mathfrak{S}_X$ é igual a um produto de transposições elementares.
 \end{corollary}
 
-{\color{red}
 \textbf{Demonstração:}
 
 O resultado é consequência imediata da combinação do \hyperlink{corol221}{\textbf{Corolário 2.2.1}} e da \hyperlink{prop224}{\textbf{Proposição 2.2.4}}. 
 
-\qed}
+\qed
 
 \hypertarget{prop225}{}
 \begin{proposition}
