@@ -1838,46 +1838,51 @@ Seja $G$ um grupo finito e $H, K \leq G$. Então:
 \]
 \end{proposition}
 
-{\color{blue}
-
 \textbf{Demonstração:}
 
-Note que \( H \cap K \le H \) e \( H \cap K \le K \), então podemos escrever:
+Note que $H \cap K \leq H$ e $H \cap K \leq K$, então podemos escrever:
 
 \[
-H = \overset{\bullet}{\bigcup}_{1 \le i\le r} a_i (H \cap K), \quad \text{com } r = [H : H \cap K],
+H = \bigsqcup_{1 \leq i\leq r} a_i (H \cap K), \quad \text{com } r = [H : H \cap K],
 \]
 
 \[
-K = \overset{\bullet}{\bigcup}_{1 \le j \le s} (H \cap K) b_j, \quad \text{com } s = [K : H \cap K].
+K = \bigsqcup_{1 \leq j \leq s} (H \cap K) b_j, \quad \text{com } s = [K : H \cap K].
 \]
 
-Assim, o conjunto \( HK = \{ hk \mid h \in H,\, k \in K \} \) pode ser escrito como:
+Assim, o conjunto $HK = \{ hk \mid h \in H,\, k \in K \}$ pode ser escrito como:
+
 \[
 HK = \bigcup_{i=1}^r \bigcup_{j=1}^s a_i (H \cap K) b_j.
 \]
 
-Cada conjunto \( a_i (H \cap K) b_j \) possui \( |H \cap K| \) elementos. A união acima é disjunta: se
+Cada conjunto $a_i (H \cap K) b_j$ possui $\vert H \cap K\vert$ elementos. A união acima é disjunta: se
+
 \[
 a_i (H \cap K) b_j = a_{i'} (H \cap K) b_{j'},
 \]
-então, por multiplicações à esquerda e direita, deduz-se que \( i = i' \) e \( j = j' \), dado que os \( a_i \) e \( b_j \) representam classes distintas.
 
-Logo, temos \( rs \) conjuntos disjuntos de tamanho \( |H \cap K| \), e portanto:
+então, por multiplicações à esquerda e direita, deduz-se que $i = i'$ e $j = j'$, dado que os $a_i$ e $b_j$ representam classes distintas.
+
+Logo, temos $rs$ conjuntos disjuntos de tamanho $\vert H \cap K\vert$, e portanto:
+
 \[
-\text{Card}(HK) = rs \cdot |H \cap K| = [H : H \cap K][K : H \cap K] \cdot |H \cap K|.
+\text{Card}(HK) = rs \cdot \vert H \cap K\vert = [H : H \cap K][K : H \cap K] \cdot \vert H \cap K\vert.
 \]
 
 Mas
+
 \[
-|H| = [H : H \cap K] \cdot |H \cap K|,\quad |K| = [K : H \cap K] \cdot |H \cap K|,
-\]
-e portanto:
-\[
-\text{Card}(HK) = \frac{|H||K|}{|H \cap K|}.
+\vert H\vert = [H : H \cap K] \cdot \vert H \cap K\vert,\quad \vert K\vert = [K : H \cap K] \cdot \vert H \cap K\vert,
 \]
 
-\qed}
+e portanto:
+
+\[
+\text{Card}(HK) = \frac{\vert H\vert \vert K\vert}{\vert H \cap K\vert}.
+\]
+
+\qed
 
 \begin{proposition}
 Seja $G$ um grupo e $H, K\leq G$ tal que $HK \leq G$. Então: 
@@ -4004,7 +4009,7 @@ Concluímos, portanto, que $\mathcal{O}(\sigma) = \text{mmc}(k_1,\ldots,k_t)$.
 
 \hypertarget{corol221}{}
 \begin{corollary}
-Seja $X$ um conjunto finito e não vazio tal que $\text{Card}(X) = n\in \mathbb{Z}_{\geq 2}$.
+Seja $X$ um conjunto finito e não vazio tal que $\text{Card}(X) = n\in \mathbb{Z}_{\geq 3}$.
 
 Então, todo elemento de $\mathfrak{S}_X$ é igual a um produto de no máximo $n-1$ transposições.
 \end{corollary}
@@ -4031,8 +4036,12 @@ Como $\sum_{i=1}^m k_i \leq n$, pelo Princípio da Casa de Pombos, e $m\in\llbra
 
 \qed
 
-\textit{Observação: diferentemente do \hyperlink{teo221}{\textbf{Teorema 2.2.1}}, a decomposição de uma permutação $\sigma\in\mathfrak{S}_X$ em transposições não é necessariamente única. Será mostrado na \hyperlink{prop224}{\textbf{Proposição 2.2.4}} que uma permutação pode também ser decomposta em \textbf{transposições elementares}.}
+\textit{Observações:} 
 
+\begin{itemize}
+  \item \textit{Diferentemente do \hyperlink{teo221}{\textbf{Teorema 2.2.1}}, a decomposição de uma permutação $\sigma\in\mathfrak{S}_X$ em transposições não é necessariamente única. Será mostrado na \hyperlink{prop224}{\textbf{Proposição 2.2.4}} que uma permutação pode também ser decomposta em \textbf{transposições elementares};}
+  \item \textit{Note que, para o caso $n = 2$, temos que o resultado é trivialmente válido para qualquer elemento do grupo simétrico, com exceção do elemento neutro, que é representado por no mínimo duas transposições: $(x_1\; x_2)(x_1\; x_2) = \text{id}_X$}.
+\end{itemize}
 
 \begin{example}
 Seja $\sigma \in \mathfrak{S}_8$ tal que:
@@ -4162,7 +4171,7 @@ Então, $\forall \sigma \in \mathfrak{S}_X$, temos:
 Seja $x \in X \setminus \{\sigma(x_i),\;\sigma(x_j)\}$. Temos diretamente que:
 
 \[
-\sigma^{-1}(x) = \underbrace{x'}_{x'\in X\setminus \{x_i,x_j\}} \implies \bigl((x_i\;x_j)\sigma^{-1}\bigr)(x) = x' \implies \bigl(\sigma(x_i\;x_j)\sigma^{-1}\bigr)(x) = \sigma(x') = x
+\sigma^{-1}(x) = \underbrace{x'}_{\in X\setminus \{x_i,x_j\}} \implies \bigl((x_i\;x_j)\sigma^{-1}\bigr)(x) = x' \implies \bigl(\sigma(x_i\;x_j)\sigma^{-1}\bigr)(x) = \sigma(x') = x
 \]
 
 Tomemos agora $x = \sigma(x_i)$, temos que:
@@ -4181,7 +4190,7 @@ Concluímos que $\sigma (x_i\; x_j) \sigma^{-1} = (\sigma(x_i)\; \sigma(x_j))$.
 \textit{Observação: perceba que a proposição vale também para quaisquer $r$-ciclos tal que $r\leq n$. Basta realizar de forma indutiva em $r$ o mesmo procedimento construtivo. Logo, temos:}
 
 \[
-\sigma(x_1\;x_2\;\ldots\;x_r)\sigma^{-1} = (\sigma(x_1)\;\sigma(x_2\;\ldots\;\sigma(x_r))
+\sigma(x_1\;x_2\;\ldots\;x_r)\sigma^{-1} = (\sigma(x_1)\;\sigma(x_2)\;\ldots\;\sigma(x_r))
 \]
 
 \textit{Isto é, quaisquer ciclos em $\mathfrak{S}_X$ são conjugados a outro ciclo se eles têm o mesmo comprimento.}
@@ -4515,7 +4524,7 @@ De forma simétrica, o deslize vertical para cima de uma peça arbitrária no ta
 
 Tomando $i$ sendo a posição inicial da peça a ser movida na permutação $\sigma\in\mathfrak{Q}_8$, onde $i\in\llbracket 3, 8\rrbracket$, realizamos o produto $(i\;i-1\;i-2)\sigma$.
 
-Como $\varepsilon(\text{id}_{\mathfrak{Q}_8}) = 1$ e quaisquer permutações $\sigma\in\mathfrak{Q}_8$ são geradas a partir de produtos de $3$-ciclos, concluímos que $\mathfrak{Q}_8 \subseteq \mathfrak{A}_8$.
+Como $\varepsilon(\text{id}_{\mathfrak{Q}_8}) = 1$ e quaisquer permutações $\sigma\in\mathfrak{Q}_8$ são geradas a partir de produtos de $3$-ciclos, concluímos que $\mathfrak{Q}_8$ só pode ser composto de permutações de assinatura igual a $1$.
 
 \qed}
 
