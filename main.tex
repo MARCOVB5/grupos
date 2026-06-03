@@ -788,6 +788,8 @@ De forma geral, dado um grupo $G$, para determinarmos um subgrupo $H$ gerado por
     Seja $G$ um grupo. \textbf{$G$ é chamado de grupo cíclico quando ele pode ser gerado por um único elemento $x \in G$.}
 \end{definition}
 
+\textit{Observação: caso um grupo possa ser gerado por mais de um elemento, digamos $n$ elementos, então dizemos que o grupo é $n$-gerado}.
+
 \begin{example}
     $\mathbb{Z} = \langle 1\rangle, \; \mathbb{Z}/n\mathbb{Z} = \langle \bar{1}\rangle, \; \mathbb{U} = \langle e^{\frac{2\pi i}{n}}\rangle$.
 \end{example}
@@ -4155,7 +4157,6 @@ O resultado é consequência imediata da combinação do \hyperlink{corol221}{\t
 
 \hypertarget{prop225}{}
 \begin{proposition}
-\color{red}
 Sejam $X = \{x_1,\ldots,x_n\}$ tal que $n\geq 2$ e $(x_i\;x_j)$ uma transposição arbitrária de $X$.
 
 Então, $\forall \sigma \in \mathfrak{S}_X$, temos:
@@ -4165,7 +4166,6 @@ Então, $\forall \sigma \in \mathfrak{S}_X$, temos:
 \]
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Seja $x \in X \setminus \{\sigma(x_i),\;\sigma(x_j)\}$. Temos diretamente que:
@@ -4195,9 +4195,6 @@ Concluímos que $\sigma (x_i\; x_j) \sigma^{-1} = (\sigma(x_i)\; \sigma(x_j))$.
 
 \textit{Isto é, quaisquer ciclos em $\mathfrak{S}_X$ são conjugados a outro ciclo se eles têm o mesmo comprimento.}
 
-}
-
-
 
 \begin{theorem}
 \color{red}
@@ -4216,7 +4213,7 @@ Isto é, $\forall \sigma \in \mathfrak{S}_X, \; \exists a_1,\;\ldots, a_p,\;b_1,
 {\color{red}
 \textbf{Demonstração:}
 
-A partir do \hyperlink{corol222}{\textbf{Corolário 2.2.2}}, basta mostrar que o produto de $\tau$ e $\gamma$ formam uma transposição elementar.
+A partir do \hyperlink{corol222}{\textbf{Corolário 2.2.2}}, basta mostrar que é possível formar uma transposição elementar a partir de um produto de $\tau$ e $\gamma$.
 
 Ora, pela \hyperlink{prop225}{\textbf{Proposição 2.2.5}} temos diretamente que:
 
@@ -4228,7 +4225,7 @@ Portanto, concluímos que $\mathfrak{S}_X$ pode ser gerado a partir de apenas $\
 
 \qed
 
-\textit{Observação: a partir do resultado acima deduzimos que $\mathfrak{S}_X$ é um grupo dicíclico.}
+\textit{Observação: a partir do resultado acima deduzimos que $\mathfrak{S}_X$ é um grupo $2$-gerado.}
 
 }
 
