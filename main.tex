@@ -438,6 +438,7 @@ Sabemos que $H \subseteq G$, logo, se $h_1 \cdot h_2 \in H \Longrightarrow h_1 \
     $G$ e $\{e\}$ são subgrupos \textit{triviais} de $G$.
 \end{example}
 
+\hypertarget{grupoespecial}{}
 \begin{example}
 Seja $n\in \mathbb{N}^*$, 
 
@@ -2233,6 +2234,7 @@ Portanto, deduzimos que:
 
 \qed
 
+\hypertarget{grupoespecial2}{}
 \begin{example}
 Seja \( n \in \mathbb{N}^* \). O núcleo do homomorfismo 
 \[
@@ -3458,6 +3460,120 @@ Deduzimos, finalmente, que $\mathcal{K}$ é o menor grupo não cíclico e, porta
 \qed
 
 \section{Produto Semidireto de Grupos}
+
+\begin{definition}
+\color{red}
+
+Seja $G$ um grupo e $H,K\leq G$. Dizemos que \textbf{$G$ é o produto semidireto interno de $H$ e $K$ se:}
+
+\begin{itemize}
+  \item $G = HK$;
+  \item $H \trianglelefteq G$;
+  \item $H\cap K = \{e\}$.
+\end{itemize}
+
+Caso $G$, $H$ e $K$ satisfaçam as condições acima, denotamos:
+
+\[
+G = H \rtimes K
+\]
+
+\end{definition}
+
+{\color{red}
+\textit{Observações:}
+
+\begin{itemize}
+  \item \textit{Note que, diferentemente da \hyperlink{def172}{\textbf{Definição 1.7.2}}, definimos o produto semidireto interno apenas entre $2$ subgrupos de $G$. Tal escolha é motivada pela natureza assimétrica do produto semidireto, ao contrário da simetria do produto direto. Entretanto é possível estender essa estrutura de forma indutiva para $n$ subgrupos de $G$. Nesse caso, obtemos um produto semidireto interno onde agrupamos os subgrupos passo a passo e cada novo subgrupo interage com o bloco formado pelos anteriores};
+  \item \textit{Caso $K\trianglelefteq G$, então denotaríamos $G = K\rtimes H$ ou $G = H\ltimes K$}.
+\end{itemize}
+
+}
+
+\begin{example}
+\color{red}
+
+Tomemos os grupos $GL_2(\mathbb{R})$ e $SL_2(\mathbb{R})$. Sabemos, a partir dos exemplos \hyperlink{grupoespecial}{\textbf{1.3.3}} e \hyperlink{grupoespecial2}{\textbf{1.6.6}} que $SL_2(\mathbb{R}) \trianglelefteq GL_2(\mathbb{R})$. Denotemos $H\overset{def}{=} SL_2(\mathbb{R})$ \\[2.5pt]
+
+Tomemos também $K \overset{def}{=} \left\{M(a) \; : \; M(a) = \begin{pmatrix}
+a & 0 \\
+0 & 1
+\end{pmatrix},\; a\neq 0 \right\}$. Note que $K\leq G$, mas $K \not\trianglelefteq G$, pois:
+
+\[
+\underbrace{
+\begin{pmatrix}
+  1 & 0 \\
+  1 & 1
+\end{pmatrix}}_{\overset{def}{=} M \in GL_2(\mathbb{R})}
+\begin{pmatrix}
+  2 & 0\\
+  0 & 1
+\end{pmatrix}
+\underbrace{
+\begin{pmatrix}
+  1 & 0\\
+  -1 & 1
+\end{pmatrix}}_{= M^{-1} \in GL_2(\mathbb{R})}
+= 
+\begin{pmatrix}
+  2 & 0\\
+  1 & 1
+\end{pmatrix}
+\notin K.
+\]
+
+Porém, note que $GL_2(\mathbb{R}) = HK$, uma vez que:
+
+Sendo $M\in GL_2(\mathbb{R})$ e $M\left(\frac{1}{a}\right)\in K$, temos,
+
+\[
+M\cdot M\left(\frac{1}{a}\right)\in H,\;\;\text{pois  } \text{det}\left(M\cdot M\left(\frac{1}{a}\right)\right) = 1
+\]
+
+Logo $\exists S\in H$ tal que $M\cdot M\left(\frac{1}{a}\right) = S$, onde $M = \underbrace{S}_{\in H} \cdot \underbrace{M(a)}_{\in K}$.
+
+Note ainda que a interseção é evidentemente trivial:
+
+\[
+H\cap K = \left\{
+\begin{pmatrix}
+  1 & 0 \\
+  0 & 1
+\end{pmatrix}
+\right\}
+\]
+
+Concluímos que $GL_2(\mathbb{R}) = H\rtimes K$.
+
+\end{example}
+
+\begin{proposition}
+\color{red}
+
+Seja $G$ um grupo e $H, K\leq G$ tal que $G = H\rtimes K$. Se $g\in G$ é tal que $g = hk = h'k'$, onde $h,h'\in H$ e $k,k'\in K$, então $h=h'$ e $k=k'$. 
+\end{proposition}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+Seja $g\in G$ tal que $g = hk = h'k'$ para $h,h'\in H$ e $k,k'\in K$. Note que:
+
+\[
+hk = h'k' \iff {h'}^{-1}h = k'k^{-1} \iff {h'}^{-1}h\in K \;\; \text{e}\;\; k'k^{-1}\in H
+\]
+
+Ora, como $H\cap K=\{e\}$, temos ${h'}^{-1}h = e \iff h = h'$ e $k'k^{-1} = e \iff k = k'$.
+
+\qed}
+
+\begin{definition}
+\color{red}
+
+
+
+\end{definition}
 
 \chapter{Grupo Simétrico}
 
