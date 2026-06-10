@@ -3615,8 +3615,12 @@ H \rtimes_{\theta} K.
 
 {\color{red}
 
-\textit{Observação: quando livre de ambiguidade, a operação ''$\cdot$'' será omitida}.
+\textit{Observações:} 
 
+\begin{itemize}
+  \item \textit{Quando livre de ambiguidade, a operação ''$\cdot$'' será omitida};
+  \item \textit{Note que, caso $\theta$ seja trivial, então $H\rtimes_\theta K = H\times K$}.
+\end{itemize}
 }
 
 
@@ -3711,6 +3715,37 @@ Portanto, $\psi$ é um isomorfismo de grupos e $G\cong H\rtimes_{\theta} K$.
 
 \qed}
 
+\begin{proposition}
+\color{red}
+
+Sejam $H$ e $K$ grupos e $\theta: K\to \text{Aut}(H)$ um homomorfismo. Se $\theta$ é não trivial, então $H\rtimes_\theta K$ é não abeliano.
+\end{proposition}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+Suponha que $H\rtimes_\theta K$ seja abeliano. Por contrapositiva, mostremos que $\theta$ é trivial.
+
+Como $(h_1,k_1)(h_2,k_2) = (h_2,k_2)(h_1,k_1)$ para quaisquer $h_1,h_2\in H$ e $k_1,k_2\in K$, temos então, para um dado $(h,k)\in H\times K$:
+
+\[
+(h, e_K)(e_H, k) = (e_H, k)(h, e_K) \iff (h\theta_{e_K}(e_H), k) = (\theta_{k}(h), k) \iff \theta_{k}(h) = h
+\]
+
+Concluímos, portanto, que $\theta$ é trivial.
+
+\qed}
+
+
+\begin{example}
+\color{red}
+
+
+\end{example}
+
+
+\section{Sequências Exatas Curtas}
 
 \chapter{Grupo Simétrico}
 
