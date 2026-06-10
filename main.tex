@@ -2796,6 +2796,7 @@ Seja $G$ um grupo.
 Denotamos o \textbf{conjunto de todos os automorfismos de $G$ por $\operatorname{Aut}(G)$.}
 \end{definition}
 
+\hypertarget{prop167}{}
 \begin{proposition}
 Seja $G$ um grupo, então $(\operatorname{Aut}(G), \circ)$ é um grupo, onde $\circ$ denota a composição usual de funções.
 \end{proposition}
@@ -3548,6 +3549,7 @@ Concluímos que $GL_2(\mathbb{R}) = H\rtimes K$.
 
 \end{example}
 
+\hypertarget{prop181}{}
 \begin{proposition}
 \color{red}
 
@@ -3566,14 +3568,149 @@ hk = h'k' \iff {h'}^{-1}h = k'k^{-1} \iff {h'}^{-1}h\in K \;\; \text{e}\;\; k'k^
 
 Ora, como $H\cap K=\{e\}$, temos ${h'}^{-1}h = e \iff h = h'$ e $k'k^{-1} = e \iff k = k'$.
 
-\qed}
+\qed
 
+Note que, diferentemente do produto direto interno, não existe a comutatividade entre elementos de subgrupos distintos. Isso ocorre pois tal resultado dependia fortemente da normalidade de ambos os subgrupos. Além disso, note que, sendo $g_1, g_2 \in G$ temos pela \hyperlink{prop181}{\textbf{Proposição 1.8.1}} que tais elementos são decompostos de forma única em:
+
+\[
+g_1 = h_1k_1,\; h_1\in H, \; k_1\in K
+\]
+
+\[
+g_2 = h_2k_2,\; h_2\in H, \; k_2\in K
+\]
+
+Logo, como $g_1g_2 \in G$, temos também que tal elemento deve ser decomposto como $g_1g_2 = h'k'$, para $h'\in H$ e $k'\in K$.
+
+Note que:
+
+\[
+g_1g_2 = h_1k_1h_2k_2 = h_1(k_1 h_2)k_2 = h_1 (k_1 h_2 k_{1}^{-1} k_1)k_2 = (h_1 k_1 h_2 k_{1}^{-1})(k_1 k_2)
+\]
+
+Como $H\trianglelefteq G$, então temos, evidentemente, que $k_1 h_2 k_{1}^{-1} \in H$. Logo, tomando $h'\overset{def}{=} h_1 k_1 h_2 k_{1}^{-1}$ e $k'\overset{def}{=} k_1k_2$, temos o resultado esperado. Ainda, perceba que, tal manipulação gera naturalmente um automorfismo interno de $H$. 
+
+Tal observação é a motivação principal da definição a seguir:
+}
+
+\hypertarget{def182}{}
 \begin{definition}
 \color{red}
 
+Sejam $H$ e $K$ grupos e $\theta : K\to \text{Aut}(H)$ um homomorfismo de grupos. Definimos o \textbf{produto semidireto externo de $H$ e $K$} como o conjunto $H\times K$ munido da seguinte operação:
 
+\[
+(h_1,k_1)\cdot(h_2,k_2) \overset{def}{=} (h_1 \theta_{k_1}(h_2), k_1k_2)
+\]
+
+Onde $h_1,h_2\in H, k_1,k_2 \in K$ e $\theta_{k_1} \in \text{Aut}(H)$.
+
+Denotamos, comumente:
+
+\[
+H \rtimes_{\theta} K.
+\]
 
 \end{definition}
+
+{\color{red}
+
+\textit{Observação: quando livre de ambiguidade, a operação ''$\cdot$'' será omitida}.
+
+}
+
+
+\begin{proposition}
+\color{red}
+A partir das notações da \hyperlink{def182}{\textbf{Definição 1.8.2}}, temos que o produto semidireto externo de $H$ e $K$ é um grupo.
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Sejam $H$ e $K$ grupos e consideremos seu produto semidireto externo $H\rtimes_{\theta} K$, onde $\theta: K\to \text{Aut}(H)$. Perceba que, por definição, $\theta$ é um homomorfismo de grupos, e, portanto, para quaisquer $k_1,k_2\in K$ temos que $\theta_{k_1k_2} = \theta_{k_1}\theta_{k_2}$.
+
+Note que, de fato, a operação definida é uma lei de composição interna por definição.
+
+Além disso, temos evidentemente que o elemento neutro é dado por $e\overset{def}{=} (e_H, e_K)$, onde $e_H$ denota o elemento neutro do grupo $H$ e $e_K$ denota o elemento neutro do grupo $K$.
+
+Tomemos $(h,k)\in H\times K$, note que seu elemento inverso é dado por:
+
+\[
+(h,k)^{-1}\overset{def}{=} (\theta_{k^{-1}}(h^{-1}), k^{-1})
+\]
+
+De fato, temos:
+
+\[
+\begin{aligned}
+(h,k)(h,k)^{-1} &= (h,k)(\theta_{k^{-1}}(h^{-1}), k^{-1}) \\
+&= (h\theta_{k}(\theta_{k^{-1}}(h^{-1})), e_K) \\
+&= (h\theta_{e_K}(h^{-1}), e_K) \\
+&= (hh^{-1}, e_K) \\
+&= (e_H, e_K)
+\end{aligned}
+\]
+
+Por fim, sendo $h_1,h_2,h_3\in H$ e $k_1,k_2,k_3\in K$ temos que:
+
+\[
+\begin{aligned}
+((h_1,k_1)(h_2,k_2))(h_3,k_3) &= (h_1\theta_{k_1}(h_2), k_1k_2)(h_3,k_3) \\
+&= ((h_1\theta_{k_1}(h_2))\theta_{k_1k_2}(h_3), (k_1k_2)k_3) \\
+&= (h_1(\theta_{k_1}(h_2)\theta_{k_1k_2}(h_3)), k_1(k_2k_3)) \\
+&= (h_1(\theta_{k_1}(h_2)\theta_{k_1}(\theta_{k_2}(h_3))), k_1(k_2k_3)) \\
+&= (h_1\theta_{k_1}(h_2\theta_{k_2}(h_3)), k_1(k_2k_3)) \\
+&= (h_1, k_1)(h_2\theta_{k_2}(h_3), k_2k_3) \\
+&= (h_1,k_1)((h_2,k_2)(h_3,k_3))
+\end{aligned}
+\]
+
+Concluímos, portanto, que $H\rtimes_{\theta} K$ é um grupo.
+
+\qed}
+
+\begin{theorem}
+\color{red}
+Seja $G$ um grupo e $H,K\leq G$ tal que $G = H\rtimes K$. Logo, $G \cong H\rtimes_{\theta} K$, onde $\theta: K\to \text{Aut}(H)$ é definida por $\theta_k(h) = khk^{-1}$.
+\end{theorem}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+Seja $\psi$ definida da seguinte forma:
+
+\[
+\psi: 
+\begin{array}{c}
+G \to H\rtimes_{\theta} K \\
+hk \mapsto (h,k)
+\end{array}
+\]
+
+Mostremos que $\psi$ é um isomorfismo de grupos. 
+
+Note primeiramente que $\psi$ é, por construção, uma função sobrejetora, uma vez que $g = hk$ é escrito de forma única.
+
+Tomemos $h_1,h_2\in H$ e $k_1,k_2\in K$. Perceba que:
+
+\[
+\begin{aligned}
+\psi(h_1k_1h_2k_2) &= \psi((h_1k_1h_2k_{1}^{-1})(k_1k_2)) \\
+&= (h_1k_1h_2k_{1}^{-1}, k_1k_2) \\
+&= (h_1\theta_{k_1}(h_2), k_1k_2) \\
+&= (h_1,k_1)(h_2,k_2) \\
+&= \psi(h_1k_1)\psi(h_2k_2)
+\end{aligned}
+\]
+
+Além disso, como temos evidentemente $\ker{\psi} = \{e\}$, concluímos que $\psi$ é injetora.
+
+Portanto, $\psi$ é um isomorfismo de grupos e $G\cong H\rtimes_{\theta} K$.
+
+\qed}
+
 
 \chapter{Grupo Simétrico}
 
