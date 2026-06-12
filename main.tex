@@ -4485,12 +4485,11 @@ Concluímos que $\sigma (x_i\; x_j) \sigma^{-1} = (\sigma(x_i)\; \sigma(x_j))$.
 
 
 \begin{theorem}
-\color{red}
 Seja $X = \{x_1, x_2,\ldots,x_n\}$ tal que $n \geq 3$.
 
 Então, o grupo $\mathfrak{S}_X$ é gerado por $\tau = (x_1\;x_2)$ e $\gamma = (x_1\;x_2\;\ldots\;x_n)$.
 
-Isto é, $\forall \sigma \in \mathfrak{S}_X, \; \exists a_1,\;\ldots, a_p,\;b_1,\ldots,b_p\in \mathbb{Z}$ tal que:
+Isto é, $\forall \sigma \in \mathfrak{S}_X, \; \exists a_1,\;\ldots, a_p,\;b_1,\ldots,b_p\in \mathbb{Z}$, onde $a_1 = 0$ e $a_2,\ldots,a_p = 1$ tal que:
 
 \[
 \sigma = \prod_{i=1}^{p} \tau^{a_i}\gamma^{b_i}
@@ -4498,7 +4497,6 @@ Isto é, $\forall \sigma \in \mathfrak{S}_X, \; \exists a_1,\;\ldots, a_p,\;b_1,
 
 \end{theorem}
 
-{\color{red}
 \textbf{Demonstração:}
 
 A partir do \hyperlink{corol222}{\textbf{Corolário 2.2.2}}, basta mostrar que é possível formar uma transposição elementar a partir de um produto de $\tau$ e $\gamma$.
@@ -4506,7 +4504,7 @@ A partir do \hyperlink{corol222}{\textbf{Corolário 2.2.2}}, basta mostrar que �
 Ora, pela \hyperlink{prop225}{\textbf{Proposição 2.2.5}} temos diretamente que:
 
 \[
-\gamma^{k}\tau\gamma^{-k} = (x_{k+1}\; x_{k+2}),\; \forall k\in \llbracket 0, n-2 \rrbracket
+\gamma^{k}\tau\gamma^{-k} = \gamma^k (x_1\; x_2)\gamma^{-k} = (\gamma^{k}(x_1)\; \gamma^{k}(x_2)) = (x_{k+1}\; x_{k+2}),\; \forall k\in \llbracket 0, n-2 \rrbracket
 \]
 
 Portanto, concluímos que $\mathfrak{S}_X$ pode ser gerado a partir de apenas $\tau$ e $\gamma$.
@@ -4515,22 +4513,18 @@ Portanto, concluímos que $\mathfrak{S}_X$ pode ser gerado a partir de apenas $\
 
 \textit{Observação: a partir do resultado acima deduzimos que $\mathfrak{S}_X$ é um grupo $2$-gerado.}
 
-}
-
 \section{Assinatura}
 
 \begin{definition}
-\color{red}
 Sejam $X$ um conjunto ordenado, finito e não vazio e uma permutação $\sigma\in\mathfrak{S}_X$.
 
-Chamamos de \textbf{inversão em $\sigma$} o par ordenado $(x,y)\in X^2$ tq. $x<y$ e $\sigma(x) > \sigma(y)$.
+Chamamos de \textbf{inversão em $\sigma$} o par ordenado $(x,y)\in X^2$ tal que $x<y$ e $\sigma(x) > \sigma(y)$.
 
 Denotamos o número de inversões de uma dada permutação $\sigma$ como $\mathscr{I}(\sigma)$.
 \end{definition}
 
 \hypertarget{ex231}{}
 \begin{example}
-\color{red}
 Seja $\sigma\in\mathfrak{S}_{9}$ tal que:
 
 \[
@@ -4550,28 +4544,22 @@ Contando cada par de inversões partindo do primeiro elemento temos que:
 
 \hypertarget{def232}{}
 \begin{definition}
-\color{red}
 Sejam $X$ um conjunto ordenado, finito e não vazio e uma permutação $\sigma\in\mathfrak{S}_X$.
 
 Definimos a \textbf{assinatura de $\sigma$} como o resultado da função $\varepsilon(\sigma) \overset{def}{=} (-1)^{\mathscr{I}(\sigma)}$.
 
 \end{definition}
 
-{\color{red}
+\textit{Observação: note que, embora a definição de inversão dependa de uma relação de ordem em $X$, a assinatura $\varepsilon(\sigma)$ é uma propriedade intrínseca da permutação. Se $X$ for um conjunto finito qualquer, podemos sempre munir $X$ de uma ordem total arbitrária para calcular $\varepsilon(\sigma)$; o valor obtido será independente da ordem escolhida, como será mostrado posteriormente.}
 
-\textit{Observação: note que, embora a definição de inversão dependa de uma relação de ordem em $X$, a assinatura $\varepsilon(\sigma)$ é uma propriedade intrínseca da permutação. Se $X$ for um conjunto finito qualquer, podemos sempre munir $X$ de uma ordem total arbitrária para calcular $\varepsilon(\sigma)$; o valor obtido será independente da ordem escolhida.}
-
-}
 
 \begin{definition}
-\color{red}
 A partir das notações da \hyperlink{def232}{\textbf{Definição 2.3.2}}, uma permutação $\sigma\in\mathfrak{S}_X$ é dita \textbf{par} se $\varepsilon(\sigma) = 1$.
 
 Simetricamente, uma permutação $\sigma\in\mathfrak{S}_X$ é dita \textbf{ímpar} se $\varepsilon(\sigma) = -1$.
 \end{definition}
 
 \begin{example}
-\color{red}
 Retomando o \hyperlink{ex231}{\textbf{Exemplo 2.3.1}} temos diretamente que $\sigma$ é uma permutação de assinatura igual à $-1$ e é, portanto, ímpar:
 
 \[
