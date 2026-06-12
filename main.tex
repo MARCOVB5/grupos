@@ -3745,6 +3745,106 @@ Concluímos, portanto, que $\theta$ é trivial.
 \end{example}
 
 
+\hypertarget{teo182}{}
+\begin{theorem}
+\color{red}
+
+Sejam $H$ e $K$ grupos e $\theta,\delta : K\to \text{Aut}(H)$ dois homomorfismos. Se existir $\sigma\in\text{Aut}(H)$ tal que:
+
+\[
+\delta_k = \sigma\theta_k\sigma^{-1},\; \forall k\in K
+\]
+
+Então, 
+
+\[
+H\rtimes_{\theta} K \cong H\rtimes_{\delta} K.
+\]
+
+\end{theorem}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Defina $\varphi$ a função dada por:
+
+\[
+\varphi: 
+\begin{array}{r c l}
+	H\rtimes_{\theta} K &\to & H\rtimes_{\delta} K \\
+	(h,k) &\mapsto & (\sigma(h), k)
+\end{array}
+\]
+
+Mostremos que $\varphi$ é um isomorfismo de grupos.
+
+Note, primeiramente, que $\varphi$ é de fato função e é bijetora por construção, pelo fato de $\sigma$ ser um automorfismo de $H$. 
+
+Sejam $(h_1,k_1),(h_2,k_2)\in H\rtimes_{\theta} K$, temos:
+
+\[
+\begin{aligned}
+\varphi((h_1,k_1)(h_2,k_2)) &= \varphi((h_1\theta_{k_1}(h_2), k_1k_2)) = (\sigma(h_1\theta_{k_1}(h_2)), k_1k_2) \\
+&= (\sigma(h_1)\sigma(\theta_{k_1}(h_2)), k_1k_2) = (\sigma(h_1)\delta_{k_1}(\sigma_{k_1}(h_2)), k_1k_2) \\
+&= (\sigma(h_1), k_1)(\sigma(h_2), k_2) = \varphi((h_1,k_1))\varphi((h_2,k_2))
+\end{aligned}
+\]
+
+Concluímos, portanto, que $\varphi$ é um isomorfismo de grupos e,
+
+\[
+H\rtimes_{\theta} K \cong H\rtimes_{\delta} K.
+\]
+
+\qed}
+
+\begin{theorem}
+\color{red}
+
+Sejam $H$ e $K$ grupos e $\theta,\delta : K \to \text{Aut}(H)$ homomorfismos. Se existir $\beta\in \text{Aut}(K)$ tal que $\theta = \delta\beta$, então:
+
+\[
+H \rtimes_{\theta} K \cong H\rtimes_{\delta} K.
+\]
+
+\end{theorem}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Defina $\varphi$ a função dada por:
+
+\[
+\varphi: 
+\begin{array}{r c l}
+	H\rtimes_{\theta} K &\to & H\rtimes_{\delta} K \\
+	(h,k) &\mapsto & (h, \beta(k))
+\end{array}
+\]
+
+Mostremos que $\varphi$ é um isomorfismo de grupos. 
+
+Note que, analogamente ao \hyperlink{teo182}{\textbf{Teorema 1.8.2}}, $\varphi$ é de fato função e é bijetora por construção, pelo fato de $\beta$ ser um automorfismo de $K$. 
+
+Mostremos, portanto, que $\varphi$ é um homomorfismo de grupos. Sejam $(h_1,k_1),(h_2,k_2)\in H\rtimes_{\theta} K$. Temos:
+
+\[
+\begin{aligned}
+\varphi((h_1,k_1)(h_2,k_2)) &= \varphi((h_1\theta_{k_1}(h_2), k_1k_2)) = (h_1\theta_{k_1}(h_2), \beta(k_1k_2)) \\
+&= (h_1\theta_{k_1}(h_2), \beta(k_1)\beta(k_2)) = (h_1\delta{\beta{k_1}}(h_2), \beta(k_1)\beta(k_2)) \\
+&= (h_1,\beta(k_1))(h_2,\beta(k_2)) = \varphi((h_1,k_1))\varphi((k_2,h_2))
+\end{aligned}
+\]
+
+Portanto, temos que $\varphi$ é um isomorfismo de grupos e,
+
+\[
+H \rtimes_{\theta} K \cong H\rtimes_{\delta} K.
+\]
+
+\qed}
+
+
 \section{Sequências Exatas Curtas}
 
 \chapter{Grupo Simétrico}
