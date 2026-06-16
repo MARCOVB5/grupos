@@ -3499,7 +3499,18 @@ Tomemos os grupos $GL_2(\mathbb{R})$ e $SL_2(\mathbb{R})$. Sabemos, a partir dos
 Tomemos também $K \overset{def}{=} \left\{M(a) \; : \; M(a) = \begin{pmatrix}
 a & 0 \\
 0 & 1
-\end{pmatrix},\; a\neq 0 \right\}$. Note que $K\leq G$, mas $K \not\trianglelefteq G$, pois:
+\end{pmatrix},\; a\neq 0 \right\}$. Então, 
+
+\[
+GL_2(\mathbb{R}) = H\rtimes K.
+\]
+\end{example}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+Note que $K\leq G$, mas $K \not\trianglelefteq G$, pois:
 
 \[
 \underbrace{
@@ -3547,7 +3558,7 @@ H\cap K = \left\{
 
 Concluímos que $GL_2(\mathbb{R}) = H\rtimes K$.
 
-\end{example}
+\qed}
 
 \hypertarget{prop181}{}
 \begin{proposition}
@@ -3846,6 +3857,63 @@ H \rtimes_{\theta} K \cong H\rtimes_{\delta} K.
 
 
 \section{Sequências Exatas Curtas}
+
+\hypertarget{def191}{}
+\begin{definition}
+\color{red}
+
+Sejam $H, G$ e $K$ grupos e $\varphi: H\to G$ e $\psi: G\to K$ homomorfismos de grupos. A sequência:
+
+\[
+H \xrightarrow{\varphi} G \xrightarrow{\psi} K
+\]
+
+é dita \textbf{sequência exata em $G$} se, e somente se, $\operatorname{Im}{\varphi} = \ker{\psi}$.
+
+\end{definition}
+
+\begin{definition}
+\color{red}
+A partir das notações da \hyperlink{def191}{\textbf{Definição 1.9.1}}, uma sequência da forma:
+
+\[
+\{e\} \xrightarrow{\epsilon_1} H \xrightarrow{\varphi} G \xrightarrow{\psi} K \xrightarrow{\epsilon_2} \{e\}
+\]
+
+é dita \textbf{sequência exata curta} se for uma sequência exata em $H, G$ e $K$, onde $\{e\}$ é o grupo trivial cujo único elemento é seu neutro $e$ e os homomorfismos $\epsilon_1$ e $\epsilon_2$ são definidos por:
+
+\[
+\epsilon_1: 
+\begin{array}{r c l}
+  \{e\} &\to & H \\
+  e &\mapsto & e
+\end{array}
+\qquad \text{e,} \qquad
+\epsilon_2: 
+\begin{array}{r c l}
+  K &\to & \{e\} \\
+  k &\mapsto & e
+\end{array}
+\]
+\end{definition}
+
+{\color{red}
+\textit{Observações:}
+
+\begin{itemize}
+  \item \textit{Note que o grupo trivial $\{e\}$ é único a menos de isomorfismo, logo podemos assumir, sem perda de generalidade, que os grupos triviais definidos na \hyperlink{def192}{\textbf{Definição 1.9.2}} são de fato iguais;}
+  \item \textit{A partir da definição temos que $\varphi$ é um monomorfismo, pois $\ker{\varphi} = \operatorname{Im}{\epsilon_1} = \{e\}$;}
+  \item \textit{Analogamente, temos que $\psi$ é um epimorfismo, pois $\operatorname{Im}{\psi} = \ker{\epsilon_2} = K$;}
+  \item \textit{Desde que a sequência é exata em $G$, então como $\operatorname{Im}{\varphi} = \ker{\psi}$, temos que $\operatorname{Im}{\varphi}\trianglelefteq G$}.
+\end{itemize}
+
+}
+
+\begin{example}
+\color{red}
+
+
+\end{example}
 
 \chapter{Grupo Simétrico}
 
