@@ -4533,7 +4533,7 @@ Isto é, uma transposição cujas imagens são elementos consecutivos de $X$.
 
 \hypertarget{prop224}{}
 \begin{proposition}
-Toda transposição de um conjunto finito e não vazio $X$ pode ser decomposta em transposições elementares de $X$.
+Toda transposição de um conjunto finito e não vazio $X$ pode ser decomposta em um número ímpar de transposições elementares de $X$.
 \end{proposition}
 
 \textbf{Demonstração:}
@@ -4737,39 +4737,35 @@ Retomando o \hyperlink{ex231}{\textbf{Exemplo 2.3.1}} temos diretamente que $\si
 
 \hypertarget{prop231}{}
 \begin{proposition}
-\color{red}
 Seja $X$ um conjunto finito, não vazio e munido de uma ordem total. Logo, toda transposição de $\mathfrak{S}_X$ é uma permutação ímpar.
 \end{proposition}
-
-{\color{red}
 
 \textbf{Demonstração:}
 
 Seja $\tau = (x\;y) \in \mathfrak{S}_X$ uma transposição tal que, pela ordem total de $X$, $x < y$ e $\tau(x) > \tau(y)$.
 
-Note que, como $x<y$ e $\tau(x) > \tau(y)$, então temos diretamente que $\forall z_x\in X_{<x},\; \tau(x) > z$.
+Note que, como $x<y$ e $\tau(x) > \tau(y)$, então temos diretamente que $\forall z\in X_{<x},\; \tau(y) > z$.
 
-Simetricamente, temos que $\forall z_y\in X_{>y},\; \tau(y) < z$.
+Simetricamente, temos que $\forall z\in X_{>y},\; \tau(x) < z$.
 
 Portanto, resta contar o número de inversões para $z\in\llbracket x, y\rrbracket$.
 
-Ora, para todo $z\in\llbracket x,y\rrbracket$ temos diretamente que $\tau(y) > z, \; \forall z\in \llbracket x,y\rrbracket$.
+Ora, para todo $z$ tal que $x \le z < y$, temos $z < y$, mas $\tau(z) \ge \tau(y)$ (pois $\tau(y) = x$).
 
-Seja $M$ o número de inversões $(\tau(y), z)$ calculado acima. 
+Seja $M$ o número destas inversões, isto é, os pares $(z, y)$. 
 
-Note que, de forma análoga, temos que $\tau(x) < z, \; \forall z\in \llbracket x, y \rrbracket$. 
+Note que, de forma análoga, para todo $z$ tal que $x < z \le y$, temos $x < z$, mas $\tau(x) \ge \tau(z)$ (pois $\tau(x) = y$). 
 
-Portanto, o número de inversões dos pares $(\tau(x), z)$ é também $M$. 
+Portanto, o número de inversões dos pares $(x, z)$ é também $M$. 
 
-Entretanto, como contabilizamos duas vezes a inversão $(\tau(x),\tau(y))$, temos que $\mathscr{I}(\tau) = 2M-1$. 
+Entretanto, como contabilizamos duas vezes a mesma inversão $(x,y)$, temos que $\mathscr{I}(\tau) = 2M-1$. 
 
-Portanto, $\varepsilon(\tau) = -1$ e $\tau$ é ímpar. 
+Portanto, $\varepsilon(\tau) = -1$ e $\tau$ é ímpar.
 
-\qed}
+\qed
 
 \hypertarget{teo231}{}
 \begin{theorem}
-\color{red}
 Sejam $X$ um conjunto finito munido de uma ordem total tal que $\text{Card}(X) = n\in\mathbb{Z}_{\geq 2}$ e uma permutação $\sigma\in\mathfrak{S}_X$.
 
 Portanto, ao decompor $\sigma = \tau_1\ldots\tau_m$ para $m\in\mathbb{Z}_{+}^{*}$ onde $\tau_i$ é uma transposição para todo $i\in\llbracket 1,m\rrbracket$, temos que:
@@ -4780,12 +4776,11 @@ Portanto, ao decompor $\sigma = \tau_1\ldots\tau_m$ para $m\in\mathbb{Z}_{+}^{*}
 
 \end{theorem}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Note, primeiramente, que podemos supor sem perda de generalidade que $\sigma$ é decomposto em um número finito $p\in\mathbb{Z}_{\geq m}$ de transposições elementares. 
 
-Isso se dá pois, pela \hyperlink{prop224}{\textbf{Proposição 2.2.4}}, temos diretamente via a construção da demonstração que uma dada transposição se decompõe em um número ímpar de transposições elementares. Portanto, $(-1)^m = (-1)^p$.
+Isso se dá pois, pela \hyperlink{prop224}{\textbf{Proposição 2.2.5}}, temos diretamente via a construção da demonstração que uma dada transposição se decompõe em um número ímpar de transposições elementares. Portanto, $(-1)^m = (-1)^p$.
 
 Sejam $\sigma' \in \mathfrak{S}_X$ uma permutação arbitrária e $\tau' = (x_d\; x_{d+1})\in \mathfrak{S}_X$ uma transposição elementar tal que $x_d < x_{d+1}$ via a ordem total de $X$.
 
@@ -4803,12 +4798,11 @@ Como $\sigma = \tau_{1}'\ldots \tau_{p}'$ onde $\tau_{i}'$ é transposição ele
 \varepsilon(\sigma) = (-1)^p = (-1)^m
 \]
 
-\qed}
+\qed
 
 A partir do \hyperlink{teo231}{\textbf{Teorema 2.3.1}} podemos enunciar a seguinte definição equivalente para o conceito de \textbf{assinatura de uma permutação}:
 
 \begin{definition}
-\color{red}
 Sejam $X$ um conjunto finito tal que $\text{Card}(X)\geq 2$ e $\sigma\in\mathfrak{S}_X$ uma permutação.
  
 Então, se $\sigma = \tau_1\ldots\tau_m$ é a decomposição de $\sigma$ em transposições de $\mathfrak{S}_X$, onde $m\in\mathbb{Z}_{+}^{*}$, definimos a \textbf{assinatura de $\sigma$} o valor denotado $\varepsilon(\sigma)$ dado por:
@@ -4819,13 +4813,10 @@ Então, se $\sigma = \tau_1\ldots\tau_m$ é a decomposição de $\sigma$ em tran
 
 \end{definition}
 
-{\color{red}
 \textit{Observação: note que a definição equivale a afirmar que uma permutação é par se é composta por um número par de transposições e que uma permutação é ímpar se é composta por um número ímpar de transposições.}
 
-}
 
 \begin{proposition}
-\color{red}
 Sejam $X$ um conjunto finito tal que $\text{Card}(X)=n\in\mathbb{Z}_{\geq 2}$ e $k\in\llbracket 2, n\rrbracket$. 
 
 Logo, para quaisquer $k$-ciclos $\sigma\in \mathfrak{S}_X$, temos que:
@@ -4836,15 +4827,13 @@ Logo, para quaisquer $k$-ciclos $\sigma\in \mathfrak{S}_X$, temos que:
 
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 O resultado da proposição é imediato via a \hyperlink{prop221}{\textbf{Proposição 2.2.1}} e o \hyperlink{teo231}{\textbf{Teorema 2.3.1}}.
 
-\qed}
+\qed
 
 \begin{theorem}
-\color{red}
 Sejam $X$ um conjunto finito com $\text{Card}(X)\geq 2$ e a \textbf{função assinatura $\varepsilon$} tal que:
 
 \[
@@ -4858,7 +4847,6 @@ Sejam $X$ um conjunto finito com $\text{Card}(X)\geq 2$ e a \textbf{função ass
 Logo, $\varepsilon$ é um epimorfismo de grupos.
 \end{theorem}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Sejam $\sigma,\sigma' \in\mathfrak{S}_X$ tais que suas decomposições em transposições de $\mathfrak{S}_X$ são dadas por:
@@ -4883,13 +4871,14 @@ Como $\varepsilon(\text{id}_X) = 1$ e $\varepsilon(\tau) = -1$ para qualquer $\t
 
 \qed
 
-\textit{Observação: note que $\forall\sigma,\tau\in\mathfrak{S}_X$ tal que $\tau$ é uma transposição, temos que $\varepsilon(\sigma\tau)=\varepsilon(\tau\sigma)=-\varepsilon(\sigma)$}.
+\textit{Observação: note que $\forall\sigma,\tau\in\mathfrak{S}_X$ tal que $\tau$ é uma transposição, temos que:}
 
-}
+\[
+\varepsilon(\sigma\tau)=\varepsilon(\tau\sigma)=-\varepsilon(\sigma).
+\]
 
 
 \begin{example}
-\color{red}
 Seja $\sigma\in\mathfrak{S}_9$ tal que:
 
 \[
@@ -4910,7 +4899,6 @@ Note que conseguimos calcular a assinatura de $\sigma$ diretamente da seguinte f
 \end{example}
 
 \begin{example}
-\color{red}
 
 \textbf{\textit{Retirado de \href{https://www.bibmath.net/ressources/index.php?action=affiche&quoi=bde/algebre/groupesym&type=fexo}{https://www.bibmath.net}}.}
 
@@ -4946,18 +4934,17 @@ a permutação obtida é:
 Demonstre que só é possível obter permutações de assinatura igual a 1.
 \end{example}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Denotemos $\mathfrak{Q}_{8}$ como o conjunto das permutações possíveis para o quebra-cabeça deslizante.
 
 Note, primeiramente, que para qualquer $\sigma\in\mathfrak{Q}_8$, $\sigma$ é invariante para movimentos horizontais de peças para a casa vazia. Tal invariância é justificada pela convenção de leitura linha por linha da esquerda para a direita.
 
-Temos, portanto, apenas dois casos a analisar: caso a peça deslize verticalmente para cima para a casa vazia ou caso a peça deslize verticalmetne para baixo para a casa vazia.
+Temos, portanto, apenas dois casos a analisar: caso a peça deslize verticalmente para cima para a casa vazia ou caso a peça deslize verticalmente para baixo para a casa vazia.
 
 Consideremos o deslize vertical para baixo de uma peça arbitrária do tabuleiro. Ora, sabemos, por construção, que a peça em questão não pode realizar tal deslize caso esteja na última linha do tabuleiro. 
 
-Seja $i$ a posição inicial da peça na permutação $\sigma\in\mathfrak{Q}_8$, onde $i\in\llbracket 1,6\rrbracket$.
+Seja $i$ a posição inicial da peça na permutação $\sigma\in\mathfrak{Q}_8$, onde $i\in\llbracket 1,6\rrbracket$ (isto é, no caso em que queremos mover a peça verticalmente para baixo).
 
 Ora, como existe uma casa vazia abaixo da peça a ser movida, então as peças originalmente à esquerda da casa vazia passarão a estar à esquerda da peça movida. Isto é, realizamos o produto $(i\;i+1\;i+2)\sigma$. 
 
@@ -4965,14 +4952,13 @@ De forma simétrica, o deslize vertical para cima de uma peça arbitrária no ta
 
 Tomando $i$ sendo a posição inicial da peça a ser movida na permutação $\sigma\in\mathfrak{Q}_8$, onde $i\in\llbracket 3, 8\rrbracket$, realizamos o produto $(i\;i-1\;i-2)\sigma$.
 
-Como $\varepsilon(\text{id}_{\mathfrak{Q}_8}) = 1$ e quaisquer permutações $\sigma\in\mathfrak{Q}_8$ são geradas a partir de produtos de $3$-ciclos, concluímos que $\mathfrak{Q}_8$ só pode ser composto de permutações de assinatura igual a $1$.
+Como o jogo de quebra-cabeça deslizante começa a partir da permutação identidade e sabemos que $\varepsilon(\text{id}_{\mathfrak{Q}_8}) = 1$, de acordo com o argumento acima quaisquer permutações $\sigma\in\mathfrak{Q}_8$ serão produtos de $3$-ciclos. Como o resultado da função assinatura para um $3$-ciclo sempre resulta em $1$, deduzimos que $\mathfrak{Q}_8$ só pode ser composto de permutações de assinatura igual a $1$. 
 
-\qed}
+\qed
 
 \section{Grupo Alternado $\mathfrak{A}_X$}
 
 \begin{definition}
-\color{red}
 Seja $X$ um conjunto finito e não vazio. Definimos o conjunto $\mathfrak{A}_X$ como o \textbf{conjunto alternado de $\mathfrak{S}_X$}, tal que:
 
 \[
@@ -4983,15 +4969,12 @@ Onde $\varepsilon$ denota a função assinatura.
 \end{definition}
 
 \begin{proposition}
-\color{red}
 Seja $X$ um conjunto finito e não vazio, então: 
 
 \[
 \mathfrak{A}_X \trianglelefteq \mathfrak{S}_X
 \]
 \end{proposition}
-
-{\color{red}
 
 \textbf{Demonstração:}
 
@@ -5007,10 +4990,9 @@ Como $\ker{\varepsilon}\trianglelefteq \mathfrak{S}_X$, então temos diretamente
 \mathfrak{A}_X \trianglelefteq \mathfrak{S}_X
 \]
 
-\qed}
+\qed
 
 \begin{example}
-\color{red}
 Enumeremos todos os elementos de $\mathfrak{S}_3$:
 
 \[
@@ -5026,7 +5008,6 @@ Logo, fica claro que os elementos de $\mathfrak{A}_3$ são:
 \end{example}
 
 \begin{proposition}
-\color{red}
 Seja $X$ um conjunto finito tal que $\text{Card}(X) = n\in\mathbb{Z}_{\geq 2}$. Logo:
 
 \[
@@ -5034,7 +5015,6 @@ Seja $X$ um conjunto finito tal que $\text{Card}(X) = n\in\mathbb{Z}_{\geq 2}$. 
 \]
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Seja $\sigma,\tau \in \mathfrak{S}_X$, tal que $\tau$ é uma transposição fixada.
@@ -5064,17 +5044,15 @@ Como a função $\varphi$ é bijetiva, então também temos que $\vert \mathfrak
 É evidente ainda que $\mathfrak{S}_X = \mathfrak{A}_X \sqcup \mathfrak{S}_X\setminus\mathfrak{A}_X$, logo:
 
 \[
-\vert \mathfrak{S}_X \vert = \vert \mathfrak{A}_X\vert + \text{Card}(\mathfrak{S}_X\setminus\mathfrak{A}_X) = 2\mathfrak{A}_X \iff \vert \mathfrak{A}_X \vert = \frac{n!}{2}
+\vert \mathfrak{S}_X \vert = \vert \mathfrak{A}_X\vert + \text{Card}(\mathfrak{S}_X\setminus\mathfrak{A}_X) = 2\vert\mathfrak{A}_X\vert \iff \vert \mathfrak{A}_X \vert = \frac{n!}{2}
 \]
 
 \qed
 
 \textit{Observação: note que para o caso em que $\text{Card}(X) = 1$ temos evidentemente que $\mathfrak{A}_X = \{\text{id}_X\}\implies \vert \mathfrak{A}_X\vert = 1$}.
 
-}
 
 \begin{proposition}
-\color{red}
 
 Sejam $X$ um conjunto finito e não vazio e $x,y,z\in X$, então:
 
@@ -5084,8 +5062,6 @@ Sejam $X$ um conjunto finito e não vazio e $x,y,z\in X$, então:
 
 Isto é, o grupo alternado $\mathfrak{A}_X$ é gerado por $3$-ciclos de $\mathfrak{S}_X$.
 \end{proposition}
-
-{\color{red}
 
 \textbf{Demonstração:}
 
@@ -5117,15 +5093,13 @@ Concluímos que:
 \mathfrak{A}_X = \langle(x\;y\;z)\rangle.
 \]
 
-\qed}
+\qed
 
 
 \begin{proposition}
-\color{red}
 Seja $X$ um conjunto finito e não vazio. Logo, se $H \leq \mathfrak{S}_X$, então ou $H\leq \mathfrak{A}_X$ ou $[H : H\cap \mathfrak{A}_X] = 2$.
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Note, primeiramente, que não existe subgrupo $H\leq \mathfrak{S}_X$ tal que $H$ é composto exclusivamente de permutações ímpares. Ora, para quaisquer permutações $\sigma_1,\sigma_2\in H$ teríamos $\varepsilon(\sigma_1\sigma_2) = 1 \implies \sigma_1\sigma_2\notin H$.
@@ -5152,22 +5126,19 @@ Como $\text{Card}(\{-1,1\}) = 2$, então deduzimos que $[H:H\cap\mathfrak{A}_X] 
 
 \end{itemize}
 
-}
 
 \hypertarget{teo241}{}
 \begin{theorem}
-\color{red}
 Seja $G$ um grupo de ordem $n \in \mathbb{Z}_{+}^{*}$. Logo, se $d \vert n$, não é possível garantir que exista subgrupo $H \leq G$ tal que $\vert H\vert = d$.
 
 Isto é, a recíproca do \hyperlink{teolagrange}{\textbf{Teorema de Lagrange}} é falsa.
 \end{theorem}
 
-{\color{red}
 \textbf{Demonstração:}
 
-Seja $\mathfrak{A}_4$ o grupo alternado de $\{1,2,3,4\}$. Sabemos que $\vert \mathfrak{A}_4\vert = \frac{4!}{2} = 12$. 
+Seja $\mathfrak{A}_4$ o grupo alternado do conjunto $\{1,2,3,4\}$. Sabemos que $\vert \mathfrak{A}_4\vert = \frac{4!}{2} = 12$. 
 
-Logo, $\mathfrak{A}_4$ admite subgrupos de ordens $1,2,3,4,6$ e $12$.
+Logo, $\mathfrak{A}_4$ pode admitir subgrupos de ordens $1,2,3,4,6$ e $12$.
 
 Suponha que $\mathfrak{A}_4$ admite um subgrupo $H$ de ordem $6$. Logo, $[\mathfrak{A}_4 : H] = 2$.
 
@@ -5179,7 +5150,7 @@ Sabemos que em $\mathfrak{A}_4$ existem $8$ $3$-ciclos, porém $H$ tem ordem $6$
 
 Concluímos que não existe subgrupo $H$ de $\mathfrak{A}_4$ tal que $\vert H\vert = 6$.
 
-\qed}
+\qed
 
 \hypertarget{prop245}{}
 \begin{proposition}
