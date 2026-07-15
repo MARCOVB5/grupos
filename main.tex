@@ -4,20 +4,20 @@
 \usepackage{pagenote}
 \usepackage{anyfontsize}
 \usepackage[portuguese]{babel}
-\usepackage{amsmath}    % Ambientes e símbolos matemáticos básicos
-\usepackage{amssymb}    % Símbolos matemáticos adicionais
-\usepackage{amsfonts}   % Fontes matemáticas adicionais
+\usepackage{amsmath}    
+\usepackage{amssymb}    
+\usepackage{amsfonts}   
 \usepackage{amsthm}
-\usepackage{mathtools}  % Extensão do amsmath com funcionalidades extras
-\usepackage{bm}         % Vetores e matrizes em negrito
-\usepackage{mathrsfs}   % Fontes script caligráficas
-\usepackage{esint}      % Integrais múltiplas e notações extras
-\usepackage{cancel}     % Símbolos de cancelamento
-\usepackage{nicefrac}   % Frações em linha no formato texto
-\usepackage{siunitx}    % Escrita de unidades e notação científica
-\usepackage{array}      % Formatação avançada de tabelas e matrizes
-\usepackage{arydshln}   % Linhas tracejadas em tabelas e matrizes
-\usepackage{ytableau}   % Tabelas de Young e outras notações combinatórias
+\usepackage{mathtools} 
+\usepackage{bm}         
+\usepackage{mathrsfs}   
+\usepackage{esint}      
+\usepackage{cancel}     
+\usepackage{nicefrac}   
+\usepackage{siunitx}    
+\usepackage{array}      
+\usepackage{arydshln}  
+\usepackage{ytableau}   
 \usepackage{tcolorbox}
 \tcbuselibrary{breakable}
 \usepackage{xcolor}
@@ -27,53 +27,48 @@
 \definecolor{lightred}{rgb}{1,0.6,0.6}
 \usepackage{stmaryrd}
 
-% fontes AMS EULER !!! 
-%\usepackage{eulervm} 
-%\usepackage[T1]{fontenc} 
-%\usepackage{mathpazo}
-
 \theoremstyle{definition}
 
-\newtheorem{definition}{Definição}[section]  % Definições numeradas por subseção
-\newtheorem{example}{Exemplo}[section]       % Exemplos numerados por subseção
-\newtheorem{theorem}{Teorema}[section]     % Teoremas numerados como as definições
-\newtheorem{proposition}{Proposição}[section] % Proposições numeradas como as definições
-\newtheorem{corollary}{Colorário}[section] % Colorários numerados como as definições
+\newtheorem{definition}{Definição}[section]  
+\newtheorem{example}{Exemplo}[section]       
+\newtheorem{theorem}{Teorema}[section]     
+\newtheorem{proposition}{Proposição}[section] 
+\newtheorem{corollary}{Colorário}[section] 
 
-\newtcolorbox{mybox}[2]{%
-  colback=#1!10!white, % Fundo colorido
-  colframe=#1!50!black, % Borda mais escura
-  boxrule=0.5pt,        % Espessura da borda
-  sharp corners,        % Bordas retas
-  fonttitle=\bfseries,  % Título em negrito
-  breakable,            % Permite quebra de página
-  title={\textbf{#2}},  % Define o título
+\newtcolorbox{mybox}[2]{
+  colback=#1!10!white, 
+  colframe=#1!50!black, 
+  boxrule=0.5pt,        
+  sharp corners,        
+  fonttitle=\bfseries,  
+  breakable,            
+  title={\textbf{#2}},  
 }
 
-% Redefinindo os ambientes para adicionar caixinhas com numeração
-\renewenvironment{definition}[1][]{%
-  \refstepcounter{definition}%
-  \begin{mybox}{green}{Definição \thesection.\arabic{definition}}%
+
+\renewenvironment{definition}[1][]{
+  \refstepcounter{definition}
+  \begin{mybox}{green}{Definição \thesection.\arabic{definition}}
 }{\end{mybox}}
 
-\renewenvironment{example}[1][]{%
-  \refstepcounter{example}%
-  \begin{mybox}{yellow}{Exemplo \thesection.\arabic{example}}%
+\renewenvironment{example}[1][]{
+  \refstepcounter{example}
+  \begin{mybox}{yellow}{Exemplo \thesection.\arabic{example}}
 }{\end{mybox}}
 
-\renewenvironment{theorem}[1][]{%
-  \refstepcounter{theorem}%
-  \begin{mybox}{blue}{Teorema \thesection.\arabic{theorem}}%
+\renewenvironment{theorem}[1][]{
+  \refstepcounter{theorem}
+  \begin{mybox}{blue}{Teorema \thesection.\arabic{theorem}}
 }{\end{mybox}}
 
-\renewenvironment{proposition}[1][]{%
-  \refstepcounter{proposition}%
-  \begin{mybox}{red}{Proposição \thesection.\arabic{proposition}}%
+\renewenvironment{proposition}[1][]{
+  \refstepcounter{proposition}
+  \begin{mybox}{red}{Proposição \thesection.\arabic{proposition}}
 }{\end{mybox}}
 
-\renewenvironment{corollary}[1][]{%
-  \refstepcounter{corollary}%
-  \begin{mybox}{lightred}{Corolário \thesection.\arabic{corollary}}%
+\renewenvironment{corollary}[1][]{
+  \refstepcounter{corollary}
+  \begin{mybox}{lightred}{Corolário \thesection.\arabic{corollary}}
 }{\end{mybox}}
 
 
@@ -95,9 +90,7 @@
   \mathrel{
     \unitlength=1mm
     \begin{picture}(5,3)(0,-1.5)
-      % Triângulo maior
       \polyline(0,0)(4,1.5)(4,-1.5)(0,0)
-      % Triângulo menor
       \polyline(1.25,0)(3,0.75)(3,-0.75)(1.25,0)
     \end{picture}
   }
@@ -107,24 +100,21 @@
   \mathrel{
     \unitlength=1mm
     \begin{picture}(5,3)(0,-1.5)
-      % Triângulo maior
       \polyline(0,0)(4,1.5)(4,-1.5)(0,0)
-      % Triângulo menor
       \polyline(1.25,0)(3,0.75)(3,-0.75)(1.25,0)
-      % Barra horizontal
       \polyline(0,-1.9)(4,-1.9)
     \end{picture}
   }
 }
 
-\newtheoremstyle{no-italic}  % Nome do estilo
-  {3pt}   % Espaçamento antes
-  {3pt}   % Espaçamento depois
-  {\normalfont} % Fonte do corpo (normal, sem itálico)
-  {}      % Identação
-  {\bfseries} % Fonte do título
-  {.}     % Ponto após o título
-  { }     % Espaçamento após o título
+\newtheoremstyle{no-italic}  
+  {3pt}   
+  {3pt}   
+  {\normalfont} 
+  {}      
+  {\bfseries} 
+  {.}     
+  { }     
   {}
 
 
@@ -991,15 +981,6 @@ xH \mapsto Hx^{-1}
 \end{theorem}
 
 \textbf{Demonstração:}
-
-
-%A ideia da demonstração se baseia em, a partir de um subgrupo $H$ de $G$, formar partições de $G$ duas-a-duas disjuntas tais que a cardinalidade dessas partições sejam iguais à ordem de $H$.
-
-%Isto é, se $\{X_i \}_{i\in\mathbb{N}}$ representa uma família de subconjuntos de $G$ e $H$ é um subgrupo de $G$, então queremos provar que:
-
-%\[
-%\bigcup_{i \in \mathbb{N}}X_i = G; \; \; \bigcap_{i \in \mathbb{N}}X_i = \emptyset\; \; \text{e} \; \; \text{Card}(X_i) = \vert H\vert, \; \forall i \in \mathbb{N}.
-%\]
 
 Seja $x\in G \backslash H$, consideremos o conjunto das classes laterais à esquerda de $H$:
 
@@ -5652,7 +5633,6 @@ Sejam $G$ um grupo e $X$ um conjunto não vazio tal que $G\curvearrowright X$ pe
 \end{example}
 
 
-% ==================================
 
 \chapter{Grupos Solúveis}
 
