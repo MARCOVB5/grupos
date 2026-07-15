@@ -5154,40 +5154,32 @@ Concluímos que não existe subgrupo $H$ de $\mathfrak{A}_4$ tal que $\vert H\ve
 
 \hypertarget{prop245}{}
 \begin{proposition}
-\color{red}
 Seja $X$ um conjunto finito tal que $\text{Card}(X) \geq 5$. Logo, todos $3$-ciclos são dois a dois conjugados em $\mathfrak{A}_X$. 
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Sejam $x,y,z\in X$ e $\sigma\in\mathfrak{S}_X$ uma permutação arbitrária.
 
-Sabemos, da \hyperlink{prop225}{\textbf{Proposição 2.2.5}}, que quaisquer ciclos são conjugados entre si em $\mathfrak{S}_X$ se possuem mesmo comprimento. Mostremos que para os $3$-ciclos essa conjugação permanece em $\mathfrak{A}_X$. Isto é:
+Sabemos, da \hyperlink{prop225}{\textbf{Proposição 2.2.5}}, que quaisquer ciclos são conjugados entre si em $\mathfrak{S}_X$ se possuem mesmo comprimento. Mostremos que para os $3$-ciclos essa conjugação permanece em $\mathfrak{A}_X$.
+
+Note que, se $\sigma$ for par, então a proposição está demonstrada diretamente. Suponha, agora, que $\sigma$ é ímpar.
+
+Tomemos $\sigma' \overset{def}{=} \sigma(a\; b)$, onde $a,b\in X\setminus \{x,y,z\}$. Note que a existência de $a,b$ é garantida pois $\text{Card}(X)\geq 5$. Temos, portanto:
 
 \[
-\varepsilon(\sigma(x\;y\;z)\sigma^{-1}) = 1
+\sigma(x\;y\;z)\sigma^{-1} = \sigma'(a\;b)(x\;y\;z)(\sigma'(a\;b))^{-1} = \sigma'(a\;b)(x\;y\;z)(a\;b)\sigma'^{-1} = \sigma'(x\;y\;z)\sigma'^{-1}
 \]
 
-Note que, se $\sigma$ for par, então está demonstrado. Suponha que $\sigma$ é ímpar, logo, podemos tomar uma transposição $(a\;b),\;a,b\in X\setminus \{x,y,z\}$ da decomposição em transposições de $\sigma$. A existência de $a,b$ é garantida pois $\text{Card}(X)\geq 5$.
+Como $\sigma'$ é uma permutação par ($\sigma' \in \mathfrak{A}_X$), concluímos que a conjugação também pode ser realizada por um elemento do grupo alternado. Logo, quaisquer dois $3$-ciclos são conjugados em $\mathfrak{A}_X$.
 
-Tomemos $\sigma \overset{def}{=} \sigma'(a\;b)$. Temos que:
-
-\[
-	\sigma(x\;y\;z)\sigma^{-1} = \sigma'(a\;b)(x\;y\;z)(\sigma'(a\;b))^{-1} = \sigma'(a\;b)(x\;y\;z)(a\;b)\sigma'^{-1} = \sigma'(x\;y\;z)\sigma'^{-1}
-\]
-
-Como $\sigma'$ é claramente par, então concluímos que $\sigma(x\;y\;z)\sigma^{-1}$ é par para $\sigma$ ímpar quando $\text{Card}(X) \geq 5$.
-
-\qed}
+\qed
 
 \hypertarget{prop246}{}
 \begin{proposition}
-\color{red}
 Seja $X$ um conjunto finito tal que $\text{Card}(X) \geq 5$. Então, se um subgrupo normal $H\trianglelefteq \mathfrak{A}_X$ contém um $3$-ciclo, temos que $H = \mathfrak{A}_X$.
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Suponha $H\trianglelefteq \mathfrak{A}_X$ tal que $H$ contém um $3$-ciclo. Ora, então, por definição de normalidade, todo elemento conjugado do $3$-ciclo de $H$ por permutações de $\mathfrak{A}_X$ pertence à $H$.
@@ -5196,10 +5188,9 @@ Pela \hyperlink{prop245}{\textbf{Proposição 2.4.5}}, sabemos que, se $\text{Ca
 
 Como $\mathfrak{A}_X$ é gerado por $3$-ciclos, concluímos que $H = \mathfrak{A}_X$.
 
-\qed}
+\qed
 
 \begin{theorem}
-\color{red}
 Seja $X$ um conjunto não vazio e finito, onde $n\overset{def}{=} \text{Card}(X)$. 
 
 Se $n\neq 4$, então $\mathfrak{A}_X$ é um grupo simples.
@@ -5264,7 +5255,6 @@ Logo, $\mathfrak{A}_X$ é um grupo simples.
 
 
 \begin{definition}
-\color{red}
 Seja $X = \{x_1,x_2,x_3,x_4\}$ e $\mathfrak{K} \subseteq \mathfrak{A}_X$ tal que:
 
 \[
@@ -5277,7 +5267,6 @@ Definimos o subconjunto $\mathfrak{K}\subseteq \mathfrak{A}_X$ como sendo o \tex
 \textit{Observação: note que de fato $\mathfrak{K}\subseteq\mathfrak{A}_X$, uma vez que $\varepsilon(\sigma) = 1, \;\forall \sigma\in\mathfrak{K}$.}
 
 \begin{proposition}
-\color{red}
 Seja $\mathfrak{K}$ o conjunto simétrico de Klein e $\mathcal{K}$ o grupo de Klein. 
 
 Então, se $\mathfrak{K}$ for munido da composição usual de funções, temos:
@@ -5289,7 +5278,6 @@ Então, se $\mathfrak{K}$ for munido da composição usual de funções, temos:
 Isto é, $\mathfrak{K}$ é isomorfo ao grupo de Klein.
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Sejam $X = \{x_1,x_2,x_3,x_4\}$ e $\varphi : \mathfrak{K} \to \mathcal{K}$ uma função tal que:
@@ -5344,9 +5332,10 @@ Finalmente, concluímos que $\varphi$ é um isomorfismo de grupos e temos:
 
 \begin{itemize}
 	\item \textit{A partir do resultado acima, \textbf{definimos $\mathfrak{K}$ como grupo simétrico de Klein} ou, quando não houver ambiguidade, simplesmente \textbf{grupo de Klein}};
-	\item \textit{Temos diretamente via o isomorfismo que $\mathfrak{K}$ é abeliano e $\mathfrak{K}\trianglelefteq \mathfrak{A}_X$}.
+	\item \textit{Temos diretamente via o isomorfismo que $\mathfrak{K}$ é abeliano.};
+  \item \textit{Como $\mathfrak{K}$ contém a identidade e todos os elementos de estrutura de ciclos do tipo $(a\;b)(c\;d)$ de $\mathfrak{S}_X$, e a conjugação preserva o comprimento dos ciclos, concluímos que $\mathfrak{K}\trianglelefteq \mathfrak{S}_X$ e, consequentemente, $\mathfrak{K}\trianglelefteq \mathfrak{A}_X$.}.
 \end{itemize}
-}
+
 
 \begin{theorem}
 \color{red}
@@ -5358,41 +5347,29 @@ Isto é, o único grupo normal não trivial de $\mathfrak{A}_{X}$ é $\mathfrak{
 {\color{red}
 \textbf{Demonstração:}
 
-Sabemos que $\vert \mathfrak{A}_{\{x_1,x_2,x_3,x_4\}}\vert = \frac{4!}{2} = 12$. 
+Sabemos que $\vert \mathfrak{A}_X\vert = \frac{4!}{2} = 12$. Logo, seus subgrupos podem admitir apenas cardinais $1,2,3,4,6$ e $12$.
 
-Logo, seus subgrupos podem admitir apenas cardinais $1,2,3,4,6$ e $12$.
+As ordens $1$ e $12$ correspondem, respectivamente, aos subgrupos normais triviais $\{\text{id}_X\}$ e $\mathfrak{A}_X$. Para a ordem $6$, sabemos pelo \hyperlink{teo241}{\textbf{Teorema 2.4.1}} que $\mathfrak{A}_X$ não admite subgrupos com essa cardinalidade. Resta-nos analisar as ordens $2, 3$ e $4$.
 
-Listemos todos seus subgrupos:
+Um subgrupo de ordem $2$ deve ser da forma $H_2 = \{\text{id}_X, \tau\}$, em que $\tau$ é um elemento de ordem $2$. Em $\mathfrak{A}_X$, tais elementos são necessariamente produtos de duas transposições disjuntas. Suponha, sem perda de generalidade, que $\tau = (x_1\;x_2)(x_3\;x_4)$ e $\sigma = (x_1\;x_2\;x_3)$. Note que $\tau,\sigma \in \mathfrak{A}_X$. Ao conjugarmos $\tau$ por $\sigma$ obtemos:
 
-\begin{itemize}
-	\item \textbf{Ordem 1 e 12:} subgrupos triviais $\{\text{id}_X\}$ e $\mathfrak{A}_X$ (que são normais); 
-	\item \textbf{Ordem 2:} é necessário haver o elemento neutro e um produto de transposições de suportes dois a dois disjuntos $\tau$, pois $\tau^2 = \tau^{-1}$. Logo, temos subgrupos da forma $H_2 \overset{def}{=}\{\text{id}_X, (x_i\;x_j)(x_p\;x_q)\}$, onde $i,j,p,q\in\llbracket 1,4\rrbracket$ e $i\neq j\neq p\neq q$.
+\[
+\sigma\tau\sigma^{-1} = (x_1\;x_2\;x_3)(x_1\;x_2)(x_3\;x_4)(x_1\;x_3\;x_2) = (x_1\;x_4)(x_2\;x_3)
+\]
 
-		Tais subgrupos são trivialmente não normais, uma vez que:
-	
-		\[
-		(x_1\;x_2\;x_3)\tau(x_1\;x_2\;x_3)^{-1} \notin H_2,\;\; \text{para}\;\; \tau\in H_2
-		\]
+Claramente temos que $\sigma\tau\sigma^{-1} \notin H_2$, logo $H_2$ não é normal.
 
-	\item \textbf{Ordem 3:} subgrupos de ordem $3$ são cíclicos, logo, tem forma:
+Um subgrupo de ordem $3$ é gerado por um $3$-ciclo, tendo a forma $H_3 = \{\text{id}_X, \gamma, \gamma^{-1}\}$. Suponha, sem perda de generalidade, que $\gamma = (x_1\;x_2\;x_3)$. Tomemos o elemento $\kappa = (x_1\;x_2)(x_3\;x_4) \in \mathfrak{A}_X$. Note que: 
 
-		\[
-		H_3 \overset{def}{=}\{\text{id}_X, (x_i\;x_j\;x_z), (x_i\;x_j\;x_z)^{-1}\}
-		\]
+\[
+\kappa\gamma\kappa^{-1} = (x_1\;x_2)(x_3\;x_4)(x_1\;x_2\;x_3)(x_1\;x_2)(x_3\;x_4) = (x_2\;x_1\;x_4) = (x_1\;x_4\;x_2)
+\]
 
-		Tais subgrupos também não são normais, uma vez que: 
+Uma vez que $(x_1\;x_4\;x_2) \notin H_3$, temos $\kappa H_3 \kappa^{-1} \neq H_3$. Logo, $H_3$ não é normal.
 
-		\[
-		(x_1\;x_2)(x_3\;x_4)(x_1\;x_2\;x_3)(x_1\;x_2)(x_3\;x_4) \notin H_3
-		\]
+Finalmente, para a ordem $4$, sabemos que $\mathfrak{A}_X$ possui exatamente um subgrupo com essa cardinalidade: o grupo de Klein $\mathfrak{K}$. Isso se dá pois $\mathfrak{A}_X$ não admite elementos de ordem $4$, uma vez que $4$-ciclos são permutações ímpares. Isso força qualquer subgrupo de ordem $4$ a ser composto pela identidade e por três elementos de ordem $2$. Como existem exatamente três elementos de ordem $2$ em $\mathfrak{A}_X$, há apenas uma combinação possível. Sabemos, ainda, da \hyperlink{prop247}{\textbf{Proposição 2.4.7}}, que $\mathfrak{K}\trianglelefteq \mathfrak{A}_X$.
 
-	\item \textbf{Ordem 4:} o único subgrupo de ordem $4$ em $\mathfrak{A}_X$ é o grupo de Klein $\mathfrak{K}$. Tal subgrupo é normal em $\mathfrak{A}_X$.
-
-	\item \textbf{Ordem 6:} segundo o \hyperlink{teo241}{\textbf{Teorema 2.4.1}} não existem subgrupos de ordem $6$.
-
-\end{itemize}
-
-Concluímos, portanto, que os únicos subgrupos normais em $\mathfrak{A}_{X=\{x_1,x_2,x_3,x_4\}}$ são $\{\text{id}_X\},\mathfrak{K},\mathfrak{A}_X$.
+Concluímos assim que os únicos subgrupos normais em $\mathfrak{A}_X$ são $\{\text{id}_X\}$, $\mathfrak{K}$ e $\mathfrak{A}_X$.
 
 \qed}
 
