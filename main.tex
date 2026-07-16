@@ -34,6 +34,8 @@
 \newtheorem{theorem}{Teorema}[section]     
 \newtheorem{proposition}{Proposição}[section] 
 \newtheorem{corollary}{Colorário}[section] 
+\newtheorem{lemma}{Lema}[section]  
+
 
 \newtcolorbox{mybox}[2]{
   colback=#1!10!white, 
@@ -69,6 +71,11 @@
 \renewenvironment{corollary}[1][]{
   \refstepcounter{corollary}
   \begin{mybox}{lightred}{Corolário \thesection.\arabic{corollary}}
+}{\end{mybox}}
+
+\renewenvironment{lemma}[1][]{
+  \refstepcounter{lemma}
+  \begin{mybox}{cyan}{Lema \thesection.\arabic{lemma}}
 }{\end{mybox}}
 
 
@@ -5656,18 +5663,24 @@ Onde $G_{i+1}$ são subgrupos normais de $G_i$ e $i\in\llbracket0,n-1\rrbracket$
 \begin{itemize}
   \item \textit{Se uma série subnormal $\lambda$ de um grupo $G$ possuir $r$ subgrupos normais próprios, dizemos que $\lambda$ tem comprimento $r$};
   \item \textit{Em uma série subnormal, um mesmo subgrupo pode ser repetido e, portanto, podemos ter $G_i/G_{i+1}$ grupos quocientes triviais e não triviais};
-  \item \textit{Note que todo grupo $G$ admite a série subnormal do tipo $G\trianglerighteq \{e\}$}.
+  \item \textit{Note que todo grupo $G$ admite a série subnormal trivial $G\trianglerighteq \{e\}$}.
 \end{itemize}
 
 }
 
+\hypertarget{ex411}{}
 \begin{example}
 \color{red}
 
 A cadeia de normalidade:
 
 \[
-\mathbb{Z}/30\mathbb{Z} \trianglerighteq \langle \overline{5}\rangle \trianglerighteq \langle \overline{5}\rangle \trianglerighteq \langle\overline{10}\rangle \trianglerighteq \langle \overline{0}\rangle
+\lambda: 
+\begin{array}{ccccccc}
+\mathbb{Z}/30\mathbb{Z} & \trianglerighteq & \langle \overline{5} \rangle & \trianglerighteq & \langle \overline{10} \rangle & \trianglerighteq & \langle \overline{0} \rangle \\
+\shortparallel & & \shortparallel & & \shortparallel & & \shortparallel \\
+G_0 & & G_1 & & G_2 & & G_3
+\end{array}
 \]
 
 é uma série subnormal de $\mathbb{Z}/30\mathbb{Z}$ de comprimento igual a $3$.
@@ -5679,23 +5692,56 @@ A cadeia de normalidade:
 
 Seja $G$ um grupo e $\lambda$ uma série subnormal de $G$. Dizemos que uma série subnormal $\lambda'$ de $G$ é um \textbf{refinamento de $\lambda$} se $\lambda'$ é obtida inserindo uma quantidade finita de subgrupos na cadeia de normalidade de $\lambda$.
 
-Dizemos ainda que um refinamento é \textbf{próprio} se é adicionada uma quantidade não nula de subgrupos na cadeia de normalidade.
+Dizemos ainda que um refinamento é \textbf{próprio} se é adicionada uma quantidade não nula de subgrupos distintos dos que já existem na cadeia de normalidade.
 
 \end{definition}
+
+\begin{example}
+\color{red}
+
+A série subnormal apresentada no \hyperlink{ex411}{\textbf{Exemplo 4.1.1}} é um refinamento das seguintes séries subnormais de $\mathbb{Z}/30\mathbb{Z}$:
+
+\[
+\lambda_1:
+\begin{array}{ccccccc}
+\mathbb{Z}/30\mathbb{Z} & \trianglerighteq & \langle \overline{5} \rangle & \trianglerighteq & \langle \overline{0} \rangle \\
+\shortparallel & & \shortparallel & & \shortparallel \\
+G_0 & & G_1 & & G_2 
+\end{array}
+\]
+
+e, 
+
+\[
+\lambda_2:
+\begin{array}{ccccccc}
+\mathbb{Z}/30\mathbb{Z} & \trianglerighteq & \langle \overline{10} \rangle & \trianglerighteq & \langle \overline{0} \rangle \\
+\shortparallel & & \shortparallel & & \shortparallel \\
+G_0 & & G_1 & & G_2 
+\end{array}
+\]
+
+\end{example}
 
 
 \begin{definition}
 \color{red}
 
-Seja $G$ um grupo e $\lambda$ uma série subnormal de $G$ sem repetições. Dizemos que $\lambda$ é uma \textbf{série de composição de $G$} se, e somente se, $\lambda$ não admite refinamento próprio.
+Seja $G$ um grupo e $\lambda$ uma série subnormal de $G$. Dizemos que $\lambda$ é uma \textbf{série de composição de $G$} se, e somente se, $\lambda$ não admite refinamento próprio.
 
 \end{definition}
 
 {\color{red}
 
-\textit{Note que nem todo grupo admite uma série de composição.}
+\textit{Note que nem todo grupo admite uma série de composição. Por exemplo, o grupo aditivo $(\mathbb{Z}, +)$ não possui série de composição pois, dado qualquer subgrupo não trivial de $\mathbb{Z}$, sempre existe um subgrupo normal próprio e não trivial contido nele. Assim, qualquer série subnormal de $\mathbb{Z}$ pode ser refinada indefinidamente.}
 
 }
+
+\begin{example}
+\color{red}
+
+A série subnormal apresentada no \hyperlink{ex411}{\textbf{Exemplo 4.1.1}} é também uma série de composição.
+\end{example}
 
 \begin{proposition}
 \color{red}
@@ -5724,6 +5770,63 @@ Suponha, agora, que $G_i/G_{i+1}$ é simples para todo $i\in\llbracket 0,n-1\rrb
 
 
 \qed}
+
+\begin{proposition}
+\color{red}
+
+Todo grupo finito não trivial admite uma série de composição.
+
+\end{proposition}
+
+{\color{red}
+\textbf{Demonstração:}
+
+
+
+\qed}
+
+\begin{definition}
+\color{red}
+
+Sejam $G$ um grupo e $\lambda_1$ e $\lambda_2$ duas séries subnormais de $G$ dadas por:
+
+\[
+G = G_0 \trianglerighteq G_1 \trianglerighteq \ldots \trianglerighteq G_n = \{e\}
+\]
+
+e,
+
+\[
+G = H_0 \trianglerighteq H_1 \trianglerighteq \ldots \trianglerighteq H_m = \{e\}
+\]
+
+Dizemos que $\lambda_1$ e $\lambda_2$ são \textbf{séries equivalentes} se existe uma bijeção entre os grupos quocientes não triviais da série $\lambda_1$ e os da série $\lambda_2$ tal que os grupos quocientes correspondentes são isomorfos.
+
+\end{definition}
+
+{\color{red}
+
+\textit{Observações:}
+
+\begin{itemize}
+  \item \textit{Note que duas séries subnormais que são equivalentes possuem o mesmo comprimento};
+  \item \textit{Note também que $\lambda_2$ é um refinamento próprio de $\lambda_1$ se, e somente se, $\lambda_1$ e $\lambda_2$ não são equivalentes}.
+\end{itemize}
+
+}
+
+\begin{example}
+\color{red}
+
+
+
+\end{example}
+
+\begin{lemma}
+\color{red}
+\textbf{Lema da Borboleta de Zassenhaus}
+
+\end{lemma}
 
 \bibliographystyle{alpha}
 \bibliography{refs}
