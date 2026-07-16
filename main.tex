@@ -5636,7 +5636,7 @@ Sejam $G$ um grupo e $X$ um conjunto não vazio tal que $G\curvearrowright X$ pe
 
 \chapter{Grupos Solúveis}
 
-\section{Teorema de Jordan-Holder}
+\section{Teorema de Jordan-Hölder}
 
 \begin{definition}
 \color{red}
@@ -5644,15 +5644,86 @@ Sejam $G$ um grupo e $X$ um conjunto não vazio tal que $G\curvearrowright X$ pe
 Seja $G$ um grupo e $n\in\mathbb{Z}^*$. Definimos \textbf{série subnormal} de $G$ como sendo a seguinte cadeia de normalidade:
 
 \[
-G = G_0 \triangleright G_1 \triangleright \cdots \triangleright G_n
+G = G_0 \trianglerighteq G_1 \trianglerighteq \cdots \trianglerighteq G_n = \{e\}
 \]
 
-Onde $G_n = \{e\}$ e $G_{i+1}$ são subgrupos normais próprios de $G_i$, onde $i\in\llbracket0,n-1\rrbracket$.
+Onde $G_{i+1}$ são subgrupos normais de $G_i$ e $i\in\llbracket0,n-1\rrbracket$.
+\end{definition}
+
+{\color{red}
+\textit{Observações:}
+
+\begin{itemize}
+  \item \textit{Se uma série subnormal $\lambda$ de um grupo $G$ possuir $r$ subgrupos normais próprios, dizemos que $\lambda$ tem comprimento $r$};
+  \item \textit{Em uma série subnormal, um mesmo subgrupo pode ser repetido e, portanto, podemos ter $G_i/G_{i+1}$ grupos quocientes triviais e não triviais};
+  \item \textit{Note que todo grupo $G$ admite a série subnormal do tipo $G\trianglerighteq \{e\}$}.
+\end{itemize}
+
+}
+
+\begin{example}
+\color{red}
+
+A cadeia de normalidade:
+
+\[
+\mathbb{Z}/30\mathbb{Z} \trianglerighteq \langle \overline{5}\rangle \trianglerighteq \langle \overline{5}\rangle \trianglerighteq \langle\overline{10}\rangle \trianglerighteq \langle \overline{0}\rangle
+\]
+
+é uma série subnormal de $\mathbb{Z}/30\mathbb{Z}$ de comprimento igual a $3$.
+
+\end{example}
+
+\begin{definition}
+\color{red}
+
+Seja $G$ um grupo e $\lambda$ uma série subnormal de $G$. Dizemos que uma série subnormal $\lambda'$ de $G$ é um \textbf{refinamento de $\lambda$} se $\lambda'$ é obtida inserindo uma quantidade finita de subgrupos na cadeia de normalidade de $\lambda$.
+
+Dizemos ainda que um refinamento é \textbf{próprio} se é adicionada uma quantidade não nula de subgrupos na cadeia de normalidade.
+
 \end{definition}
 
 
+\begin{definition}
+\color{red}
+
+Seja $G$ um grupo e $\lambda$ uma série subnormal de $G$ sem repetições. Dizemos que $\lambda$ é uma \textbf{série de composição de $G$} se, e somente se, $\lambda$ não admite refinamento próprio.
+
+\end{definition}
+
+{\color{red}
+
+\textit{Note que nem todo grupo admite uma série de composição.}
+
+}
+
+\begin{proposition}
+\color{red}
+
+Sejam $G$ um grupo, $n\in \mathbb{Z}^*$ e $\lambda$ uma série subnormal de $G$ dada por:
+
+\[
+G = G_0 \trianglerighteq G_1 \trianglerighteq \cdots \trianglerighteq G_n = \{e\}
+\]
+
+Logo, as seguintes afirmações são equivalentes:
+
+$(i)$ $\lambda$ é uma série de composição de $G$;
+
+$(ii)$ $G_i/G_{i+1}$ é simples para todo $i\in\llbracket 0,n-1\rrbracket$.
+
+\end{proposition}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+Suponha que $G_i/G_{i+1}$ não é simples para algum $i\in\llbracket 0,n-1\rrbracket$. Nesse caso, existe um subgrupo normal próprio e não trivial $G_i'/G_{i+1} \triangleleft G_i/G_{i+1}$. Pelo \hyperlink{correspondencia}{\textbf{Teorema da Correspondência}}, sabemos que existe portanto $G_i'$ tal que $G_{i+1} \subsetneq G_i' \subsetneq G_i$ e $G_i' \triangleleft G_i$. Basta tomarmos então $\lambda'$ um refinamento próprio de $\lambda$ inserindo o subgrupo $G_i'$. Como $\lambda$ admite um refinamento próprio, concluímos que $\lambda$ não é uma série de composição de $G$.
+
+Suponha, agora, que $G_i/G_{i+1}$ é simples para todo $i\in\llbracket 0,n-1\rrbracket$. Nesse caso, $G_i/G_{i+1}$ não admite nenhum subgrupo normal não trivial. Se $\lambda$ não é uma série de composição, então $\lambda$ admite um refinamento próprio. Digamos, sem perda de generalidade, que tal refinamento próprio é dado pela inserção de um grupo $G_j' \triangleleft G_j$ para um dado $j\in\llbracket 0,n-1\rrbracket$. Ora, pelo \hyperlink{correspondencia}{\textbf{Teorema da Correspondência}}, temos que $G_j'/G_{j+1} \triangleleft G_j/G_{j+1}$. Absurdo. Concluímos que $\lambda$ é uma série de composição.
 
 
+\qed}
 
 \bibliographystyle{alpha}
 \bibliography{refs}
