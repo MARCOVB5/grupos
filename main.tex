@@ -3087,6 +3087,8 @@ r^2r^2s = r^4s = s, \; sr^2 = r^2s, \; sr^2s = r^2,\; r^2sr^2 = s, \; r^2s^2 = r
 
 \textit{Concluímos, portanto, via contraexemplo, que a normalidade não é transitiva.}
 
+\chapter{Produtos}
+
 \section{Produto Direto de Grupos}
 
 Nesta seção inteira a variável $n$ representa um número inteiro positivo.
@@ -3111,12 +3113,12 @@ Denotamos, comumente:
 \textit{Observação: por uma questão de convenção, a operação "$\cdot$" será omitida.}
 
 \begin{proposition} 
-A partir da \hyperlink{def171}{\textbf{Definição 1.7.1}}, temos que o produto direto externo de $\mathfrak{G}$ é um grupo.
+A partir da \hyperlink{def171}{\textbf{Definição 2.1.1}}, temos que o produto direto externo de $\mathfrak{G}$ é um grupo.
 \end{proposition}
 
 \textbf{Demonstração:}
 
-Via a \hyperlink{def171}{\textbf{Definição 1.7.1}} temos que a operação "$\cdot$" é uma lei de composição interna por construção. 
+Via a \hyperlink{def171}{\textbf{Definição 2.1.1}} temos que a operação "$\cdot$" é uma lei de composição interna por construção. 
 
 Temos também, de forma evidente, que o elemento neutro e o elemento inverso de $x \overset{def}{=}(x_1,\ldots,x_n)\in \prod_{i=1}^{n} G_i$ são dados por, respectivamente:
 
@@ -3214,7 +3216,7 @@ Seja $g \overset{def}{=} h_1\ldots h_n = h_1' \ldots h_n'$. Ora, temos então qu
 h_1\ldots h_n = h_1' \ldots h_n' \iff h_{1}'^{-1}h_1 = (h_2'\ldots h_n')(h_2\ldots h_n)^{-1}
 \]
 
-A partir da \hyperlink{prop172}{\textbf{Proposição 1.7.2}} podemos reescrever a expressão tal que:
+A partir da \hyperlink{prop172}{\textbf{Proposição 2.1.2}} podemos reescrever a expressão tal que:
 
 \[
 h_{1}'^{-1}h_1 = \underbrace{(h_2'h_{2}^{-1}) \ldots (h_n'h_{n}^{-1})}_{\in H_2\ldots H_n}
@@ -3237,7 +3239,7 @@ Realizando de forma análoga as mesmas operações indutivamente sobre $n$ concl
 \begin{theorem}
 Sejam $G$ um grupo e $H_1, \ldots, H_n \leq G$.
 
-Temos, a partir das notações nas definições \hyperlink{def171}{1.7.1} e \hyperlink{def172}{1.7.2}, que:
+Temos, a partir das notações nas definições \hyperlink{def171}{2.1.1} e \hyperlink{def172}{2.1.2}, que:
 
 \[
 G = \bigodot_{i=1}^{n} H_i \Longrightarrow G \cong \prod_{i=1}^{n} H_i
@@ -3260,7 +3262,7 @@ Tomemos a função $\mu$ tal que:
 
 Note que a função está de fato bem definida e é trivialmente bijetiva: 
 
-A sobrejetividade de $\mu$ segue diretamente da primeira condição da \hyperlink{def172}{\textbf{Definição 1.7.2}}, pois $G = H_1 \ldots H_n$. Além disso, pela \hyperlink{prop173}{\textbf{Proposição 1.7.3}} temos que a representação de qualquer elemento $g \in G$ na forma $h_1 \ldots h_n$ é única. Essa unicidade assegura que $\mu$ está bem definida e é injetiva. Logo, $\mu$ é uma bijeção.
+A sobrejetividade de $\mu$ segue diretamente da primeira condição da \hyperlink{def172}{\textbf{Definição 2.1.2}}, pois $G = H_1 \ldots H_n$. Além disso, pela \hyperlink{prop173}{\textbf{Proposição 2.1.3}} temos que a representação de qualquer elemento $g \in G$ na forma $h_1 \ldots h_n$ é única. Essa unicidade assegura que $\mu$ está bem definida e é injetiva. Logo, $\mu$ é uma bijeção.
 
 Mostremos, por fim, que $\mu$ é um homomorfismo de grupos.
 
@@ -3270,7 +3272,7 @@ Temos:
 
 \begin{align*}
     \mu(gg') &= \mu\bigl( (h_1 \ldots h_n)(h'_{1} \ldots h'_{n}) \bigr) \\
-             &= \mu(h_1 h'_{1} \ldots h_n h'_{n}) \; \; \; \text{(\hyperlink{prop172}{\textbf{Proposição 1.7.2}})} \\
+             &= \mu(h_1 h'_{1} \ldots h_n h'_{n}) \; \; \; \text{(\hyperlink{prop172}{\textbf{Proposição 2.1.2}})} \\
              &= (h_1 h'_{1}, \ldots, h_n h'_{n}) \\
              &= (h_1, \ldots, h_n)(h'_{1}, \ldots, h'_{n}) \\
              &= \mu(g)\mu(g')
@@ -3473,7 +3475,7 @@ G = H \rtimes K
 \textit{Observações:}
 
 \begin{itemize}
-  \item \textit{Note que, diferentemente da \hyperlink{def172}{\textbf{Definição 1.7.2}}, definimos o produto semidireto interno apenas entre $2$ subgrupos de $G$. Tal escolha é motivada pela natureza assimétrica do produto semidireto, ao contrário da simetria do produto direto. Entretanto é possível estender essa estrutura de forma indutiva para $n$ subgrupos de $G$. Nesse caso, obtemos um produto semidireto interno onde agrupamos os subgrupos passo a passo e cada novo subgrupo interage com o bloco formado pelos anteriores};
+  \item \textit{Note que, diferentemente da \hyperlink{def172}{\textbf{Definição 2.1.2}}, definimos o produto semidireto interno apenas entre $2$ subgrupos de $G$. Tal escolha é motivada pela natureza assimétrica do produto semidireto, ao contrário da simetria do produto direto. Entretanto é possível estender essa estrutura de forma indutiva para $n$ subgrupos de $G$. Nesse caso, obtemos um produto semidireto interno onde agrupamos os subgrupos passo a passo e cada novo subgrupo interage com o bloco formado pelos anteriores};
   \item \textit{Caso $K\trianglelefteq G$, então denotaríamos $G = K\rtimes H$ ou $G = H\ltimes K$}.
 \end{itemize}
 
@@ -3569,7 +3571,7 @@ Ora, como $H\cap K=\{e\}$, temos ${h'}^{-1}h = e \iff h = h'$ e $k'k^{-1} = e \i
 
 \qed
 
-Note que, diferentemente do produto direto interno, não existe a comutatividade entre elementos de subgrupos distintos. Isso ocorre pois tal resultado dependia fortemente da normalidade de ambos os subgrupos. Além disso, note que, sendo $g_1, g_2 \in G$ temos pela \hyperlink{prop181}{\textbf{Proposição 1.8.1}} que tais elementos são decompostos de forma única em:
+Note que, diferentemente do produto direto interno, não existe a comutatividade entre elementos de subgrupos distintos. Isso ocorre pois tal resultado dependia fortemente da normalidade de ambos os subgrupos. Além disso, note que, sendo $g_1, g_2 \in G$ temos pela \hyperlink{prop181}{\textbf{Proposição 2.2.1}} que tais elementos são decompostos de forma única em:
 
 \[
 g_1 = h_1k_1,\; h_1\in H, \; k_1\in K
@@ -3625,7 +3627,7 @@ H \rtimes_{\theta} K.
 
 \begin{proposition}
 \color{red}
-A partir das notações da \hyperlink{def182}{\textbf{Definição 1.8.2}}, temos que o produto semidireto externo de $H$ e $K$ é um grupo.
+A partir das notações da \hyperlink{def182}{\textbf{Definição 2.2.2}}, temos que o produto semidireto externo de $H$ e $K$ é um grupo.
 \end{proposition}
 
 {\color{red}
@@ -3823,7 +3825,7 @@ Defina $\varphi$ a função dada por:
 
 Mostremos que $\varphi$ é um isomorfismo de grupos. 
 
-Note que, analogamente ao \hyperlink{teo182}{\textbf{Teorema 1.8.2}}, $\varphi$ é de fato função e é bijetora por construção, pelo fato de $\beta$ ser um automorfismo de $K$. 
+Note que, analogamente ao \hyperlink{teo182}{\textbf{Teorema 2.2.2}}, $\varphi$ é de fato função e é bijetora por construção, pelo fato de $\beta$ ser um automorfismo de $K$. 
 
 Mostremos, portanto, que $\varphi$ é um homomorfismo de grupos. Sejam $(h_1,k_1),(h_2,k_2)\in H\rtimes_{\theta} K$. Temos:
 
@@ -3862,7 +3864,7 @@ H \xrightarrow{\varphi} G \xrightarrow{\psi} K
 
 \begin{definition}
 \color{red}
-A partir das notações da \hyperlink{def191}{\textbf{Definição 1.9.1}}, uma sequência da forma:
+A partir das notações da \hyperlink{def191}{\textbf{Definição 2.3.1}}, uma sequência da forma:
 
 \[
 \{e\} \xrightarrow{\epsilon_1} H \xrightarrow{\varphi} G \xrightarrow{\psi} K \xrightarrow{\epsilon_2} \{e\}
@@ -3889,7 +3891,7 @@ A partir das notações da \hyperlink{def191}{\textbf{Definição 1.9.1}}, uma s
 \textit{Observações:}
 
 \begin{itemize}
-  \item \textit{Note que o grupo trivial $\{e\}$ é único a menos de isomorfismo, logo podemos assumir, sem perda de generalidade, que os grupos triviais definidos na \hyperlink{def192}{\textbf{Definição 1.9.2}} são de fato iguais;}
+  \item \textit{Note que o grupo trivial $\{e\}$ é único a menos de isomorfismo, logo podemos assumir, sem perda de generalidade, que os grupos triviais definidos na \hyperlink{def192}{\textbf{Definição 2.3.2}} são de fato iguais;}
   \item \textit{A partir da definição temos que $\varphi$ é um monomorfismo, pois $\ker{\varphi} = \operatorname{Im}{\epsilon_1} = \{e\}$;}
   \item \textit{Analogamente, temos que $\psi$ é um epimorfismo, pois $\operatorname{Im}{\psi} = \ker{\epsilon_2} = K$;}
   \item \textit{Desde que a sequência é exata em $G$, então como $\operatorname{Im}{\varphi} = \ker{\psi}$, temos que $\operatorname{Im}{\varphi}\trianglelefteq G$}.
@@ -4064,7 +4066,7 @@ Portanto, $\Upsilon$ é um homomorfismo injetivo.
 \textit{Observações:}
 
 \begin{itemize}
-	\item \textit{Note que $G$ não é isomorfo a $\mathfrak{S}_{G_0}$, uma vez que $\vert G\vert = n \neq \vert \mathfrak{S}_{G_0}\vert = n!$, como mostrado na \hyperlink{prop211}{\textbf{Proposição 2.1.1}};}
+	\item \textit{Note que $G$ não é isomorfo a $\mathfrak{S}_{G_0}$, uma vez que $\vert G\vert = n \neq \vert \mathfrak{S}_{G_0}\vert = n!$, como mostrado na \hyperlink{prop211}{\textbf{Proposição 3.1.1}};}
 	\item \textit{Como mostramos que se trata de um homomorfismo de grupos injetivo, então a estrutura de grupo é preservada e é possível mapear cada elemento de $G$ para algum elemento de $\mathfrak{S}_{G_0}$, em outras palavras:}
 
 \textbf{\textit{"Todo grupo finito é isomorfo a um subgrupo de um grupo simétrico".}}
@@ -4139,7 +4141,7 @@ Temos também que os elementos $\tau_1,\ldots,\tau_k$ comutam entre si e:
 
 \textbf{Demonstração:}
 
-Seja $x\in \text{supp}(\tau_i)$, para algum $i\in\llbracket 1,k\rrbracket$. Pela \hyperlink{prop212}{\textbf{Proposição 2.1.2}} temos que $\tau_i(x) \in \text{supp}(\tau_i)$. 
+Seja $x\in \text{supp}(\tau_i)$, para algum $i\in\llbracket 1,k\rrbracket$. Pela \hyperlink{prop212}{\textbf{Proposição 3.1.2}} temos que $\tau_i(x) \in \text{supp}(\tau_i)$. 
 
 Como $\forall j\in\llbracket 1,k\rrbracket$ tal que $i\neq j$ temos que $\text{supp}(\tau_j)\cap\text{supp}(\tau_i) = \emptyset$, então $\sigma(x) = \tau_i(x)$.
 
@@ -4203,7 +4205,7 @@ Denotamos tal $k$-ciclo como:
 \]
 
 	\item \textit{Chamamos também um $k$-ciclo de \textbf{ciclo de comprimento $k$}};
-	\item \textit{Caso $\sigma,\tau$ sejam ciclos com suportes dois a dois disjuntos, temos diretamente via a \hyperlink{prop213}{\textbf{Proposição 2.1.3}} que $\sigma\tau=\tau\sigma$};
+	\item \textit{Caso $\sigma,\tau$ sejam ciclos com suportes dois a dois disjuntos, temos diretamente via a \hyperlink{prop213}{\textbf{Proposição 3.1.3}} que $\sigma\tau=\tau\sigma$};
 
 	\item \textit{Note que nem toda permutação é um ciclo. Tomemos $\sigma\in\mathfrak{S}_4$ tal que:}
 
@@ -4244,11 +4246,11 @@ Definimos o seguinte conjunto:
 \mathfrak{O}(x) \overset{def}{=} \{\sigma^k(x)\; ; \;k\in\mathbb{Z} \}
 \]
 
-Note que a restrição $\sigma\upharpoonright_{\mathfrak{O}(x_j)}$ forma um $k$-ciclo e $\text{supp}(\sigma\upharpoonright_{\mathfrak{O}(x_j)}) = \mathfrak{O}(x_j)$, pela \hyperlink{prop212}{\textbf{Proposição 2.1.2}}.
+Note que a restrição $\sigma\upharpoonright_{\mathfrak{O}(x_j)}$ forma um $k$-ciclo e $\text{supp}(\sigma\upharpoonright_{\mathfrak{O}(x_j)}) = \mathfrak{O}(x_j)$, pela \hyperlink{prop212}{\textbf{Proposição 3.1.2}}.
 
 Realizamos o mesmo procedimento para todo $x\in X\setminus \mathfrak{O}(x_j)$ tal que $\sigma(x)\neq x$ e assim sucessivamente. Como $X$ é um conjunto finito, realizamos tal procedimento em um número finito de passos.
 
-Pela \hyperlink{prop213}{\textbf{Proposição 2.1.3}} temos que a família $\{\mathfrak{O}(x)\}_{x\in X}$ forma uma partição de $X\setminus I$, onde $I\overset{def}{=} \{ x\in X ; \sigma(x) = x \}$.
+Pela \hyperlink{prop213}{\textbf{Proposição 3.1.3}} temos que a família $\{\mathfrak{O}(x)\}_{x\in X}$ forma uma partição de $X\setminus I$, onde $I\overset{def}{=} \{ x\in X ; \sigma(x) = x \}$.
 
 Sendo $\mathfrak{R}$ o conjunto dos representantes de cada $k_x$-ciclo $\sigma \upharpoonright_{\mathfrak{O}(x)}, \; \forall x\in X\setminus I$, temos:
 
@@ -4276,6 +4278,7 @@ Como isso vale para qualquer elemento $x \in \text{supp}(\sigma)$, todo ciclo qu
 
 \qed
 
+\hypertarget{prop220}{}
 \begin{proposition}
 Seja $X$ um conjunto finito e não vazio tal que $\text{Card}(X) \geq 3$. 
 
@@ -4292,7 +4295,7 @@ Suponha, agora, que $X\setminus\text{supp}(\sigma) = \emptyset$. Procedemos por 
 
 Considere, inicialmente, que $\sigma$ possui um ciclo de comprimento maior ou igual a $3$ (como $\text{Card}(X)\geq 3$, então podemos afirmar que tal caso existe). 
 
-Tomemos, sem perda de generalidade, $\sigma \overset{def}{=} (x_1\;x_s\;x_k)\kappa$, onde $\kappa\in\mathfrak{S}_X$ e $\{x_1, x_s, x_k\}\cap\text{supp}(\kappa)=\emptyset$. Sabemos que $\sigma$ pode ser decomposto unicamente de tal forma pelo \hyperlink{teo221}{\textbf{Teorema 2.2.1}}.
+Tomemos, sem perda de generalidade, $\sigma \overset{def}{=} (x_1\;x_s\;x_k)\kappa$, onde $\kappa\in\mathfrak{S}_X$ e $\{x_1, x_s, x_k\}\cap\text{supp}(\kappa)=\emptyset$. Sabemos que $\sigma$ pode ser decomposto unicamente de tal forma pelo \hyperlink{teo221}{\textbf{Teorema 3.2.1}}.
  
 Definimos, ainda, $\tau \overset{def}{=} (x_1 \; x_s)$. Logo, temos que $\tau\sigma\tau^{-1}(x_k) = x_s \neq x_1$ e, portanto, $\tau\sigma\tau^{-1} \neq \sigma \iff \tau\sigma\neq\sigma\tau$.
 
@@ -4387,7 +4390,7 @@ Então, $\mathcal{O}(\sigma) = \text{mmc}(k_1,\ldots,k_t)$.
 
 Seja $h\in\mathbb{Z}_{+}^{*}$ tal que $h\overset{def}{=}\mathcal{O}(\sigma)$, isto é, $\sigma^h = \text{id}_X$.
 
-Note que, como $\gamma_i\gamma_j=\gamma_j\gamma_i,\;\forall i,j\in\llbracket 1, t\rrbracket$ tal que $i\neq j$, pela \hyperlink{prop213}{\textbf{Proposição 2.1.3}} temos:
+Note que, como $\gamma_i\gamma_j=\gamma_j\gamma_i,\;\forall i,j\in\llbracket 1, t\rrbracket$ tal que $i\neq j$, pela \hyperlink{prop213}{\textbf{Proposição 3.1.3}} temos:
 
 \[
 \text{id}_X = \sigma^h = (\gamma_1\ldots\gamma_t)^h = \gamma_{1}^{h}\ldots\gamma_{t}^{h}
@@ -4470,7 +4473,7 @@ Seja $\sigma\in\mathfrak{S}_X$ uma permutação tal que:
 
 Definimos $\mathcal{O}(\gamma_i) = k_i, \; \forall i\in\llbracket 1,m\rrbracket$ (de tal forma que $\gamma_i$ é um $k_i$-ciclo).
 
-Sabemos a partir da \hyperlink{prop221}{\textbf{Proposição 2.2.1}} que cada $k$-ciclo pode ser escrito como $k-1$ transposições (de suportes não necessariamente disjuntos).
+Sabemos a partir da \hyperlink{prop221}{\textbf{Proposição 3.2.1}} que cada $k$-ciclo pode ser escrito como $k-1$ transposições (de suportes não necessariamente disjuntos).
 
 Como possuímos $m$ ciclos dois a dois disjuntos, temos:
 
@@ -4485,7 +4488,7 @@ Como $\sum_{i=1}^m k_i \leq n$, pelo Princípio da Casa de Pombos, e $m\in\llbra
 \textit{Observações:} 
 
 \begin{itemize}
-  \item \textit{Diferentemente do \hyperlink{teo221}{\textbf{Teorema 2.2.1}}, a decomposição de uma permutação $\sigma\in\mathfrak{S}_X$ em transposições não é necessariamente única. Será mostrado na \hyperlink{prop224}{\textbf{Proposição 2.2.4}} que uma permutação pode também ser decomposta em \textbf{transposições elementares};}
+  \item \textit{Diferentemente do \hyperlink{teo221}{\textbf{Teorema 3.2.1}}, a decomposição de uma permutação $\sigma\in\mathfrak{S}_X$ em transposições não é necessariamente única. Será mostrado na \hyperlink{prop224}{\textbf{Proposição 3.2.4}} que uma permutação pode também ser decomposta em \textbf{transposições elementares};}
   \item \textit{Note que, para o caso $n = 2$, temos que o resultado é trivialmente válido para qualquer elemento do grupo simétrico, com exceção do elemento neutro, que é representado por no mínimo duas transposições: $(x_1\; x_2)(x_1\; x_2) = \text{id}_X$}.
 \end{itemize}
 
@@ -4500,7 +4503,7 @@ Seja $\sigma \in \mathfrak{S}_8$ tal que:
 = (1\;7\;8)(2\;5\;3\;6) 
 \]
 
-Note que, seguindo a mesma estratégia de prova da \hyperlink{prop221}{\textbf{Proposição 2.2.1}}, podemos ainda reescrever $\sigma$ como:
+Note que, seguindo a mesma estratégia de prova da \hyperlink{prop221}{\textbf{Proposição 3.2.1}}, podemos ainda reescrever $\sigma$ como:
 
 \[
 \sigma = (1\;7\;8)(2\;5\;3\;6) = (1\;8)(1\;7)(2\;6)(2\;3)(2\;5)
@@ -4595,7 +4598,7 @@ Então, todo elemento de $\mathfrak{S}_X$ é igual a um produto de transposiçõ
 
 \textbf{Demonstração:}
 
-O resultado é consequência imediata da combinação do \hyperlink{corol221}{\textbf{Corolário 2.2.1}} e da \hyperlink{prop224}{\textbf{Proposição 2.2.4}}. 
+O resultado é consequência imediata da combinação do \hyperlink{corol221}{\textbf{Corolário 3.2.1}} e da \hyperlink{prop224}{\textbf{Proposição 3.2.4}}. 
 
 \qed
 
@@ -4655,9 +4658,9 @@ Isto é, $\forall \sigma \in \mathfrak{S}_X, \; \exists a_1,\;\ldots, a_p,\;b_1,
 
 \textbf{Demonstração:}
 
-A partir do \hyperlink{corol222}{\textbf{Corolário 2.2.2}}, basta mostrar que é possível formar uma transposição elementar a partir de um produto de $\tau$ e $\gamma$.
+A partir do \hyperlink{corol222}{\textbf{Corolário 3.2.2}}, basta mostrar que é possível formar uma transposição elementar a partir de um produto de $\tau$ e $\gamma$.
 
-Ora, pela \hyperlink{prop225}{\textbf{Proposição 2.2.5}} temos diretamente que:
+Ora, pela \hyperlink{prop225}{\textbf{Proposição 3.2.5}} temos diretamente que:
 
 \[
 \gamma^{k}\tau\gamma^{-k} = \gamma^k (x_1\; x_2)\gamma^{-k} = (\gamma^{k}(x_1)\; \gamma^{k}(x_2)) = (x_{k+1}\; x_{k+2}),\; \forall k\in \llbracket 0, n-2 \rrbracket
@@ -4710,13 +4713,13 @@ Definimos a \textbf{assinatura de $\sigma$} como o resultado da função $\varep
 
 
 \begin{definition}
-A partir das notações da \hyperlink{def232}{\textbf{Definição 2.3.2}}, uma permutação $\sigma\in\mathfrak{S}_X$ é dita \textbf{par} se $\varepsilon(\sigma) = 1$.
+A partir das notações da \hyperlink{def232}{\textbf{Definição 3.3.2}}, uma permutação $\sigma\in\mathfrak{S}_X$ é dita \textbf{par} se $\varepsilon(\sigma) = 1$.
 
 Simetricamente, uma permutação $\sigma\in\mathfrak{S}_X$ é dita \textbf{ímpar} se $\varepsilon(\sigma) = -1$.
 \end{definition}
 
 \begin{example}
-Retomando o \hyperlink{ex231}{\textbf{Exemplo 2.3.1}} temos diretamente que $\sigma$ é uma permutação de assinatura igual à $-1$ e é, portanto, ímpar:
+Retomando o \hyperlink{ex231}{\textbf{Exemplo 3.3.1}} temos diretamente que $\sigma$ é uma permutação de assinatura igual à $-1$ e é, portanto, ímpar:
 
 \[
 \varepsilon(\sigma) = (-1)^{\mathscr{I}(\sigma)} = (-1)^{17} = -1.
@@ -4768,7 +4771,7 @@ Portanto, ao decompor $\sigma = \tau_1\ldots\tau_m$ para $m\in\mathbb{Z}_{+}^{*}
 
 Note, primeiramente, que podemos supor sem perda de generalidade que $\sigma$ é decomposto em um número finito $p\in\mathbb{Z}_{\geq m}$ de transposições elementares. 
 
-Isso se dá pois, pela \hyperlink{prop224}{\textbf{Proposição 2.2.5}}, temos diretamente via a construção da demonstração que uma dada transposição se decompõe em um número ímpar de transposições elementares. Portanto, $(-1)^m = (-1)^p$.
+Isso se dá pois, pela \hyperlink{prop224}{\textbf{Proposição 3.2.5}}, temos diretamente via a construção da demonstração que uma dada transposição se decompõe em um número ímpar de transposições elementares. Portanto, $(-1)^m = (-1)^p$.
 
 Sejam $\sigma' \in \mathfrak{S}_X$ uma permutação arbitrária e $\tau' = (x_d\; x_{d+1})\in \mathfrak{S}_X$ uma transposição elementar tal que $x_d < x_{d+1}$ via a ordem total de $X$.
 
@@ -4788,7 +4791,7 @@ Como $\sigma = \tau_{1}'\ldots \tau_{p}'$ onde $\tau_{i}'$ é transposição ele
 
 \qed
 
-A partir do \hyperlink{teo231}{\textbf{Teorema 2.3.1}} podemos enunciar a seguinte definição equivalente para o conceito de \textbf{assinatura de uma permutação}:
+A partir do \hyperlink{teo231}{\textbf{Teorema 3.3.1}} podemos enunciar a seguinte definição equivalente para o conceito de \textbf{assinatura de uma permutação}:
 
 \begin{definition}
 Sejam $X$ um conjunto finito tal que $\text{Card}(X)\geq 2$ e $\sigma\in\mathfrak{S}_X$ uma permutação.
@@ -4817,7 +4820,7 @@ Logo, para quaisquer $k$-ciclos $\sigma\in \mathfrak{S}_X$, temos que:
 
 \textbf{Demonstração:}
 
-O resultado da proposição é imediato via a \hyperlink{prop221}{\textbf{Proposição 2.2.1}} e o \hyperlink{teo231}{\textbf{Teorema 2.3.1}}.
+O resultado da proposição é imediato via a \hyperlink{prop221}{\textbf{Proposição 3.2.1}} e o \hyperlink{teo231}{\textbf{Teorema 3.3.1}}.
 
 \qed
 
@@ -5057,7 +5060,7 @@ Mostremos, primeiramente, que $\langle (x\;y\;z)\rangle\subseteq \mathfrak{A}_X$
 
 Note que $(x\;y\;z)^3 = \text{id}_X \in \mathfrak{A}_X$.
 
-Pela \hyperlink{prop232}{\textbf{Proposição 2.3.2}} temos ainda que $\varepsilon\left((x\;y\;z)^k\right) = 1,\; \forall k\in\mathbb{Z}$. 
+Pela \hyperlink{prop232}{\textbf{Proposição 3.3.2}} temos ainda que $\varepsilon\left((x\;y\;z)^k\right) = 1,\; \forall k\in\mathbb{Z}$. 
 
 Portanto, temos diretamente que $\langle (x\;y\;z)\rangle \subseteq \mathfrak{A}_X$.
 
@@ -5083,7 +5086,7 @@ Concluímos que:
 
 \qed
 
-
+\hypertarget{prop344}{}
 \begin{proposition}
 Seja $X$ um conjunto finito e não vazio. Logo, se $H \leq \mathfrak{S}_X$, então ou $H\leq \mathfrak{A}_X$ ou $[H : H\cap \mathfrak{A}_X] = 2$.
 \end{proposition}
@@ -5119,7 +5122,7 @@ Como $\text{Card}(\{-1,1\}) = 2$, então deduzimos que $[H:H\cap\mathfrak{A}_X] 
 \begin{theorem}
 Seja $G$ um grupo de ordem $n \in \mathbb{Z}_{+}^{*}$. Logo, se $d \vert n$, não é possível garantir que exista subgrupo $H \leq G$ tal que $\vert H\vert = d$.
 
-Isto é, a recíproca do \hyperlink{teolagrange}{\textbf{Teorema de Lagrange}} é falsa.
+Isto é, a recíproca do \hyperlink{lagrange}{\textbf{Teorema de Lagrange}} é falsa.
 \end{theorem}
 
 \textbf{Demonstração:}
@@ -5149,7 +5152,7 @@ Seja $X$ um conjunto finito tal que $\text{Card}(X) \geq 5$. Logo, todos $3$-cic
 
 Sejam $x,y,z\in X$ e $\sigma\in\mathfrak{S}_X$ uma permutação arbitrária.
 
-Sabemos, da \hyperlink{prop225}{\textbf{Proposição 2.2.5}}, que quaisquer ciclos são conjugados entre si em $\mathfrak{S}_X$ se possuem mesmo comprimento. Mostremos que para os $3$-ciclos essa conjugação permanece em $\mathfrak{A}_X$.
+Sabemos, da \hyperlink{prop225}{\textbf{Proposição 3.2.5}}, que quaisquer ciclos são conjugados entre si em $\mathfrak{S}_X$ se possuem mesmo comprimento. Mostremos que para os $3$-ciclos essa conjugação permanece em $\mathfrak{A}_X$.
 
 Note que, se $\sigma$ for par, então a proposição está demonstrada diretamente. Suponha, agora, que $\sigma$ é ímpar.
 
@@ -5163,21 +5166,22 @@ Como $\sigma'$ é uma permutação par ($\sigma' \in \mathfrak{A}_X$), concluím
 
 \qed
 
-\hypertarget{prop246}{}
-\begin{proposition}
+\hypertarget{lemalt}{}
+\begin{lemma}
 Seja $X$ um conjunto finito tal que $\text{Card}(X) \geq 5$. Então, se um subgrupo normal $H\trianglelefteq \mathfrak{A}_X$ contém um $3$-ciclo, temos que $H = \mathfrak{A}_X$.
-\end{proposition}
+\end{lemma}
 
 \textbf{Demonstração:}
 
 Suponha $H\trianglelefteq \mathfrak{A}_X$ tal que $H$ contém um $3$-ciclo. Ora, então, por definição de normalidade, todo elemento conjugado do $3$-ciclo de $H$ por permutações de $\mathfrak{A}_X$ pertence à $H$.
 
-Pela \hyperlink{prop245}{\textbf{Proposição 2.4.5}}, sabemos que, se $\text{Card}(X)\geq 5$, então todos os $3$-ciclos são conjugados entre si. 
+Pela \hyperlink{prop245}{\textbf{Proposição 3.4.5}}, sabemos que, se $\text{Card}(X)\geq 5$, então todos os $3$-ciclos são conjugados entre si. 
 
 Como $\mathfrak{A}_X$ é gerado por $3$-ciclos, concluímos que $H = \mathfrak{A}_X$.
 
 \qed
 
+\hypertarget{teo342}{}
 \begin{theorem}
 Seja $X$ um conjunto não vazio e finito, onde $n\overset{def}{=} \text{Card}(X)$. 
 
@@ -5187,57 +5191,35 @@ Se $n\neq 4$, então $\mathfrak{A}_X$ é um grupo simples.
 {\color{red}
 \textbf{Demonstração:}
 
-Note que, caso $n = 1$ ou $n = 2$, temos trivialmente que $\mathfrak{A}_X$ é simples e, pelo \hyperlink{teolagrange}{\textbf{Teorema de Lagrange}}, sabemos que se $n=3$ então $\mathfrak{A}_X$ é simples (uma vez que $\vert \mathfrak{A}_X\vert = 3$ é primo).
+Note que, caso $n = 1$ ou $n = 2$, temos trivialmente que $\mathfrak{A}_X$ é simples e, pelo \hyperlink{lagrange}{\textbf{Teorema de Lagrange}}, sabemos que se $n=3$ então $\mathfrak{A}_X$ é simples (uma vez que $\vert \mathfrak{A}_X\vert = 3$ é primo).
 
-Suponhamos que $n\geq 5$. Para mostrar que $\mathfrak{A}_X$ é simples basta mostrar que se existe um subgrupo normal não trivial $H\trianglelefteq \mathfrak{A}_X$, então $H$ contém um $3$-ciclo. Pela \hyperlink{prop246}{\textbf{Proposição 2.4.6}} temos $H=\mathfrak{A}_X$.
+Suponha que $n\geq 5$. Para mostrar que $\mathfrak{A}_X$ é simples, basta mostrar que se existe um subgrupo normal não trivial $H\trianglelefteq \mathfrak{A}_X$, então $H$ contém um $3$-ciclo. Pelo \hyperlink{lemalt}{\textbf{Lema 3.4.1}} temos então que $H=\mathfrak{A}_X$.
 
-Sabemos que, para qualquer $\sigma\in\mathfrak{S}_X$, se $\text{Card}(\text{supp}(\sigma)) = 3$, então $\sigma$ é um $3$-ciclo. Mostremos que para qualquer permutação de $H$ podemos realizar um número finito de operações tal que a permutação resultante seja um $3$-ciclo de $H$. Mostremos via disjunção de casos.
+Definimos pontos fixos de uma permutação $\sigma$ todos os elementos que não pertencem ao suporte de $\sigma$. Vamos mostrar que, se existe $\sigma\in H$ com um número máximo de pontos fixos tal que $\sigma$ não é a função identidade e nem um $3$-ciclo, então sempre é possível construir uma permutação $\sigma'\in H$ tal que $\sigma'$ tem mais pontos fixos que $\sigma$.
 
-Suponha, primeiramente, que $\sigma\in H$ é um produto de transposições de suportes dois a dois disjuntos (número par de transposições, uma vez que $\varepsilon(\sigma) = 1$). Consideremos $\sigma = (x\;y)(z\; t)\gamma$, para $\gamma\in \mathfrak{A}_X$ um produto de transposições de suportes dois a dois disjuntos, tal que $\text{supp}\left((x\;y)(z\;t)\right)\cap\text{supp}(\gamma) = \emptyset$, e $\tau \in \mathfrak{A}_X$ tal que $\tau = (x\;y)(z\;s)$, onde $s\notin\text{supp}(\sigma)$ e $\text{supp}\left((x\;y)(z\;s)\right)\cap\text{supp}(\gamma) = \emptyset$.
+Suponha, primeiramente, que $\sigma\in H$ é um produto de transposições de suportes dois a dois disjuntos (número par não nulo de transposições, uma vez que $\sigma$ não é a função identidade e temos que $\varepsilon(\sigma) = 1$). Definimos $\sigma \overset{def}{=} (x\;y)(z\; t)\gamma$, onde $\gamma\in \mathfrak{A}_X$ é um produto de transposições tal que $\text{supp}\left((x\;y)(z\;t)\right)\cap\text{supp}(\gamma) = \emptyset$. Tomemos também $\tau \in \mathfrak{A}_X$ tal que $\tau \overset{def}{=} (x\;y)(z\;s)$, onde $s\notin\text{supp}(\sigma)$.
 
 Note que a existência de $s\in X\setminus\text{supp}(\sigma)$ é garantida, uma vez que $n\geq 5$.
 
-Tomemos $\sigma' \overset{def}{=} [\sigma,\tau]$. Note que $\sigma'\in H$, uma vez que $H\trianglelefteq \mathfrak{A}_X$. Temos que:
+Seja $\sigma' \overset{def}{=} \sigma\tau\sigma\tau^{-1}$. Note que $\sigma'\in H$, uma vez que $H\trianglelefteq \mathfrak{A}_X$ e $\tau\in\mathfrak{A}_X$. Temos, portanto:
 
 \[
-\sigma' = (x\;y)(z\;t)\gamma(x\;y)(z\;s)(x\;y)(z\;t)\gamma(x\;y)(z\;s) = (z\;t)(z\;s)(z\;t)(z\;s) = (z\;t\;s) \in H
+\sigma' = \left( (x\; y)(z\; t)\gamma (x\; y)(z\; s)\right)^2 = \left((z\; t)\gamma(z\; s)\right)^2
 \]
 
-Logo, existe um $3$-ciclo em $H$. 
+Note que $\sigma'(t) = s$, então $\sigma'$ não é a função identidade. Além disso, temos que $\sigma'$ fixa $x,y\in X$, além de todos os outros pontos fixos de $\sigma$, com a possível exceção de $s\in X$. Portanto, concluímos que $\sigma'$ possui mais pontos fixos que $\sigma$. 
 
-Suponha, agora, que a decomposição de $\sigma\in H$ em ciclos de suportes dois a dois disjuntos possui um $k$-ciclo, tal que $k\in\mathbb{Z}_{\geq 3}$, mas $\sigma$ não simplesmente um $3$-ciclo.
+Suponha, agora, que a decomposição de $\sigma\in H$ em ciclos de suportes dois a dois disjuntos possui um $k$-ciclo, tal que $k\in\mathbb{Z}_{\geq 3}$, mas de tal forma que $\sigma$ não seja simplesmente um $3$-ciclo. Definimos $\sigma \overset{def}{=} (x\;y\;z\; \ldots)\gamma$, onde $\text{supp}\left((x\;y\;z\; \ldots)\right)\cap\text{supp}(\gamma) = \emptyset$.
 
-Note, primeiramente, que $\text{Card}(\text{supp}(\sigma)) \geq 5$, uma vez que um $4$-ciclo possui assinatura igual à $-1$. 
+Perceba que, caso $\sigma$ possuísse $n-4$ pontos fixos, então $\sigma$ seria da forma $\sigma = (x\;y\;z\;t)$, o que é absurdo pois $\varepsilon(\sigma) = -1$. Logo, $\sigma$ tem no máximo $n-5$ pontos fixos. Sabemos, portanto, que existem $t, s\in \text{supp}(\sigma)\setminus \{x,y,z\}$, uma vez que o suporte de $\sigma$ possui pelo menos $5$ elementos. Defina $\tau \overset{def}{=} (z\;t\;s)$. 
 
-Tomemos $\sigma = (x\;y\;z\;\ldots)\gamma$, onde $\gamma\in\mathfrak{A}_X$ tal que $\text{supp}\left((x\;y\;z\;\ldots)\right)\cap\text{supp}(\gamma) = \emptyset$.
+Tomemos, então, $\sigma'\overset{def}{=}\sigma^{-1}\tau\sigma\tau^{-1}$. Analogamente ao caso anterior, temos diretamente que $\sigma'\in H$.
 
-Como $n\geq 5$, existem $p,q\in X\setminus\{x,y,z\}$ tal que $p,q\in\text{supp}(\sigma)$, uma vez que $\text{Card}(\text{supp}(\sigma)) \geq 5$.
+Ainda, como $\tau$ fixa $x,y\in X$, assim como todos os outros pontos fixos de $\sigma$, temos que $\sigma'$ fixa $x\in X$ e todos os outros pontos fixos de $\sigma$. Logo, temos que $\sigma'$ fixa um ponto a mais que $\sigma$. Note também que $\sigma'$ é não trivial, uma vez que $\sigma'(y) \neq y$.
 
-Tomemos $\tau = (z\;p\;q)$ e $\sigma'\overset{def}{=} [\sigma,\tau]$. Analogamente ao caso anterior, temos que $\sigma'\in H$.
+Finalmente, como para quaisquer permutações $\sigma\in H$ não triviais com um número máximo de pontos fixos temos os dois casos acima, concluímos que $\sigma$ pode ser apenas um $3$-ciclo. Pelo \hyperlink{lemalt}{\textbf{Lema 3.4.1}}, temos então que $H = \mathfrak{A}_X$. 
 
-Note que, para $t\in X\setminus\text{supp}(\sigma)$, temos:
-
-\[
-\sigma'(t) = \sigma(\tau(\sigma^{-1}(\tau^{-1}(t)))) = \sigma(\tau(\sigma^{-1}(t))) = \sigma(\tau(t)) = \sigma(t) = t
-\]
-
-Note, também, que:
-
-\[
-\sigma'(y) = \sigma(\tau(\sigma^{-1}(\tau^{-1}(y)))) = \sigma(\tau(\sigma^{-1}(y))) = \sigma(\tau(x)) = \sigma(x) = y
-\]
-
-Além disso, $\sigma'(p) = z$ e, portanto, concluímos que $\sigma'$ não é trivial e que também diminuiu estritamente o número de elementos do suporte original de $\sigma$. Logo:
-
-\[
-\text{Card}(\text{supp}(\sigma')) < \text{Card}(\text{supp}(\sigma))
-\]
-
-Podemos, portanto, realizar um número finito de operações em $\sigma$ tal que o resultado de tais operações é um elemento de $H$ com cardinal de suporte menor. Em particular, chegamos em um suporte de cardinal igual à $3$. Concluímos que $H$ contém um $3$-ciclo. 
-
-Finalmente, deduzimos que $H$ possui $3$-ciclos para todos os casos e, portanto, $H = \mathfrak{A}_X$. 
-
-Logo, $\mathfrak{A}_X$ é um grupo simples.
+Concluímos que $\mathfrak{A}_X$ é simples para $n\neq 4$.
 
 \qed}
 
@@ -5324,7 +5306,7 @@ Finalmente, concluímos que $\varphi$ é um isomorfismo de grupos e temos:
   \item \textit{Como $\mathfrak{K}$ contém a identidade e todos os elementos de estrutura de ciclos do tipo $(a\;b)(c\;d)$ de $\mathfrak{S}_X$, e a conjugação preserva o comprimento dos ciclos, concluímos que $\mathfrak{K}\trianglelefteq \mathfrak{S}_X$ e, consequentemente, $\mathfrak{K}\trianglelefteq \mathfrak{A}_X$.}.
 \end{itemize}
 
-
+\hypertarget{teo343}{}
 \begin{theorem}
 \color{red}
 Seja $X = \{x_1,x_2,x_3,x_4\}$, então os únicos subgrupos normais que $\mathfrak{A}_X$ admite são: $\{\text{id}_X\},\;\mathfrak{K}\;\;\text{e}\;\;\mathfrak{A}_X$, onde $\mathfrak{K}$ é o grupo de Klein. 
@@ -5337,7 +5319,7 @@ Isto é, o único grupo normal não trivial de $\mathfrak{A}_{X}$ é $\mathfrak{
 
 Sabemos que $\vert \mathfrak{A}_X\vert = \frac{4!}{2} = 12$. Logo, seus subgrupos podem admitir apenas cardinais $1,2,3,4,6$ e $12$.
 
-As ordens $1$ e $12$ correspondem, respectivamente, aos subgrupos normais triviais $\{\text{id}_X\}$ e $\mathfrak{A}_X$. Para a ordem $6$, sabemos pelo \hyperlink{teo241}{\textbf{Teorema 2.4.1}} que $\mathfrak{A}_X$ não admite subgrupos com essa cardinalidade. Resta-nos analisar as ordens $2, 3$ e $4$.
+As ordens $1$ e $12$ correspondem, respectivamente, aos subgrupos normais triviais $\{\text{id}_X\}$ e $\mathfrak{A}_X$. Para a ordem $6$, sabemos pelo \hyperlink{teo241}{\textbf{Teorema 3.4.1}} que $\mathfrak{A}_X$ não admite subgrupos com essa cardinalidade. Resta-nos analisar as ordens $2, 3$ e $4$.
 
 Um subgrupo de ordem $2$ deve ser da forma $H_2 = \{\text{id}_X, \tau\}$, em que $\tau$ é um elemento de ordem $2$. Em $\mathfrak{A}_X$, tais elementos são necessariamente produtos de duas transposições disjuntas. Suponha, sem perda de generalidade, que $\tau = (x_1\;x_2)(x_3\;x_4)$ e $\sigma = (x_1\;x_2\;x_3)$. Note que $\tau,\sigma \in \mathfrak{A}_X$. Ao conjugarmos $\tau$ por $\sigma$ obtemos:
 
@@ -5355,7 +5337,7 @@ Um subgrupo de ordem $3$ é gerado por um $3$-ciclo, tendo a forma $H_3 = \{\tex
 
 Uma vez que $(x_1\;x_4\;x_2) \notin H_3$, temos $\kappa H_3 \kappa^{-1} \neq H_3$. Logo, $H_3$ não é normal.
 
-Finalmente, para a ordem $4$, sabemos que $\mathfrak{A}_X$ possui exatamente um subgrupo com essa cardinalidade: o grupo de Klein $\mathfrak{K}$. Isso se dá pois $\mathfrak{A}_X$ não admite elementos de ordem $4$, uma vez que $4$-ciclos são permutações ímpares. Isso força qualquer subgrupo de ordem $4$ a ser composto pela identidade e por três elementos de ordem $2$. Como existem exatamente três elementos de ordem $2$ em $\mathfrak{A}_X$, há apenas uma combinação possível. Sabemos, ainda, da \hyperlink{prop247}{\textbf{Proposição 2.4.7}}, que $\mathfrak{K}\trianglelefteq \mathfrak{A}_X$.
+Finalmente, para a ordem $4$, sabemos que $\mathfrak{A}_X$ possui exatamente um subgrupo com essa cardinalidade: o grupo de Klein $\mathfrak{K}$. Isso se dá pois $\mathfrak{A}_X$ não admite elementos de ordem $4$, uma vez que $4$-ciclos são permutações ímpares. Isso força qualquer subgrupo de ordem $4$ a ser composto pela identidade e por três elementos de ordem $2$. Como existem exatamente três elementos de ordem $2$ em $\mathfrak{A}_X$, há apenas uma combinação possível. Sabemos, ainda, da \hyperlink{prop247}{\textbf{Proposição 3.4.7}}, que $\mathfrak{K}\trianglelefteq \mathfrak{A}_X$.
 
 Concluímos assim que os únicos subgrupos normais em $\mathfrak{A}_X$ são $\{\text{id}_X\}$, $\mathfrak{K}$ e $\mathfrak{A}_X$.
 
@@ -5371,7 +5353,7 @@ Concluímos assim que os únicos subgrupos normais em $\mathfrak{A}_X$ são $\{\
 {\color{red}
 \textbf{Demonstração:}
 
-O resultado é imediato combinando as proposições \hyperlink{prop221}{\textbf{2.2.1}} e \hyperlink{prop244}{\textbf{2.4.4}} e os teoremas \hyperlink{teo242}{\textbf{2.4.2}} e \hyperlink{teo243}{\textbf{2.4.3}}.
+O resultado é imediato combinando as proposições \hyperlink{prop220}{\textbf{3.2.1}} e \hyperlink{prop344}{\textbf{3.4.4}} e os teoremas \hyperlink{teo342}{\textbf{3.4.2}} e \hyperlink{teo343}{\textbf{3.4.3}}.
 
 \qed}
 
@@ -5699,7 +5681,7 @@ Dizemos ainda que um refinamento é \textbf{próprio} se é adicionada uma quant
 \begin{example}
 \color{red}
 
-A série subnormal apresentada no \hyperlink{ex411}{\textbf{Exemplo 4.1.1}} é um refinamento das seguintes séries subnormais de $\mathbb{Z}/30\mathbb{Z}$:
+A série subnormal apresentada no \hyperlink{ex411}{\textbf{Exemplo 5.1.1}} é um refinamento das seguintes séries subnormais de $\mathbb{Z}/30\mathbb{Z}$:
 
 \[
 \lambda_1:
@@ -5727,20 +5709,20 @@ G_0 & & G_1 & & G_2
 \begin{definition}
 \color{red}
 
-Seja $G$ um grupo e $\lambda$ uma série subnormal de $G$. Dizemos que $\lambda$ é uma \textbf{série de composição de $G$} se, e somente se, $\lambda$ não admite refinamento próprio.
+Seja $G$ um grupo e $\lambda$ uma série subnormal de $G$. Dizemos que $\lambda$ é uma \textbf{série de composição de $G$} se, e somente se, $\lambda$ não possui repetições e não admite refinamento próprio.
 
 \end{definition}
 
 {\color{red}
 
-\textit{Note que nem todo grupo admite uma série de composição. Por exemplo, o grupo aditivo $(\mathbb{Z}, +)$ não possui série de composição pois, dado qualquer subgrupo não trivial de $\mathbb{Z}$, sempre existe um subgrupo normal próprio e não trivial contido nele. Assim, qualquer série subnormal de $\mathbb{Z}$ pode ser refinada indefinidamente.}
+\textit{Observação: note que nem todo grupo admite uma série de composição. Por exemplo, o grupo aditivo $(\mathbb{Z}, +)$ não possui série de composição pois, dado qualquer subgrupo não trivial de $\mathbb{Z}$, sempre existe um subgrupo normal próprio e não trivial contido nele. Assim, qualquer série subnormal de $\mathbb{Z}$ pode ser refinada indefinidamente.}
 
 }
 
 \begin{example}
 \color{red}
 
-A série subnormal apresentada no \hyperlink{ex411}{\textbf{Exemplo 4.1.1}} é também uma série de composição.
+A série subnormal apresentada no \hyperlink{ex411}{\textbf{Exemplo 5.1.1}} é também uma série de composição.
 \end{example}
 
 \begin{proposition}
@@ -5781,7 +5763,27 @@ Todo grupo finito não trivial admite uma série de composição.
 {\color{red}
 \textbf{Demonstração:}
 
+Tomemos $G$ um grupo finito não trivial. Caso $G$ seja um grupo simples, temos trivialmente a seguinte série de composição:
 
+\[
+\lambda: G \trianglerighteq \{e\}
+\]
+
+Suponha, agora, que $G$ não é simples. Logo, existe pelo menos um subgrupo normal $G_1 \trianglelefteq G$.
+
+Tomemos $G_1 \trianglelefteq G$ tal que $G_1$ seja um subgrupo normal maximal de $G$.
+
+Nesse caso, podemos construir a série subnormal $\lambda_1$ dada por:
+
+\[
+\lambda_1: G \trianglerighteq G_1 \trianglerighteq \{e\}
+\]
+
+Note que, caso $G_1$ seja simples, então $\lambda_1$ é uma série de composição. Caso $G_1$ não seja simples, então podemos proceder de forma indutiva o mesmo procedimento para os subgrupos normais de $G_1$. 
+
+Como $G$ é um grupo finito, então tal construção será realizada em um número finito de passos. 
+
+Concluímos, portanto, que todo grupo finito não trivial possui série de composição.
 
 \qed}
 
@@ -5818,7 +5820,62 @@ Dizemos que $\lambda_1$ e $\lambda_2$ são \textbf{séries equivalentes} se exis
 \begin{example}
 \color{red}
 
+Considere as seguintes séries de composição de $\mathbb{Z}/30\mathbb{Z}$:
 
+\[
+\lambda_1: 
+\begin{array}{ccccccc}
+\mathbb{Z}/30\mathbb{Z} & \trianglerighteq & \langle \overline{5} \rangle & \trianglerighteq & \langle \overline{10} \rangle & \trianglerighteq & \langle \overline{0} \rangle \\
+\shortparallel & & \shortparallel & & \shortparallel & & \shortparallel \\
+G_0 & & G_1 & & G_2 & & G_3
+\end{array}
+\]
+
+\[
+\lambda_2: 
+\begin{array}{ccccccc}
+\mathbb{Z}/30\mathbb{Z} & \trianglerighteq & \langle \overline{2} \rangle & \trianglerighteq & \langle \overline{6} \rangle & \trianglerighteq & \langle \overline{0} \rangle \\
+\shortparallel & & \shortparallel & & \shortparallel & & \shortparallel \\
+H_0 & & H_1 & & H_2 & & H_3
+\end{array}
+\]
+
+\[
+\lambda_3: 
+\begin{array}{ccccccc}
+\mathbb{Z}/30\mathbb{Z} & \trianglerighteq & \langle \overline{2} \rangle & \trianglerighteq & \langle \overline{10} \rangle & \trianglerighteq & \langle \overline{0} \rangle \\
+\shortparallel & & \shortparallel & & \shortparallel & & \shortparallel \\
+K_0 & & K_1 & & K_2 & & K_3
+\end{array}
+\]
+
+Note que $\lambda_1, \lambda_2$ e $\lambda_3$ são todas equivalentes, pois:
+
+\[
+\frac{G_0}{G_1} = \frac{\mathbb{Z}}{5\mathbb{Z}},\; \frac{G_1}{G_2} = \frac{\mathbb{Z}}{2\mathbb{Z}},\; \frac{G_2}{G_3} = \frac{\mathbb{Z}}{3\mathbb{Z}}
+\]
+
+\[
+\frac{H_0}{H_1} = \frac{\mathbb{Z}}{2\mathbb{Z}},\; \frac{H_1}{H_2} = \frac{\mathbb{Z}}{3\mathbb{Z}},\; \frac{H_2}{H_3} = \frac{\mathbb{Z}}{5\mathbb{Z}}
+\]
+
+\[
+\frac{K_0}{K_1} = \frac{\mathbb{Z}}{2\mathbb{Z}},\; \frac{K_1}{K_2} = \frac{\mathbb{Z}}{5\mathbb{Z}},\; \frac{K_2}{K_3} = \frac{\mathbb{Z}}{3\mathbb{Z}}
+\]
+
+Logo, de fato temos que:
+
+\[
+\frac{G_0}{G_1} \cong \frac{H_2}{H_3} \cong \frac{K_1}{K_2}
+\]
+
+\[
+\frac{G_1}{G_2} \cong \frac{H_0}{H_1} \cong \frac{K_0}{K_1}
+\]
+
+\[
+\frac{G_2}{G_3} \cong \frac{H_1}{H_2} \cong \frac{K_2}{K_3}
+\]
 
 \end{example}
 
@@ -5826,8 +5883,28 @@ Dizemos que $\lambda_1$ e $\lambda_2$ são \textbf{séries equivalentes} se exis
 \color{red}
 \textbf{Lema da Borboleta de Zassenhaus}
 
+Sejam $H_1, H_2, K_1$ e $K_2$ subgrupos de um grupo $G$ tais que $H_2 \trianglelefteq H_1$ e $K_2\trianglelefteq K_1$. Então:
+
+
+\[
+\left\{
+\begin{aligned}
+H_2(H_1 \cap K_2) &\trianglelefteq H_2(H_1 \cap K_1) \\
+K_2(H_2\cap K_1) &\trianglelefteq K_2(H_1\cap K_1) \\
+\frac{H_2(H_1 \cap K_1)}{H_2(H_1 \cap K_2)} &\cong \frac{K_2(H_1\cap K_1)}{K_2(H_2\cap K_1)}
+\end{aligned}
+\right.
+\]
+
 \end{lemma}
 
+{\color{red}
+
+\textbf{Demonstração:}
+
+\qed}
+
+\nocite{*}
 \bibliographystyle{alpha}
 \bibliography{refs}
 \end{document}
