@@ -1441,6 +1441,7 @@ gzg^{-1} = zgg^{-1} = z \in Z(G).
 	\item \textit{Isso equivale ainda a dizer que se $G$ é um grupo abeliano, então todos seus subgrupos são normais.}
 \end{itemize}
 
+\hypertarget{ex153}{}
 \begin{example}
 Seja $G$ um grupo e $G'$ o subgrupo dos comutadores de $G$. Logo $G' \trianglelefteq G$.
 \end{example}
@@ -2010,10 +2011,9 @@ Com isso, mostramos que $G$ é um grupo abeliano e, portanto, $G = Z(G)$.
 
 \qed
 
+\hypertarget{prop1510}{}
 \begin{proposition}
-Seja $G$ um grupo e $G'$ o seu subgrupo de comutadores. 
-
-O grupo quociente $G/G'$ é abeliano.
+Seja $G$ um grupo e $G'$ o seu subgrupo de comutadores. Então, grupo quociente $G/G'$ é abeliano.
 
 Este grupo é denominado como \textit{abelianização} de $G$ e é denotado como $G^{ab}$.
 
@@ -5376,39 +5376,38 @@ Onde $G'$ denota o grupo dos comutadores do grupo $G$.
 {\color{red}
 \textbf{Demonstração:}
 
-Sabemos que, para um dado grupo $G$, $G' \trianglelefteq G$, pelo \hyperlink{ex153}{\textbf{Exemplo 1.5.3}}.
+Sabemos que, para qualquer grupo $G$, temos que $G' \trianglelefteq G$ pelo \hyperlink{ex153}{\textbf{Exemplo 1.5.3}}.
 
-Mostremos, primeiramente, o item $1.$. Suponha inicialmente $n\neq 4$.
+Mostremos, primeiramente, o item $1.$: 
 
-Sabemos que $\mathfrak{S}_X'$ pode ser apenas $\{\text{id}_X\},\mathfrak{A}_X$ ou $\mathfrak{S}_X$.
+Caso $n=2$, temos diretamente que $\mathfrak{S}_X$ é abeliano e, portanto $\mathfrak{S}_X' = \{\text{id}_X\} = \mathfrak{A}_X$.
 
-Note que, como $Z(\mathfrak{S}_X) = \{\text{id}_X\}$, então $\mathfrak{S}_X' \neq \{\text{id}_X\}$.
+Caso $n\geq 3$, então sabemos que a função assinatura $\varepsilon: \mathfrak{S}_X \to \{-1,1\}$ é um epimorfismo onde $\ker{\varepsilon} = \mathfrak{A}_X$. Além disso, como $\operatorname{Im}{\varepsilon}$ é um grupo abeliano, temos que $\mathfrak{S}_X/\mathfrak{A}_X$ é abeliano. Portanto, pela \hyperlink{prop1510}{\textbf{Proposição 1.5.10}}, temos que $\mathfrak{S}_X' \leq \mathfrak{A}_X$.
 
-Além disso, perceba que $\varepsilon(\mathfrak{S}_X') = \{1\}$. Portanto $\mathfrak{S}_X'\leq \mathfrak{A}_X$.
+Sendo $n\geq 3$, sabemos que $\mathfrak{A}_X$ é gerado por $3$-ciclos. Note que, para um dado $3$-ciclo $(x\;y\;z)\in \mathfrak{A}_X$, podemos escrever:
 
-Concluímos que $\mathfrak{S}_X' = \mathfrak{A}_X$. 
+\[
+(x\; y\; z) = (x\; y)(x\; z)(x\; y)(x\; z) = (x\; y)(x\; z)(x\; y)^{-1}(x\; z)^{-1} = [(x\; y), (x\; z)]
+\]
 
-Suponha, agora, que $n = 4$. Temos portanto o grupo de Klein $\mathfrak{K} \trianglelefteq \mathfrak{S}_X$. Ora, mas como $\mathfrak{K} \subseteq \mathfrak{A}_X$, temos ainda que $\mathfrak{S}_X' = \mathfrak{A}_X$.
+Logo, como os geradores de $\mathfrak{A}_X$ estão em $\mathfrak{S}_X'$, temos que $\mathfrak{A}_X \leq \mathfrak{S}_X'$.
 
-Mostremos o item $2.$.
+Como $\mathfrak{S}_X' \leq \mathfrak{A}_X$ e $\mathfrak{A}_X \leq \mathfrak{S}_X'$, concluímos que $\mathfrak{S}_X' = \mathfrak{A}_X$.
 
-Ora, se $n\leq 3$, então sabemos que $\mathfrak{A}_X = \{\text{id}_X\}$ para $n=1,2$ e que $\vert\mathfrak{A}_X\vert = \frac{3!}{2} = 3$ para $n = 3$.
+Mostremos o item $2.$:
 
-Concluímos que $\mathfrak{A}_X$ é abeliano para esses casos e, portanto, temos que $\mathfrak{A}_X' = \{\text{id}_X\}$.
+Ora, se $n\leq 3$, então sabemos que $\mathfrak{A}_X = \{\text{id}_X\}$ para $n=1,2$ e que $\vert\mathfrak{A}_X\vert = \frac{3!}{2} = 3$ para $n = 3$. Logo, $\mathfrak{A}_X$ é trivialmente abeliano para todos os casos e, portanto, temos que $\mathfrak{A}_X' = \{\text{id}_X\}$.
 
-Mostremos o item $3.$. Suponha que $n = 4$.
 
-Ora, mostrar que $[\mathfrak{A}_X : \mathfrak{A}_X'] = 3$ é equivalente a mostrar que $\vert \mathfrak{A}_X / \mathfrak{A}_X' \vert = 3$. 
+Mostremos o item $3.$:
 
-Sabemos, por definição, que $\mathfrak{A}_{X}^{ab} \overset{def}{=}\mathfrak{A}_X/\mathfrak{A}_X'$ é o maior subgrupo quociente abeliano de $\mathfrak{A}_X$. 
+Se $n=4$, então $\mathfrak{K} \trianglelefteq \mathfrak{A}_X$. Como $\vert \mathfrak{A}_X/\mathfrak{K}\vert = 3$, então $\mathfrak{A}_X/\mathfrak{K}$ é um grupo abeliano. Pela \hyperlink{prop1510}{\textbf{Proposição 1.5.10}} temos então que $\mathfrak{A}_X' \leq \mathfrak{K}$.
 
-Ora, note que $\vert\mathfrak{A}_X/\mathfrak{K}\vert > \vert\mathfrak{A}_X/\mathfrak{A}_X\vert$ e $\mathfrak{A}_X/\{\text{id}_X\}$ não é abeliano.
+Como $\mathfrak{A}_X'$ não é abeliano, então sabemos que $\mathfrak{A}_X' \neq \{\text{id}_X\}$. Sabemos, também, que $\mathfrak{A}_X' \trianglelefteq \mathfrak{A}_X$. Portanto, como sabemos também que $\mathfrak{A}_X' \neq \mathfrak{A}_X$, temos que $\mathfrak{A}_X' = \mathfrak{K}$.
 
-Portanto, concluímos que $\mathfrak{A}_X' = \mathfrak{K}$.
+Mostremos, por fim, o item $4.$:
 
-Mostremos, por fim, o item $4.$. Supondo $n\geq 5$.
-
-Ora, sabemos que $\mathfrak{A}_X$ é um grupo simples e não abeliano. Portanto temos diretamente que $\mathfrak{A}_X' = \mathfrak{A}_X$. Isto é, $\mathfrak{A}_X$ é perfeito para $n\geq 5$.
+Se $n\geq 5$, então $\mathfrak{A}_X$ é um grupo simples e não abeliano. Portanto temos diretamente que $\mathfrak{A}_X' = \mathfrak{A}_X$. Isto é, $\mathfrak{A}_X$ é perfeito para $n\geq 5$.
  
 \qed}
 
