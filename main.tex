@@ -1747,9 +1747,39 @@ Ora, temos diretamente que:
 (HK)^{-1} = K^{-1}H^{-1} = KH = HK
 \]
 
-Com isso mostramos a proposição.
-
 \qed
+
+\hypertarget{dedekind}{}
+\begin{lemma}
+\color{red}
+
+Seja $G$ um grupo e $A, B$ e $C$ subgrupos de $G$ tais que $A\leq C$. Então:
+
+\[
+AB\cap C = A(B\cap C).
+\]
+
+\end{lemma}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+Note que a inclusão $A(B\cap C) \subseteq AB\cap C$ é trivial. 
+
+Mostremos que $AB\cap C \subseteq A(B\cap C)$. Seja $x\in AB\cap C$, então $x\in AB$ e $x\in C$.
+
+Como $x\in AB$, então podemos escrever $x = ab$, para $a\in A$ e $b\in B$. Como também sabemos que $x\in C$ e $A\leq C$, sabemos que $a^{-1}\in C$ e portanto:
+
+\[
+x = ab \iff b = a^{-1}x \implies b\in C
+\]
+
+Portanto, concluímos que $b\in B\cap C$ e, ainda, como $x = ab$, temos que $x\in A(B\cap C)$.
+
+Logo, $AB\cap C = A(B\cap C)$.
+
+\qed}
 
 \begin{proposition}
 \hypertarget{prop154}
@@ -2586,6 +2616,7 @@ Com isso, mostramos que $\psi$ se trata se um isomorfismo de grupos e deduzimos 
 
 \qed
 
+\hypertarget{segteoiso}{}
 \begin{theorem}
 \textbf{Segundo Teorema dos Isomorfismos}
 
@@ -5668,6 +5699,25 @@ G_0 & & G_1 & & G_2 & & G_3
 
 \end{example}
 
+\hypertarget{ex412}{}
+\begin{example}
+\color{red}
+
+Seja $X \overset{def}{=} \{x_1, x_2, x_3, x_4\}$ um conjunto arbitrário. Então, a cadeia de normalidade:
+
+\[
+\Lambda: 
+\begin{array}{ccccccccc}
+\mathfrak{S}_X & \trianglerighteq & \mathfrak{A}_X & \trianglerighteq & \mathfrak{K} & \trianglerighteq & \langle (x_1\; x_2)(x_3\; x_4) \rangle & \trianglerighteq & \{id_X\} \\
+\shortparallel & & \shortparallel & & \shortparallel & & \shortparallel & & \shortparallel \\
+G_0 & & G_1 & & G_2 & & G_3 & & G_4
+\end{array}
+\]
+
+é uma série subnormal de $\mathfrak{S}_X$ de comprimento igual a $4$.
+
+\end{example}
+
 \begin{definition}
 \color{red}
 
@@ -5721,7 +5771,7 @@ Seja $G$ um grupo e $\lambda$ uma série subnormal de $G$. Dizemos que $\lambda$
 \begin{example}
 \color{red}
 
-A série subnormal apresentada no \hyperlink{ex411}{\textbf{Exemplo 5.1.1}} é também uma série de composição.
+As séries subnormais apresentadas nos \textbf{Exemplos} \hyperlink{ex411}{\textbf{5.1.1}} e \hyperlink{ex411}{\textbf{5.1.2}} são também séries de composição.
 \end{example}
 
 \begin{proposition}
@@ -5947,20 +5997,87 @@ Para isto, basta mostrar que:
 \frac{H_2(H_1 \cap K_1)}{H_2(H_1 \cap K_2)} \cong \frac{H_1\cap K_1}{(H_2\cap K_1)(H_1\cap K_2)} \cong \frac{K_2(H_1\cap K_1)}{K_2(H_2\cap K_1)}
 \]
 
-%usar segundo teorema dos isomorfismos
+Tomemos $\mathcal{H} \overset{def}{=} H_2(H_1\cap K_2)$ e $\mathcal{K} \overset{def}{=} H_1\cap K_1$. Perceba que:
+
+\[
+\mathcal{H}\mathcal{K} = H_2(H_1\cap K_2)(H_1\cap K_1) = H_2\underbrace{(H_1\cap K_1)}_{K_2 \leq K_1}
+\]
+
+e,
+
+\[
+\mathcal{H}\cap\mathcal{K} = H_2(H_1\cap K_2)\cap (H_1\cap K_1) = \underbrace{(H_1\cap K_2)H_2\cap (H_1\cap K_1)}_{H_2 \trianglelefteq H_1}
+\]
+
+Como $(H_1\cap K_2) \leq (H_1\cap K_1)$, pelo \hyperlink{dedekind}{\textbf{Lema 1.5.1}} temos que:
+
+\[
+\mathcal{H}\cap\mathcal{K} = (H_1\cap K_2)H_2\cap (H_1\cap K_1) = (H_1 \cap K_2)(H_2 \cap H_1\cap K_1) = (H_1 \cap K_2)(H_2\cap K_1)
+\]
+
+Como já mostrado, sabemos que $\mathcal{H}\trianglelefteq \mathcal{H}\mathcal{K}$, e portanto, pelo \hyperlink{segteoiso}{\textbf{Segundo Teorema do Isomorfismo}}, temos que:
+
+\[
+\frac{\mathcal{H}\mathcal{K}}{\mathcal{H}} \cong \frac{\mathcal{K}}{\mathcal{H}\cap \mathcal{K}} \implies \frac{H_2(H_1\cap K_1)}{H_2(H_1\cap K_2)} \cong \frac{H_1\cap K_1}{(H_2\cap K_1)(H_1\cap K_2)}
+\]
+
+A prova de que $\frac{K_2(H_1\cap K_1)}{K_2(H_2\cap K_1)} \cong \frac{H_1\cap K_1}{(H_2\cap K_1)(H_1\cap K_2)}$ é análoga.
+
+\qed
+
+\textit{Observação: a partir da construção da prova acima, podemos construir o seguinte diagrama que possui formato semelhante a uma borboleta:}
 
 
-...
+\begin{center}
+\begin{tikzpicture}[scale=0.85, every node/.style={scale=0.95}]
+    \node (E) at (0, 3.5) {$H_1 \cap K_1$};
+    \node (H) at (0, 0) {$(H_2 \cap K_1)(H_1 \cap K_2)$};
+    \node (B) at (0, -3.5) {$H_2 \cap K_2$};
+    \node (H1) at (-6.5, 7) {$H_1$};
+    \node (C)  at (-4.5, 5) {$H_2(H_1 \cap K_1)$};
+    \node (F)  at (-4.5, 1.5) {$H_2(H_1 \cap K_2)$};
+    \node (H2) at (-6.5, -0.5) {$H_2$};
+    \node (K1) at (6.5, 7) {$K_1$};
+    \node (D)  at (4.5, 5) {$K_2(H_1 \cap K_1)$};
+    \node (G)  at (4.5, 1.5) {$K_2(H_2 \cap K_1)$};
+    \node (K2) at (6.5, -0.5) {$K_2$};
+    \draw[thick, double] (C) -- (F) node[midway, left=0.1cm] {$\cong$};
+    \draw[thick, double] (E) -- (H) node[midway, right=0.1cm] {$\cong$};
+    \draw[thick, double] (D) -- (G) node[midway, right=0.1cm] {$\cong$};
+    \draw (C) -- (E);
+    \draw (F) -- (H);
+    \draw (E) -- (D);
+    \draw (H) -- (G);
+    \draw (H1) -- (C);
+    \draw (F) -- (H2);
+    \draw (H2) -- (B);
+    \draw (K1) -- (D);
+    \draw (G) -- (K2);
+    \draw (K2) -- (B);
+    \draw (H) -- (B);
+\end{tikzpicture}
+\end{center}
 
 
-\qed}
+}
 
 \begin{theorem}
 \color{red}
 
 \textbf{Teorema de Schreirer}
 
+Quaisquer duas séries subnormais de um grupo $G$ possuem refinamentos equivalentes.
+
 \end{theorem}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+\qed}
+
+
+\section{Grupos Solúveis}
 
 \nocite{*}
 \bibliographystyle{alpha}
