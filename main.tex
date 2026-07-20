@@ -5901,7 +5901,66 @@ K_2(H_2\cap K_1) &\trianglelefteq K_2(H_1\cap K_1) \\
 
 \textbf{Demonstração:}
 
+Mostremos, primeiramente, que $H_2(H_1 \cap K_2) \trianglelefteq H_2(H_1 \cap K_1)$.
+
+Sabemos que $K_2 \trianglelefteq K_1$. Note, então, que $H_1 \cap K_2 \trianglelefteq H_1 \cap K_1$. De fato, sendo $y\in H_1 \cap K_2$ e tomando $x \in H_1 \cap K_1$, temos simultaneamente $x \in H_1$ e $x \in K_1$, o que nos garante que:
+
+\[
+\left\{
+\begin{aligned}
+xyx^{-1} &\in H_1,\;\; \text{pois } x\in H_1 \text{ e } H_1 \text{ é subgrupo} \\
+xyx^{-1} &\in K_2, \;\; \text{pois } x\in K_1 \text{ e } K_2 \trianglelefteq K_1 \\
+\end{aligned}
+\right.
+\]
+
+Logo, $xyx^{-1} \in H_1 \cap K_2$.
+
+Por fim, vejamos que $H_2(H_1 \cap K_2) \trianglelefteq H_2(H_1 \cap K_1)$.
+
+Como $H_2 \trianglelefteq H_1$, tomando $a\in H_1\cap K_2,\; b\in H_1\cap K_1,\; h_1 \in H_2$ e $h_2\in H_2$, temos que:
+
+\[
+(h_2b)(h_1a)(h_2b)^{-1} = h_2\underbrace{(b h_1 b^{-1})}_{\in H_2}\underbrace{(b a b^{-1})}_{\in H_1\cap K_2}h_2^{-1}
+\] 
+
+Tomando $h_3 \overset{def}{=} h_2bh_1b^{-1}$ e $a_1 \overset{def}{=} bab^{-1}$, temos então:
+
+\[
+h_3a_1 h_2^{-1} = \underbrace{h_3h_4a_1}_{H_2 \trianglelefteq H_1},\;\; \text{para algum } h_4\in H_2
+\]
+
+Como $(h_3h_4) \in H_2$ e $a_1 \in H_1 \cap K_2$, concluímos que o elemento pertence a $H_2(H_1 \cap K_2)$. 
+Logo, $H_2(H_1 \cap K_2) \trianglelefteq H_2(H_1 \cap K_1)$. 
+
+A prova de que $K_2(H_2\cap K_1) \trianglelefteq K_2(H_1\cap K_1)$ é análoga.
+
+Mostremos, por fim, que:
+
+\[
+\frac{H_2(H_1 \cap K_1)}{H_2(H_1 \cap K_2)} \cong \frac{K_2(H_1\cap K_1)}{K_2(H_2\cap K_1)}
+\]
+
+Para isto, basta mostrar que:
+
+\[
+\frac{H_2(H_1 \cap K_1)}{H_2(H_1 \cap K_2)} \cong \frac{H_1\cap K_1}{(H_2\cap K_1)(H_1\cap K_2)} \cong \frac{K_2(H_1\cap K_1)}{K_2(H_2\cap K_1)}
+\]
+
+%usar segundo teorema dos isomorfismos
+
+
+...
+
+
 \qed}
+
+\begin{theorem}
+\color{red}
+
+\textbf{Teorema de Schreirer}
+
+\end{theorem}
 
 \nocite{*}
 \bibliographystyle{alpha}
