@@ -5842,13 +5842,13 @@ Concluímos, portanto, que todo grupo finito não trivial possui série de compo
 Sejam $G$ um grupo e $\lambda_1$ e $\lambda_2$ duas séries subnormais de $G$ dadas por:
 
 \[
-G = G_0 \trianglerighteq G_1 \trianglerighteq \ldots \trianglerighteq G_n = \{e\}
+\lambda_1: G = G_0 \trianglerighteq G_1 \trianglerighteq \ldots \trianglerighteq G_n = \{e\}
 \]
 
 e,
 
 \[
-G = H_0 \trianglerighteq H_1 \trianglerighteq \ldots \trianglerighteq H_m = \{e\}
+\lambda_2: G = H_0 \trianglerighteq H_1 \trianglerighteq \ldots \trianglerighteq H_m = \{e\}
 \]
 
 Dizemos que $\lambda_1$ e $\lambda_2$ são \textbf{séries equivalentes} se existe uma bijeção entre os grupos quocientes não triviais da série $\lambda_1$ e os da série $\lambda_2$ tal que os grupos quocientes correspondentes são isomorfos.
@@ -5928,6 +5928,7 @@ Logo, de fato temos que:
 
 \end{example}
 
+\hypertarget{zassenhaus}{}
 \begin{lemma}
 \color{red}
 \textbf{Lema da Borboleta de Zassenhaus}
@@ -6061,10 +6062,12 @@ A prova de que $\frac{K_2(H_1\cap K_1)}{K_2(H_2\cap K_1)} \cong \frac{H_1\cap K_
 
 }
 
+
+\hypertarget{schreier}{}
 \begin{theorem}
 \color{red}
 
-\textbf{Teorema de Schreirer}
+\textbf{Teorema de Schreier}
 
 Quaisquer duas séries subnormais de um grupo $G$ possuem refinamentos equivalentes.
 
@@ -6074,7 +6077,105 @@ Quaisquer duas séries subnormais de um grupo $G$ possuem refinamentos equivalen
 
 \textbf{Demonstração:}
 
+Sejam $\lambda_1$ e $\lambda_2$ duas séries subnormais de $G$ dadas por:
+
+\[
+\lambda_1: G = G_0 \trianglerighteq G_1 \trianglerighteq \ldots \trianglerighteq G_n = \{e\}
+\]
+
+e,
+
+\[
+\lambda_2: G = H_0 \trianglerighteq H_1 \trianglerighteq \ldots \trianglerighteq H_m = \{e\}
+\]
+
+Onde $n$ e $m$ são dois inteiros positivos.
+
+Defina $G_{i,j} \overset{def}{=} G_{i+1}(G_i\cap H_j)$, para $i\in \llbracket 0, n-1\rrbracket$ e $j\in \llbracket 0, m\rrbracket$.
+
+Note que:
+
+\[
+G_{i,0} = G_{i+1}(G_i\cap H_0) = G_{i+1}(G_i\cap G) = G_{i+1}G_i = G_i
+\]
+
+e,
+
+\[
+G_{i,m} = G_{i+1}(G_i\cap H_m) = G_{i+1}(G_i\cap \{e\}) = G_{i+1}\{e\} = G_{i+1}
+\]
+
+Ainda, como $G_{i+1} \trianglelefteq G_{i}$ e $H_{j+1} \trianglelefteq H_j$, pelo \hyperlink{zassenhaus}{\textbf{Lema da Borboleta de Zassenhaus}}, temos que $G_{i,j+1} \trianglelefteq G_{i,j}$. 
+
+Portanto, podemos construir o seguinte refinamento $\lambda_1'$ da série subnormal $\lambda_1$:
+
+\[
+\lambda_1': 
+\begin{array}{ccccccc}
+G_{0,0} & \trianglerighteq G_{0,1} \trianglerighteq \ldots \trianglerighteq & G_{0,m} & & & & \\
+\shortparallel & & \shortparallel & & & & \\
+G_0 & & G_{1,0} & \trianglerighteq G_{1,1} \trianglerighteq \ldots \trianglerighteq & G_{1,m} & & \\
+& & \shortparallel & & \shortparallel & & \\
+& & G_1 & & G_{2,0} & \trianglerighteq \ldots \trianglerighteq & G_{n-1,m} \\
+& & & & \shortparallel & & \shortparallel \\
+& & & & G_2 & \ldots & G_n = \{e\}
+\end{array}
+\]
+
+De forma análoga, podemos construir um refinamento $\lambda_2'$ da série subnormal $\lambda_2$:
+
+\[
+\lambda_2': 
+\begin{array}{ccccccc}
+H_{0,0} & \trianglerighteq H_{0,1} \trianglerighteq \ldots \trianglerighteq & H_{0,n} & & & & \\
+\shortparallel & & \shortparallel & & & & \\
+H_0 & & H_{1,0} & \trianglerighteq H_{1,1} \trianglerighteq \ldots \trianglerighteq & H_{1,n} & & \\
+& & \shortparallel & & \shortparallel & & \\
+& & H_1 & & H_{2,0} & \trianglerighteq \ldots \trianglerighteq & H_{m-1,n} \\
+& & & & \shortparallel & & \shortparallel \\
+& & & & H_2 & \ldots & H_m = \{e\}
+\end{array}
+\]
+
+Onde $H_{i,j} \overset{def}{=} H_{i+1}(H_i \cap G_j)$, para $i\in \llbracket 0, m-1\rrbracket$ e $j\in \llbracket 0, n\rrbracket$.
+
+Note que os grupos quocientes adjacentes das séries refinadas são da forma $\frac{G_{i,j}}{G_{i,j+1}}$ e $\frac{H_{j,i}}{H_{j,i+1}}$. Pelo \hyperlink{zassenhaus}{\textbf{Lema da Borboleta de Zassenhaus}}, temos diretamente o isomorfismo:
+
+\[
+\frac{G_{i, j}}{G_{i, j+1}} \cong \frac{H_{j, i}}{H_{j, i+1}}
+\]
+
+para todos $i \in \llbracket 0, n-1\rrbracket$ e $j \in \llbracket 0, m-1\rrbracket$. 
+
+Com isso, concluímos que os refinamentos $\lambda_1'$ e $\lambda_2'$ são equivalentes.
+
 \qed}
+
+\begin{theorem}
+\color{red}
+\textbf{Teorema de Jordan-Hölder}
+
+Seja $G$ um grupo. Logo, todas as séries de composição de $G$ são equivalentes.
+
+\end{theorem}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Sejam $\lambda_1$ e $\lambda_2$ duas séries de composição de $G$. Pelo \hyperlink{schreier}{\textbf{Teorema de Schreier}}, sabemos que $\lambda_1$ e $\lambda_2$ possuem refinamentos equivalentes, digamos $\lambda_1'$ e $\lambda_2'$.
+
+Por definição, uma série de composição não admite refinamentos próprios. Logo, os refinamentos $\lambda_1'$ e $\lambda_2'$ são formados apenas pela inserção de repetições de subgrupos que já pertenciam às cadeias originais.
+
+Logo, o conjunto de grupos quocientes não triviais da série refinada $\lambda_1'$ é exatamente igual ao conjunto de grupos quocientes não triviais da série original $\lambda_1$. O mesmo ocorre entre $\lambda_2'$ e $\lambda_2$.
+
+Ora, como $\lambda_1'$ e $\lambda_2'$ são séries equivalentes, então temos diretamente que as séries de composição $\lambda_1$ e $\lambda_2$ também são equivalentes.
+
+\qed
+
+\textit{Observações:}
+
+}
+
 
 
 \section{Grupos Solúveis}
