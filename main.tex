@@ -2705,6 +2705,7 @@ Aplicando o \hyperlink{primteoiso}{\textbf{Primeiro Teorema do Isomorfismo}} ded
 
 \qed
 
+\hypertarget{terteoiso}{}
 \begin{theorem}
 \textbf{Terceiro Teorema dos Isomorfismos}
 
@@ -3141,7 +3142,7 @@ Denotamos, comumente:
 \]
 \end{definition}
 
-\textit{Observação: por uma questão de convenção, a operação "$\cdot$" será omitida.}
+\textit{Observação: por convenção, a operação "$\cdot$" será omitida.}
 
 \begin{proposition} 
 A partir da \hyperlink{def171}{\textbf{Definição 2.1.1}}, temos que o produto direto externo de $\mathfrak{G}$ é um grupo.
@@ -5374,6 +5375,7 @@ Concluímos assim que os únicos subgrupos normais em $\mathfrak{A}_X$ são $\{\
 
 \qed}
 
+\hypertarget{teo344}{}
 \begin{theorem}
 \color{red}
 	Seja $X$ um conjunto não vazio e finito. Logo, se $\text{Card}(X)\neq 4$, os únicos subgrupos normais de $\mathfrak{S}_X$ são $\{\text{id}_X\},\mathfrak{A}_X$ e $\mathfrak{S}_X$.
@@ -5771,7 +5773,7 @@ Seja $G$ um grupo e $\lambda$ uma série subnormal de $G$. Dizemos que $\lambda$
 \begin{example}
 \color{red}
 
-As séries subnormais apresentadas nos \textbf{Exemplos} \hyperlink{ex411}{\textbf{5.1.1}} e \hyperlink{ex411}{\textbf{5.1.2}} são também séries de composição.
+As séries subnormais apresentadas nos \textbf{Exemplos} \hyperlink{ex411}{\textbf{5.1.1}} e \hyperlink{ex412}{\textbf{5.1.2}} são também séries de composição.
 \end{example}
 
 \begin{proposition}
@@ -6190,7 +6192,7 @@ Seja $G$ um grupo. Dizemos que $G$ é \textbf{solúvel} se $G$ possui uma cadeia
 
 tal que $G_{i}/G_{i+1}$ é abeliano para todo $i\in \llbracket 0, n-1\rrbracket$.
 
-Neste caso, também chamamos $\lambda$ de \textbf{série solúvel}.
+Neste caso, também chamamos $\lambda$ de \textbf{série solúvel de $G$}.
 \end{definition}
 
 {\color{red}
@@ -6198,6 +6200,34 @@ Neste caso, também chamamos $\lambda$ de \textbf{série solúvel}.
 \textit{Observação: note que todo grupo abeliano é solúvel.}
 
 }
+
+\begin{example}
+\color{red}
+
+Sendo $X$ um conjunto finito, temos que:
+
+$(i)$ Se $\text{Card}(X) = 4$, então $\mathfrak{S}_X$ e $\mathfrak{A}_X$ são grupos solúveis;
+
+$(ii)$ Se $\text{Card}(X) \geq 5$, então $\mathfrak{S}_X$ e $\mathfrak{A}_X$ não são grupos solúveis.
+\end{example}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+Para o item $(i)$ basta notar que no \hyperlink{ex412}{\textbf{Exemplo 5.1.2}} os grupos quocientes das subséries subnormais de $\mathfrak{S}_X$ e $\mathfrak{A}_X$ têm ordem prima. Logo, tratam-se de grupos abelianos.
+
+Para o item $(ii)$, pelo \hyperlink{teo344}{\textbf{Teorema 3.4.4}}, basta notar que a única série de composição possível para $\mathfrak{S}_X$ é:
+
+\[
+\mathfrak{S}_X \trianglerighteq \mathfrak{A}_X \trianglerighteq \{\text{id}_X\}
+\]
+
+Como $\mathfrak{A}_X/\{\text{id}_X\}$ não é abeliano para $\text{Card}(X) \geq 5$, temos que $\mathfrak{S}_X$ e $\mathfrak{A}_X$ não são solúveis.
+
+\qed}
+
+
 
 \begin{proposition}
 \color{red}
@@ -6216,6 +6246,51 @@ $(iii)$ Se $H\trianglelefteq G$ e $H$ e $G/H$ forem solúveis, então $G$ é sol
 
 \textbf{Demonstração:}
 
+Mostremos, primeiramente, o item $(i)$. 
+
+Defina $H_{i+1} \overset{def}{=} H\cap G_{i+1}, \; \forall i\in \llbracket 0, n-1\rrbracket$.
+
+Tomando $H_1 = G_i, H_2 = G_{i+1}, K_1 = H$ e $K_2 = \{e\}$ tal como no \hyperlink{zassenhaus}{\textbf{Lema de Zassenhaus}}, temos diretamente que $H_{i+1} \trianglelefteq H_i, \; \forall i\in \llbracket 0, n-1\rrbracket$.
+
+Além disso, temos também que:
+
+\[
+\frac{G_i\cap H}{G_{i+1}\cap H} = \frac{H_i}{H_{i+1}} \cong \frac{G_{i+1}(G_i\cap H)}{G_{i+1}(G_i\cap \{e\})} = \frac{G_{i+1}(G_i\cap H)}{G_{i+1}}
+\]
+
+Como $G_{i+1}(G_i\cap H) \leq G_i$, pois $G_{i+1} \trianglelefteq G_i$ e $G_i\cap H \leq G_i$, e $\frac{G_i}{G_{i+1}}$ é abeliano, deduzimos que $\frac{H_i}{H_{i+1}}$ é abeliano para todo $i\in\llbracket 0, n-1\rrbracket$.
+
+Portanto, $H = H_0 \trianglerighteq H_1 \trianglerighteq \ldots \trianglerighteq H_n = \{e\}$ é uma série solúvel de $H$. 
+
+Mostremos, agora, o item $(ii)$.
+
+Basta notarmos que a série $\lambda$:
+
+\[
+\lambda: G/H = G_0H/H \trianglerighteq (G_1H)/H \trianglerighteq \ldots \trianglerighteq (G_nH)/H = (\{e\}H)/H
+\]
+
+é uma série solúvel de $G/H$. De fato, como $H\trianglelefteq G$ e $G_{i+1} \trianglelefteq G_i$, temos que $H \trianglelefteq G_{i+1}H \trianglelefteq G_iH$ para todo $i\in\llbracket 0, n-1\rrbracket$. 
+
+Pelo \hyperlink{terteoiso}{\textbf{Terceiro Teorema do Isomorfismo}}, podemos reescrever os grupos quocientes de $\lambda$ como:
+
+\[
+\frac{(G_iH)/H}{(G_{i+1}H)/H} \cong \frac{G_iH}{G_{i+1}H}
+\]
+
+Para mostrarmos que os grupos quocientes $\frac{G_iH}{G_{i+1}H}$ são abelianos, note primeiramente que  
+
+
+Mostremos, finalmente, o item $(iii)$.
+
+Ora, se $H\trianglelefteq G$ e $G/H$ são grupos solúveis, então existem séries solúveis $\lambda_1$ e $\lambda_2$ de $H$ e $G/H$, respectivamente.
+
+\[
+\begin{aligned}
+\lambda_1&: H = H_0 \trianglerighteq H_1 \trianglerighteq \ldots \trianglerighteq H_n = \{e\}\\
+\lambda_2&: G/H = G_0/H \trianglerighteq G_1/H \trianglerighteq \ldots \trianglerighteq G_m/H = H
+\end{aligned}
+\]
 
 
 \qed}
