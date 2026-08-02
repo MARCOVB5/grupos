@@ -252,7 +252,7 @@ $(\mathbb{Z, +}), \;(\mathbb{Z}/n\mathbb{Z}, +),\;(\mathbb{R}^*, \cdot), \; (\ma
     \]
     O conjunto das funções $f$ bijetivas de $A$ em $A$.\\
     $(\mathcal{P}(f), \circ )$ define uma estrutura de grupo, onde $\circ$ representa composição entre funções. \\
-    Caso $A$ seja um conjunto finito e $n\in \mathbb{N}$ tal que $\text{Card}(A) = n$, $\mathcal{P}(f)$ será representado por $S_n$ e será chamado de \textbf{grupo simétrico ou grupo das permutações}.
+    Caso $A$ seja um conjunto finito, $\mathcal{P}(f)$ será representado por $\mathfrak{S}_A$ e será chamado de \textbf{grupo simétrico ou grupo das permutações}.
 \end{example}
 
 \begin{example}
@@ -452,7 +452,7 @@ Chamamos $SL_n(\mathbb{K})$ de \textbf{grupo linear especial}.
 
 Mostremos que temos de fato $SL_n(\mathbb{K}) \leq GL_n(\mathbb{K})$.
 
-Primeiramente, note que é evidente que $SL_n(\mathbb{K})$ é não vazio, pois $\text{Id}_n \in SL_n(\mathbb{K})$.
+Primeiramente, note que é evidente que $SL_n(\mathbb{K})$ é não vazio, pois $\text{id}_n \in SL_n(\mathbb{K})$.
 
 Mostremos que $\forall A, B \in SL_n(\mathbb{K}), \; AB^{-1} \in SL_n(\mathbb{K})$.
 
@@ -652,7 +652,7 @@ Logo, deduzimos que:
 
 Portanto, $Z(G) \leq G$. \qed
 
-\textit{Observação: O subgrupo centro serve o propósito de "medir a comutatividade" de um dado grupo. Por exemplo, observamos que $Z(\mathbb{Z}) = \mathbb{Z}$, $Z(GL_2 (\mathbb{R})) = \{\lambda I: \lambda \in \mathbb{R}^*\}$ e  $Z(S_n) = \{e\},\; n \geq 3$}.
+\textit{Observação: O subgrupo centro serve o propósito de "medir a comutatividade" de um dado grupo. Por exemplo, observamos que $Z(\mathbb{Z}) = \mathbb{Z}$, $Z(GL_2 (\mathbb{R})) = \{\lambda I: \lambda \in \mathbb{R}^*\}$ e  $Z(\mathfrak{S}_n) = \{e\},\; n \geq 3$}.
 
 \begin{definition} \hypertarget{def133}
     Seja $(G, \cdot)$ um grupo e $X$ um conjunto não-vazio tal que $X\subseteq G$. \textbf{Chamamos de subgrupo gerado por um subconjunto a interseção de todos os subgrupos de $G$ que contém $X$.}  Denotamos-o como $\langle X\rangle$.
@@ -789,7 +789,7 @@ De forma geral, dado um grupo $G$, para determinarmos um subgrupo $H$ gerado por
 \textit{Observação: caso um grupo possa ser gerado por mais de um elemento, digamos $n$ elementos, então dizemos que o grupo é $n$-gerado}.
 
 \begin{example}
-    $\mathbb{Z} = \langle 1\rangle, \; \mathbb{Z}/n\mathbb{Z} = \langle \bar{1}\rangle, \; \mathbb{U} = \langle e^{\frac{2\pi i}{n}}\rangle$.
+    $\mathbb{Z} = \langle 1\rangle, \; \mathbb{Z}/n\mathbb{Z} = \langle \bar{1}\rangle, \; \mathbb{U} = \langle e^{\frac{2\pi i}{n}}\rangle$. são exemplos de grupos cíclicos.
 \end{example}
 
 \begin{proposition} \hypertarget{prop132}
@@ -829,13 +829,16 @@ x\cdot y = a^{r_1} \cdot a^{r_2} = a^{r_1 + r_2} \stackrel{(*)}{=} a^{r_2+ r_1} 
 Portanto, $G$ é um grupo abeliano. \qed
 
 \begin{definition} \hypertarget{defglinha}{}
-    Definimos $G' \overset{def}{=} \langle \{ xyx^{-1}y^{-1} \vert (x,y) \in G \times G \} \rangle$ como o subgrupo dos comutadores do grupo $G$.
-	
-	Podemos também denotar $G' \overset{def}{=} [G,G]$, onde, para $x,y \in G$, temos:
 
-	\[
-	[x,y] \overset{def}{=} xyx^{-1}y^{-1}.
-	\]
+Sejam $G$ um grupo e $x,y \in G$. Definimos o \textbf{comutador de $x$ e $y$} como o elemento $[x,y] \overset{def}{=} xyx^{-1}y^{-1} \in G$.
+
+Definimos ainda o \textbf{grupo derivado de $G$} (ou \textbf{grupo dos comutadores de $G$}) como o subgrupo de $G$ dado por:
+
+\[ 
+G' \overset{def}{=} \langle \{[x,y] : x,y\in G \} \rangle
+\]
+
+Alternativamente podemos escrever $G^{(1)} \overset{def}{=} G',\; G^{(2)} \overset{def}{=} (G')'$, e assim sucessivamente.
 \end{definition}
 
 \textit{Observações}: 
@@ -857,7 +860,7 @@ Seja $G$ um grupo. Chamamos $G$ de \textbf{grupo perfeito} se $G' = G$.
 \end{definition}
 
 \begin{example}
-    $\vert \mathbb{Z} \vert = \infty, \; \vert\mathbb{Z}/n\mathbb{Z}\vert = n, \; \vert(\mathbb{Z}/p\mathbb{Z})^* \vert = p-1, \; \vert S_n \vert = n!$
+    $\vert \mathbb{Z} \vert = \infty, \; \vert\mathbb{Z}/n\mathbb{Z}\vert = n, \; \vert(\mathbb{Z}/p\mathbb{Z})^* \vert = p-1, \; \vert \mathfrak{S}_n \vert = n!$
 \end{example}
 
 \begin{proposition} \hypertarget{prop135}
@@ -1600,10 +1603,10 @@ AB = \{ab, \; a\in A, \; b\in B \}.
 
 \textit{Note que o conjunto $AB$ não necessariamente é um grupo mesmo que $A$ e $B$ o sejam.}
 
-\textit{Note, por exemplo, o caso do grupo $S_3$:}
+\textit{Note, por exemplo, o caso do grupo $\mathfrak{S}_3$:}
 
 \[
-A, B \leq S_3, \; \; A = \left\{
+A, B \leq \mathfrak{S}_3, \; \; A = \left\{
   \begin{pmatrix}
     1 & 2 & 3 \\[4pt]
     1 & 2 & 3
@@ -1628,7 +1631,7 @@ B = \left\{
 \right\}.
 \]
 
-\textit{Note que $A$ e $B$ são de fato subgrupos de $S_3$, pois:}
+\textit{Note que $A$ e $B$ são de fato subgrupos de $\mathfrak{S}_3$, pois:}
 
 \[
 \begin{aligned}
@@ -1655,7 +1658,7 @@ e = \begin{pmatrix}
 \; \sigma^2 = e, 
 \\
 &\qquad e,\sigma,\sigma^{-1}=\sigma \in A 
-\;\;\Longrightarrow\;\; A \le S_3. 
+\;\;\Longrightarrow\;\; A \le \mathfrak{S}_3. 
 \\
 & B = \left\{
   \begin{pmatrix}
@@ -1675,7 +1678,7 @@ e = \begin{pmatrix}
 \; \tau^2 = e, 
 \\
 &\qquad e,\tau,\tau^{-1}=\tau \in B 
-\;\;\Longrightarrow\;\; B \le S_3.
+\;\;\Longrightarrow\;\; B \le \mathfrak{S}_3.
 \end{aligned}
 \]
 
@@ -2116,7 +2119,7 @@ Sejam $G$ e $\mathcal{G}$ dois grupos. Definimos $\operatorname{Hom}(G,\mathcal{
 \end{definition}
 
 \begin{example}
-$\text{Id}: (G, \cdot) \rightarrow (G, \cdot), \; \text{Id}(g) = g$ é um homomorfismo chamado \textit{identidade}.
+$\text{Id}: (G, \cdot) \rightarrow (G, \cdot), \; \text{id}(g) = g$ é um homomorfismo chamado \textit{identidade}.
 \end{example}
 
 \begin{example}
@@ -2787,6 +2790,14 @@ Portanto, aplicando o \hyperlink{primteoiso}{\textbf{Primeiro Teorema dos Isomor
 \]
 
 \qed
+
+\hypertarget{correspondencia}{}
+\begin{theorem}
+\color{red}
+\textbf{Teorema da Correspondência}
+
+
+\end{theorem}
 
 \begin{definition}
 Sejam $G$ e  $\mathcal{G}$ grupos.
@@ -3508,7 +3519,7 @@ G = H \rtimes K
 
 \begin{itemize}
   \item \textit{Note que, diferentemente da \hyperlink{def172}{\textbf{Definição 2.1.2}}, definimos o produto semidireto interno apenas entre $2$ subgrupos de $G$. Tal escolha é motivada pela natureza assimétrica do produto semidireto, ao contrário da simetria do produto direto. Entretanto é possível estender essa estrutura de forma indutiva para $n$ subgrupos de $G$. Nesse caso, obtemos um produto semidireto interno onde agrupamos os subgrupos passo a passo e cada novo subgrupo interage com o bloco formado pelos anteriores};
-  \item \textit{Caso $K\trianglelefteq G$, então denotaríamos $G = K\rtimes H$ ou $G = H\ltimes K$}.
+  \item \textit{Caso $H\leq G$ e $K\trianglelefteq G$, denotaríamos $G = K\rtimes H$ ou $G = H\ltimes K$}.
 \end{itemize}
 
 }
@@ -3774,9 +3785,17 @@ Concluímos, portanto, que $\theta$ é trivial.
 \begin{example}
 \color{red}
 
+Sejam $H$ um grupo e $K \overset{def}{=} \text{Aut}(H)$. Se definirmos $\theta: K\to \text{Aut}(H)$ por $\theta(\sigma) = \sigma$, então temos o produto semidireto externo $H\rtimes_\theta K$, onde:
 
+\[
+(h,\sigma)(h',\tau) = (h\sigma(h'), \sigma\tau).
+\]
 \end{example}
 
+{\color{red}
+
+\textit{Observação: a construção do exemplo acima é chamada de \textbf{Holomorfo do grupo $H$}, comumente denotada por $\operatorname{Hol}(H)$}.
+}
 
 \hypertarget{teo182}{}
 \begin{theorem}
@@ -6227,6 +6246,12 @@ Como $\mathfrak{A}_X/\{\text{id}_X\}$ não é abeliano para $\text{Card}(X) \geq
 
 \qed}
 
+\begin{example}
+\color{red}
+
+
+
+\end{example}
 
 
 \begin{proposition}
@@ -6264,34 +6289,76 @@ Portanto, $H = H_0 \trianglerighteq H_1 \trianglerighteq \ldots \trianglerighteq
 
 Mostremos, agora, o item $(ii)$.
 
-Basta notarmos que a série $\lambda$:
+Seja $\lambda$ uma série solúvel para $G$ dada por:
 
 \[
-\lambda: G/H = G_0H/H \trianglerighteq (G_1H)/H \trianglerighteq \ldots \trianglerighteq (G_nH)/H = (\{e\}H)/H
+\lambda: G_0 = G \trianglerighteq G_1 \trianglerighteq \ldots \trianglerighteq G_n = \{e\}
 \]
 
-é uma série solúvel de $G/H$. De fato, como $H\trianglelefteq G$ e $G_{i+1} \trianglelefteq G_i$, temos que $H \trianglelefteq G_{i+1}H \trianglelefteq G_iH$ para todo $i\in\llbracket 0, n-1\rrbracket$. 
+Consideremos o epimorfismo projeção canônica dado por $\pi: G\to G/H,\; \pi(g)\mapsto gH$. 
 
-Pelo \hyperlink{terteoiso}{\textbf{Terceiro Teorema do Isomorfismo}}, podemos reescrever os grupos quocientes de $\lambda$ como:
+Logo, pelo \hyperlink{correspondencia}{\textbf{Teorema da Correspondência}}, existe uma série subnormal $\lambda'$ dada por:
 
 \[
-\frac{(G_iH)/H}{(G_{i+1}H)/H} \cong \frac{G_iH}{G_{i+1}H}
+\lambda': G/H = \pi(G_0) \trianglerighteq \pi(G_1) \trianglerighteq \ldots \trianglerighteq \pi(G_n) = H
 \]
 
-Para mostrarmos que os grupos quocientes $\frac{G_iH}{G_{i+1}H}$ são abelianos, note primeiramente que  
+Ainda, temos que $\pi$ induz o epimorfismo $\tilde{\pi}: G_{j+1}/G_j \to \pi(G_{j+1})/\pi(G_j)$ para todo $j\in\llbracket 0, n-1\rrbracket$.
 
+Logo, como $G_{j+1}/G_j$ é abeliano para todo $j\in\llbracket 0, n-1\rrbracket$ e $\tilde{\pi}$ é um epimorfismo, temos que $\pi(G_{j+1})/\pi(G_j)$ forma um grupo abeliano para todo $j\in\llbracket 0, n-1\rrbracket$. 
+
+Portanto, $\lambda'$ é uma série solúvel.
 
 Mostremos, finalmente, o item $(iii)$.
 
 Ora, se $H\trianglelefteq G$ e $G/H$ são grupos solúveis, então existem séries solúveis $\lambda_1$ e $\lambda_2$ de $H$ e $G/H$, respectivamente.
 
 \[
-\begin{aligned}
-\lambda_1&: H = H_0 \trianglerighteq H_1 \trianglerighteq \ldots \trianglerighteq H_n = \{e\}\\
-\lambda_2&: G/H = G_0/H \trianglerighteq G_1/H \trianglerighteq \ldots \trianglerighteq G_m/H = H
-\end{aligned}
+\lambda_1: H = H_0 \trianglerighteq H_1 \trianglerighteq \ldots \trianglerighteq H_n = \{e\}
 \]
 
+e,
+
+\[
+\lambda_2: G/H = Q_0 \trianglerighteq Q_1 \trianglerighteq \ldots \trianglerighteq Q_m = H
+\]
+
+Como $Q_j = L_j/H$ para um dado $L_j \leq G$, temos pelo \hyperlink{correspondencia}{\textbf{Teorema da Correspondência}} a série subnormal:
+
+\[
+\lambda_3: G = L_0 \trianglerighteq \ldots \trianglerighteq L_m = H = H_0 \trianglerighteq \ldots \trianglerighteq H_n = \{e\}
+\]
+
+Claramente $\lambda_3$ é uma série solúvel.
+
+\qed}
+
+\begin{theorem}
+\color{red}
+\textbf{(P. Hall)}
+Seja $G$ um grupo solúvel com $\vert G\vert = mn$, onde $\text{mdc}(m,n) = 1$. Então:
+
+$(i)$ Existe pelo menos um subgrupo de $G$ de ordem $m$.
+
+$(ii)$ Dois subgrupos quaisquer de $G$ são conjugados.
+
+$(iii)$ Qualquer subgrupo cuja ordem divide $m$ está contido num subgrupo de ordem $m$.
+\end{theorem}
+
+{\color{red}
+\textbf{Demonstração:}
+
+\qed}
+
+
+\begin{theorem}
+\color{red}
+\textbf{(Feit-Thompson)}
+Todos os grupos finitos de ordem ímpar são solúveis.
+\end{theorem}
+
+{\color{red}
+\textbf{Demonstração:}
 
 \qed}
 
