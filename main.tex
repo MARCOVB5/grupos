@@ -26,6 +26,11 @@
 \usepackage{tikz}
 \definecolor{lightred}{rgb}{1,0.6,0.6}
 \usepackage{stmaryrd}
+\usepackage{comment}
+
+\usepackage{tgpagella}
+\usepackage{eulervm}
+%\usepackage[euler-digits]{eulervm}
 
 \theoremstyle{definition}
 
@@ -161,14 +166,17 @@ Definimos a função acima como a \textbf{operação binária de dois elementos 
 
 \begin{example}
     Sejam $(a,b)\in \mathbb{R}^2$, a função que define a distância cartesiana entre dois pontos $a$ e $b$:
-    \[
-    \text{dist}(a,b): 
-    \begin{array}{c}
-    \mathbb{R}\bigtimes \mathbb{R} \to \mathbb{R}^+ \\
-    (a, b) \mapsto \sqrt{a^2 + b^2}
-    \end{array}
-    \]
-    representa uma operação binária de dois elementos de $\mathbb{R}$ em $\mathbb{R}^+$.
+
+
+  \[
+  \text{dist}(a,b): 
+  \begin{array}{r c l}
+  \mathbb{R}\bigtimes \mathbb{R} &\to &\mathbb{R}^+ \\
+  (a, b) &\mapsto &\sqrt{a^2 + b^2}
+  \end{array}
+  \]
+
+  representa uma operação binária de dois elementos de $\mathbb{R}$ em $\mathbb{R}^+$.
     
 \end{example}
 
@@ -237,7 +245,7 @@ A partir das notações acima, definimos \textbf{lei de composição interna de 
 \end{enumerate}
 
 \begin{example}
-$(\mathbb{Z, +}), \;(\mathbb{Z}/n\mathbb{Z}, +),\;(\mathbb{R}^*, \cdot), \; (\mathbb{R}, +), \; (\mathbb{C, +}),\; (\mathbb{C^*, \cdot}), \; (\mathbb{Q}^*, \cdot)$ \\ são grupos abelianos (onde $+$ e $\cdot$ denotam as operações usuais de adição e produto em $\mathbb{C}$).
+$(\mathbb{Z, +}), \;(\mathbb{Z}/n\mathbb{Z}, +),\;(\mathbb{R}^*, \cdot), \; (\mathbb{R}, +), \; (\mathbb{C, +}),\; (\mathbb{C^*, \cdot})$ e $(\mathbb{Q}^*, \cdot)$ são grupos abelianos (onde $+$ e $\cdot$ denotam as operações usuais de adição e produto em $\mathbb{C}$).
 \end{example}
 
 \begin{example}
@@ -248,7 +256,7 @@ $(\mathbb{Z, +}), \;(\mathbb{Z}/n\mathbb{Z}, +),\;(\mathbb{R}^*, \cdot), \; (\ma
 \begin{example}
     Seja $A$ um conjunto não-vazio. Seja 
     \[
-    \mathcal{P}(f)  = \{f:A \to A\; \vert\; f\;\text{bijetiva} \}
+    \mathcal{P}(f)  = \{f:A \to A\; ; \; f\;\text{bijetiva} \}
     \]
     O conjunto das funções $f$ bijetivas de $A$ em $A$.\\
     $(\mathcal{P}(f), \circ )$ define uma estrutura de grupo, onde $\circ$ representa composição entre funções. \\
@@ -256,21 +264,21 @@ $(\mathbb{Z, +}), \;(\mathbb{Z}/n\mathbb{Z}, +),\;(\mathbb{R}^*, \cdot), \; (\ma
 \end{example}
 
 \begin{example}
-Seja, neste exemplo, para fins de simplificação, $\mathbb{Z} / n\mathbb{Z} \overset{def}{=} \mathbb{Z}_n$, para $n\in \mathbb{Z}$.
+Consideremos, neste exemplo, para fins de simplificação, $\mathbb{Z}_n \overset{def}{=} \mathbb{Z} / n\mathbb{Z}$, para $n\in \mathbb{Z}$.
 
 Seja a operação $\odot$ em $\mathbb{Z}_n$ definida da seguinte forma:
 
 \[
 \odot: 
-\begin{array}{c}
-\mathbb{Z}_n \bigtimes \mathbb{Z}_n \to \mathbb{Z}_n \\
-(\overline{a}, \overline{b}) \mapsto \overline{a} \odot \overline{b} = \overline{a\cdot b}
+\begin{array}{r c l}
+\mathbb{Z}_n \bigtimes \mathbb{Z}_n &\to &\mathbb{Z}_n \\
+(\overline{a}, \overline{b}) &\mapsto &\overline{a} \odot \overline{b} = \overline{a\cdot b}
 \end{array}
 \] 
 
 onde $\cdot$ é a operação usual de produto nos inteiros.
 
-Temos que $(\mathbb{Z}_{p}^{*}, \odot)$, onde $p$ é um número primo, é um grupo abeliano.
+Temos que $(\mathbb{Z}_{p}^{*}, \odot)$, para $p$ primo, é um grupo abeliano.
 
 \end{example}
 \textbf{Demonstração:}
@@ -320,11 +328,13 @@ Portanto, provamos que $(\mathbb{Z}_{p}^{*}, \odot)$ é um grupo abeliano.
 
 
 \begin{example}
-     Seja $G = \;]-1, 1[, \; (G, \star)$ tal que 
-     \[
-     \forall x,y \in G \; : x\star y = \frac{x + y}{1 + xy}
-     \]
-     define um grupo abeliano.
+     Seja o conjunto $G = \;]-1, 1[$ e a operação binária $\star$ definida por: 
+
+    \[
+    x\star y = \frac{x + y}{1 + xy},\; \forall x,y \in G
+    \]
+
+     Então $(G,\star)$ define um grupo abeliano.
 \end{example}
 
 \textbf{Demonstração:}
@@ -437,7 +447,7 @@ Sabemos que $H \subseteq G$, logo, se $h_1 \cdot h_2 \in H \Longrightarrow h_1 \
 
 \hypertarget{grupoespecial}{}
 \begin{example}
-Seja $n\in \mathbb{N}^*$, 
+Seja $n\in \mathbb{N}^*$, defina:
 
 \[
 SL_n(\mathbb{K}) \overset{def}{=} \{A \in GL_n(\mathbb{K}), \; \text{det}(A) = 1 \}
@@ -469,7 +479,7 @@ Logo, mostramos que $SL_n(\mathbb{K}) \leq GL_n(\mathbb{K})$.
 \qed
 
 \begin{example}
-    Seja $n\in \mathbb{Z}$, $(n\mathbb{Z}, +)$ são subgrupos de $(\mathbb{Z},+)$, e, em particular, são os únicos.
+    Seja $n\in \mathbb{Z}$, então $(n\mathbb{Z}, +)$ são subgrupos de $(\mathbb{Z},+)$ e, em particular, são os únicos.
 \end{example}
 \textbf{Demonstração:}
 
@@ -589,7 +599,7 @@ Portanto, provamos que:
     \[
     Z(G) = \{x \in G : xg = gx, \; \forall g \in G\}
     \]
-    define um subgrupo de $G$ chamado \textit{centro} de $G$.
+    define um subgrupo de $G$ chamado \textbf{centro de $G$}.
 \end{definition}
 
 
@@ -789,7 +799,7 @@ De forma geral, dado um grupo $G$, para determinarmos um subgrupo $H$ gerado por
 \textit{Observação: caso um grupo possa ser gerado por mais de um elemento, digamos $n$ elementos, então dizemos que o grupo é $n$-gerado}.
 
 \begin{example}
-    $\mathbb{Z} = \langle 1\rangle, \; \mathbb{Z}/n\mathbb{Z} = \langle \bar{1}\rangle, \; \mathbb{U} = \langle e^{\frac{2\pi i}{n}}\rangle$. são exemplos de grupos cíclicos.
+    $\mathbb{Z} = \langle 1\rangle, \; \mathbb{Z}/n\mathbb{Z} = \langle \bar{1}\rangle, \; \mathbb{U} = \langle e^{\frac{2\pi i}{n}}\rangle$ são exemplos de grupos cíclicos.
 \end{example}
 
 \begin{proposition} \hypertarget{prop132}
@@ -949,11 +959,11 @@ Logo, como todos elementos de $\langle \alpha \rangle$ são distintos, deduzimos
 \begin{definition}
     Seja $G$ um grupo e $H$ um subgrupo de $G$. \textbf{Definimos classe lateral à esquerda de $H$ em $G$ que contém $x$ o subconjunto $xH$} de $G$ tal que $\forall x \in G$:
     \[
-    xH = \{xh \; \vert \; h\in H \}
+    xH = \{xh \; : \; h\in H \}
     \]
     Analogamente definimos \textbf{classe lateral à direita de $H$ em $G$ que contém $x$ o subconjunto $Hx$} de $G$ tal que $\forall x \in G$:
     \[
-    Hx = \{ hx \; \vert \; h \in H\}
+    Hx = \{ hx \; : \; h \in H\}
     \]
 \end{definition}
 
@@ -995,7 +1005,7 @@ xH \mapsto Hx^{-1}
 Seja $x\in G \backslash H$, consideremos o conjunto das classes laterais à esquerda de $H$:
 
 \[
-xH = \{xh \; \vert \; h \in H\}
+xH = \{xh \; : \; h \in H\}
 \]
 
 Mostremos que $H\cap xH = \emptyset$:
@@ -1011,10 +1021,10 @@ Como $\alpha =xh \in H$, logo $\exists h^{-1}\in H$ tal que $hh^{-1} \in H$
 Portanto:
 
 \[
-\alpha h^{-1} = xhh^{-1} \in H \iff x \in H \Longrightarrow \text{Absurdo, pois   } x\in G\backslash H.
+\alpha h^{-1} = xhh^{-1} \in H \iff x \in H
 \]
 
-Logo, $H\cap xH = \emptyset$.
+O que é um absurdo, pois $x\in G\backslash H$. Logo, $H\cap xH = \emptyset$.
 
 Agora mostremos que $\text{Card}(xH) = \vert H\vert$:
 
@@ -1030,7 +1040,7 @@ h \mapsto xh
 
 A função $\zeta$ é claramente sobrejetiva por definição. 
 
-$\zeta$ também é injetiva pois se $(xh_1, xh_2) \in (xH)^2$:
+$\zeta$ também é injetiva pois se $(xh_1, xh_2) \in xH\times xH$, temos que:
 
 \[
 xh_1 = xh_2 \Longrightarrow x^{-1}xh_1 = x^{-1}xh_2 \Longrightarrow h_1 = h_2.
@@ -1059,16 +1069,18 @@ Então $\beta$ pode ser escrito de duas formas:
 Logo, temos:
 
 \[
-yh_1 = xh_2 \Longrightarrow y = xh_2h_1^{-1} \in xH \Longrightarrow \text{Absurdo, pois  } y \notin H\cup xH.
+yh_1 = xh_2 \Longrightarrow y = xh_2h_1^{-1} \in xH
 \]
+
+O que é absurdo, pois $y \notin H\cup xH$.
 
 Analogamente ao passo anterior podemos provar que $\text{Card}(yH) = \text{Card}(xH) = \vert H\vert$.
 
-Portanto, realizando os passos acima sucessivamente, criamos partições de $G$.
+Portanto, realizando os passos acima sucessivamente, construímos partições de $G$.
 
-Como $G$ é finito, o processo terá finalizado após $n$ etapas.
+Como $G$ é finito, o processo terá finalizado após um número inteiro $n$ de etapas.
 
-Portanto, temos: $\vert G\vert = n\vert H\vert$. \qed
+Portanto, temos que $\vert G\vert = n\vert H\vert$. \qed
 
 \textit{Observações:} 
 
@@ -1077,6 +1089,7 @@ Portanto, temos: $\vert G\vert = n\vert H\vert$. \qed
 	\item \textit{Temos diretamente pela \hyperlink{def142}{\textbf{Definição 1.4.2}} que: $\vert G\vert = \vert H\vert [G:H]$.}
 \end{enumerate}
 
+\begin{comment}
 \begin{corollary}
 	Seja $G$ um grupo não finito e $H \leq G$. 
 
@@ -1145,6 +1158,8 @@ Assim, provamos que o \hyperlink{lagrange}{\textbf{Teorema de Lagrange}} vale ta
 
 \qed
 
+\end{comment}
+
 \hypertarget{prop141}{}
 \begin{proposition}
     Seja $G$ um grupo finito de ordem $p\in \mathbb{N}^*$. \\
@@ -1159,7 +1174,7 @@ Como $\vert G\vert = p$ primo, então os únicos subgrupos possíveis de $G$ sã
 
 Seja $x\in G$ tal que $x \neq e$, onde $e$ é o elemento neutro de $G$.
 
-Logo, o único subgrupo gerado por $x$ é o próprio $G$, $\langle x\rangle = G$ \qed
+Logo, o único subgrupo gerado por $x$ é o próprio $G$, isto é: $\langle x\rangle = G$ \qed
 
 \textit{Observação: como visto na \hyperlink{prop132}{\textbf{Proposição 1.3.2}}, $G$ também é abeliano!}
 
@@ -1167,7 +1182,7 @@ Logo, o único subgrupo gerado por $x$ é o próprio $G$, $\langle x\rangle = G$
 
 \begin{theorem} 
 	\textbf{Teorema de Euler (Grupos)} \\
-	Seja $(G, \cdot)$ um grupo finito tal que $\vert G \vert = n, \; n\in \mathbb{Z}$.
+	Seja $(G, \cdot)$ um grupo finito tal que $\vert G \vert = n, \; n\in \mathbb{Z}_+$.
 	Então:
 	\[
 	\forall g \in G, \; g^n = 1.
@@ -1184,13 +1199,11 @@ Ora, podemos então escrever:
 \vert G\vert = k\mathcal{O}(g), \; k\in \mathbb{Z} 
 \]
 
-Porém, pela \hyperlink{prop136}{\textbf{Proposição 1.3.6}}, deduzimos:
+Porém, pela \hyperlink{prop136}{\textbf{Proposição 1.3.6}}, temos que:
 
 \[
 g^{n} = g^{\vert G \vert} = g^{k\mathcal{O}(g)} = \left(g^{\mathcal{O}(g)}\right)^{k} = e^k = e
 \]
-
-Ora, demonstramos, com o argumento acima, sem perda de generalidade, tal fato para qualquer elemento de $G$.
 
 \qed
 
@@ -1198,7 +1211,7 @@ Ora, demonstramos, com o argumento acima, sem perda de generalidade, tal fato pa
 
 \begin{theorem} 
     \textbf{Pequeno Teorema de Fermat} \\
-   	Seja $p$ um número primo e $a\in \mathbb{Z} \setminus p\mathbb{Z}$, então:
+   	Seja $p$ um número primo e $a\in \mathbb{Z}/p\mathbb{Z}$, então:
 	\[
 	a^{p-1} \equiv 1 \pmod{p}.
 	\] 
@@ -1211,9 +1224,9 @@ O \hyperlink{pequenofermat}{\textbf{Pequeno Teorema de Fermat}} é evidentemente
 \qed
 
 \begin{proposition}
-	Seja $G$ um grupo e sejam $K < H < G$.
+	Seja $G$ um grupo e sejam $K \leq H \leq G$.
 
-	Logo $[G : K] = [G : H][H : K].$
+	Logo $[G : K] = [G : H][H : K]$.
 \end{proposition}
 
 \textbf{Demonstração:}
@@ -1221,9 +1234,9 @@ O \hyperlink{pequenofermat}{\textbf{Pequeno Teorema de Fermat}} é evidentemente
 Basta aplicar sucessivamente o \hyperlink{lagrange}{\textbf{Teorema de Lagrange}}:
 
 \begin{align*}
-& H < G &&\Rightarrow && \lvert G \rvert = \lvert H \rvert \cdot [G : H] \; \; \; \text{(I)} \\
-& K < H &&\Rightarrow && \lvert H \rvert = \lvert K \rvert \cdot [H : K] \; \; \; \text{(II)} \\
-& K < G &&\Rightarrow && \lvert G \rvert = \lvert K \rvert \cdot [G : K] \; \; \; \text{(III)}
+& H \leq G &&\Rightarrow && \lvert G \rvert = \lvert H \rvert \cdot [G : H] \; \; \; \text{(I)} \\
+& K \leq H &&\Rightarrow && \lvert H \rvert = \lvert K \rvert \cdot [H : K] \; \; \; \text{(II)} \\
+& K \leq G &&\Rightarrow && \lvert G \rvert = \lvert K \rvert \cdot [G : K] \; \; \; \text{(III)}
 \end{align*}
 
 Combinando as expressões (I) e (II), obtemos:
@@ -1256,12 +1269,12 @@ Portanto:
 	Seja $G$ um grupo e $H\leq G$. 
 
 	\textbf{Definimos a seguinte operação entre as classes laterais à esquerda de $H$ em $G$:}
-
+  
 \[
 \bullet \; : 
-\begin{array}{c}
-G/H \times G/H \to G/H \\
-(xH, yH)  \mapsto xyH
+\begin{array}{r c l}
+G/H \times G/H &\to &G/H \\
+(xH, yH)  &\mapsto &xyH
 \end{array}
 \]
 
@@ -1603,7 +1616,7 @@ AB = \{ab, \; a\in A, \; b\in B \}.
 
 \textit{Note que o conjunto $AB$ não necessariamente é um grupo mesmo que $A$ e $B$ o sejam.}
 
-\textit{Note, por exemplo, o caso do grupo $\mathfrak{S}_3$:}
+\textit{Note, por exemplo, o caso do grupo $\mathfrak{S}_3$ (para entender as representações dos elementos de $\mathfrak{S}_3$ leia brevemente o começo do Capítulo 3):}
 
 \[
 A, B \leq \mathfrak{S}_3, \; \; A = \left\{
@@ -2130,10 +2143,11 @@ $\theta: G \rightarrow \mathcal{G},\; \theta (g) = e_{\mathcal{G}}, \; \forall g
 A função:
 
 \[
-\text{det} \colon \begin{cases}
-GL_n(\mathbb{K}) \to \mathbb{K}^* \\
-A \mapsto \text{det}(A)
-\end{cases}
+\text{det}: 
+\begin{array}{r c l}
+GL_n(\mathbb{K}) &\to &\mathbb{K}^* \\
+A &\mapsto &\text{det}(A)
+\end{array}
 \]
 
 é um homomorfismo de grupos, pois sabemos que $\forall A, B\in GL_n(\mathbb{K})$ temos:
@@ -2147,10 +2161,11 @@ A \mapsto \text{det}(A)
 Seja $G$ um grupo e $N \trianglelefteq G$, logo a função:
 
 \[
-\pi \colon \begin{cases}
-G \to G/N \\
-x \mapsto xN
-\end{cases}
+\pi:
+\begin{array}{r c l}
+G &\to &G/N \\
+x &\mapsto &xN
+\end{array}
 \]
 
 é um homomorfismo chamado de \textit{projeção canônica}.
@@ -2177,11 +2192,13 @@ Seja $G = \mathbb{R}_{+}^{*}\times \mathbb{R}$ munido da operação $\heartsuit$
 
 A função:
 
+
 \[
-\spadesuit \colon \begin{cases}
-(G, \heartsuit) \to (\mathbb{C}^*, \cdot) \\
-(r, \theta) \mapsto re^{i\theta}
-\end{cases}
+\spadesuit:
+\begin{array}{r c l}
+(G, \heartsuit) &\to &(\mathbb{C}^*, \cdot) \\
+(r, \theta) &\mapsto &re^{i\theta}
+\end{array}
 \] 
 
 é um homomorfismo de grupos, onde $e$ é o número de Euler, $i^2 = -1$ e:
@@ -2272,7 +2289,7 @@ Seja \( n \in \mathbb{N}^* \). O núcleo do homomorfismo
 Definimos a \textbf{imagem de um homomorfismo $\varphi$ o subconjunto $\operatorname{Im} \varphi \subseteq \mathcal{G}$ tal que:}
 
 \[
-\operatorname{Im} \varphi \overset{\text{def}}{=} \{ y \in \mathcal{G} \mid \exists x \in G,\, y = \varphi(x) \}
+\operatorname{Im} \varphi \overset{\text{def}}{=} \{ y \in \mathcal{G} : \exists x \in G,\, y = \varphi(x) \}
 \]
 \end{definition}
 
@@ -2554,9 +2571,9 @@ Sejam $G$ e $\mathcal{G}$ grupos tais que $\varphi : G \to \mathcal{G}$ é um ho
 
 \[
 \psi: 
-\begin{array}{c}
-G/\ker \varphi \to \operatorname{Im}\varphi \\
-g\ker\varphi \mapsto \varphi(g)
+\begin{array}{r c l}
+G/\ker \varphi &\to &\operatorname{Im}\varphi \\
+g\ker\varphi &\mapsto &\varphi(g)
 \end{array}
 \]
 
@@ -2855,9 +2872,9 @@ A função:
 
 \[
 \mathcal{I}_g: 
-\begin{array}{c}
-G \to G \\
-x \mapsto gxg^{-1}
+\begin{array}{r c l}
+G &\to &G \\
+x &\mapsto &gxg^{-1}
 \end{array}
 \]
 
