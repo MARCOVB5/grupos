@@ -24,6 +24,7 @@
 \usepackage{hyperref}
 \usepackage{pict2e}
 \usepackage{tikz}
+\usepackage{tikz-cd}
 \definecolor{lightred}{rgb}{1,0.6,0.6}
 \usepackage{stmaryrd}
 \usepackage{comment}
@@ -32,6 +33,7 @@
 \usepackage{eulervm}
 %\usepackage[euler-digits]{eulervm}
 
+\usetikzlibrary{babel}
 \theoremstyle{definition}
 
 \newtheorem{definition}{Definição}[section]  
@@ -272,7 +274,7 @@ Seja a operação $\odot$ em $\mathbb{Z}_n$ definida da seguinte forma:
 \odot: 
 \begin{array}{r c l}
 \mathbb{Z}_n \bigtimes \mathbb{Z}_n &\to &\mathbb{Z}_n \\
-(\overline{a}, \overline{b}) &\mapsto &\overline{a} \odot \overline{b} = \overline{a\cdot b}
+(\overline{a}, \overline{b}) &\mapsto &\overline{a} \odot \overline{b} \overset{def}{=} \overline{a\cdot b}
 \end{array}
 \] 
 
@@ -2132,7 +2134,7 @@ Sejam $G$ e $\mathcal{G}$ dois grupos. Definimos $\operatorname{Hom}(G,\mathcal{
 \end{definition}
 
 \begin{example}
-$\text{Id}: (G, \cdot) \rightarrow (G, \cdot), \; \text{id}(g) = g$ é um homomorfismo chamado \textit{identidade}.
+$\text{id}: (G, \cdot) \rightarrow (G, \cdot), \; \text{id}(g) = g$ é um homomorfismo chamado \textit{identidade}.
 \end{example}
 
 \begin{example}
@@ -3938,7 +3940,7 @@ A partir das notações da \hyperlink{def191}{\textbf{Definição 2.3.1}}, uma s
 \{e\} \xrightarrow{\epsilon_1} H \xrightarrow{\varphi} G \xrightarrow{\psi} K \xrightarrow{\epsilon_2} \{e\}
 \]
 
-é dita \textbf{sequência exata curta} se for uma sequência exata em $H, G$ e $K$, onde $\{e\}$ é o grupo trivial cujo único elemento é seu neutro $e$ e os homomorfismos $\epsilon_1$ e $\epsilon_2$ são definidos por:
+é dita \textbf{sequência exata curta} se for uma sequência exata em $H, G$ e $K$, onde $\{e\}$ é o grupo trivial cujo único elemento é seu neutro $e$ e os homomorfismos $\epsilon_1$ e $\epsilon_2$ são dados por:
 
 \[
 \epsilon_1: 
@@ -3960,6 +3962,10 @@ A partir das notações da \hyperlink{def191}{\textbf{Definição 2.3.1}}, uma s
 
 \begin{itemize}
   \item \textit{Note que o grupo trivial $\{e\}$ é único a menos de isomorfismo, logo podemos assumir, sem perda de generalidade, que os grupos triviais definidos na \hyperlink{def192}{\textbf{Definição 2.3.2}} são de fato iguais;}
+  \item \textit{Pelo fato dos homomorfismos $\epsilon_1$ e $\epsilon_2$ serem únicos, podemos simplesmente escrever:}
+  \[
+  \{e\} \xrightarrow{} H \xrightarrow{\varphi} G \xrightarrow{\psi} K \xrightarrow{} \{e\}
+  \]
   \item \textit{A partir da definição temos que $\varphi$ é um monomorfismo, pois $\ker{\varphi} = \operatorname{Im}{\epsilon_1} = \{e\}$;}
   \item \textit{Analogamente, temos que $\psi$ é um epimorfismo, pois $\operatorname{Im}{\psi} = \ker{\epsilon_2} = K$;}
   \item \textit{Desde que a sequência é exata em $G$, então como $\operatorname{Im}{\varphi} = \ker{\psi}$, temos que $\operatorname{Im}{\varphi}\trianglelefteq G$}.
@@ -3970,8 +3976,106 @@ A partir das notações da \hyperlink{def191}{\textbf{Definição 2.3.1}}, uma s
 \begin{example}
 \color{red}
 
+Sejam $G$ um grupo e $H\trianglelefteq G$. A sequência:
+
+\[
+\{e\} \xrightarrow{} H \xrightarrow{\iota} G \xrightarrow{\pi} G/H \xrightarrow{} \{e\}
+\]
+
+onde, 
+
+\[
+\iota: 
+\begin{array}{r c l}
+  H &\to & G \\
+  h &\mapsto & h
+\end{array}
+\qquad \text{e,} \qquad
+\pi: 
+\begin{array}{r c l}
+  G &\to & G/H \\
+  g &\mapsto & gH
+\end{array}
+\]
+
+é uma sequência exata curta.
 
 \end{example}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Basta mostrar que $\iota$ é um monomorfismo, $\pi$ é um epimorfismo e que $\operatorname{Im}{\iota} = \ker{\pi}$.
+
+Note que, de fato, $\iota$ é um monomorfismo e $\pi$ é um epimorfismo, trivialmente. Resta mostrar que $\operatorname{Im}{\iota} = \ker{\pi}$.
+
+Ora, é fácil ver que:
+
+\[
+\ker{\pi} = \{g\in G : \pi(g) = H\} = H = \operatorname{Im}{\iota}
+\]
+
+Portanto, a sequência apresentada é de fato uma sequência exata curta.
+
+\qed}
+
+\begin{definition}
+\color{red}
+
+Dizemos que uma sequência exata curta da forma:
+
+\[
+\{e\} \xrightarrow{} H \xrightarrow{\varphi} G \xrightarrow{\psi} K \xrightarrow{} \{e\}
+\]
+
+\textbf{cinde} se existe um homomorfismo $\kappa: K \to G$ tal que $\psi(\kappa(k)) = k, \;\forall k\in K$.
+
+\end{definition}
+
+{\color{red}
+\textit{Observação: se uma dada sequência exata curta cinde, então podemos representar seu diagrama como:}
+
+\[
+\begin{tikzcd}
+\{e\} \arrow[r] & H \arrow[r, "\varphi"] & G \arrow[r, "\psi"] & K \arrow[l, bend left=40, "\kappa" below] \arrow[r] & \{e\}
+\end{tikzcd}
+\]
+
+}
+
+\begin{theorem}
+\color{red}
+
+Sejam $G$, $H$ e $K$ grupos, $\varphi$, $\psi$ e $\kappa$ homomorfismos e a sequência exata curta que cinde dada por: 
+
+\[
+\begin{tikzcd}
+\{e\} \arrow[r] & H \arrow[r, "\varphi"] & G \arrow[r, "\psi"] & K \arrow[l, bend left=40, "\kappa" below] \arrow[r] & \{e\}
+\end{tikzcd}
+\]
+
+Então:
+
+\[
+G \cong H \rtimes_\theta K
+\]
+
+onde $\theta: K\to \text{Aut}(H)$ é o homomorfismo dado por:
+
+\[
+\theta_k(h) = \varphi\left(\kappa(k)\varphi(h)\kappa(k)^{-1}\right)^{-1}.
+\]
+
+\end{theorem}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+
+
+\qed}
+
 
 \chapter{Grupo Simétrico}
 
@@ -6352,12 +6456,12 @@ Claramente $\lambda_3$ é uma série solúvel.
 
 \begin{theorem}
 \color{red}
-\textbf{(P. Hall)}
+\textbf{(P. Hall, 1928)}
 Seja $G$ um grupo solúvel com $\vert G\vert = mn$, onde $\text{mdc}(m,n) = 1$. Então:
 
 $(i)$ Existe pelo menos um subgrupo de $G$ de ordem $m$.
 
-$(ii)$ Dois subgrupos quaisquer de $G$ são conjugados.
+$(ii)$ Dois subgrupos quaisquer de $G$ de ordem $m$ são conjugados
 
 $(iii)$ Qualquer subgrupo cuja ordem divide $m$ está contido num subgrupo de ordem $m$.
 \end{theorem}
@@ -6365,17 +6469,36 @@ $(iii)$ Qualquer subgrupo cuja ordem divide $m$ está contido num subgrupo de or
 {\color{red}
 \textbf{Demonstração:}
 
-\qed}
+Ver artigo "\textit{A note on soluble groups}" \cite{hall1928note}.
 
+\qed}
 
 \begin{theorem}
 \color{red}
-\textbf{(Feit-Thompson)}
+\textbf{(P. Hall, 1937)}
+
+Seja $G$ um grupo finito com a seguinte propriedade: para todo inteiro $a$ tal que $\vert G\vert = ab$, com $\text{mdc}(a,b) = 1$, existe um subgrupo de $G$ de ordem $a$.
+
+Então, $G$ é solúvel.
+\end{theorem}
+
+{\color{red}
+\textbf{Demonstração:}
+
+Ver artigo "\textit{A characteristic property of soluble groups}" \cite{hall1937characteristic}.
+
+\qed}
+
+\begin{theorem}
+\color{red}
+\textbf{(Feit-Thompson, 1963)}
 Todos os grupos finitos de ordem ímpar são solúveis.
 \end{theorem}
 
 {\color{red}
 \textbf{Demonstração:}
+
+Ver artigo "\textit{Solvability of groups of odd order}" \cite{feit1963solvability}.
 
 \qed}
 
