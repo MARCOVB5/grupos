@@ -3813,7 +3813,8 @@ Sejam $H$ um grupo e $K \overset{def}{=} \text{Aut}(H)$. Se definirmos $\theta: 
 
 {\color{red}
 
-\textit{Observação: a construção do exemplo acima é chamada de \textbf{Holomorfo do grupo $H$}, comumente denotada por $\operatorname{Hol}(H)$}.
+\textit{Observação: a construção do exemplo acima é chamada de \textbf{Holomorfo do grupo $H$}.}
+
 }
 
 \hypertarget{teo182}{}
@@ -4063,7 +4064,7 @@ G \cong H \rtimes_\theta K
 onde $\theta: K\to \text{Aut}(H)$ é o homomorfismo dado por:
 
 \[
-\theta_k(h) = \varphi\left(\kappa(k)\varphi(h)\kappa(k)^{-1}\right)^{-1}.
+\theta_k(h) = \varphi^{-1}\left(\kappa(k)\varphi(h)\kappa(k)^{-1}\right).
 \]
 
 \end{theorem}
@@ -4072,7 +4073,79 @@ onde $\theta: K\to \text{Aut}(H)$ é o homomorfismo dado por:
 
 \textbf{Demonstração:}
 
+Note, primeiramente, que $\theta$ é um homomorfismo e que $\theta_k\in \text{Aut}(H)$.
 
+Pela exatidão da sequência, temos que $\operatorname{Im}{\varphi} \trianglelefteq G$ e que $\varphi$ é injetora.
+
+Dado $k\in K$ e $h\in H$, temos que $\kappa(k)\varphi(h)\kappa(k)^{-1} \in \operatorname{Im}{\varphi}$. Assim, temos que a inversa $\varphi^{-1}: \operatorname{Im}{\varphi} \to H$ é bem definida e:
+
+\[
+\theta_k(h) = \varphi^{-1}\left(\kappa(k)\varphi(h)\kappa(k)^{-1}\right)\in H,\; \forall h\in H
+\]
+
+Logo $\theta_k\in \text{Aut}(H),\;\forall k\in K$. 
+
+Além disso, $\theta$ é um homomorfismo de grupos por construção. Portanto, temos que $H \rtimes_\theta K$ é de fato um grupo.
+
+Considere, agora, a função $\xi$ definida por:
+
+\[
+\xi: 
+\begin{array}{r c l}
+H \rtimes_\theta K &\to &G \\
+(h, k) &\mapsto & \varphi(h)\kappa(k)
+\end{array}
+\]
+
+Note que $\xi$ é de fato função, trivialmente. Mostremos que $\xi$ se trata de um homomorfismo de grupos. 
+
+Sejam $(h_1,k_1),(h_2,k_2) \in H \rtimes_\theta K$. Temos que:
+
+\[
+\begin{aligned}
+\xi\left((h_1,k_1)(h_2,k_2)\right) &= \xi\left((h_1\theta_{k_1}(h_2), k_1k_2)\right) \\
+&= \xi\left((h_1\varphi^{-1}\left(\kappa(k_1)\varphi(h_2)\kappa(k_1)^{-1}\right), k_1k_2)\right) \\
+&= \varphi\left(h_1\varphi^{-1}\left(\kappa(k_1)\varphi(h_2)\kappa(k_1)^{-1}\right)\right)\kappa(k_1k_2) \\
+&= \varphi(h_1)\kappa(k_1)\varphi(h_2)\kappa(k_1)^{-1}\kappa(k_1)\kappa(k_2) \\
+&= \varphi(h_1)\kappa(k_1)\varphi(h_2)\kappa(k_2) \\
+&= \xi((h_1,k_1))\xi((h_2,k_2))
+\end{aligned}
+\]
+
+Portanto, $\xi$ é um homomorfismo de grupos.
+
+Note ainda que, para dado $(h,k)\in H\rtimes_\theta K$, se $\xi\left((h,k)\right) = e_G$, então:
+
+\[
+\xi\left((h,k)\right) = e_G \implies \varphi(h)\kappa(k) = e_G \implies \psi(\varphi(h))k = e_K
+\]
+
+Como $\ker{\psi} = \operatorname{Im}{\varphi}$, então $\psi(\varphi(h)) = e_K$. Temos portanto que $k=e_K$.
+
+Ora, como $\varphi$ é injetora, temos ainda que $\varphi(h) = e_G \iff h = e_H$. Portanto, concluímos que:
+
+\[
+\xi\left((h,k)\right) = e_G \iff (h,k) = (e_H, e_K) \iff \ker{\xi} = \{(e_H,e_K)\}
+\]
+
+Logo, $\xi$ é injetora.
+
+Para mostrar a sobrejetividade, tomemos $g \in G$. Encontremos $(h, k) \in H \rtimes_\theta K$ tal que $\xi(h, k) = g$. 
+Seja $k = \psi(g)$ e defina $x \overset{def}{=} g\kappa(k)^{-1} \in G$. Note que:
+
+\[
+\psi(x) = \psi(g\kappa(k)^{-1}) = \psi(g)\psi(\kappa(k))^{-1} = k \cdot k^{-1} = e_K
+\]
+
+Portanto, $x \in \ker{\psi} = \operatorname{Im}{\varphi}$. Como $x\in \operatorname{Im}{\varphi}$ e $\varphi$ é injetora, existe um único $h \in H$ tal que $\varphi(h) = x$, isto é, $\varphi(h) = g\kappa(k)^{-1}$. 
+
+Logo, $\varphi(h)\kappa(k) = g$, ou seja, $\xi(h, k) = g$. Temos, portanto, que $\xi$ é sobrejetora.
+
+Concluímos, finalmente, que $\xi$ é um isomorfismo de grupos e temos:
+
+\[
+G \cong H \rtimes_\theta K
+\]
 
 \qed}
 
@@ -5583,6 +5656,9 @@ Mostremos, por fim, o item $4.$:
 Se $n\geq 5$, então $\mathfrak{A}_X$ é um grupo simples e não abeliano. Portanto temos diretamente que $\mathfrak{A}_X' = \mathfrak{A}_X$. Isto é, $\mathfrak{A}_X$ é perfeito para $n\geq 5$.
  
 \qed}
+
+
+
 
 \chapter{Ações de Grupos}
 
