@@ -4044,6 +4044,7 @@ Dizemos que uma sequência exata curta da forma:
 
 }
 
+\hypertarget{teo231}{}
 \begin{theorem}
 \color{red}
 
@@ -5657,8 +5658,77 @@ Se $n\geq 5$, então $\mathfrak{A}_X$ é um grupo simples e não abeliano. Porta
  
 \qed}
 
+\begin{theorem}
+\color{red}
+Seja $X$ um conjunto finito tal que $\text{Card}(X) \geq 2$. Então:
 
+\[
+\mathfrak{S}_X \cong \mathfrak{A}_X \rtimes_\theta \{-1, 1\}
+\]
 
+onde $\theta: \{-1,1\} \to \text{Aut}(\mathfrak{A}_X)$ é um homomorfismo tal que:
+
+\[
+\theta_{1}(\sigma) = \sigma, \; \forall \sigma \in \mathfrak{A}_X
+\]
+
+e, para uma dada transposição $\tau\in\mathfrak{S}_X$,
+
+\[
+\theta_{-1}(\sigma) = \tau\sigma\tau^{-1}, \; \forall \sigma \in \mathfrak{A}_X
+\]
+\end{theorem}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+A partir do \hyperlink{teo231}{\textbf{Teorema 2.3.1}}, basta mostrar que a sequência:
+
+\[
+\begin{tikzcd}
+\{\text{id}_X\} \arrow[r] & \mathfrak{A}_X \arrow[r, "\varphi"] & \mathfrak{S}_X \arrow[r, "\varepsilon"] & \{-1,1\} \arrow[l, bend left=40, "\kappa" below] \arrow[r] & \{1\}
+\end{tikzcd}
+\]
+
+é uma sequência exata curta que cinde, onde $\varphi$, $\varepsilon$ e $\kappa$ são homomorfismos dados por:
+
+\[
+\varphi: 
+\begin{array}{r c l}
+  \mathfrak{A}_X &\to & \mathfrak{S}_X \\
+  \sigma &\mapsto & \sigma
+\end{array}
+\qquad \text{,} \qquad
+\varepsilon: 
+\begin{array}{r c l}
+  \mathfrak{S}_X &\to & \{-1,1\} \\
+  \sigma &\mapsto & \varepsilon(\sigma)
+\end{array}
+\qquad \text{e,} \qquad
+\kappa:
+\begin{array}{r c l}
+  \{-1,1\} &\to & \mathfrak{S}_X \\
+  -1 &\mapsto & (x_1\; x_2) \\
+   1 &\mapsto & \text{id}_X
+\end{array}
+\]
+
+em que $\varepsilon$ é a função assinatura.
+
+Perceba que temos diretamente que $\varphi$ é um monomorfismo e que $\varepsilon$ é um epimorfismo. 
+
+Ainda, temos que: $\ker{\varepsilon} = \mathfrak{A}_X = \operatorname{Im}{\varphi}$.
+
+Por fim, é fácil ver que $\varepsilon(\kappa(-1)) = \varepsilon\left((x_1\;x_2)\right) = -1$ e que $\varepsilon(\kappa(1)) = \varepsilon(\text{id}_X) = 1$, para $x_1,x_2\in X$ distintos (note que é garantido que tais elementos existam pois $\text{Card}(X)\geq 2$).
+
+Portanto, concluímos que:
+
+\[
+\mathfrak{S}_X \cong \mathfrak{A}_X \rtimes_\theta \{-1, 1\}
+\]
+
+\qed}
 
 \chapter{Ações de Grupos}
 
