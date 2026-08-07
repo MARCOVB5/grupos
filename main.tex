@@ -2108,26 +2108,31 @@ Sejam $(G, \cdot)$ e $(\mathcal{G}, *)$ dois grupos. \textbf{Uma função $\varp
 
 \textit{Observações:}
 
-\textit{Note que, se $\varphi : G \rightarrow \mathcal{G}$} for um homomorfismo de grupos, então:
+\begin{itemize}
+  \item \textit{Se $\varphi$ for um homomorfismo de grupos injetivo, dizemos que $\varphi$ é um \textbf{monomorfismo}};
+  \item \textit{Se $\varphi$ for um homomorfismo de grupos sobrejetivo, dizemos que $\varphi$ é um \textbf{epimorfismo}};
+  \item \textit{Note que, se $\varphi : G \rightarrow \mathcal{G}$} for um homomorfismo de grupos, então:
 
-\begin{enumerate}
+  \begin{enumerate}
 	\item $\varphi(e_G) = e_\mathcal{G}$;
 	\item $\varphi(x^{-1}) = \varphi(x)^{-1}.$
-\end{enumerate}
+  \end{enumerate}
 
-\textit{De fato, note que, para o item 1., temos que}:
+  \textit{De fato, note que, para o item 1., temos que}:
 
-\[
-\varphi(e_G) = \varphi(e_G \cdot e_G) = \varphi(e_G)*\varphi(e_G) \implies \varphi(e_G) = e_\mathcal{G}
-\]
+  \[
+  \varphi(e_G) = \varphi(e_G \cdot e_G) = \varphi(e_G)*\varphi(e_G) \implies \varphi(e_G) = e_\mathcal{G}
+  \]
 
-\textit{E para o item 2., temos:}
+  \textit{E para o item 2., temos:}
 
-\[
-e_\mathcal{G} = \varphi(e_G) = \varphi(x\cdot x^{-1}) = \varphi(x)*\varphi(x^{-1}) \implies \varphi(x^{-1}) = \varphi(x)^{-1}
-\]
+  \[
+  e_\mathcal{G} = \varphi(e_G) = \varphi(x\cdot x^{-1}) = \varphi(x)*\varphi(x^{-1}) \implies \varphi(x^{-1}) = \varphi(x)^{-1}
+  \]
 
-\textit{$*$ Note também que muitas vezes as operações de $G$ e de $\mathcal{G}$ serão confundidas para fins de simplificação, isto é: $\varphi(ab) = \varphi(a)\varphi(b)$.}
+  \item \textit{Muitas vezes as operações de $G$ e de $\mathcal{G}$ serão confundidas para fins de simplificação, isto é: $\varphi(ab) = \varphi(a)\varphi(b)$.}
+\end{itemize}
+
 
 \begin{definition}
 Sejam $G$ e $\mathcal{G}$ dois grupos. Definimos $\operatorname{Hom}(G,\mathcal{G})$ como o \textbf{conjunto de todos os homomorfismos de $G$ em $\mathcal{G}$}.
@@ -2170,7 +2175,7 @@ x &\mapsto &xN
 \end{array}
 \]
 
-é um homomorfismo chamado de \textit{projeção canônica}.
+é um epimorfismo chamado de \textit{projeção canônica}.
 \end{example}
 
 \textbf{Demonstração:}
@@ -2180,6 +2185,9 @@ Sejam $x,y \in G$, ora:
 \[
 \pi(xy) = xyN = xN\bullet yN = \pi(x)\bullet \pi(y).
 \]
+
+Além disso, $\pi$ é trivialmente sobrejetora.
+
 \qed
 
 \begin{example}
@@ -2815,24 +2823,40 @@ Portanto, aplicando o \hyperlink{primteoiso}{\textbf{Primeiro Teorema dos Isomor
 \color{red}
 \textbf{Teorema da Correspondência}
 
+Sejam $G$ e $\mathcal{G}$ grupos e $\varphi: G\to \mathcal{G}$ um homomorfismo de grupos. Então:
+
+
+\[ 
+\begin{array}{r c l}
+\{\text{subgrupos de $G$ que contém } \ker{\varphi}\} &\to &\{\text{subgrupos de } \varphi(G)\} \\
+H &\mapsto &\varphi(H)
+\end{array}
+\]
+
+e,
+
+\[ 
+\begin{array}{r c l}
+\{\text{subgrupos de } \varphi(G)\}  &\to &\{\text{subgrupos de $G$ que contém } \ker{\varphi}\} \\
+K &\mapsto &\varphi^{-1}(K)
+\end{array}
+\]
+
+são bijeções, inversas uma da outra. Ainda, temos que:
+
+$(i)$ $H\trianglelefteq G\implies \varphi(H)\trianglelefteq \varphi(G)$.
+
+$(ii)$ $K\trianglelefteq \varphi(G) \implies \varphi^{-1}(K) \trianglelefteq G$.
 
 \end{theorem}
 
-\begin{definition}
-Sejam $G$ e  $\mathcal{G}$ grupos.
+{\color{red}
 
-\textbf{Um epimorfismo de $G$ em $\mathcal{G}$ é um homomorfismo $\varphi$ tal que $\varphi$ é sobrejetivo}.
+\textbf{Demonstração:}
 
-Denotamos o \textbf{conjunto de todos os epimorfismos de $G$ em $\mathcal{G}$ por $\operatorname{Epi}(G, \mathcal{G})$}.
-\end{definition}
 
-\begin{definition}
-Sejam $G$ e $\mathcal{G}$ grupos.
 
-\textbf{Um monomorfismo de $G$ em $\mathcal{G}$ é um homomorfismo $\varphi$ tal que $\varphi$ é injetivo}.
-
-Denotamos o \textbf{conjunto de todos os monomorfismos de $G$ em $\mathcal{G}$ por $\operatorname{Mon}(G, \mathcal{G})$}.
-\end{definition}
+\qed}
 
 \begin{definition}
 Seja $G$ um grupo. 
@@ -2843,7 +2867,7 @@ Seja $G$ um grupo.
 \varphi: G \to G
 \]
 
-Denotamos o \textbf{conjunto de todos os automorfismos de $G$ por $\operatorname{Aut}(G)$.}
+Denotamos o conjunto de todos os automorfismos de $G$ por $\operatorname{Aut}(G)$.
 \end{definition}
 
 \hypertarget{prop167}{}
