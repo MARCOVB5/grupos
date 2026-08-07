@@ -2818,6 +2818,73 @@ Portanto, aplicando o \hyperlink{primteoiso}{\textbf{Primeiro Teorema dos Isomor
 
 \qed
 
+\hypertarget{lema161}{}
+\begin{lemma}
+\color{red}
+Sejam $G$ e $\mathcal{G}$ grupos e $\varphi: G\to \mathcal{G}$ um homomorfismo de grupos. Se $H$ é um subgrupo de $G$ tal que $\ker{\varphi}\subseteq H$, então:
+
+\[
+\varphi^{-1}(\varphi(H)) = H.
+\]
+\end{lemma}
+
+{\color{red}
+
+\textbf{Demonstração:}
+
+Mostremos, primeiramente, que $H \subseteq \varphi^{-1}(\varphi(H))$.
+
+Tomemos $h\in H$. Temos, diretamente, que $\varphi(h)\in\varphi(H)$.
+
+Ainda, pela definição de pré-imagem, sabemos que:
+
+\[
+\varphi^{-1}(\varphi(H)) = \{g\in G\; :\; \varphi(g)\in \varphi(H)\}
+\]
+
+Ora, como $\varphi(h)\in \varphi(H)$, temos então que $h\in \varphi^{-1}(\varphi(H))$.
+
+Concluímos que $H \subseteq \varphi^{-1}(\varphi(H))$.
+
+Mostremos, agora, que $\varphi^{-1}(\varphi(H)) \subseteq H$.
+
+Tomemos $g\in \varphi^{-1}(\varphi(H))$. Pela definição de $\varphi^{-1}(\varphi(H))$, temos $\varphi(g)\in\varphi(H)$.
+
+Como $\varphi(g)\in\varphi(H)$, existe $h\in H$ tal que $\varphi(g) = \varphi(h)$. Logo:
+
+\[
+\varphi(g)=\varphi(h)\iff \varphi(g)\varphi(h)^{-1} = e_\mathcal{G} \iff \varphi(gh^{-1})= e_\mathcal{G} \iff gh^{-1}\in\ker{\varphi}
+\]
+
+Como $\ker{\varphi}\subseteq H$ e $h^{-1}\in H$, temos portanto que $g\in H$.
+
+Concluímos que $\varphi^{-1}(\varphi(H)) \subseteq H$ e, portanto, $\varphi^{-1}(\varphi(H)) = H$
+
+\qed
+
+\textit{Observação: note que, caso $\ker{\varphi} \not\subseteq H$, então não é possível garantir $\varphi^{-1}(\varphi(H)) = H$.}
+
+\textit{Consideremos o seguinte homomorfismo como contra-exemplo:}
+
+\[
+\varphi: 
+\begin{array}{r c l}
+\mathbb{Z}  &\to &\mathbb{Z}/2\mathbb{Z} \\
+a &\mapsto & a + 2\mathbb{Z}
+\end{array}
+\]
+
+\textit{Note que $\ker{\varphi} = 2\mathbb{Z}$. Tomando $H \overset{def}{=} 4\mathbb{Z}\leq \mathbb{Z}$, temos que:}
+
+\begin{itemize}
+  \item $\varphi(H) = \{\bar{0}\}$;
+  \item $\varphi^{-1}(\{\bar{0}\}) = 2\mathbb{Z}$.
+\end{itemize}
+
+\textit{Portanto, temos que $\varphi^{-1}(\varphi(H)) = 2\mathbb{Z} \neq H$}.
+
+}
+
 \hypertarget{correspondencia}{}
 \begin{theorem}
 \color{red}
@@ -2826,7 +2893,8 @@ Portanto, aplicando o \hyperlink{primteoiso}{\textbf{Primeiro Teorema dos Isomor
 Sejam $G$ e $\mathcal{G}$ grupos e $\varphi: G\to \mathcal{G}$ um homomorfismo de grupos. Então:
 
 
-\[ 
+\[
+f: 
 \begin{array}{r c l}
 \{\text{subgrupos de $G$ que contém } \ker{\varphi}\} &\to &\{\text{subgrupos de } \varphi(G)\} \\
 H &\mapsto &\varphi(H)
@@ -2835,7 +2903,8 @@ H &\mapsto &\varphi(H)
 
 e,
 
-\[ 
+\[
+g: 
 \begin{array}{r c l}
 \{\text{subgrupos de } \varphi(G)\}  &\to &\{\text{subgrupos de $G$ que contém } \ker{\varphi}\} \\
 K &\mapsto &\varphi^{-1}(K)
@@ -2854,7 +2923,65 @@ $(ii)$ $K\trianglelefteq \varphi(G) \implies \varphi^{-1}(K) \trianglelefteq G$.
 
 \textbf{Demonstração:}
 
+Mostremos, primeiramente, que $f$ se trata de uma função bijetiva. 
 
+Note que $f$ é de fato função, pois, dados $H_1, H_2\leq G$, temos:
+
+\[
+H_1 = H_2 \implies \varphi(H_1) = \varphi(H_2) \implies f(H_1) = f(H_2)
+\]
+
+Para mostrar a injetividade de $f$, tomemos novamente $H_1,H_2\leq G$ tais que $f(H_1) = f(H_2)$.
+
+Perceba que, pela definição de $f$, isso é equivalente a afirmar que $\varphi(H_1) = \varphi(H_2)$, onde $\varphi(H_1)$ e $\varphi(H_2)$ são subgrupos de $\varphi(G)$. Portanto, tomando a pré-imagem de tais conjuntos temos que:
+
+\[
+\varphi(H_1) = \varphi(H_2) \implies \varphi^{-1}(\varphi(H_1)) = \varphi^{-1}(\varphi(H_2)) \overset{\text{\hyperlink{lema161}{\textbf{Lema 1.6.1}}}}{\implies} H_1 = H_2 
+\]
+
+Logo, $f$ é uma função injetiva. 
+
+Mostremos, agora, a sobrejetividade de $f$. 
+
+Ora, basta notar que, dado $K\leq \varphi(G)$, podemos tomar $H = \varphi^{-1}(K) \leq G$. De fato:
+
+\[
+f(H) = \varphi(H) = \varphi(\varphi^{-1}(K)) = K
+\]
+
+Ainda, temos que $H$ é um elemento válido do domínio, pois, como $K$ é grupo, então $e_\mathcal{G}\in K$. Como a pré-imagem de $e_\mathcal{G}$ é por definição $\ker{\varphi}$, então temos que $\ker{\varphi}\subseteq H$.
+
+Concluímos, portanto, que $f$ é uma função bijetora.
+
+Para mostrarmos que $g$ também é uma função bijetora tal que $g = f^{-1}$, basta notar que:
+
+\[
+f\circ g (K) = f(g(K)) = f(\varphi^{-1}(K)) = \varphi(\varphi^{-1}(K)) = K,\; \forall K\leq \varphi(G) 
+\]
+
+e,
+
+\[
+g\circ f (H) = g(f(H)) = g(\varphi(H)) = \varphi^{-1}(\varphi(H)) = H,\; \forall H\leq G \;\; \text{tal que } \ker{\varphi}\subseteq H
+\]
+
+Mostremos, agora, os itens $(i)$ e $(ii)$.
+
+Para mostrar o item $(i)$ note que, como $H\trianglelefteq G$ tal que $\ker{\varphi} \subseteq H$ temos para $h\in H$ e $g\in G$:
+
+\[
+\varphi(\underbrace{ghg^{-1}}_{\in H}) = \underbrace{\varphi(g)}_{\in \varphi(G)}\underbrace{\varphi(h)}_{\in \varphi(H)}\underbrace{\varphi(g)^{-1}}_{\in\varphi(G)} \in \varphi(H)
+\]
+
+Logo, $\varphi(H)\trianglelefteq \varphi(G)$.
+
+Para mostrar o item $(ii)$ note que, se $K\trianglelefteq \varphi(G)$, então para $x\in \varphi^{-1}(K)$ e $g\in G$, temos:
+
+\[
+\varphi(gxg^{-1}) = \underbrace{\varphi(g)}_{\in \varphi(G)}\underbrace{\varphi(x)}_{\in K}\underbrace{\varphi(g)^{-1}}_{\in\varphi(G)} \in K
+\]
+
+Ora, temos portanto $gxg^{-1}\in \varphi^{-1}(K)$. Logo, $\varphi^{-1}(K) \trianglelefteq G$.
 
 \qed}
 
@@ -2872,7 +2999,7 @@ Denotamos o conjunto de todos os automorfismos de $G$ por $\operatorname{Aut}(G)
 
 \hypertarget{prop167}{}
 \begin{proposition}
-Seja $G$ um grupo, então $(\operatorname{Aut}(G), \circ)$ é um grupo, onde $\circ$ denota a composição usual de funções.
+Seja $G$ um grupo. Então $(\operatorname{Aut}(G), \circ)$ é um grupo, onde $\circ$ denota a composição usual de funções.
 \end{proposition}
 
 \textbf{Demonstração:}
@@ -2958,7 +3085,7 @@ o \textbf{conjunto de todos os automorfismos internos de $G$ associados à $g\in
 \end{definition}
 
 \begin{proposition}
-Seja $G$ um grupo, temos:
+Seja $G$ um grupo. Então:
 
 \[
 \operatorname{Inn}(G) \trianglelefteq \operatorname{Aut}(G).
