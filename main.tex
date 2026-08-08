@@ -28,6 +28,8 @@
 \definecolor{lightred}{rgb}{1,0.6,0.6}
 \usepackage{stmaryrd}
 \usepackage{comment}
+\usepackage{multicol}
+\usepackage{enumitem}
 
 \usepackage{tgpagella}
 \usepackage{eulervm}
@@ -85,7 +87,7 @@
   \begin{mybox}{cyan}{Lema \thesection.\arabic{lemma}}
 }{\end{mybox}}
 
-
+\begin{comment}
 \newcommand{\titlepagecontent}{
     \begin{center}
         \vspace*{2cm} 
@@ -99,6 +101,32 @@
         {\Large Curitiba, Novembro de 2024}
     \end{center}
 }
+\end{comment}
+
+\newcommand{\titlepagecontent}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[opacity=0.5, inner sep=0pt, anchor=south east] 
+        at ([xshift=6cm, yshift=-1cm]current page.south east) 
+        {\includegraphics[width=1.4\textwidth]{imgs/circlelimit.png}};
+    \end{tikzpicture}
+    
+    
+    \vspace*{2cm}
+    \begin{flushleft}
+        \hspace*{0.5cm} 
+        \begin{minipage}{0.8\textwidth} 
+            {\Huge\bfseries Introdução à Teoria de Grupos e Teoria de Módulos} \\[1.2cm] 
+            
+            {\Large Marco Vieira Busetti} \\[0.2cm]
+            {\Large \textbf{Orientador:} Prof. Francismar Ferreira Lima} \\[4cm] 
+            
+            %{\large Universidade Tecnológica Federal do Paraná} \\[0.5cm]
+            %{\large Curitiba, Novembro de 2024}
+        \end{minipage}
+    \end{flushleft}
+    \clearpage
+}
+
 
 \newcommand{\trianglechar}{
   \mathrel{
@@ -141,6 +169,103 @@
 \fontsize{12}{14}\selectfont
 
 \tableofcontents
+
+
+\chapter*{Lista de Símbolos e Notações}
+\addcontentsline{toc}{chapter}{Lista de Símbolos e Notações}
+\markboth{LISTA DE SÍMBOLOS E NOTAÇÕES}{LISTA DE SÍMBOLOS E NOTAÇÕES}
+
+Abaixo estão listadas as principais notações utilizadas ao longo deste trabalho.
+\vspace{0.8cm}
+
+\setlength{\columnsep}{1.5cm} 
+\begin{multicols}{2}
+
+%    \begin{center}\textbf{Geral e Conjuntos}\end{center}
+    \begin{description}[leftmargin=2.2cm, labelwidth=1.8cm, labelsep=0.4cm, itemsep=0.3cm, font=\normalfont]
+        \item[{ $\mathbb{N}$ }] Conjunto dos números naturais: $\{0, 1, 2,\ldots\}$
+        \item[{ $\mathbb{Z}$ }] Conjunto dos números inteiros: $\{\ldots, -1,0,1,2,\ldots\}$
+        \item[{ $\mathbb{Q}$ }] Conjunto dos números racionais
+        \item[{ $\mathbb{R}$ }] Conjunto dos números reais
+        \item[{ $\mathbb{C}$ }] Conjunto dos números complexos
+        \item[{ $\mathbb{U}$ }] Círculo unitário (conjunto dos números complexos de módulo 1)
+        \item[{ $X^*$ }] Conjunto $X$ excluindo o elemento nulo \\(ex: $\mathbb{R}^* = \mathbb{R} \setminus \{0\}$)
+        \item[{ $X_+$ }] Subconjunto dos elementos não negativos de $X$ (ex: $\mathbb{Z}_+ = \mathbb{N}$)
+        \item[{ $X_{+}^{*}$ }] Subconjunto dos elementos estritamente positivos de $X$
+        \item[{ $X_{\geq n}$ }] Subconjunto dos elementos de $X$ que são maiores ou iguais a $n$ (ex: $\mathbb{Z}_{\geq 2} = \{2,3,4,\ldots\}$)
+        \item[{ $X_{< n}$ }] Subconjunto dos elementos de $X$ que são estritamente menores que $n$
+        \item[{ $A \times B$ }] Produto cartesiano entre os conjuntos $A$ e $B$
+        \item[{ $\text{Card}(X)$ }] Cardinalidade do conjunto $X$
+        \item[{ $\llbracket a, b\rrbracket$ }] Conjunto de inteiros compreendidos entre $a$ e $b$
+        \item[{ $a \mid b$ }] O inteiro $a$ divide o inteiro $b$
+        \item[{ $a \nmid b$ }] O inteiro $a$ não divide o inteiro $b$
+    \end{description}
+    
+    %\columnbreak
+    
+%    \begin{center}\textbf{Teoria de Grupos}\end{center}
+    \begin{description}[leftmargin=2.2cm, labelwidth=1.8cm, labelsep=0.4cm, itemsep=0.3cm, font=\normalfont]
+        \item[{ $e$ ou $e_G$}] Elemento neutro do grupo $G$
+        \item[{ $|G|$ }] Ordem do grupo $G$
+        \item[{ $H \le G$ }] $H$ é subgrupo de $G$
+        \item[{ $H < G$ }] $H$ é subgrupo próprio de $G$
+        \item[{ $N \trianglelefteq G$ }] $N$ é subgrupo normal de $G$
+        \item[{ $N \triangleleft G$ }] $N$ é subgrupo normal próprio de $G$
+        \item[{ $H \trianglechareq G$ }] $H$ é subgrupo característico de $G$
+        \item[{ $[G:H]$ }] Índice do subgrupo $H$ em $G$
+        \item[{ $G/H$ }] Grupo quociente de $G$ por $H$
+        \item[{ $Z(G)$ }] Centro do grupo $G$
+        \item[{ $\langle X \rangle$ }] Subgrupo gerado pelo conjunto $X$
+        \item[{ $[x,y]$ }] Comutador dos elementos $x$ e $y$
+        \item[{ $G'$ ou $G^{(1)}$ }] Grupo derivado (ou dos comutadores) de $G$
+        \item[{ $G^{ab}$ }] Abelianização de $G$ (quociente $G/G'$)
+        \item[{ $\mathcal{O}(g)$ }] Ordem do elemento $g$
+        \item[{ $\ker \varphi$ }] Núcleo do homomorfismo $\varphi$
+        \item[{ $\operatorname{Im} \varphi$ }] Imagem do homomorfismo $\varphi$
+        \item[{ $\operatorname{Hom}(G,\mathcal{G})$ }] Conjunto de homomorfismos de $G$ em $\mathcal{G}$
+        \item[{ $\operatorname{Aut}(G)$ }] Grupo de automorfismos de $G$
+        \item[{ $\operatorname{Inn}(G)$ }] Grupo de automorfismos internos de $G$
+        \item[{ $G \cong \mathcal{G}$ }] Isomorfismo entre $G$ e $\mathcal{G}$
+    \end{description}
+
+%    \begin{center}\textbf{Produtos de Grupos}\end{center}
+    \begin{description}[leftmargin=2.2cm, labelwidth=1.8cm, labelsep=0.4cm, itemsep=0.3cm, font=\normalfont]
+        \item[{ $\prod G_i$ }] Produto direto externo de grupos
+        \item[{ $\bigodot H_i$ }] Produto direto interno de grupos
+        \item[{ $H \rtimes K$ }] Produto semidireto interno
+        \item[{ $H \rtimes_\theta K$ }] Produto semidireto externo associado a $\theta$
+    \end{description}
+    
+    %\columnbreak
+
+%    \begin{center}\textbf{Grupos Específicos}\end{center}
+    \begin{description}[leftmargin=2.2cm, labelwidth=1.8cm, labelsep=0.4cm, itemsep=0.3cm, font=\normalfont]
+        \item[{ $GL_n(\mathbb{K})$ }] Grupo linear geral sobre $\mathbb{K}$
+        \item[{ $SL_n(\mathbb{K})$ }] Grupo linear especial sobre $\mathbb{K}$
+        \item[{ $\mathbb{Z}/n\mathbb{Z}$ }] Grupo dos inteiros módulo $n$
+        \item[{ $\mathbb{Z}_{p}^{*}$ }] Grupo multiplicativo dos inteiros invertíveis módulo $p$
+        \item[{ $\mathfrak{S}_X$ ou $\mathfrak{S}_n$ }] Grupo simétrico do conjunto $X$ (ou de grau $n$)
+        \item[{ $\mathfrak{A}_X$ ou $\mathfrak{A}_n$ }] Grupo alternado do conjunto $X$ (ou de grau $n$)
+        \item[{ $\mathcal{K}$ }] Grupo de Klein
+        \item[{ $\mathfrak{K}$ }] Grupo simétrico de Klein
+    \end{description}
+    
+    %\begin{center}\textbf{Permutações e Ações}\end{center}
+    \begin{description}[leftmargin=2.2cm, labelwidth=1.8cm, labelsep=0.4cm, itemsep=0.3cm, font=\normalfont]
+        \item[{ $\text{id}_X$ }] Permutação identidade (ou função identidade)
+        \item[{ $\text{supp}(\sigma)$ }] Suporte da permutação $\sigma$
+        \item[{ $\mathscr{I}(\sigma)$ }] Número de inversões da permutação $\sigma$
+        \item[{ $\varepsilon(\sigma)$ }] Assinatura da permutação $\sigma$
+        \item[{ $G \curvearrowright X$ }] $G$ age à esquerda sobre $X$
+        \item[{ $\mathscr{O}(x)$ }] Órbita do elemento $x$
+        \item[{ $X/G$ }] Conjunto das órbitas da ação de $G$ sobre $X$
+        \item[{ $G_x$ }] Estabilizador (grupo de isotropia) de $x$
+        %\item[{ $\text{Fix}(X)$ }] Conjunto de pontos fixos da ação
+    \end{description}
+
+\end{multicols}
+
+
 \newpage
 
 \chapter{Generalidades sobre Grupos}
@@ -161,10 +286,6 @@ G\bigtimes G &\to &E \\
 
 Definimos a função acima como a \textbf{operação binária de dois elementos de $G$ em $E$} e a escrevemos comumente como: $a\oplus b$.
 \end{definition}
-
-\begin{example}
-    A adição usual $+$ é uma operação binária de dois elementos de $\mathbb{I}$ em $\mathbb{R}$. Onde $\mathbb{I}$ denota o conjunto dos números irracionais.
-\end{example}
 
 \begin{example}
     Sejam $(a,b)\in \mathbb{R}^2$, a função que define a distância cartesiana entre dois pontos $a$ e $b$:
@@ -244,6 +365,8 @@ A partir das notações acima, definimos \textbf{lei de composição interna de 
       (x\cdot y)^n = x^n \cdot y^n, 
       \quad \forall n \in \mathbb{Z}.
     \]
+
+    \item \textit{Caso não haja ambiguidade, a operação do grupo poderá ser omitida, isto é, denotaremos o grupo $(G,\cdot)$ apenas por $G$}.
 \end{enumerate}
 
 \begin{example}
@@ -251,18 +374,18 @@ $(\mathbb{Z, +}), \;(\mathbb{Z}/n\mathbb{Z}, +),\;(\mathbb{R}^*, \cdot), \; (\ma
 \end{example}
 
 \begin{example}
-    $(GL_n(\mathbb{K}), \times)$ define uma estrutura de grupo, onde $\mathbb{K}= \mathbb{C}$ ou $\mathbb{R}$ e $GL_n(\mathbb{K})$ define o conjunto das matrizes $n\times n$ invertíveis com entradas em $\mathbb{K}$.
+    $(GL_n(\mathbb{K}), \times)$ define uma estrutura de grupo, onde $\mathbb{K}= \mathbb{C}$ ou $\mathbb{R}$ e $GL_n(\mathbb{K})$ é o conjunto das matrizes $n\times n$ invertíveis com entradas em $\mathbb{K}$, munido da operação usual de produto de matrizes, denotada por $\times$.
 \end{example}
 
 \hypertarget{exem123}{}
 \begin{example}
-    Seja $A$ um conjunto não-vazio. Seja 
+    Seja $A$ um conjunto não-vazio. Considere: 
     \[
-    \mathcal{P}(f)  = \{f:A \to A\; ; \; f\;\text{bijetiva} \}
+    \operatorname{Bij}(A)  \overset{def}{=} \{f:A \to A\; ; \; f\;\text{bijetiva} \}
     \]
-    O conjunto das funções $f$ bijetivas de $A$ em $A$.\\
-    $(\mathcal{P}(f), \circ )$ define uma estrutura de grupo, onde $\circ$ representa composição entre funções. \\
-    Caso $A$ seja um conjunto finito, $\mathcal{P}(f)$ será representado por $\mathfrak{S}_A$ e será chamado de \textbf{grupo simétrico ou grupo das permutações}.
+    o conjunto das funções bijetivas de $A$ em $A$.\\
+    $(\operatorname{Bij}(A), \circ )$ define uma estrutura de grupo, onde $\circ$ representa composição entre funções. \\
+    Caso $A$ seja um conjunto finito, $\operatorname{Bij}(A)$ será representado por $\mathfrak{S}_A$ e será chamado de \textbf{grupo simétrico ou grupo das permutações}.
 \end{example}
 
 \begin{example}
@@ -336,7 +459,7 @@ Portanto, provamos que $(\mathbb{Z}_{p}^{*}, \odot)$ é um grupo abeliano.
     x\star y = \frac{x + y}{1 + xy},\; \forall x,y \in G
     \]
 
-     Então $(G,\star)$ define um grupo abeliano.
+     Então $(G,\star)$ é um grupo abeliano.
 \end{example}
 
 \textbf{Demonstração:}
@@ -404,21 +527,23 @@ Temos:
 
 Mostrando, assim, a associatividade.
 
-Ainda, temos que o grupo é evidentemente abeliano.\qed
+Ainda, temos que o grupo é evidentemente abeliano.
+
+\qed
 
 \section{Subgrupos}
 
 \begin{definition}
     Seja $(G, \cdot)$ um grupo. \textbf{Um subconjunto $H \subseteq G$ é chamado de subgrupo de $G$} (denotamos $H\leq G$) se, e somente se, $(H, \cdot)$ é um grupo.
 \end{definition}
-\textit{Observação: temos ainda que se $H \subset G$, temos então $H$ é chamado de subgrupo próprio de $G$ e denotamos como $H< G$.}
+\textit{Observação: temos ainda que se $H \subset G$, então $H$ é chamado de subgrupo próprio de $G$ e denotamos $H< G$.}
 
 \begin{proposition} \hypertarget{prop131}
-    Seja $H \subseteq G$ tal que $H \ne \emptyset$ e $(G, \cdot)$ é um grupo. $H\leq G$ é equivalente à satisfazer as seguintes condições:
-    \begin{enumerate}
-    \item $h_1 \cdot h_2 \in H,\; \forall (h_1,h_2) \in H \times H$;
-    \item $h^{-1} \in H, \; \forall h\in H$.
-    \end{enumerate}
+Seja $H \subseteq G$ tal que $H \ne \emptyset$ e $(G, \cdot)$ é um grupo. $H\leq G$ é equivalente à satisfazer as seguintes condições:
+
+$(i)$ $h_1 \cdot h_2 \in H,\; \forall (h_1,h_2) \in H \times H$;
+
+$(ii)$ $h^{-1} \in H, \; \forall h\in H$.
 \end{proposition}
 
 \textbf{Demonstração:}
@@ -426,25 +551,27 @@ Ainda, temos que o grupo é evidentemente abeliano.\qed
 É necessário mostrarmos as duas implicações da equivalência:
 
 \begin{align}
-    H\leq G \Longrightarrow (1.)\; \text{e} \;(2.)
+    H\leq G \Longrightarrow (i)\; \text{e} \;(ii)
 \end{align}
 
 \begin{align}
-    (1.)\; \text{e} \;(2.) \Longrightarrow H\leq G
+    (i)\; \text{e} \;(ii) \Longrightarrow H\leq G
 \end{align}
 
 A implicação $(1.1)$ é trivial. Ora, se $H\leq G$, então pela definição de subgrupo temos que $h_1\cdot h_2 \in H$ e $h^{-1}\in H$, isto é $\exists h^{-1} \in H : h\cdot h^{-1} = h^{-1} \cdot h = h$.
 
 Para a implicação $(1.2)$:
 
-Sabemos que $H \subseteq G$, logo, se $h_1 \cdot h_2 \in H \Longrightarrow h_1 \cdot h_2 \in G$. Ora, sabemos que $(G, \cdot)$ é um grupo. Logo, a associatividade é satisfeita. Para demonstrar que $e \in H$, basta tomarmos $h_2 = h^{-1}$ a partir de $(2.)$. Logo, temos $h\cdot h^{-1} = e \in H$. Com isso mostramos todos os axiomas necessários e deduzimos que $H\leq G$. \qed 
+Sabemos que $H \subseteq G$, logo, se $h_1 \cdot h_2 \in H \Longrightarrow h_1 \cdot h_2 \in G$. Ora, sabemos que $(G, \cdot)$ é um grupo. Logo, a associatividade é satisfeita. Para demonstrar que $e \in H$, basta tomarmos $h_2 = h^{-1}$ a partir de $(ii)$. Logo, temos $h\cdot h^{-1} = e \in H$. Com isso mostramos todos os axiomas necessários e deduzimos que $H\leq G$. 
+
+\qed 
 
 \begin{example}
     $(\mathbb{U}^*, \cdot), \;(\mathbb{R}^*, \cdot),\;(\mathbb{R}^*_+, \cdot), \; (\mathbb{Q}^*, \cdot), \; (\mathbb{Q}^*_+, \cdot)$ são subgrupos de $(\mathbb{C}^*, \cdot)$, onde $\cdot$ denota a multplicação usual em $\mathbb{C}$.
 \end{example}
 
 \begin{example}
-    $G$ e $\{e\}$ são subgrupos \textit{triviais} de $G$.
+Se $G$ é um grupo, então $G$ e $\{e\}$ são subgrupos \textit{triviais} de $G$.
 \end{example}
 
 \hypertarget{grupoespecial}{}
@@ -485,7 +612,7 @@ Logo, mostramos que $SL_n(\mathbb{K}) \leq GL_n(\mathbb{K})$.
 \end{example}
 \textbf{Demonstração:}
 
-É evidente que $(n\mathbb{Z}, +)$ são subgrupos de $(\mathbb{Z}, +)$. Mostremos que são os únicos! 
+É evidente que $(n\mathbb{Z}, +)$ são subgrupos de $(\mathbb{Z}, +)$. Mostremos que são os únicos. 
 
 Seja $(H, +)$ um subgrupo qualquer de $(\mathbb{Z}, +)$. Se $H = \{0\}$, então $H = 0\mathbb{Z}$.
 
@@ -515,77 +642,56 @@ Logo:
 h = qn \implies h \in n\mathbb{Z} \implies H \subseteq n\mathbb{Z}.
 \]
 
-Portanto deduzimos que $H = n\mathbb{Z}$. \qed
+Portanto deduzimos que $H = n\mathbb{Z}$. 
+
+\qed
 
 \begin{example}
-    Seja $G$ um grupo e $I$ um conjunto não-vazio de índices. Se $\{H_i\}_{i \in I}$ é uma família de subgrupos de $G$, então $\bigcap_{i\in I} H _i$ é um subgrupo de $G$.
+Seja $G$ um grupo e $I$ um conjunto não-vazio de índices. Se $\{H_i\}_{i \in I}$ é uma família de subgrupos de $G$, então $\bigcap_{i\in I} H _i$ é um subgrupo de $G$.
 \end{example}
 
 \textbf{Demonstração:}
 
-Como visto na \hyperlink{prop131}{\textbf{Proposição 1.3.1}}, mostremos que:
+Como visto na \hyperlink{prop131}{\textbf{Proposição 1.3.1}}, basta mostrar que:
 
-\begin{enumerate}
-    \item $\forall\; x_1, x_2 \in \bigcap_{i\in I} H _i \implies x_1\cdot x_2 \in \bigcap_{i\in I} H _i$;
-    \item $\forall x \in \bigcap_{i \in I} H_i \implies \exists \; x^{-1} \in \bigcap_{i\in I} H _i$.
-\end{enumerate}
+$(i)$ $\forall\; x_1, x_2 \in \bigcap_{i\in I} H_i \implies x_1\cdot x_2 \in \bigcap_{i\in I} H_i$;
 
-Provemos o \textbf{item 1}:
+$(ii)$ $x \in \bigcap_{i \in I} H_i \implies  x^{-1} \in \bigcap_{i\in I} H_i$.
 
-Sejam,
+Note, primeiramente, que $\bigcap_{i \in I} H_i$ é não vazio. De fato, como $H_i$ é grupo para todo $i\in I$ temos trivialmente que $e\in \bigcap_{i \in I} H_i$, onde $e$ denota o elemento neutro do grupo $G$.
 
-\[
-x_1, x_2 \in \bigcap_{i\in I} H_i
-\]
+Provemos, agora, o item $(i)$:
 
-Logo:
+Sejam $x_1, x_2 \in \bigcap_{i\in I} H_i$.
 
-\[
-\forall i \in I, \; x_1, x_2 \in H_i
-\]
+Logo, por definição, temos que $x_1, x_2\in H_i, \; \forall i\in I$. 
 
-Sabemos também que:
+Sabemos também que $H_i \leq G, \; \forall i\in I$.
 
-\[
-\forall i \in I, \; H_i \leq G 
-\]
+Portanto, deduzimos diretamente que $x_1 \cdot x_2 \in H_i,\; \forall i\in I$.
 
-Portanto, deduzimos que:
-
-\[
-\forall i \in I, \; x_1 \cdot x_2 \in H_i
-\]
-
-Mas isso é a mesma coisa que dizer:
+Mas isso é a mesma coisa que afirmar que:
 
 \[
 \forall x_1, x_2 \in \bigcap_{i \in I} H_i \implies x_1 \cdot x_2 \in \bigcap_{i\in I} H_i
 \]
 
-Provemos o \textbf{item 2}:
+Provemos o item $(ii)$:
 
-Analogamente ao \textbf{item 1}, sabemos que:
+Analogamente ao item $(i)$, sabemos que:
 
 \[
-x_0 \in \bigcap_{i \in I} H_i \iff \forall i \in I, \; x_0 \in H_i
+x \in \bigcap_{i \in I} H_i \iff x \in H_i, \;\forall i \in I
 \]
 
-Porém, sabemos que:
+Sabemos também que $H_i \leq G,\; \forall i\in I$.
+
+Logo, analogamente, temos que se $x \in H_i$, então $x^{-1}\in H_i, \; \forall i\in I$.
+
+Mas isso é a mesma coisa que afirmar:
 
 \[
-\forall i \in I, \; H_i \leq G
-\]
-
-Logo, deduzimos que:
-
-\[
-\forall i \in I, \; x_0 \in H_i, \; \exists x^{-1}_{0} \in H_i   
-\]
-
-Mas isso é a mesma coisa que:
-
-\[
-\forall x \in \bigcap_{i \in I} H_i \implies \exists  x^{-1} \in \bigcap_{i \in I} H_i
+x \in \bigcap_{i \in I} H_i \implies x^{-1} \in \bigcap_{i \in I} H_i
 \]
 
 Portanto, provamos que:
@@ -609,32 +715,29 @@ Portanto, provamos que:
 
 Como visto na \hyperlink{prop131}{\textbf{Proposição 1.3.1}}, para mostrar que $Z(G) \leq G$ é necessário mostrar que $x\cdot x^{-1} \in Z(G), \; \forall x \in Z(G)$.
 
-Nota: $Z(G)$ é claramente não vazio uma vez que o elemento neutro comuta com todos elementos de $G$ e, portanto, está em $Z(G)$.
+Note que $Z(G)$ é claramente não vazio uma vez que o elemento neutro comuta com todos elementos de $G$ e, portanto, está em $Z(G)$.
 
-Temos que:
-
-Se:
-\[
-x \in Z(G) \Rightarrow x\cdot g = g\cdot x, \; \forall g\in G.
-\]
-
-Logo, teremos:
+Ora, se:
 
 \[
-xgx^{-1} = g \Longrightarrow x^{-1}xgx^{-1} = x^{-1}g \Longrightarrow gx^{-1} =x^{-1}g, \; \forall g \in G 
+x \in Z(G) \implies x\cdot g = g\cdot x, \; \forall g\in G.
 \]
 
-Portanto: 
+Então:
 
 \[
-x^{-1} \in Z(G)
+xgx^{-1} = g \implies x^{-1}xgx^{-1} = x^{-1}g \implies gx^{-1} =x^{-1}g, \; \forall g \in G 
 \]
 
-Temos também que:
+Portanto $x^{-1} \in Z(G)$.
+
+Temos também que, se:
 
 \[
 x_1 \in Z(G) \Longrightarrow x_1g = gx_1, \; \forall g \in G \;\; \text{(I)}
 \]
+
+e,
 
 \[
 x_2 \in Z(G) \Longrightarrow x_2g = gx_2, \; \forall g \in G \; \; \text{(II)}
@@ -643,26 +746,28 @@ x_2 \in Z(G) \Longrightarrow x_2g = gx_2, \; \forall g \in G \; \; \text{(II)}
 Deduzimos de (I):
 
 \[
-x_1g = gx_1 \Longrightarrow g = x^{-1}_1gx_1
+x_1g = gx_1 \implies g = x^{-1}_1gx_1
 \]
 
 Substituindo em (II):
 
 \[
-x_2x^{-1}_1gx_1 = x^{-1}_1gx_1x_2 \Longrightarrow x_2x^{-1}_1x_1g = x^{-1}_1gx_1x_2 \Longrightarrow 
+x_2x^{-1}_1gx_1 = x^{-1}_1gx_1x_2 \implies x_2x^{-1}_1x_1g = x^{-1}_1gx_1x_2 
 \]
 
 \[
-\Longrightarrow x_2g = x^{-1}_1gx_1x_2 \Longrightarrow (x_1x_2)g = g(x_1x_2)
+\implies x_2g = x^{-1}_1gx_1x_2 \implies (x_1x_2)g = g(x_1x_2)
 \]
 
 Logo, deduzimos que:
 
 \[
-(x_1, x_2)\in Z(G)\times Z(G) \Longrightarrow x_1\cdot x_2 \in Z(G)
+(x_1, x_2)\in Z(G)\times Z(G) \implies x_1\cdot x_2 \in Z(G)
 \]
 
-Portanto, $Z(G) \leq G$. \qed
+Portanto, $Z(G) \leq G$. 
+
+\qed
 
 \textit{Observação: O subgrupo centro serve o propósito de "medir a comutatividade" de um dado grupo. Por exemplo, observamos que $Z(\mathbb{Z}) = \mathbb{Z}$, $Z(GL_2 (\mathbb{R})) = \{\lambda I: \lambda \in \mathbb{R}^*\}$ e  $Z(\mathfrak{S}_n) = \{e\},\; n \geq 3$}.
 
