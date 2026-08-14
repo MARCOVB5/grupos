@@ -2124,43 +2124,31 @@ O grupo $\mathbb{Z}/n\mathbb{Z}$ é um grupo quociente formado pelo quociente en
 
 \textbf{Demonstração:}
 
-Seja $G/Z(G)$ um grupo cíclico. 
+Seja $G/Z(G)$ um grupo cíclico, mostremos que $G = Z(G)$.
 
-Mostremos que $G = Z(G)$, isto é, que $G$ é um grupo abeliano.
+Como $G/Z(G)$ é cíclico, então existe $x\in G$ tal que $\langle xZ(G)\rangle = G/Z(G)$.
 
-Como $G/Z(G)$ é cíclico, então existe $x\in G/Z(G)$ tal que $\langle x\rangle = G$.
-
-Portanto, sabemos que, para determinado inteiro $k\in \mathbb{Z}$, temos:
+Tomemos $g_1,g_2\in G$, então suas classes laterais devem ser potências de $xZ(G)$. Isto é, existem $k_1,k_2\in \mathbb{Z}$ tais que:
 
 \[
-gz' = x^k, \; (g,z')\in G\times Z(G)
+g_1Z(G) = x^{k_1}Z(G) \implies g_1 = x^{k_1}z_1,\;\;\text{para algum  } z_1 \in Z(G)
 \]
 
-Podemos reescrever a expressão acima como:
+e,
 
 \[
-g = x^kz, \; (g,z)\in G\times Z(G)
+g_2Z(G) = x^{k_2}Z(G) \implies g_2 = x^{k_2}z_2,\;\;\text{para algum  } z_2 \in Z(G)
 \]
 
-Tomemos $g_1, g_2 \in G$ tal que:
+Logo, temos que:
 
-\[
-g_1 \overset{def}{=} x^{k_1}z_1, \; (k_1, z_1) \in \mathbb{Z}\times Z(G)
-\]
+\begin{align*}
+g_1g_2 = (x^{k_1}z_1)(x^{k_2}z_2) &= x^{k_1} x^{k_2} z_1 z_2 \\
+&=x^{k_1+k_2} z_1 z_2 = x^{k_2+k_1} z_2 z_1 \\
+&=x^{k_2} z_2 x^{k_1} z_1 = (x^{k_2}z_2)(x^{k_1}z_1) = g_2g_1
+\end{align*}
 
-\[
-g_2 \overset{def}{=} x^{k_2}z_2, \; (k_2, z_2) \in \mathbb{Z}\times Z(G)
-\]
-
-Portanto temos:
-
-\[
-g_1g_2 = x^{k_1}z_1x^{k_2}z_2 = x^{k_1 + k_2}z_1z_2 = x^{k_2}x^{k_1}z_1z_2 = x^{k_2}z_2x^{k_1}z_1 = g_2g_1. 
-\]
-
-Isso se dá pelo fato de qualquer elemento de $z\in Z(G)$ comutar com elementos de $G$ e, portanto, elementos de $G/Z(G)$.
-
-Com isso, mostramos que $G$ é um grupo abeliano e, portanto, $G = Z(G)$. 
+Portanto, como $g_1g_2= g_2g_1$ para quaisquer $g_1,g_2\in G$, temos que $G$ é abeliano e, consequentemente, $G=Z(G)$.
 
 \qed
 
