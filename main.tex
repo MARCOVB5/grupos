@@ -240,10 +240,10 @@ Abaixo estão listadas as principais notações utilizadas ao longo deste trabal
 
 %    \begin{center}\textbf{Grupos Específicos}\end{center}
     \begin{description}[leftmargin=2.2cm, labelwidth=1.8cm, labelsep=0.4cm, itemsep=0.3cm, font=\normalfont]
-        \item[{ $GL_n(\mathbb{K})$ }] Grupo linear geral sobre $\mathbb{K}$
-        \item[{ $SL_n(\mathbb{K})$ }] Grupo linear especial sobre $\mathbb{K}$
-        \item[{ $\mathbb{Z}/n\mathbb{Z}$ }] Grupo dos inteiros módulo $n$
-        \item[{ $\mathbb{Z}_{p}^{*}$ }] Grupo multiplicativo dos inteiros invertíveis módulo $p$
+        \item[{ $GL_n(\mathbb{K})$ }] Grupo linear geral sobre um corpo $\mathbb{K}$
+        \item[{ $SL_n(\mathbb{K})$ }] Grupo linear especial sobre um corpo $\mathbb{K}$
+        \item[{ $\mathbb{Z}/n\mathbb{Z}$ }] Grupo aditivo dos inteiros módulo $n$
+        \item[{ ($\mathbb{Z}/p\mathbb{Z})^{*}$ }] Grupo multiplicativo dos inteiros invertíveis módulo $p$
         \item[{ $\mathfrak{S}_X$ ou $\mathfrak{S}_n$ }] Grupo simétrico do conjunto $X$ (ou de grau $n$)
         \item[{ $\mathfrak{A}_X$ ou $\mathfrak{A}_n$ }] Grupo alternado do conjunto $X$ (ou de grau $n$)
         \item[{ $\mathcal{K}$ }] Grupo de Klein
@@ -1874,8 +1874,6 @@ Ora, temos diretamente que:
 
 \hypertarget{dedekind}{}
 \begin{lemma}
-\color{red}
-
 Seja $G$ um grupo e $A, B$ e $C$ subgrupos de $G$ tais que $A\leq C$. Então:
 
 \[
@@ -1883,8 +1881,6 @@ AB\cap C = A(B\cap C).
 \]
 
 \end{lemma}
-
-{\color{red}
 
 \textbf{Demonstração:}
 
@@ -1902,7 +1898,7 @@ Portanto, concluímos que $b\in B\cap C$ e, ainda, como $x = ab$, temos que $x\i
 
 Logo, $AB\cap C = A(B\cap C)$.
 
-\qed}
+\qed
 
 \begin{proposition}
 \hypertarget{prop154}
@@ -2913,15 +2909,12 @@ Portanto, aplicando o \hyperlink{primteoiso}{\textbf{Primeiro Teorema dos Isomor
 
 \hypertarget{lema161}{}
 \begin{lemma}
-\color{red}
 Sejam $G$ e $\mathcal{G}$ grupos e $\varphi: G\to \mathcal{G}$ um homomorfismo de grupos. Se $H$ é um subgrupo de $G$ tal que $\ker{\varphi}\subseteq H$, então:
 
 \[
 \varphi^{-1}(\varphi(H)) = H.
 \]
 \end{lemma}
-
-{\color{red}
 
 \textbf{Demonstração:}
 
@@ -2976,11 +2969,9 @@ a &\mapsto & a + 2\mathbb{Z}
 
 \textit{Portanto, temos que $\varphi^{-1}(\varphi(H)) = 2\mathbb{Z} \neq H$}.
 
-}
 
 \hypertarget{correspondencia}{}
 \begin{theorem}
-\color{red}
 \textbf{Teorema da Correspondência}
 
 Sejam $G$ e $\mathcal{G}$ grupos e $\varphi: G\to \mathcal{G}$ um homomorfismo de grupos. Então:
@@ -4006,12 +3997,8 @@ Portanto, $\psi$ é um isomorfismo de grupos e $G\cong H\rtimes_{\theta} K$.
 \qed
 
 \begin{proposition}
-\color{red}
-
 Sejam $H$ e $K$ grupos e $\theta: K\to \text{Aut}(H)$ um homomorfismo. Se $\theta$ é não trivial, então $H\rtimes_\theta K$ é não abeliano.
 \end{proposition}
-
-{\color{red}
 
 \textbf{Demonstração:}
 
@@ -4025,11 +4012,9 @@ Como $(h_1,k_1)(h_2,k_2) = (h_2,k_2)(h_1,k_1)$ para quaisquer $h_1,h_2\in H$ e $
 
 Concluímos, portanto, que $\theta$ é trivial.
 
-\qed}
-
+\qed
 
 \begin{example}
-\color{red}
 
 Sejam $H$ um grupo e $K \overset{def}{=} \text{Aut}(H)$. Se definirmos $\theta: K\to \text{Aut}(H)$ por $\theta(\sigma) = \sigma$, então temos o produto semidireto externo $H\rtimes_\theta K$, onde:
 
@@ -4038,15 +4023,11 @@ Sejam $H$ um grupo e $K \overset{def}{=} \text{Aut}(H)$. Se definirmos $\theta: 
 \]
 \end{example}
 
-{\color{red}
-
 \textit{Observação: a construção do exemplo acima é chamada de \textbf{Holomorfo do grupo $H$}.}
 
-}
 
 \hypertarget{teo182}{}
 \begin{theorem}
-\color{red}
 
 Sejam $H$ e $K$ grupos e $\theta,\delta : K\to \text{Aut}(H)$ dois homomorfismos. Se existir $\sigma\in\text{Aut}(H)$ tal que:
 
@@ -4062,7 +4043,6 @@ H\rtimes_{\theta} K \cong H\rtimes_{\delta} K.
 
 \end{theorem}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Defina $\varphi$ a função dada por:
@@ -4084,7 +4064,7 @@ Sejam $(h_1,k_1),(h_2,k_2)\in H\rtimes_{\theta} K$, temos:
 \[
 \begin{aligned}
 \varphi((h_1,k_1)(h_2,k_2)) &= \varphi((h_1\theta_{k_1}(h_2), k_1k_2)) = (\sigma(h_1\theta_{k_1}(h_2)), k_1k_2) \\
-&= (\sigma(h_1)\sigma(\theta_{k_1}(h_2)), k_1k_2) = (\sigma(h_1)\delta_{k_1}(\sigma_{k_1}(h_2)), k_1k_2) \\
+&= (\sigma(h_1)\sigma(\theta_{k_1}(h_2)), k_1k_2) = (\sigma(h_1)\delta_{k_1}(\sigma(h_2)), k_1k_2) \\
 &= (\sigma(h_1), k_1)(\sigma(h_2), k_2) = \varphi((h_1,k_1))\varphi((h_2,k_2))
 \end{aligned}
 \]
@@ -4095,10 +4075,9 @@ Concluímos, portanto, que $\varphi$ é um isomorfismo de grupos e,
 H\rtimes_{\theta} K \cong H\rtimes_{\delta} K.
 \]
 
-\qed}
+\qed
 
 \begin{theorem}
-\color{red}
 
 Sejam $H$ e $K$ grupos e $\theta,\delta : K \to \text{Aut}(H)$ homomorfismos. Se existir $\beta\in \text{Aut}(K)$ tal que $\theta = \delta\beta$, então:
 
@@ -4108,7 +4087,6 @@ H \rtimes_{\theta} K \cong H\rtimes_{\delta} K.
 
 \end{theorem}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Defina $\varphi$ a função dada por:
@@ -4130,8 +4108,8 @@ Mostremos, portanto, que $\varphi$ é um homomorfismo de grupos. Sejam $(h_1,k_1
 \[
 \begin{aligned}
 \varphi((h_1,k_1)(h_2,k_2)) &= \varphi((h_1\theta_{k_1}(h_2), k_1k_2)) = (h_1\theta_{k_1}(h_2), \beta(k_1k_2)) \\
-&= (h_1\theta_{k_1}(h_2), \beta(k_1)\beta(k_2)) = (h_1\delta{\beta{k_1}}(h_2), \beta(k_1)\beta(k_2)) \\
-&= (h_1,\beta(k_1))(h_2,\beta(k_2)) = \varphi((h_1,k_1))\varphi((k_2,h_2))
+&= (h_1\theta_{k_1}(h_2), \beta(k_1)\beta(k_2)) = (h_1\delta_{\beta(k_1)}(h_2), \beta(k_1)\beta(k_2)) \\
+&= (h_1,\beta(k_1))(h_2,\beta(k_2)) = \varphi((h_1,k_1))\varphi((h_2,k_2))
 \end{aligned}
 \]
 
@@ -4141,14 +4119,13 @@ Portanto, temos que $\varphi$ é um isomorfismo de grupos e,
 H \rtimes_{\theta} K \cong H\rtimes_{\delta} K.
 \]
 
-\qed}
+\qed
 
 
 \section{Sequências Exatas Curtas}
 
 \hypertarget{def191}{}
 \begin{definition}
-\color{red}
 
 Sejam $H, G$ e $K$ grupos e $\varphi: H\to G$ e $\psi: G\to K$ homomorfismos de grupos. A sequência:
 
@@ -4161,7 +4138,6 @@ H \xrightarrow{\varphi} G \xrightarrow{\psi} K
 \end{definition}
 
 \begin{definition}
-\color{red}
 A partir das notações da \hyperlink{def191}{\textbf{Definição 2.3.1}}, uma sequência da forma:
 
 \[
@@ -4185,7 +4161,6 @@ A partir das notações da \hyperlink{def191}{\textbf{Definição 2.3.1}}, uma s
 \]
 \end{definition}
 
-{\color{red}
 \textit{Observações:}
 
 \begin{itemize}
@@ -4199,10 +4174,8 @@ A partir das notações da \hyperlink{def191}{\textbf{Definição 2.3.1}}, uma s
   \item \textit{Desde que a sequência é exata em $G$, então como $\operatorname{Im}{\varphi} = \ker{\psi}$, temos que $\operatorname{Im}{\varphi}\trianglelefteq G$}.
 \end{itemize}
 
-}
 
 \begin{example}
-\color{red}
 
 Sejam $G$ um grupo e $H\trianglelefteq G$. A sequência:
 
@@ -4230,7 +4203,6 @@ onde,
 
 \end{example}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Basta mostrar que $\iota$ é um monomorfismo, $\pi$ é um epimorfismo e que $\operatorname{Im}{\iota} = \ker{\pi}$.
@@ -4245,10 +4217,9 @@ Ora, é fácil ver que:
 
 Portanto, a sequência apresentada é de fato uma sequência exata curta.
 
-\qed}
+\qed
 
 \begin{definition}
-\color{red}
 
 Dizemos que uma sequência exata curta da forma:
 
@@ -4260,7 +4231,6 @@ Dizemos que uma sequência exata curta da forma:
 
 \end{definition}
 
-{\color{red}
 \textit{Observação: se uma dada sequência exata curta cinde, então podemos representar seu diagrama como:}
 
 \[
@@ -4269,11 +4239,9 @@ Dizemos que uma sequência exata curta da forma:
 \end{tikzcd}
 \]
 
-}
 
 \hypertarget{teo231}{}
 \begin{theorem}
-\color{red}
 
 Sejam $G$, $H$ e $K$ grupos, $\varphi$, $\psi$ e $\kappa$ homomorfismos e a sequência exata curta que cinde dada por: 
 
@@ -4296,8 +4264,6 @@ onde $\theta: K\to \text{Aut}(H)$ é o homomorfismo dado por:
 \]
 
 \end{theorem}
-
-{\color{red}
 
 \textbf{Demonstração:}
 
@@ -4375,7 +4341,7 @@ Concluímos, finalmente, que $\xi$ é um isomorfismo de grupos e temos:
 G \cong H \rtimes_\theta K
 \]
 
-\qed}
+\qed
 
 
 \chapter{Grupo Simétrico}
@@ -6173,18 +6139,16 @@ Sejam $G$ um grupo e $X$ um conjunto não vazio tal que $G\curvearrowright X$ pe
 \section{Teorema de Jordan-Hölder}
 
 \begin{definition}
-\color{red}
 
-Seja $G$ um grupo e $n\in\mathbb{Z}^*$. Definimos \textbf{série subnormal} de $G$ como sendo a seguinte cadeia de normalidade:
+Seja $G$ um grupo e $n\in\mathbb{Z}^*$. Definimos \textbf{série subnormal} de $G$ como sendo a seguinte cadeia de normalidade, denominada $\lambda$:
 
 \[
-G = G_0 \trianglerighteq G_1 \trianglerighteq \cdots \trianglerighteq G_n = \{e\}
+\lambda: G = G_0 \trianglerighteq G_1 \trianglerighteq \cdots \trianglerighteq G_n = \{e\}
 \]
 
 Onde $G_{i+1}$ são subgrupos normais de $G_i$ e $i\in\llbracket0,n-1\rrbracket$.
 \end{definition}
 
-{\color{red}
 \textit{Observações:}
 
 \begin{itemize}
@@ -6193,11 +6157,9 @@ Onde $G_{i+1}$ são subgrupos normais de $G_i$ e $i\in\llbracket0,n-1\rrbracket$
   \item \textit{Note que todo grupo $G$ admite a série subnormal trivial $G\trianglerighteq \{e\}$}.
 \end{itemize}
 
-}
 
 \hypertarget{ex411}{}
 \begin{example}
-\color{red}
 
 A cadeia de normalidade:
 
@@ -6216,7 +6178,6 @@ G_0 & & G_1 & & G_2 & & G_3
 
 \hypertarget{ex412}{}
 \begin{example}
-\color{red}
 
 Seja $X \overset{def}{=} \{x_1, x_2, x_3, x_4\}$ um conjunto arbitrário. Então, a cadeia de normalidade:
 
@@ -6234,7 +6195,6 @@ G_0 & & G_1 & & G_2 & & G_3 & & G_4
 \end{example}
 
 \begin{definition}
-\color{red}
 
 Seja $G$ um grupo e $\lambda$ uma série subnormal de $G$. Dizemos que uma série subnormal $\lambda'$ de $G$ é um \textbf{refinamento de $\lambda$} se $\lambda'$ é obtida inserindo uma quantidade finita de subgrupos na cadeia de normalidade de $\lambda$.
 
@@ -6243,7 +6203,6 @@ Dizemos ainda que um refinamento é \textbf{próprio} se é adicionada uma quant
 \end{definition}
 
 \begin{example}
-\color{red}
 
 A série subnormal apresentada no \hyperlink{ex411}{\textbf{Exemplo 5.1.1}} é um refinamento das seguintes séries subnormais de $\mathbb{Z}/30\mathbb{Z}$:
 
@@ -6271,7 +6230,6 @@ G_0 & & G_1 & & G_2
 
 
 \begin{definition}
-\color{red}
 
 Seja $G$ um grupo e $\lambda$ uma série subnormal de $G$. Dizemos que $\lambda$ é uma \textbf{série de composição de $G$} se, e somente se, $\lambda$ não possui repetições e não admite refinamento próprio.
 
@@ -6284,13 +6242,11 @@ Seja $G$ um grupo e $\lambda$ uma série subnormal de $G$. Dizemos que $\lambda$
 }
 
 \begin{example}
-\color{red}
 
-As séries subnormais apresentadas nos \textbf{Exemplos} \hyperlink{ex411}{\textbf{5.1.1}} e \hyperlink{ex412}{\textbf{5.1.2}} são também séries de composição.
+As séries subnormais apresentadas nos \textbf{Exemplos} \hyperlink{ex411}{\textbf{5.1.1}} e \hyperlink{ex412}{\textbf{5.1.2}} são também séries de composição por construção e pelo \hyperlink{teo343}{\textbf{Teorema 3.4.3}}, respectivamente.
 \end{example}
 
 \begin{proposition}
-\color{red}
 
 Sejam $G$ um grupo, $n\in \mathbb{Z}^*$ e $\lambda$ uma série subnormal de $G$ dada por:
 
@@ -6306,25 +6262,20 @@ $(ii)$ $G_i/G_{i+1}$ é simples para todo $i\in\llbracket 0,n-1\rrbracket$.
 
 \end{proposition}
 
-{\color{red}
-
 \textbf{Demonstração:}
 
 Suponha que $G_i/G_{i+1}$ não é simples para algum $i\in\llbracket 0,n-1\rrbracket$. Nesse caso, existe um subgrupo normal próprio e não trivial $G_i'/G_{i+1} \triangleleft G_i/G_{i+1}$. Pelo \hyperlink{correspondencia}{\textbf{Teorema da Correspondência}}, sabemos que existe portanto $G_i'$ tal que $G_{i+1} \subsetneq G_i' \subsetneq G_i$ e $G_i' \triangleleft G_i$. Basta tomarmos então $\lambda'$ um refinamento próprio de $\lambda$ inserindo o subgrupo $G_i'$. Como $\lambda$ admite um refinamento próprio, concluímos que $\lambda$ não é uma série de composição de $G$.
 
 Suponha, agora, que $G_i/G_{i+1}$ é simples para todo $i\in\llbracket 0,n-1\rrbracket$. Nesse caso, $G_i/G_{i+1}$ não admite nenhum subgrupo normal não trivial. Se $\lambda$ não é uma série de composição, então $\lambda$ admite um refinamento próprio. Digamos, sem perda de generalidade, que tal refinamento próprio é dado pela inserção de um grupo $G_j' \triangleleft G_j$ para um dado $j\in\llbracket 0,n-1\rrbracket$. Ora, pelo \hyperlink{correspondencia}{\textbf{Teorema da Correspondência}}, temos que $G_j'/G_{j+1} \triangleleft G_j/G_{j+1}$. Absurdo. Concluímos que $\lambda$ é uma série de composição.
 
-
-\qed}
+\qed
 
 \begin{proposition}
-\color{red}
 
 Todo grupo finito não trivial admite uma série de composição.
 
 \end{proposition}
 
-{\color{red}
 \textbf{Demonstração:}
 
 Tomemos $G$ um grupo finito não trivial. Caso $G$ seja um grupo simples, temos trivialmente a seguinte série de composição:
@@ -6349,10 +6300,9 @@ Como $G$ é um grupo finito, então tal construção será realizada em um núme
 
 Concluímos, portanto, que todo grupo finito não trivial possui série de composição.
 
-\qed}
+\qed
 
 \begin{definition}
-\color{red}
 
 Sejam $G$ um grupo e $\lambda_1$ e $\lambda_2$ duas séries subnormais de $G$ dadas por:
 
@@ -6370,8 +6320,6 @@ Dizemos que $\lambda_1$ e $\lambda_2$ são \textbf{séries equivalentes} se exis
 
 \end{definition}
 
-{\color{red}
-
 \textit{Observações:}
 
 \begin{itemize}
@@ -6379,10 +6327,7 @@ Dizemos que $\lambda_1$ e $\lambda_2$ são \textbf{séries equivalentes} se exis
   \item \textit{Note também que $\lambda_2$ é um refinamento próprio de $\lambda_1$ se, e somente se, $\lambda_1$ e $\lambda_2$ não são equivalentes}.
 \end{itemize}
 
-}
-
 \begin{example}
-\color{red}
 
 Considere as seguintes séries de composição de $\mathbb{Z}/30\mathbb{Z}$:
 
